@@ -1,0 +1,43 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Sprint 7 testing....
+      </h1>
+
+      <p>Tick all that apply</p>
+
+      <form action="tester" method="get" class="form">
+
+          <div class="form-group">
+            <input type="checkbox" id="tester" name="test">
+            <label class="form-control-checkbox" for="tester">
+              Someone has left or joined the household
+            </label>
+          </div>
+        {{
+          form_macros.button({
+            label: 'Next'          })
+        }}
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

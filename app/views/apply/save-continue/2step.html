@@ -1,0 +1,36 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    Keep your details safe
+  </h1>
+  <p>To help keep your details safe we can send you an access code to your mobile phone or landline everytime you need to access this service.</p>
+
+  <form action="" method="get" class="form">
+
+    {{
+      form_macros.button({
+        label: 'Next',
+        href: 'phone'
+      })
+    }}
+
+    <p class="navigation"><a class="cancel" href="../lis-home">I can not do this right now</a></p>
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

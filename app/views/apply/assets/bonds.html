@@ -1,0 +1,67 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+
+  <h1 class="heading-large">
+    Do you or your partner have any premium bonds?
+  </h1>
+
+  <form action="" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <fieldset>
+        <div class="inline-form-groups">
+          <div class="form-group">
+            <input type="radio" id="email" name="contact">
+            <label class="form-control-radio js-toggle" for="email" data-show="#contact-email-address" data-hide="#contact-mobile-number">
+              Yes
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="mobile" name="contact">
+            <label class="form-control-radio js-toggle" for="mobile" data-hide="#contact-email-address">
+              No
+            </label>
+          </div>
+        </div>
+
+        <div class="js-hidden panel-indent" id="contact-email-address">
+          <label class="form-label-bold" for="email-address">
+            Total value of premium bonds
+          </label>
+          <p class="form-hint">Please tell us the combined total of all the premium bonds you and your partner have</p>
+          <input type="text" id="email-address" class="form-control">
+        </div>
+      </fieldset>
+    </div>
+
+    {{
+      form_macros.button({
+        href: 'capital-bonds',
+        label: 'Save and continue'
+      })
+    }}
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p>
+
+  </form>
+
+  </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

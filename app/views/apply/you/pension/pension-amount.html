@@ -1,0 +1,77 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+       How often do you get your State Pension?
+      </h1>
+
+      <form action="sp-handler" method="get" class="form">
+
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <input type="radio" id="weekly" value="weekly" name="frequency">
+          <label class="form-control-radio" for="weekly">
+            Every week
+          </label>
+        </div>
+        <!--div class="form-group">
+          <input type="radio" id="fortnight" name="freq">
+          <label class="form-control-radio" for="fortnight">
+            Every 2 weeks
+          </label>
+        </div-->
+        <div class="form-group">
+          <input type="radio" id="fourweekly" value="fourweekly" name="frequency">
+          <label class="form-control-radio" for="fourweekly">
+            Every 4 weeks
+          </label>
+        </div>
+        <!--div class="form-group">
+          <input type="radio" id="month" name="freq">
+          <label class="form-control-radio" for="month">
+           Every calender month
+          </label>
+        </div-->
+        <!--div class="form-group">
+          <input type="radio" id="year" name="freq">
+          <label class="form-control-radio" for="year">
+            Once a year
+          </label>
+        </div-->
+      </div>
+    {{
+      form_macros.amount_field({
+        id: 'money-amount',
+        label: 'How much do you get?'
+      })
+    }}
+
+    {{
+      form_macros.button({
+        label: 'Save and continue'
+      })
+    }}
+
+    </form>
+
+    <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p>
+
+  </div>
+
+</div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+      Do you or your partner receive any of the following?
+  </h1>
+
+  <details>
+
+  <summary><span class="summary">What we mean by partner</span></summary>
+
+  <div class="panel panel-border-narrow">
+
+    <p>
+      We use the term partner to mean a person you live with as part of a couple of the same or opposite sex, whether or not you are married or in a civil partnership.
+    </p>
+
+  </div>
+
+</details>
+  <br>
+  <form action="benefitsv2-handler" method="get" class="form">
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="cbsa" name="kickout">
+        <label class="form-control-radio" for="cbsa">
+          Income support
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="cbj" name="kickout">
+        <label class="form-control-radio" for="cbj">
+          Universal credit
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="sa" name="kickout">
+        <label class="form-control-radio" for="sa">
+          Income based job seekers allowance
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="jsa" name="kickout">
+        <label class="form-control-radio" for="jsa">
+          Income related employment &amp; support allowance
+        </label>
+      </div>
+      <p class="form-block">or</p>
+      <div class="form-group">
+        <input type="radio" id="continue" name="kickout" value="continue">
+        <label class="form-control-radio" for="continue">
+          I <span class ="bold">do not</span> receive any of these
+        </label>
+      </div>
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+          </div>
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

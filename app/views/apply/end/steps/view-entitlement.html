@@ -1,0 +1,129 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income-new.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+<link rel="stylesheet" href="/public/stylesheets/pagination.css">
+
+     <div class="grid-row">
+  <div class="column-two-thirds">
+      <div class="done-panel">
+    <h1 class="heading-medium"><span id="done-tick"> </span>Application complete</h1>
+    <h2 class="heading-medium">You can get partial help with health costs</h2>
+  </div>
+
+      <h1 class="heading-large">
+        <span class="heading-secondary">Step 2</span>
+       What you're entitled to
+      </h1>
+    </div>
+    </div>
+
+    <div class="grid-row">
+          <div class="column-two-thirds">
+        <div class="entitlement" style="margin-top:30px;">
+        <h4 class="heading-small">Prescriptions</h4>
+        <p class="description">This certificate does not entitle you to free prescriptions.</p>
+              </div>
+
+      <div class="entitlement">
+        <h4 class="heading-small">Sight tests</h4>
+        <p class="description">Towards a private sight test, you pay a maximum of:</p>
+        <p class="heading-medium">£x.xx</p>
+      </div>
+
+      <div class="entitlement">
+        <h4 class="heading-small">Glasses or contact lenses</h4>
+        <p class="description">Towards an optical voucher, you pay:</p>
+        <p class="heading-medium">£x.xx</p>
+      </div>
+
+      <div class="entitlement">
+        <h4 class="heading-small">NHS dental treatment</h4>
+        <p class="description">Per course of treatment, you pay a maximum of:</p>
+        <p class="heading-medium">£x.xx</p>
+      </div>
+
+      <div class="entitlement">
+        <h4 class="heading-small">Travel to receive NHS treatment</h4>
+        <p class="description">Towards travel, in a week you pay:</p>
+        <p class="heading-medium">£x.xx</p>
+      </div>
+
+      <div class="entitlement">
+        <h4 class="heading-small">NHS Wigs, or NHS fabric supports</h4>
+        <p class="description">Per prescribed item you pay a maximum of:</p>
+        <p class="heading-medium">£x.xx</p>
+      </div>
+
+<!--Stepped pagination-->
+<!--
+        <nav class="pagination" role="navigation">
+
+            <div class="next-page">
+              <a href="hc3-documents">
+                <span class="prefix">Next step:</span>
+                <span class="title">Get your certificate</span>
+              </a>
+            </div>
+
+            <div class="previous-page">
+              <a href="">
+                <span class="prefix">Previous step:</span>
+                <span class="title">Your application</span>
+              </a>
+            </div>
+
+        </nav>
+
+-->
+
+
+        <nav class="pagination_gds" role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="previous">
+                    <a title="Navigate to previous part" rel="prev" href="what-you-told-us">
+                      <span class="pagination-label">Previous</span>
+                      <span class="pagination-part-title">Your application</span>
+                    </a>
+                  </li>
+                  <li class="next">
+                    <a title="Navigate to next part" rel="next" href="hc3-documents">
+                      <span class="pagination-label">Next</span> <span class="pagination-part-title">Get your certificate</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+    </div>
+
+<!--
+    <div class="column-third">
+
+      <div style="margin-top:135px;">
+
+        <div>
+          <h3 class="heading-small">How was this worked out</h3>
+            <p><a href="hc3-breakdown">View a breakdown</a></p>
+            <hr>
+          <h3 class="heading-small">Change in details</h3>
+          <p><a href="#">Tell us about a change</a></p>
+             <hr>
+            <h3 class="heading-small">How do I use my certificiate</h3>
+          <p><a href="#">Get help using your certificate</a></p>
+        </div>
+
+      </div>
+
+
+    </div>
+-->
+
+  </div>
+
+</main>

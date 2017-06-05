@@ -1,0 +1,54 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    Sign in
+  </h1>
+
+  <form action="" method="get" class="form">
+
+    {{
+      form_macros.text_field({
+        id: 'user',
+        label: 'Application referenece number'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'PASSWORD',
+        label: 'Memorable word'
+      })
+    }}
+
+    {{
+      form_macros.button({
+        label: 'Next',
+        href: 'end/tabs/view-entitlement-accordian'
+      })
+    }}
+
+    <h2 class="heading-medium">Problems signing in</h2>
+    <ul>
+      <li class="navigation"><a class="cancel" href="">I do not have an account</a></li>
+      <li class="navigation"><a class="cancel" href="">Forgotten reference number</a></li>
+      <li class="navigation"><a class="cancel" href="">Forgotten memorable word</a></li>
+      <li class="navigation"><a class="cancel" href="">Forgotten reference number and memorable word</a></li>
+    </ul>
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

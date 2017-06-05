@@ -1,0 +1,41 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+         What is your telephone number?
+      </h1>
+
+      <form action="telephone-number-handler" method="get" class="form">
+        <div class="form-item-wrapper">
+          <fieldset>
+            <div class="form-group">
+              <input type="text" id="telephone-number" class="form-control" name="telephone">
+            </div>
+          </fieldset>
+        </div>
+
+        {{
+          form_macros.button({
+            label: 'Next'
+          })
+        }}
+
+    </form>
+
+    </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    Create a username
+  </h1>
+
+
+      <form action="" method="get" class="form">
+        <div class="form-item-wrapper">
+          <fieldset>
+              <div class="form-group">
+                <ul class="list list-bullet">
+                  <li>Your username must not contain spaces</li>
+                  <li>You'll need this to sign in again so make it memorable</li>
+                  <li>You can use your email address</li>
+                </ul>
+
+              <label class="form-label-bold" for="email-address">
+                Enter a username
+              </label>
+              <input type="text" id="email-address" class="form-control">
+            </div>
+          </fieldset>
+        </div>
+            {{
+              form_macros.button({
+                label: 'Next',
+                href: 'password'
+              })
+            }}
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

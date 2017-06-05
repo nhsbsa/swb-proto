@@ -1,0 +1,38 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income-new.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+         <p class="form-hint">Step 3 of 3</p>
+        <h1 class="heading-large">Step 3: Get your certificate</h1>
+
+        <div>
+          <p>You will need to show a copy of this information whenever <br>you want to use it.</p>
+            <ul>
+            <li><a href="javascript:window.print();">Print certificate</a></li>
+            <li><a href="/public/images/hc3.pdf" target="_blank">Download certificate (PDF 98k)</a></li>
+            <li><a href="email-me?helplevel=3">Get certificate by  email</a></li>
+          </ul>
+            <hr>
+            <p>I'm having trouble with this</p>
+            <a href="post?helplevel=3">Get help getting a copy</a>
+        </div>
+
+    </div>
+
+    <div class="column-third">
+
+    </div>
+
+  </div>
+
+</main>

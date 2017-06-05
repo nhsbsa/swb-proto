@@ -1,0 +1,127 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <main id="content" role="main">
+      
+      <div class="grid-row">
+        
+        <div class="column-two-thirds">
+
+          <div class="text">
+            
+            <h1 class="heading-large">
+              Check your answers
+            </h1>
+
+            <table class="data-table you-summary">
+              <tr>
+                <td>Do you live with a partner?</td>
+                <td>Yes</td>
+                <td><a href="p-status">Change this</a></td>
+              </tr>
+            </table>
+            
+            <p class="bold">Partner's personal details</p>
+            <table class="data-table you-summary">
+              <tr>
+                <td>Partner's full name</td>
+                <td>Priya Mattu</td>
+                <td><a href="basic">Change this</a></td>
+              </tr>
+              <tr>
+                <td>Partner's date of birth</td>
+                <td>24 March 1955</td>
+                <td><a href="dob">Change this</a></td>
+              </tr>
+            </table>
+            
+            <p class="bold">Partner's jobs and education</p>
+            <table class="data-table you-summary">
+              <tr>
+                <td>Does your partner have a job?</td>
+                <td>No</td>
+                <td><a href="work">Change this</a></td>
+              </tr>
+              <tr>
+                <td>Is your partner in full time education?</td>
+                <td>No</td>
+                <td><a href="education">Change this</a></td>
+              </tr>
+            </table>
+            
+            <p class="bold">Partner's pensions</p>
+            <table class="data-table you-summary">
+              <tr>
+                <td>Does your partner get a pension?</td>
+                <td>Yes</td>
+                <td><a href="pension/pension">Change this</a></td>
+              </tr>
+              <tr>
+                <td>Does your partner get Pension Credit Savings Credit?</td>
+                <td>Yes</td>
+                <td><a href="pension/pension-credit">Change this</a></td>
+              </tr>
+              <tr>
+                <td>Your partner's Pension Credit Savings Credit payments</td>
+                <td>Yes</td>
+                <td><a href="pension/pension">Change this</a></td>
+              </tr>
+              <tr>
+                <td>About your partner's state pension</td>
+                <td>£123 per week</td>
+                <td><a href="pension/private-pension-amount">Change this</a></td>
+              </tr>
+              <tr>
+                <td>About your partner's private pension</td>
+                <td>£123 per week</td>
+                <td><a href="pension/private-pension-amount">Change this</a></td>
+              </tr>
+            </table>
+            
+            <p class="bold">Partner's benefits and other money</p>
+            <table class="data-table you-summary">
+              <tr>
+                <td>Does your partner get any of these benefits?</td>
+                <td>No</td>
+                <td><a href="pension/private-pension-amount">Change this</a></td>
+              </tr>
+              <tr>
+                <td>Does your partner look after someone but cannot get Carer’s Allowance because of another reason?</td>
+                <td>No</td>
+                <td><a href="benefits/benefit4">Change this</a></td>
+              </tr>
+              <tr>
+                <td>Does someone get Carer’s Allowance for looking after your partner?</td>
+                <td>No</td>
+                <td><a href="benefits/care-allowance">Change this</a></td>
+              </tr>
+              <tr>
+                <td>Does your partner get any other money?</td>
+                <td>No</td>
+                <td><a href="benefits/other-money">Change this</a></td>
+              </tr>
+            </table>
+
+            <form action="partner-done" method="get" class="form">
+              {{
+                form_macros.button({
+                  label: 'Save and continue',
+                  id : 'next'
+                })
+              }}
+            </form>
+        </div>
+          
+      </div>
+        
+    </div>
+    
+</main>
+
+{% endblock %}

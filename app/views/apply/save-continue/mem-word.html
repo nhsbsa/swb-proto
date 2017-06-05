@@ -1,0 +1,49 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Create a memorable word
+      </h1>
+
+      <p>You will need your application number (1Q3 4T6 7K9) and a memorable word if you save your application and come back to it later.</p>
+
+      <form action="" method="get" class="form">
+        <div class="form-item-wrapper">
+          <fieldset>
+            <div class="form-group">
+              <label class="form-label-bold" for="email-address">
+                Memorable word
+              </label>
+              <input type="text" id="email-address" class="form-control">
+            </div>
+          </fieldset>
+        </div>
+
+        {{
+          form_macros.button({
+            label: 'Next',
+            href: 'phone-pre'
+          })
+        }}
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,172 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+    .right-col-details{
+        }
+
+    .right-col-details div:first-child {
+    border-bottom: 7px solid #0072C6;
+        padding-bottom: 0px;}
+    .success {
+  background-image: url("/public/images/tick-green.svg");
+  background-repeat: no-repeat;
+  background-position: 95% 55%; }
+
+.form-hint-list-item {
+	margin:0 0 0.6em 0;
+	display:table
+}
+.form-hint-list-item__indicator {
+	vertical-align:middle;
+	margin-right:.26316em;
+	display:inline-block;
+	width:20px;
+	height:20px;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-image:url("../images/bullet-icon.svg")
+}
+.form-hint-list-item--valid {
+	color:#00823B
+}
+.form-hint-list-item--valid .form-hint-list-item__indicator {
+	background-image:url("/public/images/tick-green.svg")
+}
+    .form-hint-list-item--false {
+	color:#ED1C24
+}
+.form-hint-list-item--false .form-hint-list-item__indicator {
+	background-image:url("/public/images/cross-red.svg")
+}
+.form-hint-list-item__primary {
+	display:table-cell
+}
+
+
+</style>
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+   <!--1B- lives in the UK-->
+    <h2 class="heading-large">Which country do you live in?</h2>
+
+  <form action="region-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="england" name="eligibility">
+        <label class="form-control-radio" for="england">
+          England
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="Scotland" name="eligibility">
+        <label class="form-control-radio" for="Scotland">
+          Scotland
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="wales" name="eligibility">
+        <label class="form-control-radio" for="wales">
+          Wales
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="northern-ireland" name="eligibility">
+        <label class="form-control-radio" for="northern-ireland">
+          Northern Ireland
+        </label>
+        <!--if selected send to "ni-kickout"-->
+      </div>
+      </div>
+
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+
+          <div class="column-third">
+
+      <div class="right-col-details">
+
+          <h3 class="heading-medium">What you get free </h3>
+
+<ul class="form-hint-list">
+    <li class="form-hint-list-item  form-hint-list-item--valid">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid" >
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         Sight test
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+</ul>
+
+
+
+      </div>
+
+    </div>
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+

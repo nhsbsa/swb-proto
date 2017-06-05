@@ -1,0 +1,50 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <h1 class="heading-large">Apply for help with health costs<br>The Low Income Scheme</h1>
+
+        <p>You can apply once you have completed all of the sections.</p>
+        <br>
+
+        <table class="data-table">
+          <tr class='clickable-row' data-href='you/registration'>
+            <td>About you</td>
+            <td><span id="about_you_status" class="notstarted-text">{{aboutYouStatus}}</span>
+            <a href="you/registration">{{aboutYouLink}}</a></td>
+          </tr>
+          <tr class='clickable-row' data-href='partner/p-status'>
+            <td>Partner status</td>
+            <td><span id="about_partner_status" class="notstarted-text">{{aboutPartnerStatus}}</span>
+            <a href="partner/p-status">{{aboutPartnerLink}}</a></td>
+          </tr>
+          <tr class='clickable-row' data-href='live/you-live'>
+            <td>About where you live</td>
+            <td><span id="where_you_live_status" class="notstarted-text">{{whereYouLiveStatus}}</span>
+            <a href="live/you-live">{{whereYouLiveLink}}</a></td>
+          </tr>
+          <tr class='clickable-row' data-href='assets/property'>
+            <td>Property, savings &amp; money</td>
+            <td><span id="property_status" class="notstarted-text">{{propertyStatus}}</span>
+            <a href="assets/address-prop">{{propertyLink}}</a></td>
+          </tr>
+        </table>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

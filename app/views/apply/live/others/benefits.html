@@ -1,0 +1,103 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+          Do they get any of these benefits?
+      </h1>
+      <p>Select all the benefits they get.</p>
+
+      <form action="" method="get" class="form">
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <input type="checkbox" id="afip" name="bgroup">
+            <label class="form-control-checkbox" for="afip">
+              Armed forces independence payment
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="aa" name="bgroup">
+            <label class="form-control-checkbox" for="aa">
+              Attendance allowance
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="dla" name="bgroup">
+            <label class="form-control-checkbox" for="dla">
+              Disability living allowance
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="ibja" name="bgroup">
+            <label class="form-control-checkbox" for="ibja">
+              Income based jobseekers allowance
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="esa" name="bgroup">
+            <label class="form-control-checkbox" for="esa">
+              Income related employment and support allowance
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="is" name="bgroup">
+            <label class="form-control-checkbox" for="is">
+              Income support
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="pc" name="bgroup">
+            <label class="form-control-checkbox" for="pc">
+              Pension credit
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="pip" name="bgroup">
+            <label class="form-control-checkbox" for="pip">
+              Personal independence payment
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="uc" name="bgroup">
+            <label class="form-control-checkbox" for="uc">
+              Universal credit
+            </label>
+          </div>
+          <p class="form-block">or</p>
+          <div class="form-group">
+            <input type="checkbox" id="none" name="bgroup">
+            <label class="form-control-checkbox" for="none">
+              They <span class ="bold">do not</span> get any of these
+            </label>
+          </div>
+          {{
+            form_macros.button({
+              href: 'blind',
+              label: 'Save and continue'
+            })
+          }}
+        </div>
+
+      </form>
+
+      <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p>
+
+    </div>
+
+
+  </div>
+
+</main>
+
+{% endblock %}

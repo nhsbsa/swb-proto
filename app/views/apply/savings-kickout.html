@@ -1,0 +1,33 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <h1 class="heading-xlarge">You cannot apply to get help with health costs</h1>
+
+        <p>Because [you] [you, your partner, or you both] have more than £23,250 in savings, investments and properties, you cannot get help.</p>
+
+        <p>
+          <a href="/">Link to some help</a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

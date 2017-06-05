@@ -1,0 +1,38 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Help getting a copy of your certificate
+      </h1>
+
+      <p>
+        If you are unable to print or download a copy of your certificate we can send a copy in the post to the address you used when you applied.
+      </p>
+
+      <p>
+        It will take around xx days to arrive.
+      </p>
+      <p>
+      <a class="button" href="post-confirm">Send me a copy in the post</a>
+      </p>
+      <p class="navigation"><a class="cancel" href="hc{{helplevel}}-entitlement">Cancel - back to my entitlement</a></p>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

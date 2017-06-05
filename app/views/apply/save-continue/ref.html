@@ -1,0 +1,55 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Your application number is
+      </h1>
+
+      <div class="panel panel-border-wide claim-ref">
+        <h1 class="heading-xlarge">1Q3 4T6 7K9</h1>
+      </div>
+
+      <p>You will need this number if you save your application and come back to it later.</p>
+
+      <p><a href="">Print this page</a></p>
+
+      <form action="ref-email-handler" method="get" class="form">
+
+        <div class="form-item-wrapper">
+          <fieldset>
+            <div class="form-group">
+              <label class="form-label-bold" for="email">
+                Email address (optional)
+              </label>
+              <p>Enter your email address and we will email a copy of your application number.</p>
+              <input type="text" id="email" name="email" class="form-control">
+            </div>
+          </fieldset>
+        </div>
+
+        {{
+          form_macros.button({
+            label: 'Next'
+          })
+        }}
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

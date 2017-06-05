@@ -1,0 +1,39 @@
+{% extends 'templates/bsa_transaction_layout.html' %}
+
+{% block content %}
+
+    <header role="banner" id="global-header">
+      <div class="header-container">
+
+        <a href="{% block logotypeLink %}/{% endblock %}" class="header-logo" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}">
+          <img src="{{assetPath}}images/nhs-rev-logotype.svg" alt="">
+        </a>
+
+        <h2 class="heading-large ex-header">HC3 Certificate for partial help with health costs</h2>
+
+        {% block header-controls %}{% endblock %}
+
+      </div>
+    </header>
+
+    <!--end header-->
+
+<main id="content" role="main">
+<div class="grid-row">
+
+    <div class="column-two-thirds">
+
+          <div class="text">
+  <a class="back-link" href="hc3certificate">Back </a>
+  <h2 class="heading-large">Travel to receive NHS treatment</h2>
+  <p>If you need to travel:</p>
+    <li>in England to receive NHS treatment under the care of a consultant, or through a referral by a doctor or dentist; or</li>
+    <li>in Scotland to a hospital to receive NHS treatment; or</li>
+    <li>in Wales to receive NHS treatment under the care of a consultant</li>
+  <p>you can get help with the cost of your journey. In England, if you are referred by a doctor or dentist to the same premises but on a different day you can claim for that travel cost. You have to pay the amount by Box towards the cost of travel in any week. Tell someone at the place you are treated that you want to claim back the rest of the cost of your journey and show this certificate. In some cases you may need to claim using form HC5. If for medical reasons you need someone to travel with you, their travel costs are counted with yours.</p>
+  <p>You can only get money back for costs that are necessary for your journey. If you are not sure, check before you travel. See leaflet HC11 ‘Help with health costs’ to find out more - you can download one from: www.nhs.uk/healthcosts.</p>
+  </div>
+  </div>
+  </div>
+</main>
+

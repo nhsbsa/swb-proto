@@ -1,0 +1,340 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income-new.html" %}
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/public/stylesheets/accordian.css">
+
+<main class="accordion-with-descriptions-03" id="content" role="main" tabindex="-1">
+
+<div class="done-panel">
+    <h2 class="heading-medium"><span id="done-tick"> </span>Application complete</h2>
+    <h1 class="heading-large">You can get some help with health costs</h1>
+    <h4 class="heading-small">Your certificate is valid for</h4>
+    <h2 class="heading-large">6 months</h2>
+  </div>
+
+  <nav class="tab-nav">
+    <a href="#certificate" class="tab messages selected">Get your certificate</a>
+    <a href="#entitled" class="tab messages">What you’re entitled to</a>
+    <a href="#breakdown" class="tab messages">How we worked this out</a>
+    <a href="#answers" class="tab messages">What you told us</a>
+  </nav>
+
+<!--tab 1-->
+<div id="certificate" class="details-block">
+
+  <div class="column-two-thirds">
+    <h1 class="heading-large">Get your certificate</h1>
+
+     <div class="callout-box">
+       <p>You will need to show a copy of this information whenever you want to use it.</p>
+     </div>
+  </div>
+
+  <div class="column-two-thirds">
+         <p class="email-text">Your  certificate has been emailed to <span style="font-weight:700" id="emailAddress">vinay.mattu@inter.net</span></p>
+    <article>
+      <div class="govspeak">
+        <section class="attachment embedded" id="attachment_hc3">
+          <div class="attachment-thumb"> <img alt="" src="/public/images/hc3-img-01.png">
+          </div>
+
+          <div class="attachment-details">
+            <p class="links"><span class="download"><a href="../../exemption/email-me?helplevel=3">
+            <strong>Email (another) copy</strong></a></span></p>
+
+            <p class="links"><span class="download">
+            <a href="javascript:window.print();"> <strong>Print</strong></a></span></p>
+
+            <p class="links"> <span class="download"><a href="/public/images/hc3.pdf">
+            <strong>Download PDF</strong>
+            9.97KB</a></span></p>
+
+            <p class="links"> <span class="download"><a href="/public/images/hc3.pdf">
+            <strong>Request a paper copy</strong></a></span></p>
+          </div>
+
+        </section>
+      </div>
+    </article>
+  </div>
+    </div>
+
+             <!--tab-2-->
+
+<div id="entitled" class="details-block">
+
+  <div class="column-two-thirds">
+
+    <h1 class="heading-large">What you’re entitled to</h1>
+
+    <div class="subsections js" data-module="accordion-with-descriptions">
+
+      <div class="subsection-wrapper">
+        <div class="subsection">
+          <div class="subsection__header_top">
+            <h2 class="subsection__title"><a class="subsection__link">
+                 Prescriptions
+                </a></h2>
+            <p class="subsection__description"> Perscriptions are free because you live in Scotland.</p>
+            </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection__header">
+            <h2 class="subsection__title"><a class="subsection__link">Sight tests</a></h2>
+                <p class="subsection__description">
+            <div>
+                <p class="" style="width:80%; float:left">Towards a private sight test, you pay a maximum of:</p> <p class="heading-medium" style="width:20%; float:right; margin: -8px 0 0 0">£x.xx</p>
+            </div>
+            <br><br>
+              <a href="">How to use this certificate for sight tests</a></div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection__header">
+            <h2 class="subsection__title"><a class="subsection__link">
+            Glasses or contact lenses</a></h2>
+            <div class="inline-howmuch">
+            <p class="howmuch-left">Towards an optical voucher, you pay:</p>
+            <p class="heading-medium howmuch-right">£x.xx</p>
+            </div>
+            <br><br>
+            <div><a class="howtolink">How to use this certificate for glasses or contact lenses</a></div>
+            </div>
+        </div>
+
+
+        <div class="subsection">
+          <div class="subsection__header">
+            <h2 class="subsection__title"><a class="subsection__link">
+                  NHS dental treatment
+                </a></h2>
+            <p class="subsection__description">
+            <div><p class="" style="width:80%; float:left">Per course of treatment, you pay a maximum of:</p> <p class="heading-medium" style="width:20%; float:right; margin: -8px 0 0 0">£x.xx</p></div>
+            <br><br>
+            <div><a href="">How to use this certificate for dental treatment</a></div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection__header">
+            <h2 class="subsection__title">
+             <a class="subsection__link">
+              Help with the cost of travel to receive NHS treatment
+
+              <span class="form-hint">You must be referred for the treatment by a doctor, dentist or optician</span>
+
+             </a>
+            </h2>
+            <p class="subsection__description">
+            <div><p class="" style="width:80%; float:left">Towards travel, in a week you pay:</p> <p class="heading-medium" style="width:20%; float:right; margin: -8px 0 0 0">£x.xx</p></div>
+            <br><br>
+            <div><a href="">How to use this certificate for travel</a></div>
+         </div>
+        </div>
+
+        <div class="subsection">
+          <div class="subsection__header">
+            <h2 class="subsection__title">
+             <a class="subsection__link">
+              NHS Wigs, or NHS fabric supports
+             </a>
+            </h2>
+                        <p class="subsection__description">
+            <div><p class="" style="width:80%; float:left">Per prescribed item you pay a maximum of: </p> <p class="heading-medium" style="width:20%; float:right; margin: -8px 0 0 0">£x.xx</p></div>
+            <br><br>
+            <a href="">How to use this certificate for wigs or fabric supports</a> </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+    </div>
+
+
+              <!--tab 3-->
+  <div id="breakdown" class="details-block">
+
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">How we worked out your entitlement</h1>
+
+      <div class="panel panel-border-wide">
+          Your entitlement was worked out on 19 January 2016
+      </div>
+
+      <h2 class="heading-medium">The money you need each week</h2>
+
+      <p>These amounts are set by the government to cover day to day living expenses.</p>
+
+      <table class="breakdown">
+        <tr>
+          <td>The amount the government says you need to live on</td>
+          <td>£230.85</td>
+        </tr>
+        <tr>
+          <td>Carer premium</td>
+          <td>£34.60</td>
+        </tr>
+        <tr>
+          <td>Council tax</td>
+          <td>£19.24</td>
+        </tr>
+        <tr>
+          <td>Housing costs (rent or mortgage)</td>
+          <td>£90.00</td>
+        </tr>
+        <tr class="bold">
+          <td>Total amount needed each week</td>
+          <td>£374.69</td>
+        </tr>
+      </table>
+
+      <h2 class="heading-medium">Your weekly income</h2>
+
+      <p>These are the income amounts you gave us when you applied.</p>
+
+      <table class="breakdown">
+        <tr>
+          <td>Retirement pension</td>
+          <td>£88.01</td>
+        </tr>
+        <tr>
+          <td>Retirement pension</td>
+          <td>£152.03</td>
+        </tr>
+        <tr>
+          <td>Occupational pension</td>
+          <td>£57.69</td>
+        </tr>
+        <tr>
+          <td>Occupational pension</td>
+          <td>£82.06</td>
+        </tr>
+        <tr class="bold">
+          <td>Total weekly income</td>
+          <td>£390.03</td>
+        </tr>
+      </table>
+      <p><a href="">Tell us if your income is now lower or these amounts are wrong</a></p>
+
+      <h2 class="heading-medium">Final amount</h2>
+
+      <p>We subtract the money you need each week from your weekly income</p>
+
+      <table class="breakdown">
+        <tr class="bold">
+          <td>Total left each week</td>
+          <td>£5.10 </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+      <!--tab 4-->
+  <div id="answers" class="details-block">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+        <h1 class="heading-large">Your application</h1>
+
+
+        <table class="data-table">
+          <tr class='clickable-row' data-href='you/registration'>
+            <td>About you</td>
+            <td><span id="about_you_status" class="complete-text">Completed</span>
+            <a href="/lis/8/you/about-you-summary">View answers</a></td>
+          </tr>
+          <tr class='clickable-row' data-href='partner/partner'>
+            <td>Partner status</td>
+            <td><span id="about_you_status" class="complete-text">Completed</span>
+            <a href="/lis/8/partner/summary">View answers</a></td>
+          </tr>
+          <tr class='clickable-row' data-href='assets/property'>
+            <td>Property, savings &amp; money</td>
+            <td><span id="about_you_status" class="complete-text">Completed</span>
+            <a href="/lis/8/assets/assets-summary">View answers</a></td>
+          </tr>
+          <tr class='clickable-row' data-href='live/hospital'>
+            <td>About where you live</td>
+            <td class="pagination-under-table"><span id="about_you_status" class="complete-text">Completed</span>
+            <a href="/lis/8/live/living-summary">View answers</a></td>
+          </tr>
+        </table>
+
+
+      </div>
+
+    </div>
+</div>
+</main>
+
+
+      <script>
+//            <script src="/public/javascripts/vendor/jquery-1.11.2.js"></script>
+<script src="/public/javascripts/modules/accordion-with-descriptions-03.js"></script>
+ <script>
+
+      function qs(key) {
+        key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+        var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
+        return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+      }
+
+      $(document).ready(function(){
+        $('.details-block').not("#certificate").hide();
+        $(".tab-nav a[href=#certificate]").addClass('active');
+
+        $('.tab-nav a').on('click',function(e){
+          var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+          if (viewportWidth > 640) {
+            e.preventDefault();
+          }
+
+          var blockToShow = $(this).attr('href');
+
+          $('.details-block').hide();
+          $(blockToShow).show();
+
+          $('.tab-nav a').removeClass('selected');
+          $(this).addClass('selected');
+        });
+
+        $('.nav-copy').hide();
+        $('html').keypress(function(e){
+          if (e.charCode === 100) {
+            $('.nav-copy').toggle();
+          }
+        });
+        $('.top-link').hide();
+
+        var highlight = qs("highlight");
+
+        if(highlight !== null) {
+
+          var elem = $(".tab-nav a[href=#"+highlight+"]");
+          var blockToShow = elem.attr('href');
+
+          $('.details-block').hide();
+          $(blockToShow).show();
+
+          $('.tab-nav a').removeClass('active');
+          elem.addClass('active');
+
+        }
+                });
+
+
+      </script>
+

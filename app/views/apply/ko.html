@@ -1,0 +1,67 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+      Do {{partnerortext}} get any of these benefits?
+  </h1>
+
+ <form action="kickout-handler" method="get" class="form">
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="cbsa" name="kickout">
+        <label class="form-control-radio" for="cbsa">
+          Income support
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="cbj" name="kickout">
+        <label class="form-control-radio" for="cbj">
+          Universal credit
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="sa" name="kickout">
+        <label class="form-control-radio" for="sa">
+          Income based job seekers allowance
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="jsa" name="kickout">
+        <label class="form-control-radio" for="jsa">
+          Income related employment &amp; support allowance
+        </label>
+      </div>
+      <p class="form-block">or</p>
+      <div class="form-group">
+        <input type="radio" id="continue" name="kickout" value="continue">
+        <label class="form-control-radio" for="continue">
+          No, {{iwe}} <span class="bold">do not</span> get any of these
+        </label>
+      </div>
+    </div>
+         <div class="form-item-wrapper">
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+          </div>
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'templates/bsa_transaction_layout.html' %}
+
+{% block content %}
+
+    <header role="banner" id="global-header">
+      <div class="header-container">
+
+        <a href="{% block logotypeLink %}/{% endblock %}" class="header-logo" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}">
+          <img src="{{assetPath}}images/nhs-rev-logotype.svg" alt="">
+        </a>
+
+        <h2 class="heading-large ex-header">HC3 Certificate for partial help with health costs</h2>
+
+        {% block header-controls %}{% endblock %}
+
+      </div>
+    </header>
+
+    <!--end header-->
+
+<main id="content" role="main">
+<div class="grid-row">
+
+    <div class="column-two-thirds">
+
+          <div class="text">
+  <a class="back-link" href="hc3certificate">Back </a>
+  <h2 class="heading-large">Sight tests</h2>
+  <p>Show this certificate to the person who tests your sight and ask if you are entitled to any help with the cost.</p>
+  <p>If you are, ask for a form to apply for this help. You then pay whichever is less:</p>
+    <li>the amount specified on your certificate, plus any difference between the NHS fee and the private sight test cost, or</li>
+    <li>the actual sight test cost.</li>
+  <p>The person who tests your sight can tell you how much the NHS sight test fee is. <strong>Eye examinations are free to all in Scotland</strong>
+  </p>
+  </div>
+  </div>
+  </div>
+</main>
+

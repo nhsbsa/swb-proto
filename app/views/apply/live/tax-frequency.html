@@ -1,0 +1,75 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    How often do you pay your council tax?
+  </h1>
+
+  <form action="taxfreq-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <!--div class="form-group">
+        <input type="radio" id="week" name="minor">
+        <label class="form-control-radio js-toggle" for="week" data-hide="#tax-months">
+          Every week
+        </label>
+      </div-->
+      <!--div class="form-group">
+        <input type="radio" id="fortnight" name="minor">
+        <label class="form-control-radio js-toggle" for="fortnight" data-hide="#tax-months">
+          Every 2 weeks
+        </label>
+      </div-->
+      <!--div class="form-group">
+        <input type="radio" id="fourweekly" name="minor">
+        <label class="form-control-radio js-toggle" for="fourweekly" data-hide="#tax-months">
+         Every 4 weeks
+        </label>
+      </div-->
+      <div class="form-group">
+        <input type="radio" id="year" value="year" name="ctax">
+        <label class="form-control-radio js-toggle" for="year" data-hide="#tax-months">
+          Once a year
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="month" value="month" name="ctax">
+        <label class="form-control-radio js-toggle" for="month" data-show="#tax-months">
+         Every calendar month
+        </label>
+      </div>
+
+      <div class="js-hidden" id="tax-months">
+          {{
+            form_macros.text_field({
+              id: 'tax-months',
+              label: 'How many times a year do you pay council tax?'
+            })
+          }}
+        </div>
+
+    </div>
+
+    {{
+      form_macros.button({
+        label: 'Save and continue'
+      })
+    }}
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p>
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

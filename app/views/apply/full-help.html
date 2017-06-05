@@ -1,0 +1,53 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="done-panel">
+    <h2 class="heading-large"><span id="done-tick"> </span>Application complete</h2>
+    <h1 class="heading-xlarge">You can get full help with health costs</h1>
+    <h4 class="heading-small">Your application number is</h4>
+    <h2 class="heading-large">1Q3 4T6 7K9</h2>
+  </div>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">Next Steps</h2>
+      <p>You can download or print a copy of your certificate at any time by signing into this service, using your application number and memorable word.</p>
+      <!--
+      <ul>
+        <li>A copy of your certificate has been emailed to <a href="../5/exemption/hc3email">m.smith@inter.net</a></li>
+        <li><a href="exemption/hc3certificate">View my certificate</a></li>
+        <li><a href="/public/images/hc3.pdf" target="blank">Download my certificate</a></li>
+
+        <li>
+          <details>
+            <summary><span class="summary">I can't access my certificate</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>
+                If you don't have access to a printer or this is not your own computer we can <a href=#>send a copy in the post</a>
+              </p>
+            </div>
+          </details>
+        </li>
+
+      </ul>
+      -->
+
+    </div>
+
+  </div>
+
+  <p>
+    <a class="button" href="exemption/hc2-entitlement">View your entitlement</a>
+  </p>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+      What is included in the rent?
+  </h1>
+      <p>Select everything that is included in the rent.</p>
+
+  <form action="" method="get" class="form">
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="checkbox" id="cbj" name="bgroup1">
+        <label class="form-control-checkbox" for="cbj">
+          Heating
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="cbsa" name="bgroup1">
+        <label class="form-control-checkbox" for="cbsa">
+          Meals
+        </label>
+      </div>
+      <p class="form-block">or</p>
+      <div class="form-group">
+        <input type="checkbox" id="none" name="bgroup1">
+        <label class="form-control-checkbox" for="none">
+          These things are not included
+        </label>
+      </div>
+    {{
+      form_macros.button({
+        label: 'Save and continue',
+        href : 'people-list'
+      })
+    }}
+          </div>
+    <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

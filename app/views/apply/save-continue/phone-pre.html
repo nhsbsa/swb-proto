@@ -1,0 +1,55 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+         Do you have a telephone?
+      </h1>
+
+      <p>This needs to be a telephone that you will be able to access when you sign in.</p>
+
+    <form action="" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <fieldset>
+        <div class="inline-form-groups">
+          <div class="form-group">
+            <input type="radio" id="yes" name="property" value="yes">
+            <label class="form-control-radio" for="yes">
+              Yes
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="no" name="property" value="no">
+            <label class="form-control-radio" for="no">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      </div>
+    {{
+      form_macros.button({
+        label: 'Next',
+        href : 'phone'
+      })
+    }}
+
+  </form>
+
+    </div>
+    </div>
+</main>
+
+{% endblock %}

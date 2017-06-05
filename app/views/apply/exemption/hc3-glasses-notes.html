@@ -1,0 +1,39 @@
+{% extends 'templates/bsa_transaction_layout.html' %}
+
+{% block content %}
+
+    <header role="banner" id="global-header">
+      <div class="header-container">
+
+        <a href="{% block logotypeLink %}/{% endblock %}" class="header-logo" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}">
+          <img src="{{assetPath}}images/nhs-rev-logotype.svg" alt="">
+        </a>
+
+        <h2 class="heading-large ex-header">HC3 Certificate for partial help with health costs</h2>
+
+        {% block header-controls %}{% endblock %}
+
+      </div>
+    </header>
+
+    <!--end header-->
+
+<main id="content" role="main">
+<div class="grid-row">
+
+    <div class="column-two-thirds">
+
+          <div class="text">
+  <a class="back-link" href="hc3certificate">Back </a>
+  <h2 class="heading-large">Glasses and contact lenses</h2>
+  <p>If you need new glasses or contact lenses, help towards the cost is provided through optical vouchers. The value of the voucher depends on your optical prescription. Ask the person who tests your sight the value of the voucher that matches your prescription. The value of your voucher will be reduced by the amount on your certificate.</p>
+  <p>When you order your glasses or contact lenses, show your certificate and ask if you are entitled to any help. If you are, ask for a form to apply for an optical voucher.</p>
+  <p>If your glasses or contact lenses cost more than the value of your voucher, you will have to pay the extra amount. If you are prescribed complex lenses you can get a special voucher, if that would give you more help than the value of your ordinary optical voucher.</p>
+  <p>If you lose or damage your glasses or contact lenses:</p>
+  <li>children under 16 are entitled to a voucher for replacement or repair</li>
+  <li>you and anyone aged 16 or over might be entitled to a voucher for replacement or repair. Details are in leaflet HC11 (HCS1 in Scotland) available to download from: www.nhs.uk/healthcosts.</li>
+  </div>
+  </div>
+  </div>
+</main>
+

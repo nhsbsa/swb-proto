@@ -1,0 +1,50 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income-new.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+     <div class="grid-row">
+  <div class="column-two-thirds">
+
+ <h1 class="heading-large">
+       What is the name of your GP surgery?
+      </h1>
+
+
+
+
+
+
+
+
+<div class="ui-widget">
+  <label for="tags"> </label>
+  <input id="tags">
+</div>
+
+  </div>
+    </div>
+
+</main>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var availableTags = [
+"QUEENS PARK MEDICAL CENTRE, QUEENS PARK MEDICAL CTR, FARRER STREET,STOCKTON ON TEES, CLEVELAND, TS18 2AW"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>

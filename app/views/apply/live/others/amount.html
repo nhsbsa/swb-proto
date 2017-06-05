@@ -1,0 +1,78 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+   About their pay
+  </h1>
+      <p>You do not have to tell us about the person's pay, but if they do not have much money coming in you might get more help.</p>
+
+  <h2 class="heading-medium">How often do they get paid?</h2>
+
+  <form action="" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="week" name="minor">
+        <label class="form-control-radio" for="week">
+          Every week
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="fortnight" name="minor">
+        <label class="form-control-radio" for="fortnight">
+          Every 2 weeks
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="fourweekly" name="minor">
+        <label class="form-control-radio" for="fourweekly">
+          Every 4 weeks
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="month" name="minor">
+        <label class="form-control-radio" for="month">
+         Every calender month
+        </label>
+      </div>
+      <div class="form-group">
+        <inpOnce a yearOnce a year"radio" id="year" name="minor">
+        <label class="form-control-radio" for="year">
+          Once a year
+        </label>
+      </div>
+
+      {{
+        form_macros.amount_field({
+          id: 'money-amount',
+          label: 'How much do they get before tax and national insurance are taken off?'
+        })
+      }}
+
+
+    </div>
+
+    {{
+      form_macros.button({
+        href: 'benefits',
+        label: 'Save and continue'
+      })
+    }}
+    <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p>
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

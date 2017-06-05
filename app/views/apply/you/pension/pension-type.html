@@ -1,0 +1,66 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    Which type of pensions do you get?
+  </h1>
+  <p>Select all the pensions you get.</p>
+
+  <form action="pension-type-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="checkbox" id="state" value="state" name="pensiontype">
+        <label class="form-control-checkbox" for="state">
+          State pension
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="private" value="private" name="pensiontype">
+        <label class="form-control-checkbox" for="private">
+          Private pension
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="employment" value="employment" name="pensiontype">
+        <label class="form-control-checkbox" for="employment">
+          Workplace pension
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="wardisablement" value="wardisablement" name="pensiontype">
+        <label class="form-control-checkbox" for="wardisablement">
+          War disablement pension
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="warwidow" value="warwidow" name="pensiontype">
+        <label class="form-control-checkbox" for="warwidow">
+          War Widow’s Pension or War Widower’s Pension
+        </label>
+      </div>
+    </div>
+
+    {{
+      form_macros.button({
+        label: 'Save and continue'
+      })
+    }}
+    <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p>
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

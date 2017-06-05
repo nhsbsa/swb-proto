@@ -1,0 +1,28 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Your certificate has been sent to priya.mattu@inter.net
+      </h1>
+      <br>
+      <a class="button" href="hc{{helplevel}}-entitlement">Back to my entitlement</a>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

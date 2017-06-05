@@ -1,0 +1,89 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Do {{partnerortext}} have any of these accounts or investments?
+      </h1>
+
+      <p>Select all the accounts or investments you have.</p>
+
+  <form action="account-type-handler" method="get" class="form">
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="checkbox" id="bank" name="banktype" value="bank">
+        <label class="form-control-checkbox" for="bank">
+          Bank, building society, savings accounts or ISAs
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="pb" name="banktype" value="pb">
+        <label class="form-control-checkbox" for="pb">
+          Premium Bonds
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="cp" value="cp" name="banktype">
+        <label class="form-control-checkbox" for="cp">
+          Capital Bonds
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="sh" value="sh" name="banktype">
+        <label class="form-control-checkbox" for="sh">
+          Shares
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="nsc" value="nsc" name="banktype">
+        <label class="form-control-checkbox" for="nsc">
+          National Saving Certificates
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="ut" value="ut" name="banktype">
+        <label class="form-control-checkbox" for="ut">
+        Unit trusts
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="isa" value="isa" name="banktype">
+        <label class="form-control-checkbox" for="isa">
+          Any other investments
+        </label>
+      </div>
+      <p class="form-block">or</p>
+      <div class="form-group">
+        <input type="checkbox" id="none" value="none" name="banktype">
+        <label class="form-control-checkbox" for="none">
+          I <span class ="bold">do not</span> have any of these
+        </label>
+      </div>
+
+            {{
+          form_macros.button({
+            label: 'Save and continue'
+          })
+        }}
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

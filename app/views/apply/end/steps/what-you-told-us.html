@@ -1,0 +1,71 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income-new.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+ <link rel="stylesheet" href="/public/stylesheets/pagination.css">
+     <style>
+.pagination-under-table{
+    border-top:none;
+    border-bottom: 1px solid #bfc1c3;
+    margin:0px;
+    padding-top:0px;
+   }
+    </style>
+
+     <div class="grid-row">
+      <div class="column-two-thirds">
+
+          <h1 class="heading-large">
+            <span class="heading-secondary">Step 1</span>
+           Your application
+          </h1>
+      </div>
+    </div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+        <table class="data-table">
+          <tr class='clickable-row' data-href='you/registration'>
+            <td>About you</td>
+            <td><span id="about_you_status" class="complete-text">Completed</span>
+            <a href="/lis/8/you/about-you-summary">View answers</a></td>
+          </tr>
+          <tr class='clickable-row' data-href='partner/partner'>
+            <td>Partner status</td>
+            <td><span id="about_you_status" class="complete-text">Completed</span>
+            <a href="/lis/8/partner/summary">View answers</a></td>
+          </tr>
+          <tr class='clickable-row' data-href='assets/property'>
+            <td>Property, savings &amp; money</td>
+            <td><span id="about_you_status" class="complete-text">Completed</span>
+            <a href="/lis/8/assets/assets-summary">View answers</a></td>
+          </tr>
+          <tr class='clickable-row' data-href='live/hospital'>
+            <td>About where you live</td>
+            <td class="pagination-under-table"><span id="about_you_status" class="complete-text">Completed</span>
+            <a href="/lis/8/live/living-summary">View answers</a></td>
+          </tr>
+        </table>
+
+        <nav class="pagination_gds pagination-under-table"  role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="next">
+                    <a title="Navigate to next part" rel="next" href="view-entitlement">
+                      <span class="pagination-label">Next</span> <span class="pagination-part-title">What you're entitled to</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+    </div>
+
+</div>
+
+</main>

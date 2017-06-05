@@ -1,0 +1,76 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    What is their relationship to you?
+  </h1>
+
+  <form action="relationship-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="child" value="child" name="relationship">
+        <label class="form-control-radio" for="child">
+          My child
+        </label>
+      </div>
+<!--
+      <div class="form-group">
+        <input type="radio" id="foster" value="child" name="relationship">
+        <label class="form-control-radio" for="foster">
+          My foster child
+        </label>
+      </div>
+-->
+      <div class="form-group">
+        <input type="radio" id="guardian" value="child" name="relationship">
+        <label class="form-control-radio" for="guardian">
+          I am their legal guardian
+        </label>
+      </div>
+      <!--div class="form-group">
+        <input type="radio" id="family" value="family" name="relationship">
+        <label class="form-control-radio" for="family">
+          Another family relation
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="lodger" name="relationship">
+        <label class="form-control-radio" for="lodger">
+         A lodger or boarder
+        </label>
+      </div-->
+      <p class="form-block">or</p>
+      <div class="form-group">
+        <input type="radio" id="none" value="none" name="relationship">
+        <label class="form-control-radio" for="none">
+          None of the above
+        </label>
+      </div>
+
+    {{
+      form_macros.button({
+        label: 'Save and continue',
+      })
+    }}
+
+    </div>
+
+    <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p>
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

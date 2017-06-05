@@ -1,0 +1,87 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <main id="content" role="main">
+
+    <div class="grid-row">
+    
+      <div class="column-two-thirds">
+
+        <div class="text">
+          
+          <h1 class="heading-large">
+            Check your answers
+          </h1>
+          
+          <p><strong>Property and land</strong></p>
+          <table class="data-table assets-summary">
+            <tr>
+              <td>Do you or your partner own any property or land?</td>
+              <td>No</td>
+              <td><a href="property">Change this</a></td>
+            </tr>
+          </table>
+            
+          <p><strong>Money, savings and investments</strong></p>
+          <table class="data-table assets-summary">
+            <tr>
+              <td>How much do you and your partner have in all of your bank, building society, savings accounts and ISAs?</td>
+              <td>£2000</td>
+              <td><a href="accounts">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do you or your partner have any Premium bonds</td>
+              <td>No</td>
+              <td><a href="accounts">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do you or your partner have any Capital bonds</td>
+              <td>No</td>
+              <td><a href="accounts">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do you or your partner have any Shares</td>
+              <td>No</td>
+              <td><a href="accounts">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do you or your partner have any National Saving Certificates</td>
+              <td>No</td>
+              <td><a href="accounts">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do you or your partner have any other investments</td>
+              <td>No</td>
+              <td><a href="accounts">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do you or your partner have any other money</td>
+              <td>No</td>
+              <td><a href="assets-other">Change this</a></td>
+            </tr>
+          </table>
+
+          <form action="assets-done" method="get" class="form">
+            {{
+              form_macros.button({
+                label: 'Save and continue',
+                id : 'next'
+              })
+            }}
+          </form>
+          
+      </div>
+      
+    </div>
+  
+  </div>
+
+</main>
+
+{% endblock %}

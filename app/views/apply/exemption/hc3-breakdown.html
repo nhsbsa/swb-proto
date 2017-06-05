@@ -1,0 +1,95 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income-new.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <br>
+      <a href="hc3-entitlement">Back to your entitlement</a>
+
+      <h1 class="heading-large">How we worked out your entitlement</h1>
+
+      <div class="panel panel-border-wide">
+          Your entitlement was worked out on 19 January 2016
+      </div>
+
+      <h2 class="heading-medium">The money you need each week</h2>
+
+      <p>These amounts are set by the government to cover day to day living expenses.</p>
+
+      <table class="breakdown">
+        <tr>
+          <td>The amount the government says you need to live on</td>
+          <td>£230.85</td>
+        </tr>
+        <tr>
+          <td>Carer premium</td>
+          <td>£34.60</td>
+        </tr>
+        <tr>
+          <td>Council tax</td>
+          <td>£19.24</td>
+        </tr>
+        <tr>
+          <td>Housing costs (rent or mortgage)</td>
+          <td>£90.00</td>
+        </tr>
+        <tr class="bold">
+          <td>Total amount needed each week</td>
+          <td>£374.69</td>
+        </tr>
+      </table>
+
+      <h2 class="heading-medium">Your weekly income</h2>
+
+      <p>These are the income amounts you gave us when you applied.</p>
+
+      <table class="breakdown">
+        <tr>
+          <td>Retirement pension</td>
+          <td>£88.01</td>
+        </tr>
+        <tr>
+          <td>Retirement pension</td>
+          <td>£152.03</td>
+        </tr>
+        <tr>
+          <td>Occupational pension</td>
+          <td>£57.69</td>
+        </tr>
+        <tr>
+          <td>Occupational pension</td>
+          <td>£82.06</td>
+        </tr>
+        <tr class="bold">
+          <td>Total weekly income</td>
+          <td>£390.03</td>
+        </tr>
+      </table>
+      <p><a href="">Tell us if your income is now lower or these amounts are wrong</a></p>
+
+      <h2 class="heading-medium">Final amount</h2>
+
+      <p>We subtract the money you need each week from your weekly income</p>
+
+      <table class="breakdown">
+        <tr class="bold">
+          <td>Total left each week</td>
+          <td>£5.10 </td>
+        </tr>
+      </table>
+
+      <a href="hc3-entitlement">Back to your entitlement</a>
+    </div>
+
+  </div>
+
+</main>

@@ -1,0 +1,41 @@
+{% extends 'templates/bsa_transaction_layout.html' %}
+
+{% block content %}
+
+    <header role="banner" id="global-header">
+      <div class="header-container">
+
+        <a href="{% block logotypeLink %}/{% endblock %}" class="header-logo" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}">
+          <img src="{{assetPath}}images/nhs-rev-logotype.svg" alt="">
+        </a>
+
+        <h2 class="heading-large ex-header">HC3 Certificate for partial help with health costs</h2>
+
+        {% block header-controls %}{% endblock %}
+
+      </div>
+    </header>
+
+    <!--end header-->
+
+<main id="content" role="main">
+<div class="grid-row">
+
+    <div class="column-two-thirds">
+
+          <div class="text">
+  <a class="back-link" href="hc3certificate">Back </a>
+  <h2 class="heading-large">NHS dental treatment and NHS wigs and fabric supports</h2>
+  <p><strong>NHS dental treatment</strong> - for each course of treatment you will be asked to pay whichever is less:
+  <li>the actual NHS charge - ask your dentist how much this is, or</li>
+  <li>the amount we have written by Box overleaf, or</li>
+  <li>in Scotland the maximum patient’s charge - your dentist will be able to tell you how much this is.</li>
+  <p>On the form your dentist asks you to sign, write the number of this certificate and the amount from your certificate.</p>
+  <p><strong>Dental examinations are free to all in Scotland.</strong></p>
+  <p><strong>NHS wigs and fabric supports</strong> - for each wig or fabric support the most you have to pay is the amount the amount on your certificate. <strong>The amount you have to pay could be lower than the cost of the wig or fabric support if the NHS charge is less</strong> - the person fitting the wig or fabric support can tell you how much this is.</p>
+  <p><strong>NHS wigs and fabric supports are free where prescribed and dispensed in Scotland.</strong></p>
+  </div>
+  </div>
+  </div>
+</main>
+

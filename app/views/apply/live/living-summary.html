@@ -1,0 +1,160 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <main id="content" role="main">
+      
+    <div class="grid-row">
+    
+      <div class="column-two-thirds">
+
+        <div class="text">
+
+          <h1 class="heading-large">
+            Check your answers
+          </h1>
+          
+          <p><strong>About your home</strong></p>
+          <table class="data-table living-summary">
+            <tr>
+              <td>Where do you live?</td>
+              <td>In a property<br>I own</td>
+              <td><a href="you-live">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Is anyone else other than your partner a joint owner of the property you live in</td>
+              <td>No</td>
+              <td><a href="mortgaged/joint-own">Change this</a></td>
+            </tr>
+            <tr>
+              <td>What is your address?</td>
+              <td>1 Street, Place, County, NE1234 </td>
+              <td><a href="mortgaged/address">Change this</a></td>
+            </tr>
+          </table>
+          
+          <p><strong>Household bills</strong></p>
+          <table class="data-table living-summary">
+            <tr>
+              <td>Do you pay a mortgage or loan on your home?</td>
+              <td>Yes</td>
+              <td><a href="mortgaged/mortgage">Change this</a></td>
+            </tr>
+            <tr>
+              <td>About your mortgage or loan</td>
+              <td>£400 per month</td>
+              <td><a href="mortgaged/mortgage-amount">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do you pay any service charges where you live?</td>
+              <td>No</td>
+              <td><a href="services">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do you pay Council Tax?</td>
+              <td>Yes</td>
+              <td><a href="council-tax">Change this</a></td>
+            </tr>
+            <tr>
+              <td>About your council tax</td>
+              <td>£400 per month</td>
+              <td><a href="mortgaged/mortgage-amount">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do you pay ground rent?</td>
+              <td>No</td>
+              <td><a href="ground-rent">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do you have a loan to adapt your home for the needs of a disabled person?</td>
+              <td>No</td>
+              <td><a href="adapted">Change this</a></td>
+            </tr>
+          </table>
+
+          <p><strong>People living in your home</strong></p>
+          <table class="data-table living-summary">
+            <tr>
+              <td>Does anyone else other than your partner live with you?</td>
+              <td>Yes</td>
+              <td><a href="people">Change this</a></td>
+            </tr>
+          </table>
+
+          <p><strong>About Thomas Smith</strong></p>
+          <table class="data-table living-summary">
+            <tr>
+              <td>Name</td>
+              <td>Thomas Smith</td>
+              <td><a href="others/name">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Date of birth</td>
+              <td>2 June 1986</td>
+              <td><a href="others/name">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Are they a boarder or lodger?</td>
+              <td>No</td>
+              <td><a href="others/boarder">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Are they a full time student?</td>
+              <td>No</td>
+              <td><a href="others/ft-student">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do they have a job?</td>
+              <td>Yes</td>
+              <td><a href="others/work">Change this</a></td>
+            </tr>
+            <tr>
+              <td>On average do they work for 16 hours or more per week?</td>
+              <td>Yes</td>
+              <td><a href="others/hours">Change this</a></td>
+            </tr>
+            <tr>
+              <td>About their pay</td>
+              <td>£400 per week</td>
+              <td><a href="others/amount">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Do they get any benefits?</td>
+              <td>No</td>
+              <td><a href="others/benefits">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Are they severely sight impaired or registered blind?</td>
+              <td>No</td>
+              <td><a href="others/blind">Change this</a></td>
+            </tr>
+            <tr>
+              <td>Does anyone else live in your home with you?</td>
+              <td>No</td>
+              <td><a href="others/people">Change this</a></td>
+            </tr>
+          </table>
+
+          <form action="live-done" method="get" class="form">
+            {{
+              form_macros.button({
+                label: 'Save and continue',
+                id : 'next'
+              })
+            }}
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+.column-quarter,
+.column-one-quarter {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-quarter,
+  .column-one-quarter {
+    float: left;
+    width: 25%;
+  }
+}</style>
+
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    Do you get another pension?
+  </h1>
+<!--
+
+      <ul class="list">
+        <li>{{allpensions}}</li>
+      </ul>
+-->
+      </div>
+    </div>
+
+     
+      <p>You have already told us about your:</p>
+  <div class="grid-row">
+  
+  <div class="column-two-thirds" style="padding: 0em">
+  <div class="column-one-quarter">
+    <p>State pension</p>
+  </div>
+  <div class="column-one-quarter">
+    <p>£100 weekly</p>
+  </div>
+    </div>
+    </div>
+
+  <div class="grid-row">
+      <div class="column-two-thirds">
+  <form action="otherpen-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <fieldset>
+        <div class="inline-form-groups">
+          <div class="form-group">
+            <input type="radio" id="a-yes" name="pension" value="a-yes">
+            <label class="form-control-radio" for="a-yes">
+              Yes
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="a-no" name="pension" value="a-no">
+            <label class="form-control-radio" for="a-no">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    {{
+      form_macros.button({
+        label : 'Save and continue'
+      })
+    }}
+    <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p>
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Would you like to create an account?
+      </h1>
+
+      <ul class="list list-bullet lead-list">
+        <li class="lead-list">Creating an account allows you to:</li>
+        <li>save your information and come back later if you need to</li>
+        <li>renew your certificate more quickly in the future</li>
+      </ul>
+
+      <form action="kickout-handler" method="get" class="form">
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <input type="radio" id="cbsa" name="kickout">
+            <label class="form-control-radio" for="cbsa">
+              Yes, i'd like to create an account
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="cbj" name="kickout">
+            <label class="form-control-radio" for="cbj">
+              No, I dont want an account
+            </label>
+          </div>
+          {{
+            form_macros.button({
+              label: 'Next',
+              href: 'ref'
+            })
+          }}
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

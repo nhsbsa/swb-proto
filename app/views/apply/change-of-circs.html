@@ -1,0 +1,64 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        What has changed?
+      </h1>
+
+      <p>Tick all that apply</p>
+
+      <form action="" method="get" class="form">
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <input type="checkbox" id="address" name="circs">
+            <label class="form-control-checkbox" for="address">
+              My address
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="name" name="circs">
+            <label class="form-control-checkbox" for="name">
+              Someone's name
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="partnerincome" name="circs">
+            <label class="form-control-checkbox" for="partnerincome">
+              Someone's income
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="household" name="circs">
+            <label class="form-control-checkbox" for="household">
+              Someone has left or joined the household
+            </label>
+          </div>
+        {{
+          form_macros.button({
+            label: 'Next',
+            href : " "
+          })
+        }}
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

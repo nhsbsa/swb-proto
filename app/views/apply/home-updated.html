@@ -1,0 +1,60 @@
+  {% extends 'templates/nhs_transaction_layout.html' %}
+
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <h1 class="heading-large">Apply for help with health costs<br>The Low Income Scheme</h1>
+
+        <br>
+
+        <table class="data-table">
+          <tr>
+            <td>About you</td>
+            <td><span id="about_you_status" class="notstarted-text">{{aboutYouStatus}}</span> <a href="you/registration">{{aboutYouLink}}</a></td>
+          </tr>
+          <tr>
+            <td>Partner status</td>
+            <td><span id="about_partner_status" class="notstarted-text">{{aboutPartnerStatus}}</span> <a href="partner/partner">{{aboutPartnerLink}}</a></td>
+          </tr>
+          <tr>
+            <td>About where you live</td>
+            <td><span id="where_you_live_status" class="notstarted-text">{{whereYouLiveStatus}}</span> <a href="live/hospital">{{whereYouLiveLink}}</a></td>
+          </tr>
+          <tr>
+            <td>Property, savings &amp; money</td>
+            <td><span id="property_status" class="notstarted-text">{{propertyStatus}}</span> <a href="assets/property">{{propertyLink}}</a></td>
+          </tr>
+        </table>
+
+        <h2 class="heading-medium">Declare &amp; submit</h2>
+
+        <div class="notice">
+          <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+            I confirm that the information I have given in this form is correct and complete, and I understand that if it not, appropriate action may be taken.
+          </strong>
+        </div>
+        <br>
+        <p>
+          <a class="button" href="end/tabs/view-entitlement-accordian" id="next">Agree and submit my application</a>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

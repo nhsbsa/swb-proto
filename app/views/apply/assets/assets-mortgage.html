@@ -1,0 +1,56 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+
+  <h1 class="heading-large">
+       Do {{partnerortext}} pay a mortgage on the property or land?
+  </h1>
+
+  <form action="assets-mortgage-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <fieldset>
+        <div class="inline-form-groups">
+          <div class="form-group">
+            <input type="radio" id="yes" name="mortgage" value="yes">
+            <label class="form-control-radio" for="yes">
+              Yes
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="no" name="mortgage" value="no">
+            <label class="form-control-radio" for="no">
+              No
+            </label>
+          </div>
+        </div>
+
+    {{
+      form_macros.button({
+        label: 'Save and continue'
+      })
+    }}
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p>
+
+  </form>
+
+  </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

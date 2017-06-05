@@ -1,0 +1,35 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <h1 class="heading-xlarge">You do not need to apply to get help</h1>
+
+        <p>
+         You can claim health costs because [you have] [you or your partner has] an NHS Tax Credit Exemption Certificate.
+        </p>
+
+        <p>
+          <a class="button" href="/" id="next">What you need to do to get help</a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

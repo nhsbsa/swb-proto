@@ -1,0 +1,52 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <main id="content" role="main">
+
+    <div class="grid-row">
+      
+      <div class="column-two-thirds">
+
+        <div class="text">
+
+          <h1 class="heading-large">
+            Check your answers
+          </h1>
+
+          <table class="data-table living-summary">
+            <tr>
+              <td>Where do you live?</td>
+              <td>In someone else's home</td>
+              <td><a href="you-live">Change this</a></td>
+            </tr>
+            <tr>
+              <td>What is the address where you are living?</td>
+              <td>1 Street, Place, County, NE1234 </td>
+              <td><a href="address">Change this</a></td>
+            </tr>
+          </table>
+
+          <form action="live-done" method="get" class="form">
+            {{
+              form_macros.button({
+                label: 'Save and continue',
+                id : 'next'
+              })
+            }}
+          </form>
+
+        </div>
+        
+      </div>
+      
+    </div>
+
+  </main>
+
+{% endblock %}
