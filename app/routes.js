@@ -120,12 +120,12 @@ var querystring = require('querystring');
       }
       setPartnerText(applicant.partner);
         if(applicant.age >= 20) {
-          res.render('checker/1/tax-credits-over20', {
+          res.render('checker/tax-credits-over20', {
             'partnerortext' : partnerOrText,
               'iwe' : iWe
             });
         } else {
-            res.render('checker/1/tax-credits-under20', {
+            res.render('checker/tax-credits-under20', {
                 'partnerortext' : partnerOrText,
                 'iwe' : iWe
             });
@@ -173,7 +173,7 @@ var querystring = require('querystring');
       console.log(applicant.age);
       if (applicant.age >= 20) {
         setPartnerText(applicant.partner);
-        res.render('checker/1/partner', {
+        res.render('checker/partner', {
             'iwe' : iWe
         });
       } else if (applicant.age == 19) {
@@ -216,7 +216,7 @@ var querystring = require('querystring');
       if (req.query.taxcreditsParents  === 'yes'){
         parentTc = true;
         setPartnerText(applicant.partner);
-        res.render('checker/1/tax-credits-income', {
+        res.render('checker/tax-credits-income', {
         'parenttext' : parentText
       });
       } else {
@@ -240,30 +240,30 @@ var querystring = require('querystring');
     router.get(/taxcredit-income-handler/, function (req, res) {
         if (applicant.age < 20 ) {
             if (req.query.taxcreditsIncome === 'no') {
-            res.render('checker/1/passported-benefits-under20', {
+            res.render('checker/passported-benefits-under20', {
             'partnerortext' : partnerOrText,
               'iwe' : iWe
             });
             } else { //yes
                 if (parentTc === true) {
-                    res.render('checker/1/results/full-exemption-tc', {
+                    res.render('checker/results/full-exemption-tc', {
                     'tctype' : tcType
             });
                 } else {
                     setPartnerText(applicant.partner);
-                    res.render('checker/1/tax-credits-claim-type', {
+                    res.render('checker/tax-credits-claim-type', {
                         'partnerortext' : partnerOrText
                     });
                 }
             }
         } else { //over 20
             if (req.query.taxcreditsIncome === 'no') {
-                res.render('checker/1/passported-benefits', {
+                res.render('checker/passported-benefits', {
                 'partnerortext' : partnerOrText,
                 'iwe' : iWe
              	});
             } else {
-                    res.render('checker/1/results/full-exemption-tc', {
+                    res.render('checker/results/full-exemption-tc', {
                     'tctype' : tcType
             });
             }
@@ -285,23 +285,23 @@ var querystring = require('querystring');
         }
         if (applicant.age >= 20) {
           if (tcType === 'none') {
-            res.render('checker/1/passported-benefits', {
+            res.render('checker/passported-benefits', {
               'partnerortext' : partnerOrText,
                 'iwe' : iWe
             });
           } else {
-            res.render('checker/1/tax-credits-income', {
+            res.render('checker/tax-credits-income', {
                 'partnerandtextdo' : partnerAndTextDo
             });
           }
         } else {
           if (tcType === 'none') {
             setPartnerText(applicant.partner);
-            res.render('checker/1/passported-benefits-under20', {
+            res.render('checker/passported-benefits-under20', {
               'partnercommatext' : partnerCommaText
             });
           } else {
-            res.render('checker/1/results/full-exemption-tc', {
+            res.render('checker/results/full-exemption-tc', {
               'tctype' : tcType
             });
           }
@@ -313,32 +313,32 @@ var benType;
       router.get(/passportedBen-u20/, function (req, res) {
         if (req.query.benefits ==="incomeSupport") {
           benType = 'Income Support';
-          res.render('checker/1/results/full-exemption-benefits', {
+          res.render('checker/results/full-exemption-benefits', {
             'bentype' : benType,
             'partnercommatext' : partnerCommaText
           });
         } else if (req.query.benefits ==="uniCredit") {
           benType = 'Universal Credit';
           setPartnerText(applicant.partner);
-          res.render('checker/1/uc-claim-type-v2', {
+          res.render('checker/uc-claim-type-v2', {
             'jointortext' : jointOrText,
             'parenttext' : parentText
       });
         } else if (req.query.benefits ==="jsa") {
           benType = 'income based Job Seekers Allowance (JSA)';
-          res.render('checker/1/results/full-exemption-benefits', {
+          res.render('checker/results/full-exemption-benefits', {
             'bentype' : benType,
             'partnercommatext' : partnerCommaText
           });
         } else if (req.query.benefits ==="esa") {
           benType = 'income related Employment and Support Allowance (ESA)';
-          res.render('checker/1/results/full-exemption-benefits', {
+          res.render('checker/results/full-exemption-benefits', {
             'bentype' : benType,
             'partnercommatext' : partnerCommaText
           });
         } else if (req.query.benefits ==="penCredit") {
           benType = 'Pension Credit (Guarantee Credit)';
-          res.render('checker/1/results/full-exemption-benefits', {
+          res.render('checker/results/full-exemption-benefits', {
             'bentype' : benType,
             'partnercommatext' : partnerCommaText
           });
@@ -356,32 +356,32 @@ var benType;
       router.get(/passportedBen-handler/, function (req, res) {
         if (req.query.benefits ==="incomeSupport") {
           benType = 'Income Support';
-          res.render('checker/1/results/full-exemption-benefits', {
+          res.render('checker/results/full-exemption-benefits', {
             'bentype' : benType,
             'partnercommatext' : partnerCommaText
           });
         } else if (req.query.benefits ==="uniCredit") {
           benType = 'Universal Credit';
           setPartnerText(applicant.partner);
-          res.render('checker/1/uc-claim-type-v2', {
+          res.render('checker/uc-claim-type-v2', {
             'jointortext' : jointOrText
             // 'partnerortext' : partnerOrText
       });
         } else if (req.query.benefits ==="jsa") {
           benType = 'income based Job Seekers Allowance (JSA)';
-          res.render('checker/1/results/full-exemption-benefits', {
+          res.render('checker/results/full-exemption-benefits', {
             'bentype' : benType,
             'partnercommatext' : partnerCommaText
           });
         } else if (req.query.benefits ==="esa") {
           benType = 'income related Employment and Support Allowance (ESA)';
-          res.render('checker/1/results/full-exemption-benefits', {
+          res.render('checker/results/full-exemption-benefits', {
             'bentype' : benType,
             'partnercommatext' : partnerCommaText
           });
         } else if (req.query.benefits ==="penCredit") {
           benType = 'Pension Credit (Guarantee Credit)';
-          res.render('checker/1/results/full-exemption-benefits', {
+          res.render('checker/results/full-exemption-benefits', {
             'bentype' : benType,
             'partnercommatext' : partnerCommaText
           });
@@ -397,11 +397,11 @@ var benType;
           // universal credits income handler
       router.get(/uc-type-handler/, function (req, res) {
       if (req.query.ucElement === 'yes') {
-      	res.render('checker/1/uc-income-with-element-v3', {
+      	res.render('checker/uc-income-with-element-v3', {
         'singlejointuc' : singleJointUC
       });
       } else{
-        res.render('checker/1/uc-income-without-element-v2', {
+        res.render('checker/uc-income-without-element-v2', {
         'singlejointucelement' : singleJointUCElement
       });
       }
@@ -410,7 +410,7 @@ var benType;
       // universal credits without element handler (£435)
       router.get(/uc-element-income-handler/, function (req, res) {
       if (req.query.ucelementIncome === 'yes') {
-        res.render('checker/1/results/full-exemption-uc', {
+        res.render('checker/results/full-exemption-uc', {
         'ucresults' : ucResults
       });
             } else {
@@ -421,7 +421,7 @@ var benType;
                       // universal credits with element handler(£935)
             router.get(/uc-without-elements-handler/, function (req, res) {
       if (req.query.ucIncome === 'yes') {
-        res.render('checker/1/results/full-exemption-uc', {
+        res.render('checker/results/full-exemption-uc', {
         'ucresultselement' : ucResultsElement
       });
       } else {
@@ -464,31 +464,23 @@ router.get(/medicalYes/, function (req, res) {
     res.redirect('medical-exemption');
       } else {
     medicalEx = false;
-    res.render('checker/1/care-home', {
+    res.render('checker/care-home', {
       'partnerortext' : partnerOrText 
     });
       }
     });
-//   } else {
-//     medicalEx = false;
-//     res.render('checker/1/care-home', {
-//       'partnerortext' : partnerOrText 
-//     });
-//   }
-// });
-
 
 // long term illness
 router.get(/illness-b4/, function (req, res) {
   if (req.query.illness === 'yes') {
     medicalEx = true;
     setPartnerText(applicant.partner);
-    res.render('checker/1/care-home', {
+    res.render('checker/care-home', {
       'partnerortext' : partnerOrText
     });
   } else {
     medicalEx = false;
-    res.render('checker/1/care-home', {
+    res.render('checker/care-home', {
       'partnerortext' : partnerOrText
     });
   }
@@ -499,7 +491,7 @@ router.get(/illness-b4/, function (req, res) {
       router.get(/care-home-handler/, function (req, res) {
       if (req.query.carehome === 'yes') {
            setPartnerText(applicant.partner);
-          res.render('checker/1/sc/authority-assessed', {
+          res.render('checker/sc/authority-assessed', {
             'partnerortext' : partnerOrText
       });
   } else {
@@ -510,80 +502,6 @@ router.get(/illness-b4/, function (req, res) {
 });
 
 
-//      // saving-handler
-//      router.get(/saving-handler/, function (req, res) {
-//        //scotland
-//          if (applicant.country === 'scotland'){
-//                if (req.query.savings === 'yes') {
-//           if (pregnancy === true) {
-//                res.redirect('../answers-preg-nolis');
-//           } else if (warPension === true) {
-//              res.redirect ('../answers-warpension-nolis');
-//           } else if (medicalEx === true) {
-//              res.redirect ('../answers-medex-nolis');
-//           } else {
-//              res.redirect ('../savings-kickout');
-//           }
-//        } else if (req.query.savings === 'no') {
-//            if (pregnancy === true) {
-//                res.redirect('../answers-preg-lis-v2');
-//            } else if (warPension === true) {
-//                res.redirect ('../answers-warpension-lis-v2');
-//            } else if (medicalEx === true) {
-//                res.redirect ('../answers-medex-lis-v3');
-//            } else {
-//                res.redirect ('../answers-lis-scot');
-//            }
-//        }
-//        // wales
-//         if (applicant.country === 'wales'){
-//                if (req.query.savings === 'yes') {
-//           if (pregnancy === true) {
-//                res.redirect('../answers-preg-nolis');
-//           } else if (warPension === true) {
-//              res.redirect ('../answers-warpension-nolis');
-//           } else if (medicalEx === true) {
-//              res.redirect ('../answers-medex-nolis');
-//           } else {
-//              res.redirect ('../savings-kickout');
-//           }
-//        } else if (req.query.savings === 'no') {
-//            if (pregnancy === true) {
-//                res.redirect('../answers-preg-lis-v2');
-//            } else if (warPension === true) {
-//                res.redirect ('../answers-warpension-lis-v2');
-//            } else if (medicalEx === true) {
-//                res.redirect ('../answers-medex-lis-v3');
-//            } else {
-//                res.redirect ('../answers-lis-scot');
-//            }
-//
-//        }
-//              } if (applicant.country === 'england'){
-//        if (req.query.savings === 'yes') {
-//           if (pregnancy === true) {
-//                res.redirect('../answers-preg-nolis');
-//           } else if (warPension === true) {
-//              res.redirect ('../answers-warpension-nolis');
-//           } else if (medicalEx === true) {
-//              res.redirect ('../answers-medex-nolis');
-//           } else {
-//              res.redirect ('../savings-kickout');
-//           }
-//        } else if (req.query.savings === 'no') {
-//            if (pregnancy === true) {
-//                res.redirect('../answers-preg-lis-v2');
-//            } else if (warPension === true) {
-//                res.redirect ('../answers-warpension-lis-v2');
-//            } else if (medicalEx === true) {
-//                res.redirect ('../answers-medex-lis-v3');
-//            } else {
-//                res.redirect ('../lis-v3');
-//            }
-//        }//end scot
-//        }//else wales
-//        }
-//    });
         
 // saving-handler
       router.get(/saving-handler/, function (req, res) {
@@ -607,7 +525,7 @@ router.get(/illness-b4/, function (req, res) {
                 res.redirect ('/results/answers-medex-lis-v3');
             } else {
                 setPartnerText(applicant.partner);
-          res.render('checker/1/lis-full-width', {
+          res.render('checker/lis-full-width', {
             'partnerortext' : partnerOrText,
             });
         }
@@ -620,7 +538,7 @@ router.get(/illness-b4/, function (req, res) {
         res.redirect('sc/lis-application');
       } else {
            setPartnerText(applicant.partner);
-          res.render('checker/1/sc/savings', {
+          res.render('checker/sc/savings', {
             'partnerortext' : partnerAndText,
       });
       }

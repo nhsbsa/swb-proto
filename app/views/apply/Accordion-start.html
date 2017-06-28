@@ -1,0 +1,167 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<main class="accordion-with-descriptions-03" id="content" role="main" tabindex="-1">
+  
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+     <h1 class="heading-xlarge">Apply for help to pay NHS costs</h1>
+
+             <p class="lede">If you have difficulty paying your NHS costs you may be able to get help based on your circumstances.</p>
+
+      <h2 class="heading-medium">When you don't need to apply</h2>
+      You are already entitled to full help with your NHS costs if you or your partner are getting:
+  
+        <ul class="list list-bullet">
+          <li>Income Support</li>
+          <li>Income-based Jobseeker's Allowance (JSA)</li>
+          <li>Income-related Employment Support Allowance (ESA)</li>
+          <li>Pension Credit Guarantee Credit</li>
+          <li>Universal Credit, depending on your earnings</li>
+          <li>Certain tax credits and the income on your award notice is £15,276 or less
+          </li>
+        </ul>
+        <div class="panel panel-border-narrow" style="padding:0.5rem 2rem 1rem 1rem; margin-bottom:2rem;">
+             <p>Your partner and any children under 20 included on your benefits claim are also entitled to full help with NHS costs. </p>
+        </div>
+
+                <h2 class="heading-medium">If you need to apply for help</h2>
+
+        <p>You could get help with your health costs if you, or you and your partner if you live as a couple, have less than:</p>
+
+        <ul class="list list-bullet">
+          <li>£16,000 in savings, investments or properties – not including where you live</li>
+          <li>£23,250 in savings, investments or properties if you permanently live in a care home</li>
+        </ul>
+
+        <p>You can apply at any time. Do not wait until you need treatment.</p>
+
+        <p>
+          <a class="button button-get-started" href="/checker/date-of-birth" id="next">Start a new application</a>
+        </p>
+
+        <a href="signin-continue">I've used this service before - view my application</a>
+
+        <div class="subsections" data-module="accordion-with-descriptions">
+
+          <div class="subsection-controls">
+          </div>
+          <div class="subsection-wrapper">
+
+                      <div class="subsection">
+              <div class="subsection__header">
+                  <h2 class="subsection__title">
+                    Before your start
+                  </h2>
+                  <p class="subsection__description">
+                    This is the description for subsection 2
+                  </p>
+              </div>
+
+              <div class="subsection__content" id="subsection_content_1">
+                <p>You can apply to get help paying for visits that you:</p>
+
+<ul>
+  <li>have made in the last 28 days</li>
+  <li>want to make in the next 28 days</li>
+</ul>
+
+<p>You need:</p>
+
+<ul>
+  <li>the prisoner number</li>
+  <li>the date of the visit</li>
+  <li>your National Insurance number</li>
+  <li>any receipts</li>
+  <li>a prison visit form stamped by the prison</li>
+</ul>
+
+<h2 id="get-help-using-the-service">Get help using the service</h2>
+
+<p>You can <a rel="external" href="https://help-with-prison-visits.service.gov.uk/help">report problems using the service or get help if you have any questions</a>.</p>
+
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection__header">
+                <h2 class="subsection__title">
+                  What NHS costs you can get help with
+                </h2>
+                <p class="subsection__description">
+                  This is the description for subsection 1
+                </p>
+              </div>
+
+              <div class="subsection__content" id="subsection_content_0">
+                <ul class="list list-bullet">
+          <li>
+            NHS prescriptions
+          </li>
+          <li>
+            NHS dental check-ups and treatment
+          </li>
+          <li>
+            sight tests
+          </li>
+          <li>
+            new glasses and contact lenses
+          </li>
+          <li>
+            repairing or replacing your glasses and contact lenses
+          </li>
+          <li>
+            NHS wigs
+          </li>
+          <li>
+            fabric supports- things like surgical bras, support tights and spinal support
+          </li>
+          <li>
+            travel for NHS treatment
+          </li>
+        </ul>
+              </div>
+            </div>
+
+
+            <div class="subsection">
+              <div class="subsection__header">
+                <h2 class="subsection__title">
+                  Other ways to apply
+                </h2>
+                <p class="subsection__description">
+                  This is the description for subsection 1
+                </p>
+              </div>
+
+              <div class="subsection__content" id="subsection_content_0">
+                <ul class="subsection__items">
+                  <li><a href="#">Subsection 1 - link 1</a></li>
+                  <li><a href="#">Subsection 1 - link 2</a></li>
+                  <li><a href="#">Subsection 1 - link 3</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+  </div>
+</main>
+
+
+    
+  <script src="/public/javascripts/jquery-1.11.3.js"></script>
+  <script src="/public/javascripts/modules.js"></script>
+  <script src="/public/javascripts/accordian.js"></script>
+  <script src="/public/javascripts/start-modules.js"></script>
+
+  {% endblock %}
+

@@ -29,3 +29,118 @@ $path: "/public/images/";
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+ 
+ 
+.accordion-with-descriptions-03 .subsection-controls {
+  min-height: 35px;
+}
+
+.accordion-with-descriptions-03 .subsection-controls .js-open-close {
+  float: right;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  display: inline-block;
+  color: #005ea5;
+  padding: 0.5em 0;
+}
+
+@media (min-width: 641px) {
+  .accordion-with-descriptions-03 .subsection-controls .js-open-close {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.accordion-with-descriptions-03 .subsection-wrapper {
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.accordion-with-descriptions-03 .subsection__header {
+  padding: 0.6em 0;
+  border-top: 1px solid #bfc1c3;
+  position: relative;
+}
+
+.accordion-with-descriptions-03 .subsection__title {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  padding-top: 0;
+  padding-top: 0;
+}
+
+@media (min-width: 641px) {
+  .accordion-with-descriptions-03 .subsection__title {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+.accordion-with-descriptions-03 .subsection__description {
+  display: block;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  color: #6f777b;
+  margin-bottom: 0;
+}
+
+@media (min-width: 641px) {
+  .accordion-with-descriptions-03 .subsection__description {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.accordion-with-descriptions-03 .subsection__items {
+  padding-bottom: 0.5em;
+}
+
+.accordion-with-descriptions-03 .subsection__items li {
+  margin-bottom: 0.25em;
+}
+
+.accordion-with-descriptions-03 .subsection__items li a {
+  text-decoration: none;
+}
+
+.accordion-with-descriptions-03 .subsection__link {
+  text-decoration: none;
+  color: #005ea5;
+}
+
+.accordion-with-descriptions-03 .js-hide {
+  display: none;
+}
+
+.accordion-with-descriptions-03 .subsection__icon {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  height: 15px;
+  width: 16px;
+  background-image: url("/public/images/accordion-with-descriptions/icons.png");
+  background: url("/public/images/accordion-with-descriptions/icons.svg"), linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-position: 0 -16px;
+}
+
+.accordion-with-descriptions-03 .is-open .subsection__icon {
+  background-position: 0 0;
+}
+
+.accordion-with-descriptions-03 .js .subsection__header:hover {
+  cursor: pointer;
+  background: #f8f8f8;
+}
+
+
+
+
