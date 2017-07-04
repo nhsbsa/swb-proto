@@ -10,7 +10,7 @@ function Person(
   hasMatexCard,
   hasMedexCard,
   hasHealthCondition
-  // LIS questions
+    // LIS questions
   // ppc
 ) {
   this.age = age,
@@ -23,7 +23,7 @@ function Person(
   this.isPregnant = isPregnant,
   this.hasMatexCard = hasMatexCard,
   this.hasMedexCard = hasMedexCard,
-  this.hasHealthCondition = hasHealthCondition
+  this.hasHealthCondition = hasHealthCondition,
 }
 // work out age
 

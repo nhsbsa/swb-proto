@@ -1,0 +1,52 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    Are you applying for yourself or on someone else's behalf?
+  </h1>
+
+      <form action="beneficiary-handler" method="get" class="form">
+        
+        <div class="form-group">
+          
+          <fieldset class="">
+            <legend class="visually-hidden">
+              Are you applying for yourself or someone else?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="whofor" value="no">
+              <label for="yes">you</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="whofor" value="yes">
+              <label for="no">someone else's behalf</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+    </div>
+    </div>
+</main>
+
+{% endblock %}
