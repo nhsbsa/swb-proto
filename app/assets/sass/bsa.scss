@@ -264,6 +264,43 @@ table {
       }
     }
 }
+.multiple-radio label {
+    margin-top: 0px;
+    margin-left: 52px;
+}
+
+.multiple-radio {
+  [type=checkbox] + label::before {
+    background: white;
+    top: 9px;
+    left: 9px;
+    width: 28px;
+    height: 28px;
+  }
+  [type=checkbox] + label::after {
+    top: 19px;
+    left: 17px;
+    width: 13px;
+    height: 5px;
+    border-width: 0 0 4px 4px;
+  }
+  label {
+    margin-top: 0px;
+    margin-left: 52px;
+  }
+}
+
+.inline {
+  .multiple-choice {
+    label {
+      line-height: 195%;
+    }
+  }
+}
+
+.single-line {
+   line-height: 175%;
+ }
 
 
 .multiple-choice {
@@ -434,3 +471,38 @@ $task-list-indent: 35px;
   padding-top: 3px;
 }
 
+
+.multiple-radio {
+  [type=checkbox] + label::before {
+    background: white;
+    top: 9px;
+    left: 9px;
+    width: 28px;
+    height: 28px;
+  }
+  [type=checkbox] + label::after {
+    top: 19px;
+    left: 17px;
+    width: 13px;
+    height: 5px;
+    border-width: 0 0 4px 4px;
+  }
+  label {
+    margin-top: 0px;
+    margin-left: 52px;
+  }
+}
+
+.heading-group {
+  p {
+    margin: 0;
+    padding: 0;
+    color: gray;
+    font-size: 110%;
+  }
+  .heading-xlarge, .heading-large {
+    margin: 0;
+    padding: 0;
+  }
+  margin: 40px 0 23px 0;
+}

@@ -1,4 +1,4 @@
-{% extends "layout_bsa.html" %}
+ {% extends "layout_bsa.html" %}
 
 {% block page_title %}
   Help paying for NHS Costs prototype
@@ -7,39 +7,38 @@
 {% block content %}
 
 <main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <a href="javascript:history.go(-1)" class="link-back">Back</a>
-      <div class="heading-group">
-        <p>Apply for help with NHS costs</p>
 
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
       {% if thirdparty %}
       <h1 class="heading-large">Does {{firstname}} live with a partner?</h1>
     {% else %}
-      <h1 class="heading-large">Do you live with a partner?</h1>
+      <h1 class="heading-large">Does anyone else live with you at {{data['address-lineone']}}?</h1>
     {% endif %}
     </div>
 
-  <p>This means you live together as a couple, you don't have to be married or in a civil partnership.</p>
 
 
-  <form action="p2-handler" method="get" class="form">
+  <form action="non-dephandler" method="get" class="form">
 
        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Do you live with a partner?
+              Does anyone else live with you at {{data['address-lineone']}}?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="partner" value="yes">
+              <input id="yes" type="radio" name="nonDep" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="partner" value="no">
+              <input id="no" type="radio" name="nonDep" value="no">
               <label for="no">No</label>
             </div>
             

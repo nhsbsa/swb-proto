@@ -1,66 +1,59 @@
-{% extends 'templates/nhs_transaction_layout.html' %}
-{% import 'includes/form_macros.html' as form_macros %}
+ {% extends "layout_bsa.html" %}
 
-{% block afterHeader %}
-{% include "includes/service-headers/low-income.html" %}
+{% block page_title %}
+  Help paying for NHS Costs prototype
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
-
     <div class="column-two-thirds">
 
-      <h1 class="heading-large">
-        How would you like us to contact you?
-      </h1>
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
 
-      <p>Select all the ways we can get in touch.</p>
+      <h1 class="heading-large">How should we contact you if we need to?</h1>
+</div>
+<p>Select all that apply</p>
+      
+      <form class="form" action="contact-handler" id="contact-boxes">
+        <fieldset class="form-group">
+          <legend class="visually-hidden">
+            How should we contact you if we need to?
+          </legend>
+          <div class="multiple-choice multiple-radio">
+            <input id="email" name="email" type="checkbox" value="true">
+            <label for="email">Email</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="phone" name="phone" type="checkbox" value="true">
+            <label for="phone">Phone</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="text" type="checkbox" value="true">
+            <label for="text">Text message</label>
+          </div>
+                   <div class="multiple-choice multiple-radio">
+            <input id="letter" name="contact" value="letter" type="checkbox">
+            <label for="letter">letter</label>
+          </div>
 
-      <form action="contact-handler2" method="get" class="form">
+
+
+        </fieldset>
 
         <div class="form-group">
-          <input type="checkbox" id="email" name="contact" value="email">
-          <label class="form-control-checkbox minor-checkbox" for="email">
-            Email
-          </label>
+          <input class="button" type="submit" value="Next">
         </div>
-        <div class="form-group">
-          <input type="checkbox" id="text" name="contact" value="text">
-          <label class="form-control-checkbox minor-checkbox" for="text">
-            Text
-          </label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" id="telephone" name="contact" value="telephone">
-          <label class="form-control-checkbox minor-checkbox" for="telephone">
-            Telephone
-          </label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" id="post" name="contact" value="post">
-          <label class="form-control-checkbox minor-checkbox" for="post">
-            Post
-          </label>
-        </div>
-        <div class="form-group">
-          {{
-            form_macros.button({
-              label: 'Save and continue'
-            })
-          }}
-        </div>
-
-        <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p>
-
       </form>
-
+          
     </div>
-
+      
   </div>
-
+  
 </main>
 
 {% endblock %}
