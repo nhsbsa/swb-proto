@@ -1,8 +1,7 @@
-{% extends 'templates/nhs_transaction_layout.html' %}
-{% import 'includes/form_macros.html' as form_macros %}
+{% extends "layout_bsa.html" %}
 
-{% block afterHeader %}
-  {% include "includes/service-headers/low-income.html" %}
+{% block page_title %}
+  Help paying for NHS Costs prototype
 {% endblock %}
 
 {% block content %}
@@ -11,43 +10,57 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+      <div class="heading-group">
+        <p>Apply for help with NHS costs</p>
 
-  <h1 class="heading-large">
-   {{jointOwnerText}}
-  </h1>
+
+
+      <h1 class="heading-large">Is anyone else a joint owner of the property you live in?</h1>
+
+    </div>
+
+  <p>This means you live together as a couple, you don't have to be married or in a civil partnership.</p>
+
 
   <form action="" method="get" class="form">
-      <div class="form-item-wrapper">
-        <fieldset>
-          <div class="inline-form-groups">
-            <div class="form-group">
-              <input type="radio" id="binary-yes" name="binary">
-              <label class="form-control-radio" for="binary-yes">
-                Yes
-              </label>
+
+       <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Do you live with a partner?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="partner" value="yes">
+              <label for="yes">Yes</label>
             </div>
-            <div class="form-group">
-              <input type="radio" id="binary-no" name="binary">
-              <label class="form-control-radio" for="binary-no">
-                No
-              </label>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="partner" value="no">
+              <label for="no">No</label>
             </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
           </div>
-        </fieldset>
-      </div>
 
-        {{
-      form_macros.button({
-        href: 'address',
-        label: 'Save and continue'
-      })
-    }}
-
-    <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p>
-
-  </form>
+      </form>
     </div>
     </div>
 </main>
 
 {% endblock %}
+
+
+
+
+
+
+
+

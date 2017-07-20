@@ -1,8 +1,7 @@
-{% extends 'templates/nhs_transaction_layout.html' %}
-{% import 'includes/form_macros.html' as form_macros %}
+ {% extends "layout_bsa.html" %}
 
-{% block afterHeader %}
-  {% include "includes/service-headers/low-income.html" %}
+{% block page_title %}
+  Help paying for NHS Costs prototype
 {% endblock %}
 
 {% block content %}
@@ -11,49 +10,54 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+      <div class="heading-group">
+        <p>Apply for help with NHS costs</p>
   <h1 class="heading-large">
-      Where do you live?
+      Where do you {{partnerandtext}} live?
   </h1>
 
   <form action="home-handler" method="get" class="form">
 
-    <div class="form-item-wrapper">
-      <div class="form-group">
-        <input type="radio" id="own" value="own" name="home">
-        <label class="form-control-radio" for="own">
-          In a property I own (with or without a mortgage)
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="radio" id="rented" value="rented" name="home">
-        <label class="form-control-radio" for="rented">
-          In rented accommodation
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="radio" id="guest" value="guest" name="home">
-        <label class="form-control-radio" for="guest">
-          In someone else's home (for example friends, relatives, parents)
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="radio" id="homeless" value="homeless" name="home">
-        <label class="form-control-radio" for="homeless">
+<div class="form-group">
+          <fieldset>
+            <legend class="visuallyhidden">
+            Where do you live?
+            </legend>
+          <br>
+
+          <div class="multiple-choice">
+            <input type="radio" id="own" value="own" name="home">
+            <label for="own">In a property I own (with or without a mortgage)</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input type="radio" id="rented" value="rented" name="home">
+            <label class="form-control-radio" for="rented">In rented accommodation</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input type="radio" id="guest" value="guest" name="home">
+            <label class="form-control-radio" for="guest"> In someone else's home (for example friends, relatives, parents)</label>
+        </div>
+
+          <div class="multiple-choice">
+            <input type="radio" id="homeless" value="homeless" name="home">
+            <label class="form-control-radio" for="homeless">
           I do not have a permanent address
         </label>
-      </div>
-    </div>
+          </div>
 
-    {{
-      form_macros.button({
-        label: 'Save and continue'
-      })
-    }}
+          </fieldset>
+        </div>
+      
+        <!-- submit button -->
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
 
-    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p>
+        </form>
 
-  </form>
     </div>
     </div>
 </main>
