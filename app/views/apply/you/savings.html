@@ -1,0 +1,66 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+      <div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+
+      {% if thirdparty %}
+      <h1 class="heading-large">Does {{firstname}} have any stocks, shares, land or properties?</h1>
+    {% else %}
+      <h1 class="heading-large">Do you have any stocks, shares, land or properties?</h1>
+    {% endif %}
+    </div>
+
+  <p>This does not include the property you live in.</p>
+
+
+  <form action="p2-handler" method="get" class="form">
+
+       <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Do you have any stocks, shares, land or properties?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="shares" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="shares" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+

@@ -147,7 +147,7 @@ router.get(/partner/, function (req, res) {
           firstname : benificiary.firstname
         });
       } else {
-        res.redirect('contact-prefs');
+        res.redirect('you-check-answers');
       }
     });
 
