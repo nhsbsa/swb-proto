@@ -16,6 +16,22 @@ var benificiary = {
 };
 
 
+//partner question variable
+ var setPartnerText = function (partner) {
+    if (applicant.partner === false) {
+      partnerBothText = 'you';
+      partnerCommaText = 'you';
+      partnerOrText = 'you';
+      partnerAndText = 'you'
+    } else {
+      partnerBothText = 'you, your partner or both of you';
+      partnerCommaText = 'you, your partner';
+      partnerOrText = 'you or your partner';
+      partnerAndText = 'you and your partner'
+  }
+  };
+
+
 //create applicant
 
 var applicantMaster = require('./applicant.js');
@@ -74,45 +90,13 @@ router.get(/name-handler/, function (req, res) {
   res.redirect('dob');
 });
 
-// router.get(/birth-handler/, function (req, res) {
-//   benificiary.dobDay = req.query.dobday;
-//   benificiary.dobMonth = req.query.dobmonth;
-//   benificiary.dobYear = req.query.dobyear;
-//   console.log("DOB = " + benificiary.dobDay + " " + benificiary.dobMonth + " " + benificiary.dobYear);
-//     if (applicant.age <= 15) {
-//       console.log("age");
-//         res.redirect('full-exemption-u16');
-//       } else {
-//         res.redirect('partner');
-//       }
-// });
-
     router.get(/birth-handler/, function (req, res) {
       applicant.age = (thisYear - req.query.dobyear);
       console.log(applicant.age);
       if (applicant.age <= 15) {
         res.render('apply/you/full-exemption-u16', {
-          thirdparty : benificiary.thirdParty,
-          firstname : benificiary.firstname
         });
-          } else {
-            res.redirect('partner');
-          }
-        });
-
-router.get(/partner/, function (req, res) {
-  res.render('apply/you/partner', {
-    thirdparty : benificiary.thirdParty,
-    firstname : benificiary.firstname
-  });
-});
-
-    router.get(/p2-handler/, function (req, res) {
-    // if (req.query.partner === 'yes') {
-    //     applicant.partner = true;
-      if (applicant.age <= 24) {
-        res.redirect('children-under-20');
-      } else if (benificiary.thirdParty == true) {
+          } else if (benificiary.thirdParty == true) {
         res.render('apply/you/contact-prefs-third-party', {
           thirdparty : benificiary.thirdParty,
           firstname : benificiary.firstname
@@ -122,32 +106,49 @@ router.get(/partner/, function (req, res) {
       }
     });
 
-    //     router.get(/p2-handler/, function (req, res) {
-    // // if (req.query.partner === 'yes') {
-    // //     applicant.partner = true;
-    //   if (benificiary.thirdParty == true) {
-    //     res.render('apply/you/post-address', {
-    //       thirdparty : benificiary.thirdParty,
-    //       firstname : benificiary.firstname
-    //     });
-    // // } else if (req.query.partner === 'no') {
-    // //     applicant.partner = false;
-    //   } else {
-    //     res.redirect('post-address');
-    //   }
-    // });
 
+router.get(/partner/, function (req, res) {
+  res.render('apply/you/partner', {
+    thirdparty : benificiary.thirdParty,
+    firstname : benificiary.firstname
+  });
+});
+
+         // partner handler v2
+    router.get(/p2-handler/, function (req, res) {
+      sprint = req.url.charAt(5);
+      if (req.query.partner === 'yes') {
+        applicant.partner = true;
+        //aboutPartnerStatus = "Started";
+        //aboutPartnerLink = continueText;
+      } else if (req.query.partner === 'no') {
+        applicant.partner = false;
+        //aboutPartnerStatus = completedText;
+        //aboutPartnerLink = changeText;
+      }
+      setPartnerText(applicant.partner);
+ if (benificiary.thirdParty == true) {
+        res.render('apply/you/children-under-20', {
+          thirdparty : benificiary.thirdParty,
+          firstname : benificiary.firstname
+        });   
+        } else {
+            res.render('apply/you/children-under-20', {
+                'partnerandtext' : partnerAndText,
+            });
+        }
+    });
 
 
 // address handler
         router.get(/address-c-handler/, function (req, res) {
       if (benificiary.thirdParty == true) {
-        res.render('apply/you/contact-prefs-third-party', {
+        res.render('apply/live/mortgaged/loan', {
           thirdparty : benificiary.thirdParty,
           firstname : benificiary.firstname
         });
       } else {
-        res.redirect('you-check-answers');
+        res.redirect('/live/mortgaged/loan');
       }
     });
 
@@ -212,12 +213,11 @@ router.get(/mobile-c-handler/, function (req, res) {
 
 //Email capture
 router.get(/email-c-handler/, function (req, res) {
-  if (applicant.age <= 24) {
-        res.redirect('children-under-20');
-      } else {
-        res.redirect('../live/you-live');
-      }
+  applicant.email = req.query.email;
+  console.log(applicant.email);
+  res.redirect('about-you-summary');
 });
+
 
 //telephone capture
 router.get(/telephone-c-handler/, function (req, res) {
@@ -225,6 +225,31 @@ router.get(/telephone-c-handler/, function (req, res) {
   console.log(applicant.telephone);
   res.redirect('post-address');
 });
+
+
+                
+// //Check your answers
+// router.get(/check/, function (req, res) {
+//   var myDobMonth;
+//   if (applicant.dobMonth === null) {
+//     myDobMonth = 'May';
+//   } else {
+//     myDobMonth = dateHelper.monthToText(applicant.dobMonth);
+//   }
+//   textHelper.setContactText(applicant.mobile, applicant.email);
+//   textHelper.setReminderText(applicant.mobile, applicant.email);
+//   textHelper.setMethod(applicant.email);
+//   res.render('you/about-you-summary', {
+//   name : applicant.firstName + ' ' + applicant.lastName,
+//   dobday : applicant.dobDay,
+//   dobmonth : myDobMonth,
+//   dobyear : applicant.dobYear,
+//   address : applicant.address,
+//   mobilenumber : applicant.mobile,
+//   hasemail :  boolToText(applicant.hasEmail),
+//   emailaddress : applicant.email,
+//   });
+// });
 
 
     // children

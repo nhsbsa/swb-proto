@@ -7,11 +7,19 @@
 {% block content %}
 
 <main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-  <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      {% if thirdparty %}
+      <h1 class="heading-large">Does {{firstname}} have any children living with you, who {{firstname}} supports financially?</h1>
+    {% else %}
+      <h1 class="heading-large">Do you have any children living with you, who you support financially?</h1>
+    {% endif %}
+    </div>
 
   <h1 class="heading-large">
     Do {{partnerortext}} pay a mortgage or loan on your home?
@@ -37,13 +45,8 @@
       </fieldset>
     </div>
 
-    {{
-      form_macros.button({
-        label: 'Save and continue'
-      })
-    }}
-
-    <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p>
+<!-- 
+    <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p> -->
 
   </form>
     </div>

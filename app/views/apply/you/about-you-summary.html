@@ -12,109 +12,52 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-        
-        <h1 class="heading-large">
-          Check your answers
-        </h1>
-      
-        <p class="bold">Personal details</p>
-      
-        <table class="data-table you-summary">
-          <tr>
-            <td>Full name</td>
-            <td>{{applicantFullName}}</td>
-            <td><a href="registration">Change this</a></td>
-          </tr>
-          <tr>
-            <td>Date of birth</td>
-            <td>{{dobday}} {{dobmonth}} {{dobyear}}</td>
-            <td><a href="dob">Change this</a></td>
-          </tr>
-          <tr>
-            <td>How would you like us to contact you?</td>
-            <td>{{contact}}</td>
-            <td><a href="contact-prefs">Change this</a></td>
-          </tr>
-          <tr>
-            <td>{{contacttext}}</td>
-            <td>{{contactvalue}}</td>
-            <td><a href="email">Change this</a></td>
-          </tr>
-        </table>
+  <div class="text">
 
-        <p class="bold">Jobs and education</p>
-        <table class="data-table you-summary">
-          <tr>
-            <td>Do you have a job?</td>
-            <td>No</td>
-            <td><a href="work">Change this</a></td>
-          </tr>
-          <tr>
-            <td>Are you in full time education?</td>
-            <td>No</td>
-            <td><a href="education">Change this</a></td>
-          </tr>
-        </table>
-
-        <p class="bold">Pensions</p>
-        <ul class="hidden">
-          <li>pensionanswer:</li>
-          <li id="pension_answer">{{pensionanswer}}</li>
-          <li>savingscredit:</li>
-          <li id="credit_answer">{{savingscredit}}</li>
-          <li>stateanswer:</li>
-          <li id="state_answer">{{stateanswer}}</li>
-          <li>privateanswer:</li>
-          <li id="private_answer">{{privateanswer}}</li>
-          <li>statepensionamount:</li>
-          <li id="state_amount">{{stateamount}}</li>
-          <li>statepensionamount:</li>
-          <li id="state_frequency">{{statepensionfrequency}}</li>
-          <li>privatepension amount:</li>
-          <li id="private_amount">{{privateAmount}}</li>
-          <li>private frequency:</li>
-          <li id="private_frequency">{{privatefrequency}}</li>
-        </ul>
-        
-        <table class="data-table you-summary" id="pension_table">
-          <!-- filled by js -->
-        </table>
-
-        <p class="bold">Benefits and other money</p>
-        <table class="data-table you-summary">
-          <tr>
-            <td>Do you get any of these benefits?</td>
-            <td>No</td>
-            <td><a href="benefits/benefit-sprint3">Change this</a></td>
-          </tr>
-          <tr>
-            <td>Do you look after someone but cannot get Carer’s Allowance because of another reason?</td>
-            <td>No</td>
-            <td><a href="benefits/benefit4">Change this</a></td>
-          </tr>
-          <tr>
-            <td>Does someone get Carer’s Allowance for looking after you?</td>
-            <td>No</td>
-            <td><a href="benefits/care-allowance">Change this</a></td>
-          </tr>
-             <tr>
-            <td>Do you get any other money?</td>
-            <td>No</td>
-            <td><a href="">Change this</a></td>
-          </tr>
-        </table>
-
-        <form action="you-done" method="get" class="form">
-
-        </form>
-    
-      </div>
-      
+    <div class="heading-group">
+      <p>Apply for help with NHS costs</p>
+      <h1 class="heading-large">
+        Check your answers
+      </h1>
     </div>
     
+    <h3 class="heading-medium table-head">Your personal details</h3>
+       
+    <table id="review-table-one">
+      <tr>
+        <td>Full name</td>
+        <td class="bold">{{firstname}}Billy Green</td>
+        <td><a href="">Change</a></td>
+      </tr>
+      <tr>
+        <td>Date of birth</td>
+        <td class="bold">{{dobday}} {{dobmonth}} {{dobyear}} 02 April 1984</td>
+        <td><a href="">Change</a></td>
+      </tr>
+      <tr>
+        <td>Prefered method of contact</td>
+        <td id="has-mobile" class="bold">Email</td>
+        <td><a href="">Change</a></td>
+      </tr>
+       <tr id="email-value">
+        <td>Email address</td>
+        <td class="bold">{{emailaddress}}Billy@me.com</td>
+        <td><a href="">Change</a></td>
+      </tr>
+     
+    </table>
+
+<br><br>
+        <p>
+          <a class="button" href="../lis-check-list-2" id="next">Next</a>
+        </p>
+
+
   </div>
+  </div>
+  </div>
+
+
 
 </main>
 
