@@ -14,36 +14,32 @@
 
 <div class="heading-group">
         <p>Apply for help with NHS costs</p>
-      {% if thirdparty %}
-      <h1 class="heading-large">Does {{firstname}} have any children living with you, who {{firstname}} supports financially?</h1>
-    {% else %}
-      <h1 class="heading-large">Do you have any children living with you who you support financially?</h1>
-    {% endif %}
+      { if thirdparty }
+      <h1 class="heading-large">Does {firstname} pay council tax for {address}?</h1>
+      <br>
+    { else }
+      <h1 class="heading-large">Do you pay council tax for {address}</h1>
+
     </div>
 
-<p>They must be either:</p>
-<ul class="list-bullet">
-  <li>Under 16</li>
-  <li>16 to 19 and in full time education or unpaid training. <br>
-   <span class="strong">Lindsay note:</span> *No higher than A-level or equiv. like level 4 NVQs or a degree*</li>
-</ul>
-<br>
-  <form action="children-handler" method="get" class="form">
+
+
+  <form action="non-dephandler" method="get" class="form">
 
        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Do you live with a partner?
+              Do you pay council tax for {address}?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="children" value="yes">
+              <input id="yes" type="radio" name="nonDep" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="children" value="no">
+              <input id="no" type="radio" name="nonDep" value="no">
               <label for="no">No</label>
             </div>
             

@@ -1,0 +1,64 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Does someone get Carer’s Allowance for looking after you?
+      </h1>
+
+      <form action="" method="get" class="form">
+                 <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Does someone get Carer’s Allowance for looking after you?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="yes" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="no" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+
+
+
+        
+  <div class="form-item-wrapper">
+    <div class="form-group">
+      
+        <a href="" class="button " id="next">Next</a>
+      
+    </div>
+  </div>
+<!-- 
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+      </form>
+
+    </div>
+
+  </div>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

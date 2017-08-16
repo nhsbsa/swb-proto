@@ -20,13 +20,16 @@
         Check your answers
       </h1>
     </div>
-    
-    <h3 class="heading-medium table-head">Your personal details</h3>
+
+    { if thirdparty }
+      <h3 class="heading-medium" style="margin-top:0; padding-top:0">{firstname} personal details</h3>
+    { else }
+    <h3 class="heading-medium" style="margin-top:0; padding-top:0">Your personal details</h3>
        
     <table id="review-table-one">
       <tr>
         <td>Full name</td>
-        <td class="bold">{{firstname}}Billy Green</td>
+        <td class="bold">{{firstname}}Robert Green</td>
         <td><a href="">Change</a></td>
       </tr>
       <tr>
@@ -35,13 +38,18 @@
         <td><a href="">Change</a></td>
       </tr>
       <tr>
-        <td>Prefered method of contact</td>
+        <td>Address</td>
+        <td class="bold">1 Street, <br>Place, <br>County,<br> NE1234</td>
+        <td><a href="">Change</a></td>
+      </tr>
+      <tr>
+        <td>Contact by</td>
         <td id="has-mobile" class="bold">Email</td>
         <td><a href="">Change</a></td>
       </tr>
        <tr id="email-value">
         <td>Email address</td>
-        <td class="bold">{{emailaddress}}Billy@me.com</td>
+        <td class="bold">{{emailaddress}}Bob@me.com</td>
         <td><a href="">Change</a></td>
       </tr>
      

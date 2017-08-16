@@ -16,19 +16,22 @@
         <p>Apply for help with NHS costs</p>
         <h1 class="heading-large">What is your address?</h1>
       </div>
-      <p>Your GP and dentist must have the same address. <br>We use this to confirm your identity when you claim help.</p>
+      <p>Your GP and dentist must have your correct address. <br>We use this to confirm your identity when you claim help.</p>
 
  
       <form action="address-c-handler" method="get" class="form">
 
       <div class="form-group">
         <label class="form-label-bold" for="lineone">
-          Building and street
+          Address line 1
         </label>
         <input class="form-control" id="registration-number" name="address-lineone" type="text" value="{{data['address-lineone']}}">
       </div>
         
       <div class="form-group">
+              <label class="form-label-bold" for="lineone">
+          Address line 2
+        </label>
         <input class="form-control" id="linetwo" name="linetwo" type="text">
       </div>
 

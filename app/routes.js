@@ -97,12 +97,12 @@ router.get(/name-handler/, function (req, res) {
         res.render('apply/you/full-exemption-u16', {
         });
           } else if (benificiary.thirdParty == true) {
-        res.render('apply/you/contact-prefs-third-party', {
+        res.render('apply/you/post-address', {
           thirdparty : benificiary.thirdParty,
           firstname : benificiary.firstname
         });
       } else {
-        res.redirect('contact-prefs');
+        res.redirect('post-address');
       }
     });
 
@@ -143,12 +143,12 @@ router.get(/partner/, function (req, res) {
 // address handler
         router.get(/address-c-handler/, function (req, res) {
       if (benificiary.thirdParty == true) {
-        res.render('apply/live/mortgaged/loan', {
+        res.render('/apply/you/contact-prefs', {
           thirdparty : benificiary.thirdParty,
           firstname : benificiary.firstname
         });
       } else {
-        res.redirect('/live/mortgaged/loan');
+        res.redirect('/apply/you/contact-prefs');
       }
     });
 
@@ -299,12 +299,12 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     });
     
-    router.get(/loan/, function (req, res) {
-      sprint = req.url.charAt(5);
-      res.render('lis/' + sprint + '/live/mortgaged/loan', {
-        'partnerortext' : partnerOrText
-      });
-    });
+    // router.get(/loan/, function (req, res) {
+    //   sprint = req.url.charAt(5);
+    //   res.render('lis/' + sprint + '/live/mortgaged/loan', {
+    //     'partnerortext' : partnerOrText
+    //   });
+    // });
 
     // home
     router.get(/your-home/, function (req, res) {
@@ -363,9 +363,9 @@ router.get(/telephone-c-handler/, function (req, res) {
     // NON-DEPENDANT
     router.get(/non-dephandler/, function (req, res) {
       if (req.query.nonDep === 'yes') {
-        res.redirect('../about-you');
+        res.redirect('non-dep-ko');
       } else {
-        res.redirect('../saving-ch');
+        res.redirect('../lis-check-list-3');
       }
     });
 
