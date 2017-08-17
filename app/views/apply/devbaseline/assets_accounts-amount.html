@@ -1,0 +1,58 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      { if thirdparty }
+      <h1 class="heading-large">How much does {firstname} have in all of your bank, building society, savings accounts and ISAs?</h1>
+      <br>
+    { else }
+      <h1 class="heading-large">How much do have in all of your bank, building society, savings accounts and ISAs?  </h1>
+
+    </div>
+<br>
+
+ <form action="" method="get" class="form">
+    
+    <div class="form-item-wrapper">
+
+      <div class="form-group" style="width:40%">
+      <label>Enter the total amount</label><br>
+       <span class="heading-medium">£ </span><input style="margin-top: 0.5em" type="text" id="propertyvalue" name="propertyvalue" value="" class="form-control">
+    </div>
+    
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input class="button" type="submit" value="Next">
+      </div>
+    </div>
+
+
+  <fieldset>
+
+
+    
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+

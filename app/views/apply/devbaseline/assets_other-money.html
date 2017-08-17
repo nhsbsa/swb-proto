@@ -14,68 +14,69 @@
 
 <div class="heading-group">
         <p>Apply for help with NHS costs</p>
-        <h1 class="heading-large">
-            Who should we contact about {{firstname}}'s application if we need to?
-        </h1>
-        </div>
-<p>We will only contact them if we need more information about {{firstname}}'s application</p>
-      <form action="contactTP-handler" method="get" class="form">
+      { if thirdparty }
+      <h1 class="heading-large">Does {firstname} have any other money?</h1>
+      <br>
+    { else }
+      <h1 class="heading-large">Do you have any other money?</h1>
 
-                 <div class="form-group">
-          <fieldset>
+    </div>
+<p>For example cash</p>
+
+  <form action="" method="get" class="form">
 
 
-            <legend class="visuallyhidden">
-              Who should we contact about this application if we need to?
+ <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Do you have any other money?
             </legend>
 
-            <div class="multiple-choice">
-              <input id="applicant-contact" type="radio" name="thirdpartycontact" value="applicant-contact">
-              <label for="applicant-contact">{{firstname}}</label>
-            </div>
             <div class="multiple-choice" data-target="example-other-contact">
+              <input id="applicant-contact" type="radio" name="thirdpartycontact" value="applicant-contact">
+              <label for="applicant-contact">Yes</label>
+            </div>
+            <div class="multiple-choice">
               <input id="thirdparty-contact" type="radio" name="thirdpartycontact" value="thirdparty-contact">
-              <label for="thirdparty-contact">someone else</label>
+              <label for="thirdparty-contact">no</label>
             </div>
 
             <div class="panel panel-border-narrow js-hidden" id="example-other-contact">
 
               <h2 class="heading-medium">
-                Contacts name
+                 How much money do you have? 
               </h2>
 
               <fieldset>
 
                 <legend class="visually-hidden">
-                  Contacts name
+                   How much money do you have? 
                 </legend>
 
                 <div class="form-group form-group-compound">
-                  <label class="form-label" for="address-line-1">first name</label>
+                  <label class="form-label" for="address-line-1">Enter the total amount</label>
                   <input class="form-control" type="text" id="thirdpartyname1">
                 </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="address-town">last name</label>
-                  <input class="form-control form-control-1-4" type="text" id="thirdpartyname2">
-                </div>
-
               </fieldset>
 
             </div>
           </fieldset>
         </div>
           
-        
           <div class="form-group">
             <input class="button" type="submit"  value="Next">
           </div>
       </form>
-              <!-- <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p> -->
-          
     </div>
-      
-  </div>
-
+    </div>
 </main>
+
 {% endblock %}
+
+
+
+
+
+
+

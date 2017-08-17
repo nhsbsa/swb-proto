@@ -1,0 +1,87 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+ .list-discription {
+  margin-bottom: 0.3em;
+ }
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      { if thirdparty }
+      <h1 class="heading-large">Which meals are included in {firstname}'s rent?</h1>
+      <br>
+    { else }
+      <h1 class="heading-large">Which meals are included in your rent?</h1>
+
+    </div>
+  
+      <form action="" method="get" class="form">
+                 <div class="form-group">
+          
+
+          <fieldset class="">
+            <legend class="visually-hidden">
+              Which meals are included in your rent?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="yes" value="yes">
+              <label for="yes">Breakfast only</label>
+            </div>
+
+          <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em" >
+            <input id="penCredit" type="radio" name="benefits" value="penCredit">
+            <label for="penCredit" id="penCredit" class=" block-label">
+
+              <p class="list-discription">Any meal other than breakfast</p>
+              <span class="font-xsmall">This might be meals like lunch or dinner.
+              </span>
+            </label>
+          </div>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="yes" value="yes">
+              <label for="yes">3 meals a day for a full week</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+
+
+
+        
+  <div class="form-item-wrapper">
+    <div class="form-group">
+      
+        <a href="" class="button " id="next">Next</a>
+      
+    </div>
+  </div>
+<!-- 
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+      </form>
+
+    </div>
+
+  </div>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

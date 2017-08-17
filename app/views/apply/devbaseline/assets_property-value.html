@@ -1,0 +1,75 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      { if thirdparty }
+      <h1 class="heading-large">How much is {firstname}'s other property or land worth?</h1>
+      <br>
+    { else }
+      <h1 class="heading-large">How much is the other property or land worth?  </h1>
+
+    </div>
+
+<br>
+ <form action="" method="get" class="form">
+    
+    <div class="form-item-wrapper">
+
+      <div class="form-group" style="width:40%">
+      <label>Enter the total amount</label><br>
+       <span class="heading-medium">£ </span><input style="margin-top: 0.5em" type="text" id="propertyvalue" name="propertyvalue" value="" class="form-control">
+    </div>
+    
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input class="button" type="submit" value="Next">
+      </div>
+    </div>
+
+
+  <fieldset>
+
+
+<!--     <div class="form-date">
+      <div class="form-group" style="width:20%">
+        <label class="visually-hidden">Pounds</label>
+        <input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31">
+      </div>
+          <div class="form-group" style="">.</div>
+
+      <div class="form-group" >
+        <label class="visually-hidden">Pence</label>
+        <input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0" max="12">
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="small-12 medium-5 large-5 columns"><div class="small-2 medium-3 large-3 columns" style="padding:0px;"><span class="prefix"><label class="inline" for="income-detail-amount">£</label></span></div><div class="small-10 medium-9 large-9 columns" style="padding:0px;"><input id="income-detail-amount" type="number"></div></div>
+
+    
+  </form> -->
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+

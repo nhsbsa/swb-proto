@@ -11,14 +11,14 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-
+<p><span class="bold">*Dev note:</span>This page is only shown to people who are third party applicants<span class="bold">*</span></p>
 <div class="heading-group">
         <p>Apply for help with NHS costs</p>
         <h1 class="heading-large">
-            Who should we contact about {{firstname}}'s application if we need to?
+            Who should we contact about {firstname}'s application if we need to?
         </h1>
         </div>
-<p>We will only contact them if we need more information about {{firstname}}'s application</p>
+<p>We will only contact them if we need more information about {firstname}'s application</p>
       <form action="contactTP-handler" method="get" class="form">
 
                  <div class="form-group">
@@ -31,7 +31,7 @@
 
             <div class="multiple-choice">
               <input id="applicant-contact" type="radio" name="thirdpartycontact" value="applicant-contact">
-              <label for="applicant-contact">{{firstname}}</label>
+              <label for="applicant-contact">{firstname}</label>
             </div>
             <div class="multiple-choice" data-target="example-other-contact">
               <input id="thirdparty-contact" type="radio" name="thirdpartycontact" value="thirdparty-contact">
@@ -41,13 +41,13 @@
             <div class="panel panel-border-narrow js-hidden" id="example-other-contact">
 
               <h2 class="heading-medium">
-                Contacts name
+                Contact's name
               </h2>
 
               <fieldset>
 
                 <legend class="visually-hidden">
-                  Contacts name
+                  Contact's name
                 </legend>
 
                 <div class="form-group form-group-compound">

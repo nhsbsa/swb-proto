@@ -14,33 +14,42 @@
 
 <div class="heading-group">
         <p>Apply for help with NHS costs</p>
-
-      <h1 class="heading-large">How should we contact you if we need to?</h1>
+    {if thirdparty }
+      <h1 class="heading-large">
+        How much does {firstname} have in savings and investments?
+      </h1>
+    {else }
+      <h1 class="heading-large">
+        What is your combined total of savings and investments?
+      </h1>
 </div>
-<p>We'll only contact you if we need further information about your application.</p>
-<p>Select all that apply</p>
+
+<p>Select the total amount you have from:<p>
+<ul class="list-bullet">
+  <li>{capital-type}</li>
+  <li>{capital-type}</li>
+</ul>
+<br>
+  <form action="incometype-handler" class="form" method="get">
       
       <form class="form" action="contact-handler" id="contact-boxes">
         <fieldset class="form-group">
           <legend class="visually-hidden">
-            How should we contact you if we need to?
+            How much do you have in savings and investments?
           </legend>
           <div class="multiple-choice multiple-radio">
             <input id="email" name="email" type="checkbox" value="true">
-            <label for="email">Email</label>
+            <label for="email">£6,000 or less</label>
           </div>
           <div class="multiple-choice multiple-radio">
             <input id="phone" name="phone" type="checkbox" value="true">
-            <label for="phone">Phone</label>
+            <label for="phone">£6,000.01 to £16,000</label>
           </div>
-          <div class="multiple-choice multiple-radio">
-            <input id="text" name="text" type="checkbox" value="true">
-            <label for="text">Text message</label>
-          </div>
-<!--                    <div class="multiple-choice multiple-radio">
+
+           <div class="multiple-choice multiple-radio">
             <input id="letter" name="contact" value="letter" type="checkbox">
-            <label for="letter">letter</label>
-          </div> -->
+            <label for="letter">More than £16,000</label>
+          </div>
 
         </fieldset>
 
@@ -48,11 +57,11 @@
           <input class="button" type="submit" value="Next">
         </div>
       </form>
-          
+
+   <!--  <p class="navigation"><a class="cancel" href="../lis-check-list">Save and come back later</a></p> -->
+
     </div>
-      
-  </div>
-  
+    </div>
 </main>
 
 {% endblock %}
