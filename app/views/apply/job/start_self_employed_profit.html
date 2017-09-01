@@ -1,0 +1,43 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+    
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge info-display">
+How much profit will you make?
+    </h1>
+
+            <p class="lede">Tell us how much profit you expect to make from self-employment between 6 April 2016 and 5 April 2017.</p>
+            <form method="post">
+                <div class="form-group">
+                    <label class="form-label-bold" for="earnings-before-tax"></label>
+                   <!--  <p class="form-hint">Don’t take off tax and National Insurance contributions.</p> -->
+                    £ <input autocomplete="off" class="form-control-1-8" type="text" id="profit-before-tax" name="profit-before-tax" 
+                    value="{{profit-before-tax}}" maxlength="8">
+                </div>
+
+                <input autocomplete="off" type="hidden" name="nextUrl" 
+                value="../confirm_and_send">
+
+                <div class="form-group">
+                    <button class="button" type="submit">Continue
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</main>
+{% endblock %}

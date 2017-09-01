@@ -15,9 +15,9 @@
 <div class="heading-group">
         <p>Apply for help with NHS costs</p>
       {% if thirdparty %}
-      <h1 class="heading-large">How often does {{firstname}} pay their mortgage?</h1>
+      <h1 class="heading-large">How often does {{firstname}} pay their secured loan?</h1>
     {% else %}
-      <h1 class="heading-large">How often do you pay your mortgage?</h1>
+      <h1 class="heading-large">How often do you pay your secured loan?</h1>
     {% endif %}
 
     </div>
@@ -26,7 +26,7 @@
       <form action="" method="" class="form">
           <fieldset>
             <legend class="visually-hidden">
-How often do you pay your mortgage?</legend>
+How often do you pay your secured loan?</legend>
 
             <div class="multiple-choice">
               <input class="choose" id="everyweek" type="radio" name="optionsRadios" value="Every week">
@@ -57,13 +57,12 @@ How often do you pay your mortgage?</legend>
           <label class="heading-medium" for="pay" id="cont">
   How much do you pay?
 </label><br>
-<p> Do include any endowment premiums linked to the mortgage.</p>
 
-<p>Do not include premiums for any other type of insurance, money you owe that should have been paid earlier, or any amount of mortgage that you are voluntarily overpaying. </p>
+<p>Do not include premiums for any other type of insurance, money you owe that should have been paid earlier, or any amount of the loan that you are voluntarily overpaying. </p>
 <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
 <br><br><br>
 <p>
-          <a class="button" href="loan-question" id="next">Next</a>
+          <a class="button" href="../services" id="next">Next</a>
         </p>
       
 <!-- 

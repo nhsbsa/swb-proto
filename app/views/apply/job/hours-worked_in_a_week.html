@@ -1,0 +1,36 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <h1 class="heading-xlarge info-display">
+            How many hours do you work a week?
+        </h1>
+        <form method="post">
+            <fieldset>
+                <legend class="visuallyhidden">
+                    How many hours do you work a week?
+                </legend>
+                <p class="lede">Tell us the total number of hours you work a week in all your jobs.</p>
+                <div class="form-group">
+                    <p class="form-hint">Include overtime, but not any time taken for unpaid breaks.</p>
+                    <input autocomplete="off" class="form-control form-control-1-8" type="text" id="hours" name="hours" value="{{hours}}" placeholder="">
+                </div>
+            </fieldset>
+     <div class="form-group">
+        <input class="button" type="submit"  value="Next">
+      </div>
+
+        </form>
+    </div>
+</div>
+</main>
+{% endblock %}

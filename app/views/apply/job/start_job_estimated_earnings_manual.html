@@ -1,0 +1,53 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+              <h1 class="heading-xlarge">How much will you earn?</h1>
+                         
+                            <p class="lede">Tell us how much you expect to earn between 6 April 2015 and 5 April 2016.</p>
+
+                            <p class="lede">*RUTH* Can we get an example of how to calculate the income - manually? I.E. A sum</p>
+            <form method="post">
+                <div class="form-group">
+                <label class="form-label-bold" for="earnings-before-tax"></label>
+                    <!-- <p class="form-hint">Don’t take off tax and National Insurance contributions.</p> -->
+
+                    £ <input autocomplete="off" class="form-control-1-8" type="text" id="earnings-before-tax" name="earnings-before-tax"
+                    value="{{earnings-before-tax}}" maxlength="8">
+                    <a href="start_a_job_calculator">Help to calculate your earnings</a>
+                </div>
+
+
+
+                <!-- <input autocomplete="off" type="hidden" name="nextUrl" 
+                value="../confirm_and_send"> -->
+
+                <input autocomplete="off" type="hidden" name="nextUrl" 
+                value="deductions">
+
+                <div class="form-group">
+                    <button class="button" type="submit">Continue
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+{{/content}}
+
+
+{{/layout}}

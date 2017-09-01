@@ -1,0 +1,50 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+               <h1 class="heading-xlarge info-display">How many hours do you work a week?
+    </h1>
+
+           <p class="lede">If your hours change every week, enter the number of hours you normally work.</p>
+            <form method="post">
+
+            <fieldset>
+            <legend class="visuallyhidden">How many hours do you now work a week?</legend>
+
+
+                <div class="form-group">
+                    <input autocomplete="off" class="form-control-1-8" type="text" id="hours" name="hours" value="{{hours}}" style="text-align: center;"
+                    placeholder="">
+                </div>
+            </fieldset>
+
+
+
+                <div class="form-group">
+                    <button class="button" type="submit">Continue</button>
+                </div>
+
+                <input autocomplete="off" type="hidden" name="nextUrl" value="start_job_estimated_earnings">
+            </form>
+        </div>
+        <div class="column-third"></div>
+    </div>
+
+    <!-- Back Links -->
+    <ul class="form-link-group">
+        <li><a href="javascript:history.go(-1)">Back</a></li>
+    </ul>
+
+</main>
+{% endblock %}

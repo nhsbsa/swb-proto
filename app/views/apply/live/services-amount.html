@@ -1,0 +1,58 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+    {% if thirdparty %}
+      <h1 class="heading-large">
+        What is the total amount {{firstname}} pays for their service charges
+      </h1>
+    {% else %}
+      <h1 class="heading-large">
+        What is the total amount you pay for your service charges?
+      </h1>
+    {% endif %}
+      </div>
+
+<p>You have told us that you pay services charges for:</p>
+<ul class="list-bullet">
+  <li>Cleaning, maintenance or gardening services for communal areas</li>
+  <li>Laundry room</li>
+</ul>
+<br>
+      <form action="servamount-handler" method="get" class="form">
+
+        <div class="form-item-wrapper">
+
+          <div class="form-group">
+            <span class="heading-medium">£ </span><input type="text" id="email" name="email" value="" class="form-control form-control-1-4" required>
+          </div>
+
+        </div>
+
+<p>
+          <a class="button" href="ground-rent" id="next">Next</a>
+        </p>
+
+<!--         <p class="navigation"><a class="cancel" href="start">Cancel</a></p> -->
+
+      </form>
+      
+    </div>
+    
+  </div>
+  
+</main>
+
+{% endblock %}

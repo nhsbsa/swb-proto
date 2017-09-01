@@ -1,67 +1,79 @@
- {% extends 'templates/nhs_transaction_layout.html' %}
-{% import 'includes/form_macros.html' as form_macros %}
 
-{% block afterHeader %}
-  {% include "includes/service-headers/low-income.html" %}
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-  <h1 class="heading-large">
-      Do you pay any service charges where you live?
-  </h1>
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
 
-      <p>Select all service charges you pay</p>
+    {% if thirdparty %}
+      <h1 class="heading-large">Does {{firstname}} pay any service charges for {{data['address-lineone']}}?</h1>
+    {% else %}
+      <h1 class="heading-large">Do you pay any service charges for {{data['address-lineone']}}?</h1>
+    {% endif %}
+    </div>
 
-  <form action="" method="get" class="form">
-    <div class="form-item-wrapper">
-      <div class="form-group">
-        <input type="checkbox" id="management" name="services">
-        <label class="form-control-checkbox" for="management">
-          Maintenance of communal areas
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="checkbox" id="laundry" name="services">
-        <label class="form-control-checkbox" for="laundry">
-          Laundry premises or equipment
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="checkbox" id="sheltered" name="services">
-        <label class="form-control-checkbox" for="sheltered">
-          A warden service
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="checkbox" id="communal" name="services">
-        <label class="form-control-checkbox" for="communal">
-          A communal television service
-        </label>
-      </div>
-      <p class="form-block">or</p>
-      <div class="form-group">
-        <input type="checkbox" id="none" name="services">
-        <label class="form-control-checkbox" for="none">
-          I <span class="strong">do not</span> pay for any of these service charges
-        </label>
-      </div>
-    {{
-      form_macros.button({
-        href: 'council-tax',
-        label: 'Save and continue'
-      })
-    }}
+  <p>Select all service charges you pay</p>
+
+
+      <form action="service-handler" method="get" class="form">
+
+        <fieldset class="form-group">
+          <legend class="visually-hidden">
+            Do you pay any service charges for {address}
+          </legend>
+          <div class="multiple-choice multiple-radio">
+            <input id="shared" name="service" value="shared" type="checkbox">
+            <label for="shared">Cleaning, maintenance or gardening services for communal areas</label>
           </div>
-    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p>
-  </form>
-    </div>
-    </div>
-</main>
 
+          <div class="multiple-choice multiple-radio">
+            <input id="laundry" name="service" value="laundry" type="checkbox">
+            <label for="laundry">Laundry room</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="warden" name="service" value="warden" type="checkbox">
+            <label for="warden">Warden services</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="play" name="service" value="play" type="checkbox">
+            <label for="play">Children's play area</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="tv" name="service" value="tv" type="checkbox">
+            <label for="tv">Communal television area or lounge</label>
+          </div>
+          <p class="form-block">or</p>
+          <div class="multiple-choice multiple-radio">
+                <input id="no" type="checkbox" name="service" value="no">
+              <label for="no">No, I do not pay for any of these</label>
+          </div>
+
+        </fieldset>
+
+          <div class="form-group">
+        <input class="button" type="submit"  value="Next">
+      </div>
+        
+      </form>
+          
+    </div>
+      
+  </div>
+
+</main>
 {% endblock %}
+

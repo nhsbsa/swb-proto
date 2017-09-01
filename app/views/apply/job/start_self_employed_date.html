@@ -1,0 +1,61 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+<h1 class="heading-xlarge">Started self-employed work</h1>
+
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+    <form method="post">
+
+    <h2 class="heading-medium">Date job started?</h2>
+
+     <fieldset>
+        <legend class="visuallyhidden">Date job started?
+      </legend>
+      <div class="form-date">
+
+        <p class="form-hint">For example, 31 3 2015</p>
+
+        <div class="form-group form-group-day">
+          <label for="rel-end-day">Day</label>
+          <input class="form-control" name="job-start-day" id="job-start-day" type="number" pattern="[0-9]*" min="0" max="31" value="{{job-start-day}}">
+        </div>
+
+        <div class="form-group form-group-month">
+          <label for="rel-end-month">Month</label>
+          <input class="form-control" name="job-start-month" id="job-start-month" type="number" pattern="[0-9]*" min="0" max="12" value="{{job-start-month}}">
+        </div>
+
+        <div class="form-group form-group-year">
+          <label for="rel-end-year">Year</label>
+          <input class="form-control" name="job-start-year" id="job-start-year" type="number" pattern="[0-9]*" min="0" max="2015" value="{{job-start-year}}">
+        </div>
+      </div>
+
+    </fieldset>
+      
+      <br />
+
+       <input autocomplete="off" type="hidden" name="nextUrl" value="start_self_employed_profit">
+
+      <ul class="form-link-group">
+          <li><button type="submit" class="button">Continue</button></li>
+          <li><a href="javascript:history.go(-1)">Back</a></li>
+      </ul>
+    </form>
+
+  </div>
+
+  <div class="column-third">&nbsp;</div>
+</div>
+</main>
+{% endblock %}

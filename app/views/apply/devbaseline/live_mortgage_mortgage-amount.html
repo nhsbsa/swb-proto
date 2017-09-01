@@ -29,37 +29,38 @@
 How often do you pay your mortgage?</legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="yes" value="yes">
-              <label for="yes">Every week</label>
+              <input class="choose" id="everyweek" type="radio" name="optionsRadios" value="Every week">
+              <label for="everyweek">Every week</label>
             </div>
                         <div class="multiple-choice">
-              <input id="no" type="radio" name="no" value="no">
-              <label for="no">Every 2 weeks</label>
+              <input class="choose" id="every2week" type="radio" name="optionsRadios" value="Every 2 weeks">
+              <label for="every2week">Every 2 weeks</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="no" value="no">
-              <label for="no">Every 4 weeks</label>
+              <input class="choose" id="every4week" type="radio" name="optionsRadios" value="Every 4 weeks">
+              <label for="every4week">Every 4 weeks</label>
             </div>
                         <div class="multiple-choice">
-              <input id="yes" type="radio" name="yes" value="yes">
-              <label for="yes">Every calender month</label>
+              <input class="choose" id="everymonth" type="radio" name="optionsRadios" value="Every month">
+              <label for="everymonth">Every calender month</label>
             </div>
                         <div class="multiple-choice">
-              <input id="yes" type="radio" name="yes" value="yes">
-              <label for="yes">Once a year</label>
+              <input class="choose" id="everyyear" type="radio" name="optionsRadios" value="Every year">
+              <label for="everyyear">Once a year</label>
             </div>
-            
+  
           </fieldset>  
-          
+
+
 <br>
-          <label class="heading-medium" for="ni-number">
+          <label class="heading-medium" for="pay" id="cont">
   How much do you pay?
 </label><br>
 <p> Do include any endowment premiums linked to the mortgage.</p>
 
 <p>Do not include premiums for any other type of insurance, money you owe that should have been paid earlier, or any amount of mortgage that you are voluntarily overpaying. </p>
-<input class="form-control" style="margin-top: 10px" id="ni-number" type="text" name="ni-number">
+<input class="form-control" style="margin-top: 10px" id="pay" type="text" name="ni-number">
 <br><br><br>
           <div class="form-group">
             <input class="button" type="submit" href="#"  value="Next">
@@ -76,6 +77,26 @@ How often do you pay your mortgage?</legend>
 
   </div>
 </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$('input[name="optionsRadios"]').on('change', function(){
+    if ($(this).val()=='Every week') {
+         //change to "show update"
+         $("#cont").text("How much do you pay every week?");
+    } else if ($(this).val()=='Every 2 weeks') {
+         $("#cont").text("How much do you pay every 2 weeks?");
+    } else if ($(this).val()=='Every 4 weeks') {
+         $("#cont").text("How much do you pay every 4 weeks?");
+    }
+     else if ($(this).val()=='Every month') {
+         $("#cont").text("How much do you pay every month?");
+    }
+    else {
+         $("#cont").text("How much do you pay every year?");
+    }
+});
+</script>
 
 {% endblock %}
 

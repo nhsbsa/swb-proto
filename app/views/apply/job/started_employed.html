@@ -1,0 +1,131 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+        <h1 class="heading-xlarge">Started an employed job</h1>
+    <article class="uLined">
+        <!--  payments  -->
+                     <div class="grid-row">
+                                <div class="column-two-thirds">
+<div class="alert-panel">
+<p>You can only tell us about a job that is expected to <span style="font-weight:700">last more than 4 weeks</span> and has <span style="font-weight:700">started already</span> or that will <span style="font-weight:700">start in the next 7 days</span> </p>
+              </div>
+        <form method="post">
+
+ <div class="form-group inline">
+                            <legend class="form-label" style="font-weight:700">Is this job within the United Kingdom?</legend>
+                            <label class="block-label" for="job-uk-yes">
+                                <input id="job-uk-yes" name="job-uk" value="Yes" type="radio"> Yes
+                            </label>
+                            <label class="block-label" for="job-uk-no">
+                                <input id="job-uk-no" name="job-uk" value="No" type="radio" > No
+                            </label>
+                        </div>
+
+
+                                              <div class="form-group">
+                        <label class="form-label" for="employer-name" style="font-weight: 800">
+                            Employer name
+                        </label>
+                        <input autocomplete="off" class="form-control" type="text" id="employer-name" name="employer-name" value="{{employer-name}}">
+                    </div>
+
+
+
+                    <span class="form-label" style="font-weight:700">Employer's address</span>
+                    <div class="form-group">
+
+
+                        <label class="form-label" for="address1">Address line 1</label>
+                        <input autocomplete="off" class="form-control" id="address1" name="address1" value="{{address1}}" type="text"><br><br>
+                       <label class="form-label" for="address2">Address line 2</label>
+                        <input autocomplete="off" class="form-control" id="address2" name="address2" value="{{address2}}" type="text"><br><br>
+                        <label class="form-label" for="address3">Address line 3</label>
+                        <input autocomplete="off" class="form-control" id="address3" name="address3" value="{{address3}}" type="text"><br><br>
+                        <label class="form-label" for="address4">Address line 4</label>
+                        <input autocomplete="off" class="form-control" id="address4" name="address4" value="{{address4}}" type="text">
+                    </div>
+
+                    <div class="form-group">
+                     <label class="form-label" for="postcode">Postcode</label>
+                     <input autocomplete="off" class="form-control-1-8" id="postcode" name="postcode" value="{{postcode}}" type="text">
+                 </div>
+                           <!-- Job start date -->
+
+                    <fieldset id="job-start-date" class="form-group text">
+                        <br>
+                        <legend class="form-label" style="font-weight: 800">
+                            Date job started
+                            <span class="form-hint" style="font-weight:400; margin:0px">For example, 31 10 2014</span>
+                        </legend>
+                        <div class="form-date-group">
+                            <label class="form-label" for="job-start-day">Day</label>
+                            <input autocomplete="off" 
+                            class="form-control" 
+                            name="job-start-day" 
+                            id="job-start-day" 
+                            max="31" 
+                            maxlength="2" 
+                            type="number" 
+                            value="{{job-start-day}}" 
+                            placeholder="DD" 
+                            required>
+                        </div>
+                        <div class="form-date-group">
+                            <label class="form-label" for="job-start-month">Month</label>
+                            <input autocomplete="off" 
+                            class="form-control" 
+                            name="job-start-month" 
+                            id="job-start-month"
+                            max="12" 
+                            maxlength="2" 
+                            type="number" 
+                            value="{{job-start-month}}" 
+                            placeholder="MM" 
+                            required />
+                        </div>
+                        <div class="form-date-group date-year">
+                            <label class="form-label" for="job-start-year">Year</label>
+                            <input autocomplete="off" class="form-control" name="job-start-year" id="job-start-year" maxlength="4" type="number" value="{{job-start-year}}" placeholder="YYYY" required>
+                        </div>
+                    </fieldset>
+ <div class="form-group inline">
+                            <legend class="form-label" style="font-weight:700">Is this your main employer?</legend>
+                            <label class="block-label" for="main-employer-yer">
+                                <input id="main-employer-yes" name="main-employer" value="Yes" type="radio" > Yes
+                            </label>
+                            <label class="block-label" for="main-employer-no">
+                                <input id="main-employer-no" name="main-employer" value="No" type="radio" > No
+                            </label>
+                        </div>
+
+                    <!--  How many hours? -->
+                    <div class="form-group">
+                        <label class="form-label" for="hours" style="font-weight: 800">Total number of hours worked in a week
+                        </label>
+                        <input autocomplete="off" class="form-control form-control-1-8" type="text" id="hours" name="hours" value="{{hours}}">
+                    </div>
+
+                    <ul class="form-link-group">
+                        <li>
+                            <button class="button" type="submit">Continue</button>
+                        </li>
+                        <li><a href="/cofc/left-nav-1/indexv2#employmentDetails">Back</a></li>
+                    </ul>
+            
+                    <input autocomplete="off" type="hidden" name="referer" value={{referer}}>
+                </form>
+            </div>
+        </div>
+
+</article>
+
+    </main>
+{% endblock %}

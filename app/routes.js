@@ -145,7 +145,8 @@ router.get(/partner/, function (req, res) {
       if (benificiary.thirdParty == true) {
         res.render('/apply/you/contact-prefs', {
           thirdparty : benificiary.thirdParty,
-          firstname : benificiary.firstname
+          firstname : benificiary.firstname,
+
         });
       } else {
         res.redirect('/apply/you/contact-prefs');
@@ -266,7 +267,7 @@ router.get(/telephone-c-handler/, function (req, res) {
     router.get(/home-handler/, function (req, res) {
       if (req.query.home === 'own') {
         applicant.homeOwner = true;
-        res.redirect('../you/post-address');
+        res.redirect('../live/mortgaged/mortgage-question');
       } else if (req.query.home === 'rented') {
         applicant.tennant = true;
         res.redirect('../joint-tenant');
@@ -279,7 +280,43 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('../home');
       }
     });
+
+    // mortgaged-handler
+    router.get(/mortgaged-handler/, function (req, res) {
+      if (req.query.mortgaged === 'yes') {
+        res.redirect('../mortgage-amount');
+      } else {
+        res.redirect('../services');
+      }
+    });
+        // secured loan handler
+        router.get(/service-handler/, function (req, res) {
+      if (req.query.service === 'no') {
+        res.redirect('ground-rent');
+      } else {
+        res.redirect('services-amount');
+      }
+    });
+
+// secured loan handler
+        router.get(/sloan-handler/, function (req, res) {
+      if (req.query.sloan === 'yes') {
+        res.redirect('loan-frequency');
+      } else {
+        res.redirect('../services');
+      }
+    });
+
     
+    // // servcharge-handler
+    // router.get(/svcharge-handler/, function (req, res) {
+    //   if (req.query.svice === 'no') {
+    //     res.redirect('../ground-rent');
+    //   } else {
+    //     res.redirect('services-amount');
+    //   }
+    // });
+
     // capture address
     router.get(/homeadd-handler/, function (req, res) {
       if(req.query.linetwo === '') {
@@ -317,29 +354,27 @@ router.get(/telephone-c-handler/, function (req, res) {
     // mortgaged-handler
     router.get(/mortgaged2-handler/, function (req, res) {
       if (req.query.mortgaged === 'yes') {
-        res.redirect('../mortgage-frequency');
+        res.redirect('mortgage-frequency');
       } else {
         res.redirect('../../services');
       }
-    });
+    })
 
-    // mortgaged-handler
-    router.get(/mortgaged-handler/, function (req, res) {
-      if (req.query.mortgaged === 'yes') {
-        res.redirect('../mortgage-amount');
-      } else {
-        res.redirect('../../services');
-      }
-    });
 
-    // council-tax-handler 2
-    router.get(/ctax-handler/, function (req, res) {
-      if (req.query.counciltax === 'yes') {
-        res.redirect('../tax-amount');
-      } else {
-        res.redirect('../ground-rent');
-      }
-    });
+
+    
+
+
+
+
+    // // council-tax-handler 2
+    // router.get(/ctax-handler/, function (req, res) {
+    //   if (req.query.counciltax === 'yes') {
+    //     res.redirect('../tax-amount');
+    //   } else {
+    //     res.redirect('../ground-rent');
+    //   }
+    // });
     
      // council-tax-handler 2
     router.get(/taxfreq-handler/, function (req, res) {

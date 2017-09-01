@@ -1,0 +1,331 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+<div class="grid-row">
+	<!-- <div class="heading" style="padding-left:15px"> -->
+		
+		<div class="column-two-thirds">
+		<h1 class="heading-xlarge">How much do you estimate you will earn
+		at <span class="companyName">{{calculator-journey}}</span>?</h1>
+			<!--
+			<h2 class="heading-medium">When did you start this job?</h2>
+			<div class="form-group" style="margin-bottom:20px">
+				<input class="date-picker form-control" id="start_date" type=
+				"text" value="{{startDate}}">
+				<h2 class="heading-medium" style="margin:20px 0px 0px 0px">When
+				did this job end?</h2>
+			</div>
+			-->
+			<form method="post">
+				<!-- <p class="lede">You've told us that you started work on 1 December 2015 and now work 20 hours a week.</p>
+				<p>We will use this information to calculate your estimated earnings between the date you started work and 5 April 2016 or the work end date.</p> -->
+
+				<p id="calculation-paragraph" class="lede">You've told us that you started work on 1 December 2015 and now work 20 hours a week.</p>
+
+				<p></p>
+
+				<h2 class="heading-medium">
+				Do you want to base your estimate on how much you earn an hour, a week, a month or a year?
+				</h2>
+				<!-- <p style="margin:0 0 10 0px">Based on your:</p> -->
+				<fieldset>
+					<legend class="visuallyhidden">What pay do you want to use to work out your estimate?</legend>
+					<label class="block-label" style="font-weight:normal;"for=
+							"radio-inline-0"><input checked="checked" id=
+							"radio-inline-0" name="radio-group" type="radio" value=
+						"an hour">Hour</label>
+						<label class="block-label" style="font-weight:normal;" for="radio-inline-1"><input id=
+							"radio-inline-1" name="radio-group" type="radio" value=
+						"a week">Week</label>
+						<label class="block-label" style="font-weight:normal;" for=
+							"radio-inline-2"><input id="radio-inline-2" name=
+						"radio-group" type="radio" value="a month">Month</label>
+						<label class="block-label" style="font-weight:normal;" for="radio-inline-3"><input id="radio-inline-3" name=
+						"radio-group" type="radio" value="a year">Year</label>
+				</fieldset>
+
+				    <fieldset>
+
+				<h2 class="heading-medium" id="dt_title">How much do you get paid
+				<span id="frequency">hourly</span>?</h2>
+				<div>£ <input autocomplete=
+					"off" class="form-control" name="amount" id="amount" maxlength="12" style=
+				"display: inline-block;width:20%;" type="text"></div>
+
+				<br/>
+				<button class="button-blue" name="calculate" type="submit" value=
+				"next" id="calculate">Calculate</button>
+				<p id="calculation-text">
+					<table id="dt_table" style="display:none;">
+						<tbody>
+							<tr>
+								<td id="dt_howMuch_title"> How much you earn an hour</td>
+								<td style='text-align:right;padding-right:0;' id="dt_howMuch_value"> &pound;"+ amount.toFixed(2) + "</td>
+							</tr>
+							<tr>
+								<td id="dt_howMany_title">How many hours you work a week</td>
+								<td style='text-align:right;padding-right:0;' id="dt_howMany_value">+ hoursAWeek + "</td>
+							</tr>
+							<tr>
+								<td id="dt_howLong_title">Weeks until the end of the tax year</td>
+								<td style='text-align:right;padding-right:0;' id="dt_howLong_value">"+ Math.floor(weeksRemaining) + "</td>
+							</tr>
+								<tr>
+							<td style="font-size:19px;">
+							Estimated earnings for this job are</td>
+							<td style="font-size:19px;text-align:right;padding-right:0;">
+								<span id="income-summary">£0.00</span></td>
+						</tr>
+						</tbody>
+					</table>
+				</p>
+				<!-- <div class="taxable-income" id="taxable-income">
+					<div style=
+						"border-top:3px solid #000; border-bottom: 3px solid #000;overflow:hidden;">
+						<h2 class="heading-medium" style="float:left;margin-top:18px;">
+						Your estimated earnings for this job are:</h2>
+						<span id="estimate" class="estimate" style="float:right;display:block;margin-top:10px;">£0.00</span>
+					</div> -->
+				</p>
+				<input name="estimated-amount" id="estimated-amount" type="hidden" value={{estimated-amount}}>
+				<br>
+				<input name="nextUrl" value="estimated_income_from_2_jobs" type="hidden">
+				<button class="button" type="submit">Continue</button>
+				<!-- <input  id="continue" class="button" name="action" value="Continue" type="submit" > -->
+<!-- 				<table>
+					<tr>
+						<td>Your estimated earnings for this job are</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Hourly rate</td>
+						<td>£10x</td>
+					</tr>
+					<tr>
+						<td>Hours worked per week</td>
+						<td>45x</td>
+					</tr>	
+					<tr>
+						<td>Number of weeks from date job started to end of tax year</td>
+						<td>33</td>
+					</tr>
+					<tr>
+						<td>Total</td>
+						<td>£3545.00</td>
+					</tr>														
+				</table> -->			
+			</form>
+		</div>
+	<!-- </div> -->
+	<div class="column-third">
+		<!--
+		<div class="form-link-group">
+			<button class="button-blue" name="action" type="submit" value=
+			"next" id="add-job">+ Add another job</button>
+		</div>
+		-->
+	</div>
+</div>
+</main>
+
+<script src="/public/javascripts/bootstrap-datepicker.js"></script>
+<script src="/public/javascripts/moment.js"></script>
+<script>
+	var isAsda = {{asda}}
+	var jobEndDate = undefined;
+	var jobStartDate = undefined;
+	var hoursAWeek = {{empl-hours-a-week}};
+
+	var startAnnualPeriod = new Date(2016,03,05,0,0,0,0);
+	var endAnnualPeriod = new Date(2017,03,05,0,0,0,0);
+	var dateFormat = 'DD/MM/YYYY';
+	var displayFormat = "D MMMM YYYY";
+
+	$(document).ready(function(){
+		var jobCounter = 1;
+		var date = moment(jobStartDate).format(displayFormat);
+		//Change dates in first paragraph
+		if(isAsda){
+			$('#calculation-paragraph').text(
+				"You've told us that you started work on " +
+				 date + 
+				 " and now work " +hoursAWeek+ " hours a week. We will use this information to calculate your estimated earnings until 5 April 2017."
+			);
+		}else{
+			$('#calculation-paragraph').text(
+				"You have told us you work {{empl-hours-a-week}} hours a week. We will use the number of hours you work to calculate how much you will get paid from now until 5 April 2017."
+			);
+		}
+	
+		// Date pickers
+		$('#frequency').text($(':checked').val());
+		var nowTemp = new Date();
+		var checkin = $('.date-picker').datepicker({
+			onRender: function(date) {
+				return date.valueOf() < startAnnualPeriod.valueOf() || date.valueOf() > endAnnualPeriod.valueOf() ? 'disabled' : '';
+			}
+		}).on('changeDate', function(selection) { //needs to be reworked
+			if($("#start_date").valueOf() > selection.date.valueOf()) {
+				console.log("Start date preceeds end date");
+			}
+		});
+		//need two datepickers to check if the values are different
+		$('input[type=radio]').on('click', function(){
+			var value = $(this).val();
+			$('#frequency').text(value);
+		});
+		// Calc on calculate
+		$('#calculate').on('click', function () {
+			//Get all estimated earnings so far and fill in the last
+			var amountStr = $("#amount").val();
+			if(amountStr){
+				var start = getStartDateThisTaxYear();
+				var end = getEndDateThisTaxYear();
+				var calculation = calculateEarnings(start, end, parseFloat(amountStr))
+				var earnings = calculation[0];
+				var displayText = calculation[1];
+
+				console.log('start date: ' + start.format(dateFormat));
+				console.log('end date: ' + end.format(dateFormat));
+				console.log('earnings: ' + earnings);
+
+				$('#income-summary').each(function() {
+					var elem = $(this);
+					elem.text((function () {
+						return '£' + earnings.toFixed(2);
+					})());
+					$("#estimated-amount").val(earnings);
+				});
+				$('#calculation-text').html(displayText)
+				$("#continu").prop('disabled', false);
+			}
+		});
+		//Add a job
+		$('#add-job').on('click', function() {
+			if(jobCounter >= 10) {
+				alert("Too many jobs entered");
+			} else {
+				//Add another estimation field fwhen adding
+				addEstimationBlockOnAddJob()
+				//clear start and end dates and amount input field
+				clearInputOnAddJob();
+				jobCounter++;
+				$('#estimateearnings-job').text('Job ' + jobCounter);
+			}
+		});
+	});
+	//prevent form submission on calculate
+	$("#calculate").on('click', function(e){
+		e.preventDefault();
+	});
+
+	function calculateEarnings(startDate, endDate, amount) {
+		var freqType = $('input[name="radio-group"]:checked').val();
+		var daysInYear = moment(endDate).diff(startDate, 'days');
+		var amountADay;
+		var displayText;
+		$("#dt_table").show();
+		switch (freqType) {
+			case "an hour":
+				amountADay = amount * hoursAWeek / 7;
+				var weeksRemaining = daysInYear / 7;
+				$("#dt_howMuch_title").text("How much you earn an hour")
+				$("#dt_howMuch_value").text(amount.toFixed(2));
+
+				$("#dt_howMany_title").text("How many hours you work a week");
+				$("#dt_howMany_value").text(hoursAWeek);
+
+				$("#dt_howLong_title").text("Weeks until the end of the tax year");
+				$("#dt_howLong_value").text(Math.floor(weeksRemaining));
+				displayText  =""
+				break;
+			case "a week":
+				amountADay = amount / 7;
+				var weeksRemaining = Math.round(daysInYear / 7);
+				$("#dt_howMuch_title").text("How much you earn weekly")
+				$("#dt_howMuch_value").text(amount.toFixed(2));
+
+				$("#dt_howMany_title").text("How many hours you work a week");
+				$("#dt_howMany_value").text(hoursAWeek);
+
+				$("#dt_howLong_title").text("Weeks until the end of the tax year");
+				$("#dt_howLong_value").text(Math.floor(weeksRemaining));
+				displayText  =""
+				break;
+			case "a month":
+				amountADay = amount * 12 / 365;
+				var monthsRemaining = daysInYear * 12 / 365;
+				$("#dt_howMuch_title").text("How much you earn monthly")
+				$("#dt_howMuch_value").text(amount.toFixed(2));
+
+				$("#dt_howMany_title").text("How many hours you work a week");
+				$("#dt_howMany_value").text(hoursAWeek);
+
+				$("#dt_howLong_title").text("Months until the end of the tax year");
+				$("#dt_howLong_value").text(Math.floor(monthsRemaining));
+				displayText  =""
+				break;
+			case "a year":
+
+				amountADay = amount / 365;
+				var weeksRemaining = Math.round(daysInYear / 7);
+				$("#dt_howMuch_title").text("How much you earn a year")
+				$("#dt_howMuch_value").text(amount.toFixed(2));
+
+				$("#dt_howMany_title").text("How many hours you work a week");
+				$("#dt_howMany_value").text(hoursAWeek);
+
+				$("#dt_howLong_title").text("Weeks until the end of the tax year");
+				$("#dt_howLong_value").text(weeksRemaining);
+				displayText  =""
+				break;
+			default:
+				amountADay = 0;
+				displayText = "";
+				break;
+		}
+
+		// var displayFormat = "D MMMM YYYY";
+		// return [daysInYear * amountADay,
+		// 		displayText + " from " + startDate.format(displayFormat) + " to hello world" + endDate.format(displayFormat) + ")."];
+
+				return [daysInYear * amountADay, displayText];
+	}
+
+	//return momentjs date
+	function getStartDateThisTaxYear() {
+		return moment.max(moment(jobStartDate), moment(startAnnualPeriod));
+	}
+
+	//return momentjs date
+	function getEndDateThisTaxYear() {
+		var endDate;
+		if (jobEndDate) {
+			endDate = moment(jobEndDate);
+		} else {
+			endDate = moment("06/04/2017", dateFormat);
+		}
+		return moment.min(endDate, moment(endAnnualPeriod));
+	}
+
+	function clearInputOnAddJob() {
+		$('#start_date').val("");
+		$('#end_date').val("");
+		$('#amount').val(0);
+	}
+	function addEstimationBlockOnAddJob() {
+		var estimation = '<h2 class="heading-medium" style="border-top:3px solid #000; border-bottom: 3px solid #000;">Your estimated earnings for this job is:<br><span id="estimate" class="estimate">£0.00</span></h2>'
+		$('.taxable-income').append(estimation);
+	}
+	function annualEstimationDates() {
+	}
+</script>
+{% endblock %}

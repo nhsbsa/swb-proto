@@ -1,0 +1,174 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+    <div class="grid-row">
+         <div class="column-two-thirds">
+
+  <h1 class="heading-xlarge info-display">How much do you estimate you will earn from all jobs?
+  </h1>
+  <div id="employmentDetails" class="details-block" style="margin-top:50px;">
+  <form method="post">
+            <table>
+                <tbody>
+                    <!-- <tr>
+                        <td width="60%">Your total pay to date  in this tax year, from 6 April 2015 to - today’s date - (We got this amount from the payroll information all employers provide to HMRC) 
+                        </td>
+                        <td style="text-align:right;">£3,465</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Estimated earnings to the end of the tax year, 5 April 2016</td>
+                    </tr> -->
+</tr>  
+                    <tr><td colspan="2"><h2 class="heading-medium" style="padding:0; margin:0;">Actual amount received between<br /> 6 April and 22 June 2016</h2></td></tr>
+                    <tr id="tr-error-target">
+                        <td width="70%;" style="vertical-align: middle;" >
+                        <!-- <h2 style="font-size: 24px;margin-bottom: 0;">
+                        
+                        </h2> -->
+                        Pay received to date</td>
+                        <td>
+                        <span id="error-message" class="error-text" >Enter how much pay you have received to date</span>
+                        <span style="display: block;"> £ <input style="width: 80%;" 
+                        autocomplete="off" class="form-control" name="received-amount" id="received-amount" value="{{received-amount}}" maxlength="1000" type="text" placeholder="">
+                        </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="border-bottom:0;">
+                        <details role="group">
+        <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+          <span class="summary">How to work this out</span>
+        </summary>
+        <div class="panel panel-border-wide" id="details-content-0" aria-hidden="true">
+        <p>Check your latest payslip(s). Enter the amount shown for 'taxable pay to date', 'taxable income' or 'gross for tax'.</p>
+
+        
+
+        <p>Enter the total from all your employers.</p>
+
+        </div>
+    </details></td> 
+
+<tr><td colspan="2"><h2 class="heading-medium" style="padding:0; margin:0;">Estimated earnings between<br /> 23 June 2016 and 5 April 2017</h2></td></tr>
+
+                                        <tr>
+                        <td style="vertical-align: middle;">
+                        <!-- <h2 style="font-size: 24px;margin-bottom: 0;"></h2> -->
+                        <h3>Asda</h3>
+                        </td>
+                        <!-- <td style="text-align:right;">£{{estimated}}</td> -->
+                        <td>£ <input style="width: 80%;"
+                        autocomplete="off" class="form-control" name="asda-amount" id="asda-amount" value="{{asda-amount}}" maxlength="1000" type="text" placeholder="">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                        <h3>Tesco</h3></td>
+                        <td>
+                        <span id="simpleTesco" style="display:none">
+                            £{{tesco-amount}}
+                        </span>
+                        
+                        <span id="tescoInput" style="display:none">   
+                            £<input style="width: 80%;"
+                            autocomplete="off" class="form-control" name="tesco-amount" id="tesco-amount" value="{{tesco-amount}}" maxlength="1000" type="text" placeholder="">
+                        </span>
+                        <!-- <input 
+                        autocomplete="off" class="form-control" name="tesco-amount" id="tesco-amount" value="{{tesco-amount}}" maxlength="1000" type="text" placeholder="" disabled="0.00"> -->
+                        </td>
+                    </tr>                    
+<!--                     <tr>
+                        <td colspan="2">
+                        <a class="startLink" href="start-tesco" basicUrl="start-tesco">Work out your Tesco estimate</a></td>
+                    </tr>
+
+
+                        -->                                   
+                     <tr id="totalRow" style="display:none;">
+                        <td style="vertical-align: middle;">
+                        Estimated earnings from all jobs this tax year</td>
+                        
+                        <td>£ <input style="width: 80%;"
+                        autocomplete="off" class="form-control" name="total-amount" id="total-amount" maxlength="1000" type="text" placeholder="">
+                        </td>
+                    </tr>           
+                </tbody>
+            </table>
+             <ul class="form-link-group">
+
+        <li><button id="submitButton" class="button">Continue</button></li>
+    </ul>
+  </form>
+</div>
+</div>
+</main>
+<style type="text/css">
+    .error-notification{
+        border-left: solid 8px #B10E1E;
+    }
+    .error-text{
+        font-weight: 600;
+        color: #B10E1E;
+        display: none;
+    }
+</style>
+
+<script>
+    var inputs = $('input').not('#total-amount');
+    $(document).ready(function(){
+        inputs.keyup(calculate);
+        $("#submitButton").click(function(evt){
+            evt.preventDefault();
+            checkSubmit();
+        });
+        if($("#tesco-amount").val() == ""){
+            $("#simpleTesco").show();
+            $("#simpleTesco").append("0")
+        }else {
+            $("#tescoInput").show();
+            $('#totalRow').show()
+        }
+
+
+    });
+    function calculate() {
+        if($("#received-amount").val() != ""){
+            $(".startLink").each(function(){
+                var basicUrl = $(this).attr("basicUrl");
+                $(this).attr("href", basicUrl +"?received-amount="+$("#received-amount").val());
+            });
+        }
+        var total = 0;
+        inputs.each(function(index, element) {
+            total += parseInt(element.value) || 0;
+        });
+        $('#total-amount').val(total);
+    }
+    function checkSubmit(){
+        if($("#received-amount").val() == "0"){
+            showError();
+        }else {
+            submitForm();
+        }
+    }
+    function showError(){
+        $("#tr-error-target").addClass("error-notification");
+        $("#error-message").show()    
+    }
+    function submitForm(){
+        $("form").submit();
+
+    }
+    calculate();
+</script>
+{% endblock %}

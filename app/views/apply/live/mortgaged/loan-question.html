@@ -1,0 +1,61 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      {% if thirdparty %}
+      <h1 class="heading-large">Does {{firstname}} have a loan secured on {{data['address-lineone']}}?</h1>
+    {% else %}
+      <h1 class="heading-large">Do you have a loan secured on {{data['address-lineone']}}?</h1>
+    {% endif %}
+    </div>
+
+<p>A secured loan, also known as a homeowner loan, uses your property as security against the amount you borrow. This is different from a 'personal loan'.</p>
+
+  <form action="sloan-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+
+      <fieldset class="inline">
+            <legend class="visually-hidden">
+              Do you pay a mortgage for {{address}}?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="sloan" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="sloan" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+
+    </div>
+    <br><br>
+          <div class="form-group">
+        <input class="button" type="submit"  value="Next">
+      </div>
+
+<!-- 
+    <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p> -->
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

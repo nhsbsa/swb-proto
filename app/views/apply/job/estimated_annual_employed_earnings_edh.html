@@ -1,0 +1,65 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+    <div class="grid-row">
+         <div class="column-two-thirds">
+
+  <h1 class="heading-xlarge info-display">How much will you earn this tax year?
+  </h1>
+  <div id="employmentDetails" class="details-block" style="margin-top:50px;">
+  <form method="post">
+            <table>
+                <tbody>
+                    <tr>
+                        <td width="60%">Your total pay to date in this tax year, from 6 April 2016 to - today’s date - (We got this amount from the payroll information all employers provide to HMRC) 
+                        </td>
+                        <td style="text-align:right;">£3,465</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Estimated earnings to the end of the tax year, 5 April 2016</td>
+                    </tr>
+                    <tr>
+                        <td>ASDA</td>
+                        <td style="text-align:right;">£ <input 
+                        autocomplete="off" class="form-control" name="amount" id="amount" maxlength="12" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+            <a href="estimated_annual_employed_earnings_edh_hours_asda">Use a calculator to estimate your earnings from ASDA</a></td>
+                    </tr>
+                    <tr>
+                        <td>Tesco</td>
+                        <td style="text-align:right;">£ <input 
+                        autocomplete="off" class="form-control" name="amount" id="amount" maxlength="12" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+            <a href="estimated_annual_employed_earnings_edh_hours_tesco">Use a calculator to estimate your earnings from Tesco</a></td>
+                    </tr>                    
+                    <tr>
+                        <td>Total estimated earnings from all jobs for tax year 6 April 2015 to 5 April 2016</td>
+                        <td style="text-align:right;">£0,00</td>
+                    </tr>                    
+                </tbody>
+            </table>
+             <ul class="form-link-group">
+              <input autocomplete="off" type="hidden" name="nextUrl" 
+              value="deductions_edh">
+        <li><button type="submit" class="button">Continue</button></li>
+    </ul>
+  </form>
+</div>
+</div>
+</main>
+
+{% endblock %}

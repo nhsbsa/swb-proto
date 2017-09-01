@@ -1,0 +1,63 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+<h1 class="heading-xlarge">Who is your employer?</h1>
+
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+
+
+  <form method="post">
+    <fieldset>
+<div class="form-group">
+<label class="form-label" for="employer-name">
+Employer's name
+</label>
+<input autocomplete="off" class="form-control" type="text" id="employer-name" name="employer-name" value="{{employer-name}}">
+</div>
+<!-- <span class="form-label">Employer's address</span>
+<br />
+<div class="form-group">
+<label class="form-label" for="address1">Address line 1</label>
+<input autocomplete="off" class="form-control" id="address1" name="address1" value="{{address1}}" type="text"><br><br>
+<label class="form-label" for="address2">Address line 2</label>
+<input autocomplete="off" class="form-control" id="address2" name="address2" value="{{address2}}" type="text"><br><br>
+<label class="form-label" for="address3">Address line 3</label>
+<input autocomplete="off" class="form-control" id="address3" name="address3" value="{{address3}}" type="text"><br><br>
+<label class="form-label" for="address4">Address line 4</label>
+<input autocomplete="off" class="form-control" id="address4" name="address4" value="{{address4}}" type="text">
+</div>
+
+<div class="form-group">
+<label class="form-label" for="postcode">Postcode</label>
+<input autocomplete="off" class="form-control-1-8" id="postcode" name="postcode" value="{{postcode}}" type="text">
+</div> -->
+</fieldset>
+
+      
+      <br />
+
+      <input autocomplete="off" type="hidden" name="nextUrl" 
+      value="start_a_job_calculator">
+
+      <ul class="form-link-group">
+          <li><button type="submit" class="button">Continue</button></li>
+      </ul>
+    </form>
+
+  </div>
+
+  <div class="column-third">&nbsp;</div>
+</div>
+</main>
+
+{% endblock %}

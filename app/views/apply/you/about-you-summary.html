@@ -21,10 +21,11 @@
       </h1>
     </div>
 
-    { if thirdparty }
+    {% if thirdparty %}
       <h3 class="heading-medium" style="margin-top:0; padding-top:0">{firstname} personal details</h3>
-    { else }
+    {% else %}
     <h3 class="heading-medium" style="margin-top:0; padding-top:0">Your personal details</h3>
+        {% endif %}
        
     <table id="review-table-one">
 <!--      <tr>
@@ -63,7 +64,7 @@
 
 <br><br>
         <p>
-          <a class="button" href="../lis-check-list-2" id="next">Next</a>
+          <a class="button" href="../design-sprints/sprint21/check-list_where-you-live" id="next">Next</a>
         </p>
 
 

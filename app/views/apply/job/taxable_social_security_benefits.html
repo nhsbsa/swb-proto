@@ -1,0 +1,220 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+<!--<h2 class="heading-medium line-heading">for 6 April 2015 to 5 April 2016</h2>-->
+
+
+  <div class="grid-row">
+         <div class="column-two-thirds">
+
+         <h1 class="heading-xlarge">
+Which taxable benefits will you receive and how much do you estimate you will get this tax year?
+</h1>
+          <p>Estimate how much you expect to receive between 6 April 2015 and 5 April 2016.</p>
+  <form action="" method="post" class="form">
+    <div class="form-group" id="benefits">
+      <fieldset>
+
+       <!--  <legend class="form-label-bold">
+            From 6 April 2015 to {{date}} what were your deductions?
+            <span class="form-hint">Select all that are relevant to you and then enter the amount.</span>
+        </legend>
+<br> -->
+
+        <!-- Contribution-based Employment and Support Allowance -->
+
+        <label class="block-label" for="contribution-based" class="text">
+            <input autocomplete="off" id="contribution-based" type="checkbox" name="contribution-based" value="true" 
+            data-prog-reveals="contribution-based-value">
+            Contribution-based Employment and Support Allowance
+        </label>
+
+        <div class="progressive-fields panel-indent" id="contribution-based-value">
+<!-- <p></p> -->
+          <label class="form-hint visuallyhidden">Enter amount
+          </label>
+          £ <input class="form-control-1-8" type="text" name="contribution-based-value" autocomplete="off">
+        </div>
+
+        <!-- Carer’s Allowance -->
+
+        <label class="block-label" for="carers-allowance" class="text">
+            <input autocomplete="off" id="carers-allowance" type="checkbox" name="carers-allowance" value="true" data-prog-reveals="carers-allowance-value">
+            Carer’s Allowance
+        </label>
+
+        <div class="progressive-fields panel-indent" id="carers-allowance-value">
+<!-- <p>Estimate how much you expect to receive   between 6 April 2015 and 5 April 2016.</p> -->
+          <label class="form-hint visuallyhidden">Enter amount
+          </label>
+          £ <input class="form-control-1-8" type="text" name="carers-allowance-value" autocomplete="off">
+        </div>
+
+        <!-- Contribution-based Jobseeker’s Allowance -->
+
+        <label class="block-label" for="jobseekers-allowance" class="text">
+            <input autocomplete="off" id="jobseekers-allowance" type="checkbox" 
+            name="jobseekers-allowance" value="true" 
+            data-prog-reveals="jobseekers-allowance-value">
+            Contribution-based Jobseeker’s Allowance
+        </label>
+
+        <div class="progressive-fields panel-indent" 
+        id="jobseekers-allowance-value">
+<!-- <p></p> -->
+
+          <label class="form-hint visuallyhidden">Enter amount
+          </label>
+          £ <input class="form-control-1-8" type="text" 
+          name="jobseekers-allowance-value" autocomplete="off">
+        </div>  
+
+        <!-- Bereavement Allowance -->
+
+        <label class="block-label" for="bereavement-allowance" class="text">
+            <input autocomplete="off" id="bereavement-allowance" type="checkbox" name="bereavement-allowance" value="true" 
+            data-prog-reveals="bereavement-allowance-value">
+            Bereavement Allowance
+        </label>
+
+        <div class="progressive-fields panel-indent" id="bereavement-allowance-value">
+          <label class="form-hint visuallyhidden">Enter amount
+          </label>
+          £ <input class="form-control-1-8" type="text" 
+          name="bereavement-allowance-value" autocomplete="off">
+        </div>
+
+        <!-- Incapacity Benefit -->
+        <label class="block-label" for="incapacity-benefit" class="text">
+            <input autocomplete="off" id="incapacity-benefit" type="checkbox" 
+            name="incapacity-benefit" value="true" 
+            data-prog-reveals="incapacity-benefit-value">
+            Incapacity Benefit paid after the first 28 weeks of incapacity (do not include Incapacity Benefit if you claimed before 1995 and have got it ever since)
+        </label>
+
+        <div class="progressive-fields panel-indent" id="incapacity-benefit-value">
+          <label class="form-hint visuallyhidden">Enter amount
+          </label>
+          £ <input class="form-control-1-8" type="text" name="incapacity-benefit-value" autocomplete="off">
+        </div>
+
+
+        <!-- Taxable Income Support -->
+        <label class="block-label" for="taxable-income-support">
+          <input autocomplete="off" id="taxable-income-support" type="checkbox" name="taxable-income-support" value="true" 
+          data-prog-reveals="taxable-income-support-value">
+          Taxable Income Support (this only applies if you were in a couple, and the person getting Income Support was on strike)
+        </label>
+
+        <div class="progressive-fields panel-indent" 
+        id="taxable-income-support-value">
+          <label class="form-hint visuallyhidden">Enter amount</label>
+          £ <input class="form-control-1-8" type="text" 
+          name="taxable-income-support-value" autocomplete="off">
+        </div>
+
+      </fieldset>
+          </div>
+          
+         <!--  <input type="hidden" autocomplete="off" name="nextUrl" 
+          value="estimated_income_from_2_jobs_edh"> -->
+
+   
+      <!-- </div> -->
+
+<!-- <div class="column-third"> -->
+
+
+ <table style="margin-bottom: 30px;">
+    <tbody>
+                                  <!-- <tr style="border-top:3px solid #000; border-bottom: 3px solid #000;">
+                     <td style="font-weight: 700">
+                    Estimated income from 06 April 2015 to {{date}}</td>
+                    <td style="font-weight: 700">£<span id="income-summary">{{income}}
+                    </span></td>
+      </tr> -->
+        <tr style="border-top:3px solid #000;
+                   border-bottom: 3px solid #000">
+        <!-- <td style="font-weight: 700">Estimated deductions from 6 April 2015 to {{date}}</td> -->
+        <td style="font-weight: 700">
+
+
+
+        Total taxable benefits received from 6 April 2015 to 5 April 2016</td>
+
+        
+        <td style="font-weight: 700">£<span id="deduction-summary">{{deduction}}</span></td>
+      </tr>
+
+        </tbody>
+      </table>
+
+
+ <ul class="form-link-group">
+ <!-- <input autocomplete="off" type="hidden" name="nextUrl" 
+ value="estimated_income_from_2_jobs_edh"> -->
+        <li><button type="submit" class="button">Continue</button></li>
+    </ul>
+  </form>
+
+</div>
+
+</div>
+
+</main>
+
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var $incSummary = $("#deduction-summary");
+      var incomeSummary = parseInt($incSummary.text());
+      if(isNaN(incomeSummary)){
+         incomeSummary = 0;
+       }
+      var $incValues = $('div')
+        .filter(function() {
+            return this.id.match(/.+-value/);
+        });
+      var $incCheckboxes = $("input[type=checkbox]");
+      var $allowedExtra = $('#allowed-extra');
+      var test = incomeSummary;
+      var update = function() {
+        var incomeTotal = test;
+        $incValues.each(function(i, e) {
+          var count = parseInt($(e).find("input").val());
+          if ($($incCheckboxes[i]).is(":checked") && !isNaN(count)) incomeTotal += count;
+        });
+
+
+
+      $incSummary.text(incomeTotal);
+    };
+
+      update();
+
+      $incCheckboxes.on("click", function() {
+        var id = $(this).attr("id")
+        if (!$(this).is(":checked")) {
+          $("#" + id + "-value").css('display', 'none');
+        } else {
+          $("#" + id + "-value input").focus();
+        }
+
+        update();
+      });
+
+      $incValues.on("keyup", function() {
+        update();
+      });
+    });
+  </script>
+{% endblock %}

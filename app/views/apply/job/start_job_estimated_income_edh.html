@@ -1,0 +1,41 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+  
+<div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge info-display">
+        Your estimated income
+        </h1>
+        <p class="lede">Based on the information HMRC hold on you. We estimated your taxable income until the end of the tax year 16 April 2016 to be:</p>
+        <form method="post">
+            <fieldset>
+                <legend class="visuallyhidden">
+                Your estimated income
+                </legend>
+                <div class="form-group">
+                    <p class="form-hint">Copy TBC - Applicant can overwrite this amount if they don't agree with it.</p>
+                    <input autocomplete="off" class="form-control-1-8" type="text" id="hours" name="hours" value="{{hours}}"
+                    placeholder="£1234">
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="button" type="submit">Continue</button>
+            </div>
+            <input autocomplete="off" type="hidden" name="nextUrl"
+            value="deductions_edh">
+        </form>
+    </div>
+    <div class="column-third"></div>
+</div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+    <div class="grid-row">
+         <div class="column-two-thirds">
+
+  <h1 class="heading-xlarge info-display">How much do you estimate you will earn from all jobs?
+  </h1>
+  <div id="employmentDetails" class="details-block" style="margin-top:50px;">
+  <form method="post">
+            <table>
+                <tbody>
+                    <!-- <tr>
+                        <td width="60%">Your total pay to date  in this tax year, from 6 April 2015 to - today’s date - (We got this amount from the payroll information all employers provide to HMRC) 
+                        </td>
+                        <td style="text-align:right;">£3,465</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Estimated earnings to the end of the tax year, 5 April 2016</td>
+                    </tr> -->
+                    <tr>
+                        <td width="60%;">
+                        <h2 style="font-size: 24px;margin-bottom: 0;">Total pay received to date </h2>
+                        From 6 April to 11 May 2016
+                        <!-- <span class="form-hint">(you will find this on your latest payslip)</span> -->
+                            
+
+                        </td>
+                        <td style="text-align:right;vertical-align: bottom;">£ <input 
+                        autocomplete="off" class="form-control" name="received-amount" id="received-amount" value="{{received-amount}}" maxlength="1000" type="text" placeholder=""></td>
+                    </tr>
+
+                                        <tr>
+                        <td colspan="2">
+                        <details role="group">
+        <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+          <span class="summary">How to work this out</span>
+        </summary>
+        <div class="panel panel-border-wide" id="details-content-0" aria-hidden="true">
+        <p>Check your latest payslip(s). Look for the taxable pay to date or taxable income or gross for tax amount. </p>
+
+        <p>Enter the total from all your employers.</p>
+
+        </div>
+    </details></td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <h2 style="font-size: 24px;margin-bottom: 0;">Tesco </h2>
+                        Estimated earnings between now and the end of the tax year</td>
+                        <td style="text-align:right;vertical-align: bottom;">£ <input 
+                        autocomplete="off" class="form-control" name="tesco-amount" id="tesco-amount" value="{{tesco-amount}}" maxlength="1000" type="text" placeholder="">
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td colspan="2">
+                        <a href="start-tesco">Use a calculator to work out this estimate</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                        <h2 style="font-size: 24px;margin-bottom: 0;">Asda</h2>
+                        Estimated earnings between now and the end of the tax year</td>
+                        <!-- <td style="text-align:right;">£{{estimated}}</td> -->
+                        <td style="text-align:right;vertical-align: bottom;">£ <input 
+                        autocomplete="off" class="form-control" name="asda-amount" id="asda-amount" value="{{asda-amount}}" maxlength="1000" type="text" placeholder="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                        <a href="start-asda">Use a calculator to work out this estimate</a></td>
+                    </tr>                    
+                    <tr>
+                        <td>
+                        <h2 style="font-size: 24px;margin-bottom: 0;">Total estimated earnings</h2>
+                         From all jobs for tax year 6 April 2016 to 5 April 2017</td>
+                        <!-- <td style="text-align:right;">£{{estimatedTotal}}</td> -->
+                        <td style="text-align:right;vertical-align: bottom;">£ <input 
+                        autocomplete="off" class="form-control" name="total-amount" id="total-amount" maxlength="1000" type="text" placeholder="">
+                        </td>
+                    </tr>                    
+                </tbody>
+            </table>
+             <ul class="form-link-group">
+              <input autocomplete="off" type="hidden" name="nextUrl"
+              value="deductions">
+        <li><button type="submit" class="button">Continue</button></li>
+    </ul>
+  </form>
+</div>
+</div>
+</main>
+
+<script>
+    var inputs = $('input').not('#total-amount');
+    $(document).ready(function(){
+        inputs.keyup(calculate);
+    });
+    function calculate() {
+        var total = 0;
+        inputs.each(function(index, element) {
+            total += parseInt(element.value) || 0;
+        });
+        $('#total-amount').val(total);
+    }
+    calculate();
+</script>
+{% endblock %}

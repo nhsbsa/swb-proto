@@ -1,0 +1,53 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+
+  <h1 class="heading-xlarge">Is this work employed or self-employed?</h1>
+    <form method="post">
+
+    <!-- <h2 class="heading-medium"></h2> -->
+    <fieldset>
+
+      <legend class="visuallyhidden">Is this work employed or self-employed?
+      </legend>
+
+      <label class="block-label" for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group"
+        value="Employed|nextUrl=start_a_job_is_it_temporary">
+        Employed
+      </label>
+      <label class="block-label" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" 
+        value="Self-employed|nextUrl=start_self_employed_profit">
+        Self-employed
+      </label>
+    </fieldset>
+      
+      <br />
+
+      <input autocomplete="off" type="hidden" name="nextUrl" value="start_a_job_is_it_temporary">
+
+      <ul class="form-link-group">
+          <li><button type="submit" class="button">Continue</button></li>
+      </ul>
+    </form>
+
+  </div>
+
+  <div class="column-third">&nbsp;</div>
+</div>
+</main>
+{% endblock %}

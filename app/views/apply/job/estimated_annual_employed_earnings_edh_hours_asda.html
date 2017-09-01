@@ -1,0 +1,54 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+               <h1 class="heading-xlarge info-display">How many hours do you work a week at Asda?
+    </h1>
+
+           <p class="lede">If your hours change every week, enter the number of hours you normally work.</p>
+
+        <p>If you:</p>
+
+          <ul class="list-bullet">
+            <li>are a seasonal worker, enter the number of hours you work at the moment</li>
+            <li>work term-time only, enter how many hours you work each week during the term</li>
+            <li>work for an employment agency, agree how many hours you normally work with your employer</li>
+          </ul>
+            <form method="post">
+
+            <fieldset>
+            <legend class="visuallyhidden">How many hours do you now work a week?</legend>
+
+
+                <div class="form-group">
+                <span class="form-hint">Include overtime, but not any time taken for unpaid breaks.</span>
+                    <input autocomplete="off" class="form-control-1-8" type="text" id="hours" name="hours" value="{{hours}}"
+                    placeholder="">
+                </div>
+            </fieldset>
+
+
+
+                <div class="form-group">
+                    <button class="button" type="submit">Continue</button>
+                </div>
+
+                <input autocomplete="off" type="hidden" name="nextUrl" value="estimated_annual_employed_earnings_edh_calculator_asda">
+            </form>
+        </div>
+        <div class="column-third"></div>
+    </div>
+
+</main>
+{% endblock %}

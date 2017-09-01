@@ -1,0 +1,53 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+<h1 class="heading-xlarge info-display">How much will you earn?
+    </h1>
+    <div class="grid-row">
+   <div class="column-two-thirds">
+
+   <p class="lede">
+                 Tell us your estimated earnings between <span style="font-weight:bold">6 April 2015 and 5 April 2016</span>.</p>
+
+                  <p>You can enter your own estimated amount or use our calculator to help work it out for you.</p>
+
+               <form method="post">
+
+               <div class="form-group">
+
+      <label class="block-label" for="calculator-start-job">
+        <input id="calculator-start-job" name="nextUrl" value="../../sprint-26/income/calc_start_a_job" type="radio">
+        Use the calculator to help estimate my earnings
+      </label>
+      <label class="block-label" for="estimate-earnings-input">
+        <input id="estimate-earnings-input" name="nextUrl" value="start_job_estimated_earnings_manual" type="radio">
+        I know my annual figure
+      </label>
+
+    </fieldset>
+    </div>
+
+
+                <div class="form-group">
+                    <button class="button" type="submit">Continue
+                    </button>
+                </div>
+            </form>
+
+            <ul class="form-link-group" style="margin-top:2em;">
+                <li><a href="javascript:history.go(-1)">Back</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+</main>
+{% endblock %}

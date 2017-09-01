@@ -1,0 +1,42 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">What do you need to tell us?</h1>
+      <form method="post">
+        <fieldset>
+          <legend class="visuallyhidden">What do you need to tell us?</legend>
+          <label class="block-label" for="started-a-job">
+            <input id="started-a-job" value="started a job|nextUrl=start_a_job_have_benefits_ended" name="work-change-options" type="radio">
+            You've started paid work
+          </label>
+          <label class="block-label" for="end-a-job">
+            <input id="end-a-job" value="ended a job|nextUrl=end_job_date" name="work-change-options" type="radio">
+            You’ve ended all paid work
+          </label>
+          <label class="block-label" for="change-hours">
+            <input id="change-hours" value="change work hours|nextUrl=#" name="work-change-options" type="radio">
+            Change to an existing job
+          </label>
+        </label>
+      </fieldset>
+      <br />
+      
+     <div class="form-group">
+        <input class="button" type="submit"  value="Next">
+      </div>
+    </form>
+  </div>
+</div>
+</main>
+{% endblock %}

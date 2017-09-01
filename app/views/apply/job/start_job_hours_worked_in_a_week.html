@@ -1,0 +1,87 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            <h1 class="heading-xlarge info-display">
+               How many hours a week do you expect to work<span id="companySentence"> at <span class="companyName">{{calculator-journey}}</span></span>?
+            </h1>
+
+           <p class="lede">Enter the number of hours you will normally work.
+           </p>
+    <details role="group">
+        <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+          <span class="summary">Help to work out your normal hours</span>
+        </summary>
+        <div class="panel panel-border-wide" id="details-content-0" aria-hidden="true">
+        <p>Term-time only workers, enter the number of hours you work each week during the term.</p>
+
+<p>Seasonal workers, enter the hours you work now.</p>
+
+<p>Employment agency workers, agree the hours with the agency.</p>
+
+<p>Zero hour or variable hour contract, estimate how many hours you will work. Wait until you have worked a few weeks, see how many hours a week you normally work, then you can update this.</p>
+        </div>
+    </details>
+
+    
+
+
+
+<p>You must include regular overtime but not unpaid breaks and enter hours only. For example, if you normally work between 22 and 23 hours a week, enter 22. </p>
+
+
+            <form method="post">
+
+            <fieldset>
+            <legend class="visuallyhidden">How many hours do you now work a week?</legend>
+
+
+                <div class="form-group">
+                <!-- <label><span class="form-hint">.</span></label> -->
+                    <input autocomplete="off" class="form-control-1-8" type="text" id="hours" name="hours" 
+                    {{#tesco}}
+                        value="{{empl-hours-a-week-tesco}}"
+                    {{/tesco}}
+                    {{#asda}}
+                        value="{{empl-hours-a-week-asda}}"
+                    {{/asda}}
+                    placeholder="">
+                </div>
+            </fieldset>
+
+
+
+                <div class="form-group">
+                    <button class="button" type="submit">Continue</button>
+                </div>
+            </form>
+        </div>
+        <div class="column-third"></div>
+    </div>
+
+</main>
+
+<script>
+    var newEmployerName = {{employer-name}}
+    $(document).ready(function(){
+        var companyName =  $(".companyName").text()
+        if(companyName == newEmployerName){
+            $("#companySentence").hide();
+        }
+    });
+</script>
+{% endblock %}
+
