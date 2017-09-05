@@ -32,33 +32,33 @@
           <legend class="visually-hidden">
             Do you pay any service charges for {address}
           </legend>
-          <div class="multiple-choice multiple-radio">
-            <input id="shared" name="service" value="shared" type="checkbox">
+          <div class="multiple-choice multiple-radio ">
+            <input class="example" id="shared" name="service" value="shared" type="checkbox">
             <label for="shared">Cleaning, maintenance or gardening services for communal areas</label>
           </div>
 
-          <div class="multiple-choice multiple-radio">
-            <input id="laundry" name="service" value="laundry" type="checkbox">
+          <div class="multiple-choice multiple-radio example">
+            <input class="example" id="laundry" name="scharge" value="laundry" type="checkbox">
             <label for="laundry">Laundry room</label>
           </div>
 
-          <div class="multiple-choice multiple-radio">
-            <input id="warden" name="service" value="warden" type="checkbox">
+          <div class="multiple-choice multiple-radio example">
+            <input class="example" id="warden" name="scharge" value="warden" type="checkbox">
             <label for="warden">Warden services</label>
           </div>
 
-          <div class="multiple-choice multiple-radio">
-            <input id="play" name="service" value="play" type="checkbox">
+          <div class="multiple-choice multiple-radio example">
+            <input class="example" id="play" name="scharge" value="play" type="checkbox">
             <label for="play">Children's play area</label>
           </div>
 
-          <div class="multiple-choice multiple-radio">
-            <input id="tv" name="service" value="tv" type="checkbox">
+          <div class="multiple-choice multiple-radio example">
+            <input class="example" id="tv" name="scharge" value="tv" type="checkbox">
             <label for="tv">Communal television area or lounge</label>
           </div>
           <p class="form-block">or</p>
-          <div class="multiple-choice multiple-radio">
-                <input id="no" type="checkbox" name="service" value="no">
+          <div class="multiple-choice multiple-radio example">
+                <input class="example" id="no" type="checkbox" name="scharge" value="no">
               <label for="no">No, I do not pay for any of these</label>
           </div>
 
@@ -67,7 +67,7 @@
           <div class="form-group">
         <input class="button" type="submit"  value="Next">
       </div>
-        
+
       </form>
           
     </div>
@@ -75,5 +75,13 @@
   </div>
 
 </main>
+
+<script>
+$('input.example').on('change', function() {
+    $('input.example').not(this).prop('checked', false);  
+});
+</script>
+
+
 {% endblock %}
 

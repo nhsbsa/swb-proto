@@ -289,16 +289,18 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('../services');
       }
     });
-        // secured loan handler
+
+   // service handler
         router.get(/service-handler/, function (req, res) {
-      if (req.query.service === 'no') {
+          console.log(req.query);
+      if (req.query.service == 'no') {
         res.redirect('ground-rent');
       } else {
         res.redirect('services-amount');
       }
     });
 
-// secured loan handler
+  // secured loan handler
         router.get(/sloan-handler/, function (req, res) {
       if (req.query.sloan === 'yes') {
         res.redirect('loan-frequency');
@@ -307,15 +309,10 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     });
 
-    
-    // // servcharge-handler
-    // router.get(/svcharge-handler/, function (req, res) {
-    //   if (req.query.svice === 'no') {
-    //     res.redirect('../ground-rent');
-    //   } else {
-    //     res.redirect('services-amount');
-    //   }
-    // });
+
+
+
+
 
     // capture address
     router.get(/homeadd-handler/, function (req, res) {
@@ -335,13 +332,7 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('../joint-tenant');
       }
     });
-    
-    // router.get(/loan/, function (req, res) {
-    //   sprint = req.url.charAt(5);
-    //   res.render('lis/' + sprint + '/live/mortgaged/loan', {
-    //     'partnerortext' : partnerOrText
-    //   });
-    // });
+
 
     // home
     router.get(/your-home/, function (req, res) {

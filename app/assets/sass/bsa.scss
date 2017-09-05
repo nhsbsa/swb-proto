@@ -29,6 +29,45 @@ $nhs-blue: #005EB8;
   }
 }
 
+#global-header-staff .header-wrapper {
+    background: transparent;
+}
+#global-header-staff .header-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#global-header-staff .header-wrapper {
+    background-color: $nhs-blue;
+    max-width: 990px;
+    margin: 0 auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#global-header-staff {
+    background-color: $nhs-blue;
+    width: 100%;
+    padding:15px
+}
+  .header-wrapper-staff {
+    background-color: $nhs-blue;
+    max-width: 990px;
+    margin: 0 auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#proposition-name {
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    }
+
+
 //done-page
 
 .done-panel {
@@ -480,3 +519,5 @@ $task-list-indent: 35px;
   }
   margin: 40px 0 23px 0;
 }
+
+
