@@ -1,0 +1,93 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {{firstname}} pay for any of these on top of your rent?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Are you paying for any of these on top of your rent or mortgage?</h1>
+                 {% endif %}
+            </header>
+
+  <p>Select all things you pay for separately</p>
+
+
+      <form action="additions" method="get" class="form">
+
+        <fieldset class="form-group">
+          <legend class="visually-hidden">
+            Are you paying for any of these separately from your rent?
+          </legend>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="email" name="contact" value="email" type="checkbox">
+            <label for="email">Ground rent<br><span style="font-size: 12pt">This is usually paid if you have a 'leasehold' property</label>
+          </div>
+          <div class="multiple-choice multiple-radio" style="line-height: 110%; padding-bottom: 1em; padding-top: 0.8em">
+            <input id="email" name="contact" value="email" type="checkbox">
+            <label for="email" style="font-weight: bold">A loan to adapt your home for accessibility<br><br><span style="font-size: 12pt; font-weight: 400">This is a loan for things like widening doorways or installing ramps, to make your home more accessible for people who live with you.</span></label>
+          </div>
+
+                    <div class="multiple-choice multiple-radio">
+            <input id="email" name="contact" value="email" type="checkbox">
+            <label for="email">Cleaning, maintenance or gardening services for communal areas</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="phone" name="contact" value="phone" type="checkbox">
+            <label for="phone">Laundry room</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="contact" value="text" type="checkbox">
+            <label for="text">Warden services</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="contact" value="text" type="checkbox">
+            <label for="text">Children's play area</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="contact" value="text" type="checkbox">
+            <label for="text">Communal television area or lounge</label>
+          </div>
+
+
+          <p class="form-block">or</p>
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="contact" value="text" type="checkbox">
+            <label for="text">No, I do not pay for any of these</label>
+          </div>
+
+        </fieldset>
+
+              
+          <div>
+
+          </div>
+
+        <div class="form-group">
+          <input class="button" value="Next" type="submit">
+        </div>
+      </form>
+              <!-- <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p> -->
+          
+    </div>
+      
+  </div>
+
+</main>
+{% endblock %}

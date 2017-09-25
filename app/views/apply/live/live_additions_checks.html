@@ -1,0 +1,153 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+.block-label {
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+  background: #dee0e2;
+  border: 1px solid #dee0e2;
+  padding: 18px 30px 15px 54px;
+  margin-bottom: 10px;
+  cursor: pointer; }
+  @media (min-width: 641px) {
+    .block-label {
+      float: left; } }
+  .block-label input {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    margin: 0;
+    width: 29px;
+    height: 29px; }
+  .block-label:hover {
+    border-color: #0b0c0c; }
+
+
+.block-label:last-child {
+  margin-bottom: 0; }
+
+
+  .block-label [type="checkbox"] + label::before {
+    content: "";
+    border: 2px solid black;
+    background: transparent;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 0;
+    left: 0; 
+  -moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;}
+
+.inline .block-label {
+  clear: none;
+  margin-right: 10px; }
+
+.js-enabled label.selected {
+  background: #fff;
+  border-color: #0b0c0c; }
+
+.js-enabled label.focused {
+  outline: 3px solid #ffbf47; }
+
+.js-enabled .focused input:focus {
+  outline: none; }
+ }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
+  </style>
+
+
+
+
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {{firstname}} pay for any of these on top of your rent?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Are you paying for any of these on top of your rent or mortgage?</h1>
+                 {% endif %}
+            </header>
+
+  <p>Select all things you pay for separately</p>
+
+
+     
+
+
+        <form class="form" method="post" novalidate="novalidate">
+
+                <input name="next-page" value="check-your-answers" type="hidden">
+
+                <fieldset>
+                    <legend class="visuallyhidden">What do you need to register?</legend>
+                    <div class="form-group">
+                        <label class="block-label" for="asp">
+                            <input id="asp" name="activities" value="0" type="checkbox" style="border: 2px >Accountancy services
+                        </label>
+
+                        <label class="block-label" for="bps">
+                            <input id="bps" name="activities" value="" type="checkbox">Bill payment services
+                        </label>
+
+                        <label class="block-label" for="eab">
+                            <input id="eab" name="activities" value="1" type="checkbox">Estate agency services
+                        </label>
+
+                        <label class="block-label" for="hvd">
+                            <input id="hvd" name="activities" value="2" type="checkbox">High value dealing
+                        </label>
+
+                        <label class="block-label" for="msb">
+                            <input id="msb" name="activities" value="3" type="checkbox">Money Service Business activities
+                        </label>
+
+                        <label class="block-label" for="tcsp">
+                            <input id="tcsp" name="activities" value="4" type="checkbox">Trust or company services
+                        </label>
+
+                        <label class="block-label" for="tdit">
+                            <input id="tdit" name="activities" value="" type="checkbox">Telephone, digital and IT payment services
+                        </label>
+                    </div>
+                </fieldset>
+
+            </form>
+
+              
+          <div>
+
+          </div>
+
+        <div class="form-group">
+          <input class="button" value="Next" type="submit">
+        </div>
+      </form>
+              <!-- <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p> -->
+          
+    </div>
+      
+  </div>
+
+</main>
+{% endblock %}

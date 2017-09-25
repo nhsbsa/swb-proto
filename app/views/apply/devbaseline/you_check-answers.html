@@ -12,27 +12,23 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-  <div class="text">
 
-    <div class="heading-group">
-      <p>Apply for help with NHS costs</p>
-      <h1 class="heading-large">
-        Check your answers
-      </h1>
-    </div>
 
-    { if thirdparty }
-      <h3 class="heading-medium" style="margin-top:0; padding-top:0">{firstname} personal details</h3>
-    { else }
-    <h3 class="heading-medium" style="margin-top:0; padding-top:0">Your personal details</h3>
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Personal details</p>
+                
+                <h1 class="page-header--lede heading-large">Check your answers</h1>
+               
+            </header>
+
        
     <table id="review-table-one">
-<!--      <tr>
-        <td>{ if thirdparty } Applying for<BR><span class="bold">*Dev note:</span> dont show this if applying for 'me'<span class="bold">*</span></td>
-        <td class="bold">Someone else</td>
 
-        <td><a href="">Change</a></td>
-      </tr> -->
+
+            <div class="panel panel-border-wide">
+                <p>You’re applying for help with NHS costs on behalf of:</p>
+            </div>
+            <BR>
       <tr>
         <td>Full name</td>
         <td class="bold">{{firstname}}Robert Green</td>

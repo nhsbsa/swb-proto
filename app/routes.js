@@ -140,6 +140,42 @@ router.get(/partner/, function (req, res) {
     });
 
 
+    //pension credit
+    router.get(/pencred-handler/, function (req, res) {
+      if (req.query.penscred === 'yes') {
+        res.redirect('pensioncred-type');
+      } else {
+        res.redirect('assets_thresholds');
+      }
+    });
+        //pension credit
+    router.get(/pcredtype-handler/, function (req, res) {
+      if (req.query.pctype === 'savcred') {
+        res.redirect('assets_thresholds');
+      } else {
+        res.redirect('full-exemption-pencredits');
+      }
+    });
+
+    //capital amounts
+    router.get(/assets-handler/, function (req, res) {
+      if (req.query.savings === 'no') {
+        res.redirect('');
+      } else {
+        res.redirect('assets_accounts');
+      }
+    });
+
+    //capital amounts
+    router.get(/capital-handler/, function (req, res) {
+      if (req.query.capital === 'yes') {
+        res.redirect('');
+      } else {
+        res.redirect('assets_accounts');
+      }
+    });
+
+
 // address handler
         router.get(/address-c-handler/, function (req, res) {
       if (benificiary.thirdParty == true) {
@@ -220,6 +256,7 @@ router.get(/email-c-handler/, function (req, res) {
 });
 
 
+
 //telephone capture
 router.get(/telephone-c-handler/, function (req, res) {
   applicant.telephone = req.query.telephone;
@@ -270,7 +307,7 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('../live/mortgaged/mortgage-question');
       } else if (req.query.home === 'rented') {
         applicant.tennant = true;
-        res.redirect('../joint-tenant');
+        res.redirect('housing-benefit');
       } else if (req.query.home === 'guest') {
         applicant.guest = true;
         res.redirect('../guest/address');
@@ -290,6 +327,20 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     });
 
+
+    
+    // housing ben type handler
+        router.get(/hbentype-handler/, function (req, res) {
+      console.log(req.query);
+      if (req.query.hben === 'yes') {
+        res.redirect('live_additions');
+      } else {
+        res.redirect('live_rent_rent-amount');
+      }
+    });
+
+
+
    // service handler
         router.get(/service-handler/, function (req, res) {
           console.log(req.query);
@@ -308,11 +359,6 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('../services');
       }
     });
-
-
-
-
-
 
     // capture address
     router.get(/homeadd-handler/, function (req, res) {
@@ -394,6 +440,36 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('../lis-check-list-3');
       }
     });
+
+// students
+
+
+        // student living away
+    router.get(/awaystudent-handler/, function (req, res) {
+      if (req.query.moved == 'yes') {
+        res.redirect('live_rent_student-rent-frequency');
+      } else {
+        res.redirect('../lis-check-list-3');
+      }
+    });
+
+  //reg payment
+    router.get(/regularpayment-handler/, function (req, res) {
+      if (req.query.regular== 'yes') {
+        res.redirect('live_rent_student-regular-rent-amount');
+      } else {
+        res.redirect('../lis-check-list-3');
+      }
+    });
+      //reg payment
+    router.get(/additionsfreq-handler/, function (req, res) {
+      if (req.query.radditionsfreq== 'yes') {
+        res.redirect('live_rent_student-regular-rent-amount');
+      } else {
+        res.redirect('../lis-check-list-3');
+      }
+    });
+    
 
 
 // add your routes here

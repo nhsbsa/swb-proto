@@ -1,0 +1,252 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .change-answer {
+    text-align: right;
+    font-weight: bold;
+    padding-right: 0;
+  }
+
+.check-your-answers{
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+  table td {
+    border-bottom: 1px solid #bfc1c3;
+  }
+ table tr td{
+padding: 0.63158em 1.05263em 0.47368em 0;
+}
+
+
+
+
+}
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">
+        Check your answers
+      </h1>
+
+      <div class="panel panel-border-wide">
+                <p>You’re applying for help with NHS costs on behalf of Bob Smith</p>
+            </div>
+
+      <div class="form-group">
+
+        <table class="check-your-answers">
+
+          <thead>
+            <tr>
+              <th colspan="2">
+                <h2 class="heading-medium">
+                  Jobs and education
+                </h2>
+              </th>
+              <th>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                Do you have a job?
+              </td>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                No
+              </td>
+              <td class="change-answer" style="border-bottom: 1px solid #bfc1c3;">
+                <a href="">
+                  Change <span class="visuallyhidden">Applying for</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                Are you in full time education?
+              </td>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                No
+              </td>
+              <td class="change-answer" style="border-bottom: 1px solid #bfc1c3;">
+                <a href="">
+                  Change <span class="visuallyhidden">vehicle type</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="check-your-answers">
+
+          <thead>
+            <tr>
+              <th colspan="2">
+                <h2 class="heading-medium">
+                  Pensions
+                </h2>
+              </th>
+              <th>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #bfc1c3; width:70%"">
+                Do you get a pension?
+              </td>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                Yes
+              </td>
+              <td class="change-answer" style="border-bottom: 1px solid #bfc1c3;">
+                <a href="">
+                  Change <span class="visuallyhidden">Applying for</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                Do you get Pension Credit Savings Credit?
+              </td>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                No
+              </td>
+              <td class="change-answer" style="border-bottom: 1px solid #bfc1c3;">
+                <a href="">
+                  Change <span class="visuallyhidden">vehicle type</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="check-your-answers">
+
+          <thead>
+            <tr>
+              <th colspan="2">
+                <h2 class="heading-medium">
+                  Benefits and other money
+                </h2>
+              </th>
+              <th>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td style="border-bottom: 1px solid #bfc1c3; width:70%">
+                Do you get any benefits?
+              </td>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                No
+              </td>
+              <td class="change-answer" style="border-bottom: 1px solid #bfc1c3;">
+                <a href="">
+                  Change <span class="visuallyhidden">Applying for</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                Do you look after someone but cannot get Carer’s Allowance because of another reason?
+              </td>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                No
+              </td>
+              <td class="change-answer" style="border-bottom: 1px solid #bfc1c3;">
+                <a href="">
+                  Change <span class="visuallyhidden">vehicle type</span>
+                </a>
+              </td>
+            </tr>
+                        <tr>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                Does someone get Carer’s Allowance for looking after you?
+              </td>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                No
+              </td>
+              <td class="change-answer" style="border-bottom: 1px solid #bfc1c3;">
+                <a href="">
+                  Change <span class="visuallyhidden">If someone is getting Carer's Allowance for looking after you</span>
+                </a>
+              </td>
+            </tr>
+                                    <tr>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                Do you get any other money?
+              </td>
+              <td style="border-bottom: 1px solid #bfc1c3;">
+                No
+              </td>
+              <td class="change-answer" style="border-bottom: 1px solid #bfc1c3;">
+                <a href="">
+                  Change <span class="visuallyhidden">other money</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      
+
+        <ul class="hidden">
+          <li>pensionanswer:</li>
+          <li id="pension_answer">No</li>
+          <li>savingscredit:</li>
+          <li id="credit_answer"></li>
+          <li>stateanswer:</li>
+          <li id="state_answer"></li>
+          <li>privateanswer:</li>
+          <li id="private_answer"></li>
+          <li>statepensionamount:</li>
+          <li id="state_amount"></li>
+          <li>statepensionamount:</li>
+          <li id="state_frequency"></li>
+          <li>privatepension amount:</li>
+          <li id="private_amount"></li>
+          <li>private frequency:</li>
+          <li id="private_frequency"></li>
+        </ul>
+     
+
+
+          
+  <div class="form-item-wrapper">
+    <div class="form-group">
+      
+        <button type="submit" class="button " id="next">Next</button>
+      
+    </div>
+  </div>
+
+        </form>
+    
+      </div>
+
+      </div>
+
+
+
+
+</main>
+
+{% endblock %}
+

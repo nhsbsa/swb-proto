@@ -1,0 +1,79 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      { if thirdparty }
+      <h1 class="heading-large">How often does {firstname} get paid by their boarder? </h1>
+      <br>
+    { else }
+      <h1 class="heading-large">How often does your boarder pay you?</h1>
+
+    </div>
+
+
+      <form action="" method="get" class="form">
+          <fieldset>
+            <legend class="visually-hidden">
+How often do you pay your council tax?</legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="yes" value="yes">
+              <label for="yes">Every week</label>
+            </div>
+                        <div class="multiple-choice">
+              <input id="no" type="radio" name="no" value="no">
+              <label for="no">Every 2 weeks</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="no" value="no">
+              <label for="no">Every 4 weeks </label>
+            </div>
+                        <div class="multiple-choice">
+              <input id="yes" type="radio" name="yes" value="yes">
+              <label for="yes">Every calender month</label>
+            </div>
+                        <div class="multiple-choice">
+              <input id="yes" type="radio" name="yes" value="yes">
+              <label for="yes">Once a year lump sum</label>
+            </div>
+            
+          </fieldset>  
+          
+<br>
+          <label class="heading-medium" for="ni-number">
+  How much does your boarder pay {frequency}?
+</label><br>
+
+<input class="form-control" style="margin-top: 10px" id="ni-number" type="text" name="ni-number">
+<br><br><br>
+          <div class="form-group">
+            <input class="button" type="submit" href="#"  value="Next">
+          </div>
+      
+<!-- 
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+
+      </form>
+
+    </div>
+
+  </div>
+</main>
+
+{% endblock %}
+

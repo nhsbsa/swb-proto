@@ -12,16 +12,14 @@
  <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-      { if thirdparty }
-      <h1 class="heading-large">How often does {firstname} pay their rent? </h1>
-      <br>
-    { else }
-      <h1 class="heading-large">How often do you pay your rent?</h1>
-
-    </div>
-
+       <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Where you live</p>
+                 {if thirdparty }
+                <h1 class="page-header--lede heading-large">How often does {firstname} pay their rent? </h1>
+                {else }
+                <h1 class="page-header--lede heading-large">How often do you pay your rent?</h1>
+   
+            </header>
 
       <form action="" method="get" class="form">
           <fieldset>
@@ -29,37 +27,33 @@
 How often do you pay your rent?</legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="yes" value="yes">
-              <label for="yes">Every week</label>
+              <input class="choose" id="everyweek" type="radio" name="optionsRadios" value="Every week">
+              <label for="everyweek">Every week</label>
             </div>
                         <div class="multiple-choice">
-              <input id="no" type="radio" name="no" value="no">
-              <label for="no">Every 2 weeks</label>
+              <input class="choose" id="every2week" type="radio" name="optionsRadios" value="Every 2 weeks">
+              <label for="every2week">Every 2 weeks</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="no" value="no">
-              <label for="no">Every 4 weeks</label>
+              <input class="choose" id="every4week" type="radio" name="optionsRadios" value="Every 4 weeks">
+              <label for="every4week">Every 4 weeks</label>
             </div>
                         <div class="multiple-choice">
-              <input id="yes" type="radio" name="yes" value="yes">
-              <label for="yes">Every calender month</label>
+              <input class="choose" id="everymonth" type="radio" name="optionsRadios" value="Every month">
+              <label for="everymonth">Every month</label>
             </div>
-                        <div class="multiple-choice">
-              <input id="yes" type="radio" name="yes" value="yes">
-              <label for="yes">Once a year</label>
-            </div>
-            
+  
           </fieldset>  
-          
-<br>
-          <label class="heading-medium" for="ni-number">
-  How much do you pay?
-</label><br>
-<p> Do include any endowment premiums linked to the mortgage.</p>
 
-<p>Do not include premiums for any other type of insurance, money you owe that should have been paid earlier, or any amount of mortgage that you are voluntarily overpaying. </p>
-<input class="form-control" style="margin-top: 10px" id="ni-number" type="text" name="ni-number">
+
+<br>
+          <label class="heading-medium" for="pay" id="cont">
+  How much rent do you pay?
+</label><br>
+<p>Only tell us the amount you pay yourself. Do not include any rent that is covered by housing benefit. </p>
+
+<span class="heading-medium">£ </span><input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
 <br><br><br>
           <div class="form-group">
             <input class="button" type="submit" href="#"  value="Next">
@@ -77,5 +71,24 @@ How often do you pay your rent?</legend>
   </div>
 </main>
 
-{% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$('input[name="optionsRadios"]').on('change', function(){
+    if ($(this).val()=='Every week') {
+         //change to "show update"
+         $("#cont").text("How much rent do you pay every week?");
+    } else if ($(this).val()=='Every 2 weeks') {
+         $("#cont").text("How much rent do you pay every 2 weeks?");
+    } else if ($(this).val()=='Every 4 weeks') {
+         $("#cont").text("How much rent do you pay every 4 weeks?");
+    }
+     else if ($(this).val()=='Every month') {
+         $("#cont").text("How much rent do you pay every month?");
+    }
+    else {
+         $("#cont").text("How much rent do you pay every year?");
+    }
+});
+</script>
 
+{% endblock %}

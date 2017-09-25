@@ -28,10 +28,18 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <a href="javascript:history.go(-1)" class="link-back">Back</a>
-      <div class="heading-group">
+
+
+            <div class="heading-group">
         <p>Apply for help with NHS costs</p>
-  <h1 class="heading-large">
-      What type of property do you live in?
+      { if thirdparty }
+      <h1 class="heading-large">Which type of property does {firstname} live in?</h1>
+      <br>
+    { else }
+      <h1 class="heading-large">Which type of property do you live in?</h1>
+
+    </div>
+
   </h1>
 <br>
   <form action="home-handler" method="get" class="form">
@@ -43,19 +51,21 @@
             </legend>
           <br>
 <!-- <span class="strong">Lindsay note:</span> *borders/lodgers/ student/ in emergency shelter/dom violence etc* <br> -->
-          <div class="multiple-choice">
-            <input type="radio" id="own" value="own" name="home">
-            <label class="form-control-radio bold" for="own">A property I own <br><span style="font-weight: 400">With or without a mortgage</span></label>
-          </div>
-          <div class="multiple-choice">
-            <input type="radio" id="shared" value="shared" name="home">
-            <label class="form-control-radio bold" for="shared">A shared ownership property <br><span style="font-weight: 400">Shared Ownership is where you buy a percentage of a property and pay rent on whatever part you don't own</span></label>
+<div class="multiple-choice">
+            <input type="radio" id="rented" value="rented" name="home">
+            <label class="form-control-radio bold" for="rented">Rented accomodation<br><span style="font-weight: 400">This includes student accommodation or rent paid to a council or landlord</span></label>
           </div>
 
           <div class="multiple-choice">
-            <input type="radio" id="rented" value="rented" name="home">
-            <label class="form-control-radio bold" for="rented">Rented accomodation<br><span style="font-weight: 400">Such paying a private landlord, council or for student accomodation. </span></label>
+            <input type="radio" id="own" value="own" name="home">
+            <label class="form-control-radio bold" for="own">A property I own <br><span style="font-weight: 400">This could be with or without a mortgage</span></label>
           </div>
+          <div class="multiple-choice">
+            <input type="radio" id="shared" value="shared" name="home">
+            <label class="form-control-radio bold" for="shared">A shared ownership property <br><span style="font-weight: 400"> This is where you pay mortgage and rent</span></label>
+          </div>
+
+          
            <div class="multiple-choice">
             <input type="radio" id="guest" value="guest" name="home">
             <label class="form-control-radio bold" for="guest">A care home</label>
@@ -63,7 +73,7 @@
 
           <div class="multiple-choice">
             <input type="radio" id="guest" value="guest" name="home">
-            <label class="form-control-radio bold" for="guest">Someone else's home <br><span style="font-weight: 400">Such as living with parents, friends or relatives</span></label>
+            <label class="form-control-radio bold" for="guest">Someone else's home <br><span style="font-weight: 400"> For example, living with parents, friends or relatives</span></label>
         </div>
 
           <div class="multiple-choice">

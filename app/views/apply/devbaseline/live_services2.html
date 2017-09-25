@@ -1,0 +1,103 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      { if thirdparty }
+      <h1 class="heading-large">Does {{firstname}} pay any service charges for {address}?</h1>
+      <br>
+    { else }
+      <h1 class="heading-large">Do you pay any of these on top of your rent?</h1>
+    </div>
+
+<ul class="list-bullet">
+<li>Cleaning, maintenance or gardening services for communal areas</li>
+<li>Laundry room</li>
+<li>Warden services</li>
+<li>Children's play area</li>
+<li>Communal television area or lounge</li>
+</ul>
+<br>
+<fieldset class="inline">
+            <legend class="visually-hidden">
+              Do you have any stocks, shares, land or properties?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="shares" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="shares" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+
+     <!--  <form action="" method="get" class="form">
+
+        <fieldset class="form-group">
+          <legend class="visually-hidden">
+            Do you pay any service charges for {address}
+          </legend>
+                    <div class="multiple-choice multiple-radio">
+            <input id="email" name="contact" value="email" type="checkbox">
+            <label for="email">Cleaning, maintenance or gardening services for communal areas</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="phone" name="contact" value="phone" type="checkbox">
+            <label for="phone">Laundry room</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="contact" value="text" type="checkbox">
+            <label for="text">Warden services</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="contact" value="text" type="checkbox">
+            <label for="text">Children's play area</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="contact" value="text" type="checkbox">
+            <label for="text">Communal television area or lounge</label>
+          </div>
+          <p class="form-block">or</p>
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="contact" value="text" type="checkbox">
+            <label for="text">No, I do not pay for any of these</label>
+          </div>
+
+        </fieldset> -->
+
+              
+          <div>
+
+          </div>
+<br>
+        <div class="form-group">
+          <input class="button" value="Next" type="submit">
+        </div>
+      </form>
+              <!-- <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p> -->
+          
+    </div>
+      
+  </div>
+
+</main>
+{% endblock %}

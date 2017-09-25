@@ -1,0 +1,109 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+label { 
+    float: left;
+    margin: 0 20px 0 0;
+  }
+span { 
+  display: block; 
+  margin: 0 0 3px; 
+}
+input { 
+  width: 200px; 
+  border: 1px solid #000; 
+  padding: 5px; }
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+       <header class="page-header">
+          <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Where you live</p>
+           {% if thirdparty %}
+          <h1 class="page-header--lede heading-large">Is {firstname} a student living away from home?</h1>
+          {% else %}
+          <h1 class="page-header--lede heading-large">What are your term dates? </h1>
+          {% endif %}
+      </header>
+
+<!--       <p>This usually means you have a 'home address' and 'term-time address'</p> -->
+
+<form action="" method="get" class="form">
+        <fieldset class="inline">
+            <legend class="visually-hidden">
+              Do you pay for your {meals} over the Christmas and Easter holidays?
+            </legend>
+
+
+
+  <label for="company">
+    <span>Start date</span>
+    <input type="text" id="company" />
+  </label>
+  <label for="contact">
+    <span>End date</span>
+    <input type="text" id="contact" />
+  </label>
+  <br>
+    <label for="company">
+    <span>Start date</span>
+    <input type="text" id="company" />
+  </label>
+  <label for="contact">
+    <span>End date</span>
+    <input type="text" id="contact" />
+  </label>
+  <br>
+    <label for="company">
+    <span>Start date</span>
+    <input type="text" id="company" />
+  </label>
+  <label for="contact">
+    <span>End date</span>
+    <input type="text" id="contact" />
+  </label>
+
+
+
+
+<!--             <div class="multiple-choice">
+              <input id="yes" type="radio" name="additionsfreq" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="additionsfreq" value="no">
+              <label for="no">No</label>
+            </div> -->
+            
+          </fieldset>  
+
+
+
+              
+          <div>
+
+          </div>
+<br>
+        <div class="form-group">
+          <input class="button" value="Next" type="submit">
+        </div>
+      </form>
+              <!-- <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p> -->
+          
+    </div>
+      
+  </div>
+
+</main>
+{% endblock %}

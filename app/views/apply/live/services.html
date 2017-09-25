@@ -58,7 +58,7 @@
           </div>
           <p class="form-block">or</p>
           <div class="multiple-choice multiple-radio example">
-                <input class="example" id="no" type="checkbox" name="scharge" value="no">
+                <input class="example"id="no" type="checkbox" name="scharge" value="no">
               <label for="no">No, I do not pay for any of these</label>
           </div>
 
@@ -77,6 +77,7 @@
 </main>
 
 <script>
+
 $('input.example').on('change', function() {
     $('input.example').not(this).prop('checked', false);  
 });

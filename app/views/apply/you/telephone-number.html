@@ -34,13 +34,18 @@
     
     <div class="form-item-wrapper">
 
-                <div class="form-group">
-                    <label for="phone" class="visuallyhidden" aria-describedby="hint-phone">What’s your business’s phone number?</label>
-                    <!-- span class="form-hint" id="hint-phone">Only use numbers, spaces, brackets, plus (+) and dash (-).</span> -->
-                    <input class="form-control" id="phone" type="text">
-                </div>
+<div class="form-group" style="margin-bottom: 1em">
+     <label for="phone" class="visuallyhidden" aria-describedby="hint-phone">What is your telephone number?</label>
+  <input class="form-control" id="telephone-number" name="telephone-number" type="text">
+</div>
+         <div class="multiple-choice multiple-radio" style="margin-bottom:2em">
+            <input id="email" name="email" type="checkbox" value="true">
+            <label for="email">I need to be contacted by textphone</label>
+          </div>
+          </div>
 
-                 <details role="group">
+
+<!--                  <details role="group">
               <summary><span class="summary" role="button" aria-controls="details-content-0" aria-expanded="true">
 I need to tell you more about how to use my phone number
 
@@ -62,9 +67,8 @@ I need to tell you more about how to use my phone number
             </div>
 
        </fieldset>
-</details>
+</details> -->
     
-    <br><br>
     <div class="form-item-wrapper">
       <div class="form-group">
         <input class="button" type="submit" value="Next">

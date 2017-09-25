@@ -1,0 +1,44 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      { if thirdparty }
+      <h1 class="heading-large">How often does {firstname} pay their council tax? </h1>
+      <br>
+    { else }
+      <h1 class="heading-large">How much council tax do you pay a year?</h1>
+
+    </div>
+<p>This is the amount you pay yourself. Do not include the amount that is covered by council tax benefits or discounts</p> 
+<span class="heading-medium">£ </span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="ni-number" type="text" name="ni-number">
+<br><br><br>
+          <div class="form-group">
+            <input class="button" type="submit" href="#"  value="Next">
+          </div>
+      
+<!-- 
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+
+      </form>
+
+    </div>
+
+  </div>
+</main>
+
+{% endblock %}
+
