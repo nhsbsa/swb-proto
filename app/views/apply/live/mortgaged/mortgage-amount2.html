@@ -17,7 +17,7 @@
       {% if thirdparty %}
       <h1 class="heading-large">How often does {{firstname}} pay their mortgage?</h1>
     {% else %}
-      <h1 class="heading-large">How often do you pay your mortgage?</h1>
+      <h1 class="heading-large">How much mortgage do you pay {every month}?</h1>
     {% endif %}
 
     </div>
@@ -26,49 +26,35 @@
       <form action="" method="" class="form">
           <fieldset>
             <legend class="visually-hidden">
-How often do you pay your mortgage?</legend>
-
-            <div class="multiple-choice">
-              <input class="choose" id="everyweek" type="radio" name="optionsRadios" value="Every week">
-              <label for="everyweek">Every week</label>
-            </div>
-                        <div class="multiple-choice">
-              <input class="choose" id="every2week" type="radio" name="optionsRadios" value="Every 2 weeks">
-              <label for="every2week">Every 2 weeks</label>
-            </div>
-
-            <div class="multiple-choice">
-              <input class="choose" id="every4week" type="radio" name="optionsRadios" value="Every 4 weeks">
-              <label for="every4week">Every 4 weeks</label>
-            </div>
-                        <div class="multiple-choice">
-              <input class="choose" id="everymonth" type="radio" name="optionsRadios" value="Every month">
-              <label for="everymonth">Every calendar month</label>
-            </div>
-            <div class="multiple-choice">
-              <input class="choose" id="everyyear" type="radio" name="optionsRadios" value="Every year">
-              <label for="everyyear">Once a year</label>
-            </div>
-  
-          </fieldset>  
-
+How often do you pay your mortgage {every month}?</legend>
 
 <br>
-          <h2 class="heading-large" for="pay" id="cont">
-  How much do you pay?
-</h2><br>
-<!-- <p>Include any endowment premiums linked to the mortgage.</p> -->
 
-<p>Don't include:</p>
+<p class="form-hint">The amount must include pence. For example, £171.31</p>
+
+<span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+<br><br>
+ <details>
+            <summary><span class="summary">I don't know what to include</span></summary>
+            <div class="panel panel-border-narrow">
+            <h2 class="heading-small">
+            Include</h2>
+            <ul class="list-bullet">
+  <li>endowment premiums linked to the mortgage</li>
+  </ul>
+
+            <h2 class="heading-small">
+            Do not include:</h2>
+
 <ul class="list-bullet">
   <li>arrears</li>
   <li>voluntarily overpayments</li>
   <li>insurance premiums</li>
 </ul>
-
-
-<span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
-<br><br><br>
+              </p>
+            </div>
+          </details>
+<br><br>
 <p>
           <a class="button" href="loan-question" id="next">Next</a>
         </p>

@@ -1,0 +1,106 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<link href="/public/stylesheets/progress.css" media="screen" rel="stylesheet" type="text/css">
+<style>
+.phase-banner .phase-tag {
+    padding: 1.2px 5px 2px 5px;
+  }
+  .spacelarge {
+    margin-bottom: 40px;
+}
+</style>
+
+
+<main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your 
+      <a target="" href="#">feedback</a> 
+      will help us to improve it.</span>
+      </p>
+    </div>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Progress of application</p>
+                <h1 class="page-header--lede heading-xlarge">Application received</h1>
+            </header>
+
+
+        </div>
+    </div>
+
+    <div class="grid-row spacelarge">
+
+        <div class="column-two-thirds">
+            <div class="panel panel-border-wide">
+                <p><span class="heading-small">Your application number:</span>
+                <br>K5G-V78</p><p><span class="heading-small">Application received:</span>
+                <br>Application received 8 September 2017
+               <!--  <br><a href="">Withdraw application</a></p>   -->             
+            </div>
+        </div>
+
+<!--         <div class="column-one-third">
+          <div class="grid-row declaration">
+                <h2 class="heading-small">Has something changed?</h2>
+                <a href="">Update or view your information</a>
+            </div>-->
+        </div>
+    </div>
+
+    <div class="grid-row spacelarge">
+        <div class="column-one-third">
+            <ol class="list list-number status-list">
+                <li class="status-list--complete">Completed <span class="status-list--icon"></span></li>
+                <li class="status-list--complete">Submitted <span class="status-list--icon"></span></li>
+                <li class="status-list--pending status-list--end">Decision pending <span class="status-list--icon"></span></li>
+            </ol>
+        </div>
+        <div class="column-two-thirds">
+            <p>It can take up to 19 working days for us to review your details and give you an answer about your help with NHS costs application.</p><p>You'll get an 
+email when the decision has been made.</p>
+        </div>
+    </div>
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <h3 class="heading-small">Before you go</h3>
+                <p>Help us to improve the service by <a href="">answering some questions</a> about it.</p>
+            </div>
+        </div>
+	</main>
+
+
+
+
+  <!-- Javascript -->
+  <script src="Application%20under%20review%20-%20Your%20registration%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/details.js"></script>
+  <script src="Application%20under%20review%20-%20Your%20registration%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/jquery-1.js"></script>
+  <script src="Application%20under%20review%20-%20Your%20registration%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/selection-buttons.js"></script>
+  <script src="Application%20under%20review%20-%20Your%20registration%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/lodash-4.js"></script>
+  <script src="Application%20under%20review%20-%20Your%20registration%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/bloodhound.js"></script>
+  <script src="Application%20under%20review%20-%20Your%20registration%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/accessible-typeahead-0.js"></script>
+  <script src="Application%20under%20review%20-%20Your%20registration%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/application.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-77558651-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+{% endblock %}

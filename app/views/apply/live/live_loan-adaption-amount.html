@@ -14,20 +14,19 @@
 
              <header class="page-header">
                 <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Where you live</p>
-                 {% if thirdparty %}
-                <h1 class="page-header--lede heading-large"> How much does {{firstname}} pay for the loan to adapt their home for the needs of a disabled person?</h1>
-                {% else %}
-                <h1 class="page-header--lede heading-large">How much do you pay for the loan to make your home more accessible?</h1>
-                 {% endif %}
+                 { if thirdparty }
+                <h1 class="page-header--lede heading-large"> How much does {firstname} pay for their loan?</h1>
+                { else }
+                <h1 class="page-header--lede heading-large">How much do you pay {every week} for your loan?</h1>
+
             </header>
 
 
-<p>If you need to make your home more accessible  </p>
       <form action="gramount-handler" method="get" class="form">
 
         <div class="form-item-wrapper">
 
-
+<p class="form-hint">The amount must include pence. For example, £171.31</p>
           <div class="form-group">
             <span class="heading-medium">£ </span> <input type="text" id="email" name="email" value="" class="form-control form-control-1-4" required>
           </div>

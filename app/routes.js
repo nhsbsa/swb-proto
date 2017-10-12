@@ -226,7 +226,7 @@ router.get(/contact-handler/, function (req, res) {
     console.log("applicant.hasTelephone = false");
   }
   if (applicant.hasMobile) {
-    res.redirect('mobile-number');
+    res.redirect('telephone-number');
   } else if (applicant.hasEmail) {
     res.redirect('email-address');
   } else if (applicant.hasTelephone) {
@@ -467,6 +467,16 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('live_rent_student-regular-rent-amount');
       } else {
         res.redirect('../lis-check-list-3');
+      }
+    });
+
+
+     router.get(/benefits-handler/, function (req, res) {
+      if (req.query.benefittc == 'yes') {
+          res.render('apply/preapp/benefits-type-question', {
+          });
+      } else {
+        res.redirect('pregnancy');
       }
     });
     

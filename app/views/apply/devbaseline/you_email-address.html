@@ -12,36 +12,47 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-        <h1 class="heading-large">What is your email address?</h1>
-      </div>
+            <header class="page-header">
+                <h1 class="heading-xlarge">What is your email address?</h1>
+                <p class="heading-secondary"><span class="visuallyhidden">This section is </span>Apply for help with NHS costs</p>
+            </header>
 
-      <form action="email-c-handler" method="get" class="form">
+            <div class="panel panel-border-wide">
+                <p>We’ll email you when there’s an update about your application for help with NHS costs.</p>
+            </div>
+<br>
+  <form action="email-c-handler" method="get" class="form">
 
-        <div class="form-item-wrapper">
+                <div class="form" method="post">
+                    <input name="next-page" value="phone-number" type="hidden">
+                    <fieldset>
+                        <legend class="visuallyhidden">What’s your business’s email address?</legend>
+                        <div class="form-group">
+                            <label for="email" aria-describedby="hint-email">Email address</label>
+                            <span class="form-hint" id="hint-email">For example, myname@example.com.</span>
+                            <input class="form-control" id="email" type="email">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email-confirm">Confirm email address</label>
+                            <input class="form-control" id="email-confirm" type="email">
+                        </div>
+                    </fieldset>
+                </div>
 
-          <div class="form-group">
-            <input type="text" id="email" name="email" value="" class="form-control" required>
-          </div>
-
-        </div>
-        
         <div class="form-item-wrapper">
           <div class="form-group">
             <input class="button" type="submit" value="Next">
           </div>
         </div>
 
-        
+            </form>
 
-<!--         <p class="navigation"><a class="cancel" href="start">Cancel</a></p> -->
-
-      </form>
-      
+        </div>
     </div>
-    
-  </div>
+
+
+
+
   
 </main>
 

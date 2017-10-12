@@ -18,8 +18,19 @@
 .multiple-choice label {
     float: left;
     margin-left: 48px;
+    padding:0.3em 0.3em 0.3em 0;
+  }
 
-    padding:0.3em 0.3em 0.3em 0;}
+
+    .multiple-choice [type="radio"] + label::before {
+    background-color: white;
+    position: inherit;
+    float: left;
+    margin-left: -38px;
+    margin-top: -2px;
+    width: 24px;
+    height: 24px;
+}
 
 </style>
 

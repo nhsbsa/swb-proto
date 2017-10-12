@@ -16,38 +16,70 @@
             <header class="page-header">
                 <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
                  {% if thirdparty %}
-                <h1 class="page-header--lede heading-large">Does housing benefit pay any of {{firstname}}'s rent?</h1>
+                <h1 class="page-header--lede heading-large">Does {{firstname}} get housing benefit?</h1>
                 {% else %}
-                <h1 class="page-header--lede heading-large">Does housing benefit pay any of your rent?</h1>
+                <h1 class="page-header--lede heading-large">Do you get housing benefit?</h1>
                  {% endif %}
             </header>
       
       <form action="hbentype-handler" method="get" class="form">
-         <div class="form-group">
+<!--          <div class="form-group">
           
           <fieldset>
             <legend class="visually-hidden">
               Does housing benefit pay for all or some of your rent?
             </legend>
 
-<p>If you get Universal Credit select 'No'.</p>
             <div class="multiple-choice">
               <input id="all" type="radio" name="hben" value="yes">
-              <label for="all">Yes, all of the rent</label>
+              <label for="all">It pays all of the rent</label>
             </div>
 
             <div class="multiple-choice">
               <input id="some" type="radio" name="hben" value="some">
-              <label for="some">Yes, some of the rent</label>
+              <label for="some">It pays some of the rent</label>
             </div>
                   <p class="form-block">or</p>
             <div class="multiple-choice">
               <input id="no" type="radio" name="hben" value="no">
-              <label for="no">No</label>
+              <label for="no">No, I don't get housing benefit</label>
             </div>
           </fieldset>  
           
+        </div> -->
+
+       
+       <div class="form-group">
+<!--           <p>If you get Universal Credit select 'No'.</p> -->
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Do you or your partner pay a mortgage or loan on your home?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="yes" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="no" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
         </div>
+
+        <br><br>
+ <details>
+            <summary><span class="summary">What if I get Universal Credit housing costs element? </span></summary>
+            <div class="panel panel-border-narrow">
+     <p>If you get housing costs element as part of your Universal Credit, select 'No'.</p>
+
+
+            </div>
+          </details>
+          <br>
 
   <!-- submit button -->
         <div class="form-group">

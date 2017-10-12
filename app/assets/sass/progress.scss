@@ -1,0 +1,225 @@
+
+
+.statuslist {
+  background: #bfc1c3;
+  color: #fff;
+  padding: 10px; }
+
+.statusdone {
+  background: #28a197;
+  color: #fff; }
+
+.statusdone,
+.statuspending {
+  padding: 10px; }
+
+.grey45 {
+  padding: 0 20px; }
+
+.status-text h2 {
+  margin-top: 10px; }
+
+hr {
+  margin-bottom: 0; }
+
+.grid-layout {
+  table-layout: fixed; }
+
+/* -- Progress Step -- */
+.progress-steps {
+  margin-bottom: 12px; }
+
+.progress-steps li {
+  margin-bottom: 0;
+  margin-top: 12px; }
+
+.progress-steps li:first-child {
+  margin-top: 0; }
+
+/* -- Progress Step: assets (tick & chevrons) -- */
+.progress-step--status,
+.no-svg .progress-step--status {
+  background-image: url("../images/icons/chevron.svg");
+  background-position: 90%;
+  background-repeat: no-repeat;
+  background-size: 33%; }
+
+.no-svg .progress-step--status {
+  background-image: url("../images/icons/chevron.png"); }
+
+.progress-step__started .progress-step--status,
+.progress-step:focus .progress-step--status,
+.progress-step:hover .progress-step--status,
+.progress-step__started:focus .progress-step--status,
+.progress-step__started:hover .progress-step--status,
+.progress-steps__amend .progress-step__complete .progress-step--status,
+.progress-steps__amend .progress-step__complete:focus .progress-step--status,
+.progress-steps__amend .progress-step__complete:hover .progress-step--status {
+  background-image: url("../images/icons/chevron-white.svg"); }
+
+.no-svg .progress-step__started .progress-step--status,
+.no-svg .progress-step:focus .progress-step--status,
+.no-svg .progress-step:hover .progress-step--status,
+.no-svg .progress-step__started:focus .progress-step--status,
+.no-svg .progress-step__started:hover .progress-step--status {
+  background-image: url("../images/icons/chevron-white.png"); }
+
+.no-svg .progress-step--status,
+.no-svg .progress-step__started .progress-step--status,
+.no-svg .progress-step:focus .progress-step--status,
+.no-svg .progress-step:hover .progress-step--status,
+.no-svg .progress-step__started:focus .progress-step--status,
+.no-svg .progress-step__started:hover .progress-step--status,
+.no-svg .progress-step__completed {
+  background-repeat: no-repeat; }
+
+.progress-step__complete .progress-step--status,
+.progress-step__complete:focus .progress-step--status,
+.progress-step__complete:hover .progress-step--status,
+.no-svg .progress-step__complete .progress-step--status {
+  background-image: url("../images/icons/tick.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 33%; }
+
+.no-svg .progress-step__complete .progress-step--status,
+.no-svg .progress-step__complete:hover .progress-step--status {
+  background-image: url("../images/icons/tick.png"); }
+
+.progress-steps__amend .progress-step__complete .progress-step--status {
+  background-position: 90%; }
+
+/* qualified attribute selector required here, otherwise
+   all text colour takes on regular anchor colour  */
+a.progress-step {
+  background-color: #dee0e2;
+  color: #0b0c0c;
+  display: block;
+  /* for IE8 */
+  display: flex;
+  /* for everything else */
+  margin-bottom: 0;
+  padding: 0;
+  overflow: hidden;
+  /* fix for firefox focus bug */
+  position: relative;
+  text-decoration: none;
+  transition: .25s ease-in;
+  transition-property: background-color, outline; }
+
+/* give the whole step component a focus outline */
+.progress-step:focus {
+  outline: 3px solid #ffbf47; }
+
+/* mimic the anchor colours inside this block-level component */
+.progress-step__edit {
+  color: #005ea5; }
+
+.progress-step__edit:focus,
+.progress-step__edit:hover {
+  color: #2e8aca; }
+
+a.progress-step,
+.progress-step--status,
+.progress-step--details {
+  box-sizing: border-box; }
+
+/* `display:block` fixes a layout issue in IE & Firefox */
+.progress-step--status,
+.progress-step--details {
+  display: block; }
+
+/* -- Progress Step: details -- */
+.progress-step--details {
+  background-color: #f8f8f8;
+  border-bottom: 3px solid #dee0e2;
+  padding: 5px 10px 15px; }
+
+.progress-step--details p {
+  margin: 0;
+  padding-bottom: 10px; }
+
+/* -- Progress Step: status -- */
+.progress-step--status {
+  border-bottom: 3px solid #cdcdcd;
+  color: #364747;
+  padding: 5px 10px;
+  position: relative;
+  transition: .25s ease-in; }
+
+.progress-step__started .progress-step--status,
+.progress-step:focus .progress-step--status,
+.progress-step:hover .progress-step--status,
+.progress-step__started:focus .progress-step--status,
+.progress-step__started:hover .progress-step--status {
+  color: #fff; }
+
+.progress-step--status-time {
+  padding: 15px 0 0; }
+
+/* -- Progress Step: not started -- */
+.progress-step:focus .progress-step--status,
+.progress-step:hover .progress-step--status,
+.progress-step__started:focus .progress-step--status,
+.progress-step__started:hover .progress-step--status,
+.progress-steps__amend .progress-step__complete:hover .progress-step--status,
+.progress-steps__amend .progress-step__complete:focus .progress-step--status {
+  background-color: #006435;
+  border-bottom-color: #01552e; }
+
+/* -- Progress Step: started -- */
+.progress-step__started .progress-step--status {
+  background-color: #f47738;
+  border-bottom-color: #f9641a; }
+
+.progress-step__started .progress-step--status,
+.progress-steps__amend .progress-step .progress-step--status {
+  display: flex; }
+
+.progress-step__started .progress-step--status-time,
+.progress-steps__amend .progress-step .progress-step--status-time {
+  align-self: center;
+  flex: 1;
+  padding-bottom: 15px;
+  /* add bottom padding to help centre it for the flex browsers */ }
+
+.progress-step__started .progress-step--status-time .font-xsmall,
+.progress-steps__amend .progress-step .progress-step--status-time .font-xsmall {
+  margin: 0; }
+
+/* -- Progress Step: completed -- */
+.progress-step__complete .progress-step--status,
+.progress-step__complete:focus .progress-step--status,
+.progress-step__complete:hover .progress-step--status {
+  background-color: #006435;
+  border-bottom-color: #01552e;
+  color: #fff; }
+
+/* -- Progress Step: amended -- */
+.progress-steps__amend .progress-step__complete .progress-step--status {
+  background-color: #006435;
+  border-bottom-color: #01552e; }
+
+@media screen and (max-width: 480px) {
+  .progress-step--status,
+  .no-svg .progress-step--status {
+    background-position: 90% 90%; } }
+
+@media screen and (max-width: 640px) {
+  .progress-step {
+    margin: 0 -0.78947em 12px; }
+  .progress-step .column-one-third {
+    float: left;
+    width: 33.33333%; }
+  .progress-step .column-two-thirds {
+    float: left;
+    width: 66.66667%; }
+  .progress-step--status {
+    background-size: 20%; }
+  .status-detail {
+    margin-left: 0; } }
+
+@media screen and (min-width: 641px) and (max-width: 767px) {
+  .progress-step--status {
+    background-position: 90% 90%;
+    background-size: 25%; } }
