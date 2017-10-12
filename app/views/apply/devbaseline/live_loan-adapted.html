@@ -14,17 +14,16 @@
     <div class="heading-group">
         <p>Apply for help with NHS costs</p>
 
-    {% if thirdparty %}
-      <h1 class="heading-large">Does {{firstname}} have a loan that's been used to make their home more accessible??</h1>
-    {% else %}
+    {if thirdparty}
+      <h1 class="heading-large">Does {{firstname}} have a loan that's been used to make their home more accessible?</h1>
+    { else }
       <h1 class="heading-large">Do you have a loan that's been used to make your home more accessible?</h1>
-    {% endif %}
     </div>
 
- {% if thirdparty %}
+ {if thirdparty}
 <p>This is to adapt their home for the needs of a disabled person or someone over 75. This can be things like widening doors or installing a stair lift.</p>
 
-   {% else %}
+   {else}
 <p>This is to adapt your home for the needs of a disabled person or someone over 75. This can be things like widening doors or installing a stair lift.</p>
 
       <form action="" method="get" class="form">
