@@ -1,0 +1,53 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+             <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Where you live</p>
+                 { if thirdparty }
+                <h1 class="page-header--lede heading-large"> How much ground rent does {firstname} pay {every week}?</h1>
+                { else }
+                <h1 class="page-header--lede heading-large">How much ground rent do you pay {every week}?</h1>
+
+            </header>
+
+
+<p class="form-hint">The amount must include pence. For example, £171.31</p>
+      <form action="gramount-handler" method="get" class="form">
+
+        <div class="form-item-wrapper">
+
+
+          <div class="form-group">
+            <span class="heading-medium">£ </span> <input type="text" id="email" name="email" value="" class="form-control form-control-1-4" required>
+          </div>
+
+        </div>
+  
+        <div class="form-item-wrapper">
+
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+        </div>
+
+
+      </form>
+      
+    </div>
+    
+  </div>
+  
+</main>
+
+{% endblock %}

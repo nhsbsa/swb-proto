@@ -1,0 +1,67 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      {if thirdparty }
+      <h1 class="heading-large">How often does {firstname} pay the loan for making their home more accessible?</h1>
+    {else }
+      <h1 class="heading-large">How often do you pay the loan for making your home more accessible?</h1>
+
+    </div>
+
+<br>
+
+      <form action="" method="" class="form">
+          <fieldset>
+            <legend class="visually-hidden">
+How often do you pay the loan for making your home more accessible?</legend>
+
+            <div class="multiple-choice">
+              <input class="choose" id="everyweek" type="radio" name="optionsRadios" value="Every week">
+              <label for="everyweek">Every week</label>
+            </div>
+                        <div class="multiple-choice">
+              <input class="choose" id="every2week" type="radio" name="optionsRadios" value="Every 2 weeks">
+              <label for="every2week">Every 2 weeks</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input class="choose" id="every4week" type="radio" name="optionsRadios" value="Every 4 weeks">
+              <label for="every4week">Every 4 weeks</label>
+            </div>
+                        <div class="multiple-choice">
+              <input class="choose" id="everymonth" type="radio" name="optionsRadios" value="Every month">
+              <label for="everymonth">Every calendar month</label>
+            </div>
+ 
+  
+          </fieldset>  
+
+<br>
+<p>
+          <a class="button" href="loan-question" id="next">Next</a>
+        </p>
+      
+
+      </form>
+
+    </div>
+
+  </div>
+</main>
+
+
+{% endblock %}
+

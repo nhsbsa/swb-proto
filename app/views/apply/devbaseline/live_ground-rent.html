@@ -12,16 +12,16 @@
  <div class="grid-row">
     <div class="column-two-thirds">
 
-      <div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-      { if thirdparty }
-      <h1 class="heading-large">Does {firstname} pay ground rent for {address}?</h1>
-      <br>
-    { else }
-      <h1 class="heading-large"> Do you pay ground rent for {address}?</h1>
+         <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Where you live</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {{firstname}} pay ground rent on top of their {rent or mortgage}?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large"> Do you pay ground rent on top of your {rent or mortgage}?</h1>
+                 {% endif %}
+            </header>
 
-    </div>
-<p>Ground rent is paid by the owner of a building to whoever owns the land the building is on. </p>
+<p>This is usually paid if you have a 'leasehold' property</p>
   
       <form action="" method="get" class="form">
                  <div class="form-group">
