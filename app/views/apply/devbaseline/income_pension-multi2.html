@@ -8,30 +8,89 @@
 
 
 <style>
-.input--medium {
-    width: 20em;
-}
-input {
-    line-height: 1.31579;
-    font-weight: 400;
-    text-transform: none;
-    background-color: #fff;
-    border: 2px solid #6f777b;
-    margin: 0;
-    padding: 0.1em 0 0.1em 0.4em;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-.add-remove__list {
-    margin: 0.52632em 0 0.52632em 0;
-}
-.add-remove__list {
-  margin: em(10) 0 em(10) 0;
-}
+    .button-add-another {
+      background-color: #eee;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
 
-.add-remove__remove-btn {
-  margin: 0 0 0 em(5);
-}
+      &:hover {
+        background-color: #ccc;
+        color: #000;
+        box-shadow: 0 2px 0 #666;
+      }
+
+      &:focus {
+        background-color: #ccc;
+        color: #000;
+        box-shadow: 0 2px 0 #666;
+      }
+
+      @media (max-width: 640px) {
+        width: 90%;
+        margin: auto;
+        display: block;
+      }
+    }
+        hr {
+          margin-top: 0px;
+        }
+
+      .no-padding {
+      padding-left: 0;
+      padding-right: 0;
+
+      @media (max-width: 640px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    @media (min-width: 641px) {
+    .form-control {
+      width: 100%;
+     }
+    }
+    .remove-list-item {
+      display: inline-block;
+      margin-top: 1.6em;
+      margin-left:15px;
+    }
+
+    .list-item-wrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .heading-small,
+      .heading-medium,
+      .heading-large,
+      .heading-xlarge {
+        margin-top: 0;
+      }
+
+      .column-one-third {
+        .list-item {
+          width: 100%;
+        }
+
+        hr {
+          margin-top: 0px;
+        }
+
+        input {
+          width: 90%;
+
+          @media (max-width: 640px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+
+
+    .heading-medium{
+      margin-top: 0px
+    }
 </style>
 
 
@@ -49,66 +108,135 @@ input {
       <h1 class="heading-large">Tell us about your workplace and private pensions  </h1>
     </div>
 <br>
-<p>If you have more than 1 pension you can add as many as you like.<p>
-
-
-
-
-
-           
-
-
-
-
-<div data-add-remove
-     data-max="5"
-     data-can-delete="true"
-     data-add-btn-text="Add me"
-     data-delete-btn-text="Delete me"
-     data-template-item="data-template">
-  <ul class="add-remove__list" data-add-remove-list>
-    <li class="add-remove__item" data-add-remove-item data-template>
-      <input name="example[]"
-             type="text"
-             class="form-input input--medium"
-             data-add-remove-input />
-    </li>
-  </ul>
-</div>
-
+<p class="panel panel-border-wide">If you have more than 1 pension you can add as many as you like.<p>
 </div>
 </div>
+ 
+
+
+
+ <form>
+      <div class="grid-row">
+        <div class="form-group-compound list-item-wrapper">
+          <h2 class="heading-medium">Pension 1  </h2>
+
+          <fieldset>
+            <div class="column-one-third no-padding">
+              <div class="form-group list-item">
+                <label class="form-label" for="field-1">
+                  Pension name
+                </label>
+                <input type="text" class="form-control" id="field-1" name="field-1">
+              </div>
+            </div>
+<!-- 
+            <div class="column-one-third no-padding">
+              <div class="form-group list-item">
+                <label class="form-label" for="field-2">
+                  Field label
+                </label>
+                <input type="text" class="form-control" id="field-2" name="field-2">
+              </div>
+            </div> -->
+
+            <div class="column-one-third no-padding">
+              <div class="list-item">
+              </div>
+            </div>
+          </fieldset>
+
+          <hr />
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <div class="form-group">
+            <button id="add-button" class="button button-add-another">Add another pension</button>
+          </div>
+        </div>
+      </div><br>
+                <div class="form-group">
+            <button id="add-button" class="button">Next</button>
+          </div> 
+    </form>
 
 </main>
 
-<script>
-  function(event) {
-  event.preventDefault()
-  addListItem($container)
-}
-
-function(e) {
-
-  // Discard the second event of a jQuery.event.trigger() and
-  // when an event is called after a page has unloaded
-  return typeof jQuery !== "undefined" &&
-    (!e || jQuery.event.triggered !== e.type) ?
-    jQuery.event.dispatch.apply(eventHandle.elem, arguments) :
-    undefined;
-}
-</script>
-
 <script src="/public/javascripts/modules.js"></script>
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
-    <script src="public/assets/javascripts/vendor/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+<script>
+  $(document).on('click', '.button', function (e) {
+      var beforeThis = $(this).parents('.grid-row');
+      e.preventDefault();
+      insertFields(beforeThis);
+      sortFields();
+    });
 
-    <script type="text/javascript">
-      document.body.className = document.body.className.replace('no-js', 'js') + ' js-enabled';
-    </script>
-    <script src="public/assets/javascripts/vendor/kss/kss.js"></script>
-    <script src="public/javascripts/application.js"></script>
+    $(document).on('click', '.remove-list-item', function (e) {
+      e.preventDefault();
+      $(this).parents('.list-item-wrapper').remove();
+      sortFields();
+    });
 
+    function insertFields(element) {
+      element.before(
+        '<div class="grid-row">' +
+          '<div class="form-group-compound list-item-wrapper">' +
+            '<h2 class="heading-medium">Pension 1</h2>' +
+            '<fieldset>' +
+              '<div class="column-one-third no-padding">' +
+                '<div class="form-group list-item">' +
+                  '<label class="form-label" for="field-x">' +
+                    'Pension name' +
+                  '</label>' +
+                  '<input type="text" class="form-control" id="field-x" name="field-x">' +
+                '</div>' +
+              '</div>' +
+              '<div class="column-one-third no-padding">' +
+                '<div class="list-item">' +
+                '</div>' +
+              '</div>' +
+            '</fieldset>' +
+            '<hr />' +
+          '</div>' +
+        '</div>'
+      );
+    }
+
+    function sortFields() {
+      var listCounter = 1;
+      var inputCounter = 1;
+
+      $(document).find('.list-item-wrapper').each(function () {
+        $(this).find('h2').text('Pension ' + listCounter);
+
+        if ($(this).find('.remove-list-item').length === 0) {
+          $(this).find('.list-item:last').append('<a id="remove-item-' + listCounter + '" class="remove-list-item" href="#">Remove this</a>');
+        } else {
+          $(this).find('.remove-list-item').attr('id', 'remove-item-' + listCounter);
+        }
+
+        $(this).find('.list-item').children('label').each(function () {
+          $(this).attr('for', 'field-' + inputCounter);
+          inputCounter++;
+        });
+
+        $(this).find('.list-item').children('input').each(function () {
+          var labelNo = $(this).parent().find('label').attr('for').split('-').pop();
+          $(this).attr('id', 'field-' + labelNo);
+          $(this).attr('name', 'field-' + labelNo);
+        });
+
+        listCounter++;
+      });
+
+      if ($(document).find('.list-item-wrapper').length === 1) {
+        $('.remove-list-item').remove();
+      }
+    }
+
+</script>
 
 {% endblock %}
 

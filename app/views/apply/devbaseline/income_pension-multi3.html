@@ -1,0 +1,324 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+div.test-case-overflow-allowed {
+  overflow: visible;
+}
+
+.input-list .list-entry {
+  vertical-align: middle;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+@media (min-width: 641px) {
+  .input-list .list-entry {
+    width: 78%;
+  }
+}
+
+.input-list .list-entry-remove {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  display: block;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  position: static;
+}
+
+@media (min-width: 641px) {
+  .input-list .list-entry-remove {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+@media (min-width: 641px) {
+  .input-list .list-entry-remove {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 0 0 0.6em;
+    position: absolute;
+    top: 6px;
+    /* height of textbox minus its top-padding */
+    left: 100%;
+    margin-left: 0.6em;
+  }
+}
+
+.input-list .text-box {
+  padding-left: 1.84em;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+@media (min-width: 769px) {
+  .input-list .text-box {
+    display: -moz-inline-stack;
+    display: inline-block;
+  }
+}
+.input-list .text-box {
+    display: inline-block;
+}
+.input-list .text-box {
+    padding-left: 1.84em;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.input-list .text-box-number-label {
+  float: left;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  width: 1.6em;
+  margin: 13px -1.6em 0 0;
+  position: relative;
+  left: 10px;
+  color: #6f777b;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+@media (min-width: 641px) {
+  .input-list .text-box-number-label {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+.input-list .list-entry-add {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 0 0 20px 0;
+}
+
+@media (min-width: 641px) {
+  .input-list .list-entry-add {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+
+.text-box-with-error, .text-box-smaller, .text-box-with-unit-before-with-error,
+.text-box-with-unit-before, .text-box-with-unit-after-with-error,
+.text-box-with-unit-after,
+.text-box {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  height: 50px;
+  margin: 0 0 15px 0;
+  padding: 5px;
+  border: 2px solid #0b0c0c;
+  width: 100%;
+  /* IE<8 cannot include borders and padding as part of width */
+}
+
+@media (min-width: 641px) {
+  .text-box-with-error, .text-box-smaller, .text-box-with-unit-before-with-error,
+  .text-box-with-unit-before, .text-box-with-unit-after-with-error,
+  .text-box-with-unit-after,
+  .text-box {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+.button-secondary:link, .button-secondary:hover, .button-secondary:focus, .button-secondary:visited {
+  color: #0b0c0c;
+}
+
+.button-secondary {
+  background-color: #dee0e2;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: .526315em .789473em .263157em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #b5babe;
+  -moz-box-shadow: 0 2px 0 #b5babe;
+  box-shadow: 0 2px 0 #b5babe;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: #0b0c0c;
+}
+
+.button-secondary:visited {
+  background-color: #dee0e2;
+}
+
+.button-secondary:hover, .button-secondary:focus {
+  background-color: #d0d3d6;
+}
+
+.button-secondary:active {
+  top: 2px;
+  -webkit-box-shadow: 0 0 0 #dee0e2;
+  -moz-box-shadow: 0 0 0 #dee0e2;
+  box-shadow: 0 0 0 #dee0e2;
+}
+
+.button-secondary.disabled, .button-secondary[disabled="disabled"], .button-secondary[disabled] {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+
+.button-secondary.disabled:hover, .button-secondary[disabled="disabled"]:hover, .button-secondary[disabled]:hover {
+  cursor: default;
+  background-color: #dee0e2;
+}
+
+.button-secondary.disabled:active, .button-secondary[disabled="disabled"]:active, .button-secondary[disabled]:active {
+  top: 0;
+  -webkit-box-shadow: 0 2px 0 #b5babe;
+  -moz-box-shadow: 0 2px 0 #b5babe;
+  box-shadow: 0 2px 0 #b5babe;
+}
+
+.button-secondary:link, .button-secondary:hover, .button-secondary:focus, .button-secondary:visited {
+  color: #0b0c0c;
+}
+
+.button-secondary:before {
+  content: "";
+  height: 110%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.button-secondary:active:before {
+  top: -10%;
+  height: 120%;
+}
+
+</style>
+
+
+    
+  <link href="public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+    
+<main id="content" role="main" tabindex="-1">
+
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      { if thirdparty }
+      <h1 class="heading-large">Tell us about {firstname}'s workplace and personal pensions</h1>
+      <br>
+    { else }
+      <h1 class="heading-large">What are the name's of your workplace or personal pensions?  </h1>
+    </div>
+<br>
+
+                                      <legend class="visuallyhidden">What are the name's of your workplace or personal pensions?</legend>
+                        <div class="form-group" style="margin-bottom: 0px">
+                            <label for="email" aria-describedby="hint-email">Enter the name of your pension.</label>
+                            <span class="form-hint" id="hint-email">For example, Scottish Widows</span>
+            
+                        </div>
+
+
+      <div class="test-case test-case-overflow-allowed">
+
+      <form class="form">
+          <div class="form-group ui-front">
+            <fieldset class="question" id="serviceFeatures">
+
+              <div class="input-list" data-list-item-name="service feature" id="list-entry-serviceFeatures">
+                <div class="list-entry">
+                  <label class="text-box-number-label" for="input-serviceFeatures-1"><span class="visuallyhidden">pension number</span> 1.</label><input class="text-box" id="input-serviceFeatures-1" name="serviceFeatures" type="text" value="">
+                </div>
+
+                <div class="list-entry">
+                  <label class="text-box-number-label" for="input-serviceFeatures-2"><span class="visuallyhidden">service feature number</span> 2.</label><input class="text-box" id="input-serviceFeatures-2" name="serviceFeatures" type="text" value=""><button class="button-secondary list-entry-remove" type="button">Remove <span class="visuallyhidden">pension number 2</span></button>
+                </div>
+                
+                <div class="list-entry">
+                  <label class="text-box-number-label" for="input-serviceFeatures-3"><span class="visuallyhidden">service feature number</span> 3.</label><input class="text-box" id="input-serviceFeatures-3" name="serviceFeatures" type="text" value=""><button class="button-secondary list-entry-remove" type="button">Remove <span class="visuallyhidden">pension number 3</span></button>
+                </div>
+
+                <button class="button-secondary list-entry-add" type="button">Add another pension</button>
+
+              </div>
+            </fieldset>
+          </div>
+          <br>
+                <div class="form-group">
+            <button id="add-button" class="button">Next</button>
+          </div> 
+        </form>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+
+    <script src="List%20entry%20-%20Test%20Case%201_files/govuk-template.js"></script>
+
+    
+
+  <!-- Javascript -->
+<script src="List%20entry%20-%20Test%20Case%201_files/details.js"></script>
+<script src="List%20entry%20-%20Test%20Case%201_files/selection-buttons.js"></script>
+<script src="/public/javascripts/show-hide-content.js"></script>
+<script src="/public/javascripts/application.js"></script>
+
+
+  <!-- Country selector -->
+  <script src="/public/javascripts/jquery-1.11.3js"></script>
+  <script src="/puclic/javascripts/hogan-3.js"></script>
+  <script src="/public/javascripts/list-entry.js"></script>
+
+
+
+
+    
+  
+
+{% endblock %}
