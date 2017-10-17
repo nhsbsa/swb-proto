@@ -479,6 +479,15 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('pregnancy');
       }
     });
+
+
+         router.get(/statepen-handler/, function (req, res) {
+      if (req.query.statepen== 'yes') {
+        res.redirect('pension_statepension-frequency');
+      } else {
+        res.redirect('../lis-check-list-3');
+      }
+    });
     
 
 

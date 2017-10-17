@@ -1,0 +1,78 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+ .list-discription {
+  margin-bottom: 0.3em;
+ }
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+                 { if thirdparty }
+                <h1 class="page-header--lede heading-large">Does {firstname} get housing benefit?</h1>
+                { else }
+                <h1 class="page-header--lede heading-large">How much of your rent is paid by housing benefit?</h1>
+
+            </header>
+  
+      <form action="" method="get" class="form">
+                 <div class="form-group">
+          
+
+          <fieldset class="">
+            <legend class="visually-hidden">
+              Which meals are included in your rent?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="yes" value="yes">
+              <label for="yes">All </label><span class="visually-hidden">of the rent</span>
+            </div>
+
+          <div class="multiple-choice">
+            <input id="penCredit" type="radio" name="benefits" value="penCredit">
+            <label for="penCredit" id="penCredit" class=" block-label">
+Some<span class="visually-hidden">of the rent</span>
+            </label>
+          </div>
+            
+          </fieldset>  
+          
+        </div>
+
+
+
+        
+  <div class="form-item-wrapper">
+    <div class="form-group">
+      
+        <a href="" class="button " id="next">Next</a>
+      
+    </div>
+  </div>
+<!-- 
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+      </form>
+
+    </div>
+
+  </div>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

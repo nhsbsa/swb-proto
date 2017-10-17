@@ -1,43 +1,16 @@
-<!DOCTYPE html>
-<!--[if lt IE 9]><html class="lte-ie8" lang=""><![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang=""><!--<![endif]--><head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ {% extends "layout_bsa.html" %}
 
-    <title>  Check your answers - Pre-application - Anti-money laundering registration - GOV.UK
-</title>
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
 
-    <script async="" src="Check%20your%20answers%20-%20Pre-application%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/analytics.js"></script><script type="text/javascript">
-      (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
-    </script>
+{% block content %}
 
-    <!--[if gt IE 8]><!--><link href="Check%20your%20answers%20-%20Pre-application%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/govuk-template.css" media="screen" rel="stylesheet" type="text/css"><!--<![endif]-->
-    <!--[if IE 6]><link href="/stylesheets/govuk-template-ie6.css?0.16.4" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 7]><link href="/stylesheets/govuk-template-ie7.css?0.16.4" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 8]><link href="/stylesheets/govuk-template-ie8.css?0.16.4" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <link href="Check%20your%20answers%20-%20Pre-application%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/govuk-template.css" media="screen" rel="stylesheet" type="text/css">
 
     <link href="Check%20your%20answers%20-%20Pre-application%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/govuk-template-print.css" media="print" rel="stylesheet" type="text/css">
-
-    <!--[if IE 8]>
-    <script type="text/javascript">
-      (function(){if(window.opera){return;}
-       setTimeout(function(){var a=document,g,b={families:(g=
-       ["nta"]),urls:["/stylesheets/fonts-ie8.css?0.16.4"]},
-       c="/javascripts/vendor/goog/webfont-debug.js?0.16.4",d="script",
-       e=a.createElement(d),f=a.getElementsByTagName(d)[0],h=g.length;WebFontConfig
-       ={custom:b},e.src=c,f.parentNode.insertBefore(e,f);for(;h=h-1;a.documentElement
-       .className+=' wf-'+g[h].replace(/\s/g,'').toLowerCase()+'-n4-loading');},0)
-      })()
-    </script>
-    <![endif]-->
-    <!--[if gte IE 9]><!-->
       <link href="Check%20your%20answers%20-%20Pre-application%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/fonts.css" media="all" rel="stylesheet" type="text/css">
-    <!--<![endif]-->
-
-
-    <!--[if lt IE 9]>
-      <script src="/javascripts/ie.js?0.16.4" type="text/javascript"></script>
-    <![endif]-->
+    
 
     <link rel="shortcut icon" href="http://hmrc-amls-prototype.herokuapp.com/images/favicon.ico?0.16.4" type="image/x-icon">
 
@@ -62,59 +35,8 @@
 
     
 
-    <div id="skiplink-container">
-      <div>
-        <a href="#content" class="skiplink">Skip to main content</a>
-      </div>
-    </div>
-
-    <div id="global-cookie-message">
-      
-      
-    </div>
-    <!--end global-cookie-message-->
-
-    
-    <header role="banner" id="global-header" class="with-proposition">
-      <div class="header-wrapper">
-        <div class="header-global">
-          <div class="header-logo">
-            <a href="https://www.gov.uk/" title="Go to the GOV.UK homepage" id="logo" class="content">
-              <img src="Check%20your%20answers%20-%20Pre-application%20-%20Anti-money%20laundering%20registration%20-%20GOV.UK_files/gov.png" alt="" height="31" width="35"> GOV.UK
-            </a>
-          </div>
-        </div>
-  <div class="header-proposition">
-      <div class="content">
-          <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
-          <nav id="proposition-menu">
-              <a href="http://hmrc-amls-prototype.herokuapp.com/" id="proposition-name">Manage your anti-money laundering supervision</a>
-              <ul id="proposition-links">
-                  <li><a href="http://hmrc-amls-prototype.herokuapp.com/sprint51/pre-application/your-registration/gov-gateway">Sign out</a></li>
-              </ul>
-          </nav>
-      </div>
-  </div>
-      </div>
-    </header>
-    <!--end header-->
-    
-
-
-    <div id="global-header-bar"></div>
-    <!--end global-header-bar-->
-
 	<main id="content" role="main">
-			<div class="phase-banner-beta">
-			  <p>
-			    <strong class="phase-tag-beta">
-			    	
-			    	BETA
-		            
-			    </strong>
-		        <span>This is not a real service – it is just for user research and testing.</span>
-			  </p>
-			</div>
+
 		
     <div class="grid-row">
         <div class="column-two-thirds">
@@ -211,27 +133,6 @@ RH12 1TD</p>
 
 	</main>
 
-    <footer class="group js-footer" id="footer" role="contentinfo">
-
-      <div class="footer-wrapper">
-
-        <div class="footer-meta">
-          <div class="footer-meta-inner">
-
-            <div class="open-government-licence">
-              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-              
-                <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-              
-            </div>
-          </div>
-
-          <div class="copyright">
-            <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-          </div>
-        </div>
-      </div>
-    </footer>
 
     <!--end footer-->
 
@@ -256,6 +157,5 @@ RH12 1TD</p>
     ga('create', 'UA-77558651-1', 'auto');
     ga('send', 'pageview');
   </script>
-  
 
-</body></html>
+{% endblock %}

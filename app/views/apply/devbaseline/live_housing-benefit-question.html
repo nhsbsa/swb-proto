@@ -15,11 +15,11 @@
 
             <header class="page-header">
                 <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
-                 { if thirdparty }
+                 {% if thirdparty %}
                 <h1 class="page-header--lede heading-large">Does {{firstname}} get housing benefit?</h1>
-                { else }
+                {% else %}
                 <h1 class="page-header--lede heading-large">Do you get housing benefit?</h1>
-         
+                 {% endif %}
             </header>
       
       <form action="hbentype-handler" method="get" class="form">
