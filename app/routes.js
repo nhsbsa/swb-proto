@@ -244,7 +244,7 @@ router.get(/mobile-c-handler/, function (req, res) {
       } else if (applicant.age <= 24) {
         res.redirect('children-under-20');
       } else {
-        res.redirect('../live/you-live');
+        res.redirect('about-you-summary');
       }
 });
 
@@ -437,7 +437,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.nonDep === 'yes') {
         res.redirect('non-dep-ko');
       } else {
-        res.redirect('../lis-check-list-3');
+        res.redirect('about-you-summary');
       }
     });
 
@@ -488,6 +488,69 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('../lis-check-list-3');
       }
     });
+
+         router.get(/kickout-handler/, function (req, res) {
+      if (req.query.kickout== 'Yes') {
+        res.redirect('../you/whose-applying');
+      } else {
+        res.redirect('kickout_release2-no-answer');
+      }
+    });
+
+
+var benType;
+    // passported benefits handler
+      router.get(/ben-check/, function (req, res) {
+
+        if (req.query.incomesupport == "true") {
+                  console.log(req.query);
+
+          res.render('apply/preapp/full-exemption-benefits-travel', {
+            'bentype' : benType
+          });
+        } else if (req.query.taxcredits == "true") {
+          if (req.query.esa == "true") {
+            res.render('ESA');
+          } else if (req.query.jsa == "true") {
+            res.render('JSA');
+          } else if (req.query.uc == "true") {
+            res.render('checker/1/benefits-uc-tc');
+          } else {
+            // tc only
+            res.render('checker/1/tax-credits-over20-new',{
+            });
+          }
+
+        } else if (req.query.uc == "true") {
+          setPartnerText(applicant.partner);
+          res.render('checker/1/uc-claim-type-v2', {
+      
+            // 'partnerortext' : partnerOrText
+          });
+        } else if (req.query.esa == "true") {
+          benType = 'income related Employment and Support Allowance (ESA)';
+          res.render('checker/1/benefits-esa', {
+
+          });
+        } else if (req.query.jsa == "true") {
+          benType = 'income based Job Seekers Allowance (JSA)';
+          res.render('checker/1/benefits-jsa', {
+
+          });
+        } else if (req.query.pencredit == "true") {
+          benType = 'Pension Credit (Guarantee Credit)';
+          res.render('checker/1/benefits-pension', {
+
+          });
+        } else if (req.query.none == 'true') {
+          if (applicant.age > 60) {
+            res.redirect('war-pension');
+          } else {
+            res.redirect('pregnancy');
+          }
+        }
+      });
+
     
 
 

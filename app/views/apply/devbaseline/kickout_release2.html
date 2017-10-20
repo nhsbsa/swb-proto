@@ -25,7 +25,7 @@
   <li>you claim state pension and it's your only income</li>
   <li>you live on your own</li>
 </ul>
-  <form action="" method="get" class="form">
+  <form action="kickout-handler" method="get" class="form">
 
         
 <!--           <div class="form-group">
@@ -44,18 +44,12 @@
       </legend>
 
       <div class="multiple-choice">
-        <input id="radio-yes-no-yes" name="yes-no-group" value="Yes" type="radio">
+        <input id="radio-yes-no-yes" name="kickout" value="Yes" type="radio">
         <label for="radio-yes-no-yes">Yes</label>
       </div>
-      <div class="multiple-choice" data-target="no-and-do-next">
-        <input id="radio-yes-no-no" name="yes-no-group" value="No" aria-controls="no-and-do-next" aria-expanded="false" type="radio">
+      <div class="multiple-choice">
+        <input id="radio-yes-no-no" name="kickout" value="No"  type="radio">
         <label for="radio-yes-no-no">No</label>
-      </div>
-
-      <div class="panel panel-border-narrow js-hidden" id="no-and-do-next" aria-hidden="true">
-        <h2 class="heading-medium">You can't apply online yet</h2>
-          <p>You need to apply using a paper form called an HC1.</p>
-          <p>You can <a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">download an HC1</a> or get one from Jobcentres, GP practices, pharmacies and Citizens Advice centres.</p>
       </div>
 
     </fieldset>

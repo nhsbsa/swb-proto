@@ -1,0 +1,101 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+  </style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+        <div class="heading-group">
+        <p><span class="visuallyhidden">This section is </span>Before you start</p>
+        <h1 class="heading-xlarge">Pre application eligibility</h1>
+      </div>
+    </div>
+    </div>
+
+    <div class="grid-row what-you-need">
+
+<!--         <div class="column-one-third">
+             <div class="savemessage">
+                 <h2 class="heading-small">Automatic saving</h2>
+                 <p>Your information is saved automatically. If you sign out, you’ll have 28 days to complete your application.</p>
+             </div>        </div> -->
+
+        <div class="column-two-thirds">
+        <p class="lede">Before you apply we're going ask a few quick questions.</p>
+<p>So as to avoid wasting your time, we're going to check if you are already exempt from paying NHS costs or unable to get help through this service.</p>
+
+<br>
+<p>
+<a class="button" href="benefits-question" id="next">Next</a>
+</p>
+
+        </div>
+    </div>
+
+
+
+
+ 
+
+
+
+        
+<!--       <p class="navigation"><a class="cancel" href="start">Cancel</a></p> -->
+
+      </form>
+      
+    </div>
+    
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

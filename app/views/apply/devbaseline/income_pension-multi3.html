@@ -7,9 +7,7 @@
 {% block content %}
 
 <style>
-div.test-case-overflow-allowed {
-  overflow: visible;
-}
+
 
 .input-list .list-entry {
   vertical-align: middle;
@@ -226,6 +224,7 @@ div.test-case-overflow-allowed {
   height: 120%;
 }
 
+
 </style>
 
 
@@ -251,31 +250,54 @@ div.test-case-overflow-allowed {
       <h1 class="heading-large">Tell us about {firstname}'s workplace and personal pensions</h1>
       <br>
     { else }
-      <h1 class="heading-large">What are the name's of your workplace or personal pensions?  </h1>
+      <h1 class="heading-large">Tell us about any workplace and private pensions you have  </h1>
     </div>
 <br>
 
-                                      <legend class="visuallyhidden">What are the name's of your workplace or personal pensions?</legend>
+
+ 
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+                        <legend class="visuallyhidden">What are the name's of your workplace or personal pensions?</legend>
+                        
                         <div class="form-group" style="margin-bottom: 0px">
-                            <label for="email" aria-describedby="hint-email">Enter the name of your pension.</label>
+                            <label for="email" aria-describedby="hint-email">Enter a name for each of the pensions you have. <!-- Give each of your pensions a name, so you can tell them apart when you enter their details. --></label>
                             <span class="form-hint" id="hint-email">For example, Scottish Widows</span>
             
                         </div>
-
-
+<br><br>
+<h2 class="heading-small">Name of pensions</h2>
       <div class="test-case test-case-overflow-allowed">
-
+<!-- <h2 class="heading-small">Name of pensions</h2> -->
       <form class="form">
           <div class="form-group ui-front">
             <fieldset class="question" id="serviceFeatures">
 
               <div class="input-list" data-list-item-name="service feature" id="list-entry-serviceFeatures">
                 <div class="list-entry">
-                  <label class="text-box-number-label" for="input-serviceFeatures-1"><span class="visuallyhidden">pension number</span> 1.</label><input class="text-box" id="input-serviceFeatures-1" name="serviceFeatures" type="text" value="">
+                  <label class="text-box-number-label" for="input-serviceFeatures-1">
+                  <span class="visuallyhidden">pension number</span> 1.</label>
+                  <input class="text-box" id="input-serviceFeatures-1" name="serviceFeatures" type="text" value="">
                 </div>
 
                 <div class="list-entry">
-                  <label class="text-box-number-label" for="input-serviceFeatures-2"><span class="visuallyhidden">service feature number</span> 2.</label><input class="text-box" id="input-serviceFeatures-2" name="serviceFeatures" type="text" value=""><button class="button-secondary list-entry-remove" type="button">Remove <span class="visuallyhidden">pension number 2</span></button>
+                  <label class="text-box-number-label" for="input-serviceFeatures-2">
+                  <span class="visuallyhidden">service feature number</span> 2.</label>
+                  <input class="text-box" id="input-serviceFeatures-2" name="serviceFeatures" type="text" value="">
+                  <button class="button-secondary list-entry-remove" type="button">Remove <span class="visuallyhidden">pension number 2</span>
+                  </button>
                 </div>
                 
                 <div class="list-entry">
@@ -298,22 +320,6 @@ div.test-case-overflow-allowed {
   </div>
 </main>
 
-
-    <script src="List%20entry%20-%20Test%20Case%201_files/govuk-template.js"></script>
-
-    
-
-  <!-- Javascript -->
-<script src="List%20entry%20-%20Test%20Case%201_files/details.js"></script>
-<script src="List%20entry%20-%20Test%20Case%201_files/selection-buttons.js"></script>
-<script src="/public/javascripts/show-hide-content.js"></script>
-<script src="/public/javascripts/application.js"></script>
-
-
-  <!-- Country selector -->
-  <script src="/public/javascripts/jquery-1.11.3js"></script>
-  <script src="/puclic/javascripts/hogan-3.js"></script>
-  <script src="/public/javascripts/list-entry.js"></script>
 
 
 

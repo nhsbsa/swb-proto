@@ -14,31 +14,32 @@
 
 <div class="heading-group">
         <p>Apply for help with NHS costs</p>
-      {% if thirdparty %}
-      <h1 class="heading-large">Does anyone else live with {{firstname}} who is 18 or older?</h1>
-    {% else %}
-      <h1 class="heading-large">Does anyone else live with you who is 18 or older?</h1>
-    {% endif %}
+      { if thirdparty }
+      <h1 class="heading-large">Has {firstname} deferred their State Pension?</h1>
+      <br>
+    { else }
+      <h1 class="heading-large">Have you deferred your State Pension? </h1>
+
     </div>
 
 
 
-  <form action="non-dephandler" method="get" class="form">
+  <form action="statepen-handler" method="get" class="form">
 
        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Does anyone else live with you at {{data['address-lineone']}}?
+               Do you get another pension? 
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="nonDep" value="yes">
+              <input id="yes" type="radio" name="statepen" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="nonDep" value="no">
+              <input id="no" type="radio" name="statepen" value="no">
               <label for="no">No</label>
             </div>
             
@@ -47,7 +48,7 @@
         </div>
         
           <div class="form-group">
-            <input class="button" type="submit"  value="Next">
+            <input class="button" type="submit" href="#"  value="Next">
           </div>
 
       </form>

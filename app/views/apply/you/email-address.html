@@ -17,15 +17,15 @@
         <h1 class="heading-large">What is your email address?</h1>
       </div>
 
+
       <form action="email-c-handler" method="get" class="form">
-
-        <div class="form-item-wrapper">
-
-          <div class="form-group">
-            <input type="text" id="email" name="email" value="" class="form-control" required>
-          </div>
-
+        <legend class="visuallyhidden">What’s your email address?</legend>
+        <div class="form-group">
+            <label for="email" aria-describedby="hint-email">Email address</label>
+            <span class="form-hint" id="hint-email">For example, myname@example.com</span>
+            <input class="form-control" id="email" type="email">
         </div>
+
         
         <div class="form-item-wrapper">
           <div class="form-group">

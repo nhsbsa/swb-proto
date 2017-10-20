@@ -15,17 +15,18 @@
 <div class="heading-group">
         <p>Apply for help with NHS costs</p>
      
-      <h1 class="heading-large">We're currently building this service</h1>
+      <h1 class="heading-large">Do you live on your own with pension as your only income?</h1>
 
     </div>
+    <br>
 <!-- <p class="lede">We're currently building this service</p> -->
-<p>At the moment you can only use this service if both of these apply:</p>
+<!-- <p>For now, you can only use this service if a pension is your only income and you live on your own.</p> -->
 
-<ul class="list-bullet">
+<!-- <ul class="list-bullet">
   <li>you claim state pension and it's your only income</li>
   <li>you live on your own</li>
-</ul>
-  <form action="" method="get" class="form">
+</ul> -->
+  <form action="kickout-handler" method="get" class="form">
 
         
 <!--           <div class="form-group">
@@ -38,24 +39,18 @@
     <fieldset class="inline">
 
       <legend>
-        <h1 class="heading-medium">
+        <h1 class="visually-hidden">
           Do both of these things apply?
         </h1>
       </legend>
 
       <div class="multiple-choice">
-        <input id="radio-yes-no-yes" name="yes-no-group" value="Yes" type="radio">
+        <input id="radio-yes-no-yes" name="kickout" value="Yes" type="radio">
         <label for="radio-yes-no-yes">Yes</label>
       </div>
-      <div class="multiple-choice" data-target="no-and-do-next">
-        <input id="radio-yes-no-no" name="yes-no-group" value="No" aria-controls="no-and-do-next" aria-expanded="false" type="radio">
+      <div class="multiple-choice">
+        <input id="radio-yes-no-no" name="kickout" value="No"  type="radio">
         <label for="radio-yes-no-no">No</label>
-      </div>
-
-      <div class="panel panel-border-narrow js-hidden" id="no-and-do-next" aria-hidden="true">
-        <h2 class="heading-medium">You can't apply online yet</h2>
-          <p>You need to apply using a paper form called an HC1.</p>
-          <p>You can <a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">download an HC1</a> or get one from Jobcentres, GP practices, pharmacies and Citizens Advice centres.</p>
       </div>
 
     </fieldset>
