@@ -310,11 +310,11 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('housing-benefit');
       } else if (req.query.home === 'guest') {
         applicant.guest = true;
-        res.redirect('../guest/address');
+        res.redirect('live-ko');
       } else if (req.query.home === 'homeless') {
-        res.redirect('../living-summary-nh');
+        res.redirect('live-ko');
       } else {
-        res.redirect('../home');
+        res.redirect('live-ko');
       }
     });
 
@@ -333,12 +333,21 @@ router.get(/telephone-c-handler/, function (req, res) {
         router.get(/hbentype-handler/, function (req, res) {
       console.log(req.query);
       if (req.query.hben === 'yes') {
-        res.redirect('live_additions');
+        res.redirect('housing-benefit-all');
       } else {
         res.redirect('live_rent_rent-amount');
       }
     });
 
+    // housing ben type handler
+        router.get(/allsum-handler/, function (req, res) {
+      console.log(req.query);
+      if (req.query.sum === 'all') {
+        res.redirect('live_services2');
+      } else {
+        res.redirect('live_rent_rent-amount');
+      }
+    });
 
 
    // service handler

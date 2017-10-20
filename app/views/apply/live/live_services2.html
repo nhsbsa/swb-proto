@@ -12,14 +12,17 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-      { if thirdparty }
-      <h1 class="heading-large">Does {{firstname}} pay any service charges for {address}?</h1>
-      <br>
-    { else }
-      <h1 class="heading-large">Do you pay any of these on top of your rent?</h1>
-    </div>
+
+
+                    <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {{firstname}} pay any service charges for {address}?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Do you pay any of these on top of your rent?</h1>
+                 {% endif %}
+            </header>
+
 
 <ul class="list-bullet">
 <li>Cleaning, maintenance or gardening services for communal areas</li>

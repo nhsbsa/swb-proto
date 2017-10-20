@@ -29,23 +29,23 @@
                  {% endif %}
             </header>
   
-      <form action="" method="get" class="form">
-                 <div class="form-group">
-          
+      <form action="allsum-handler" method="get" class="form">
 
-          <fieldset class="">
+        <div class="form-group">
+          
+          <fieldset>
             <legend class="visually-hidden">
               Which meals are included in your rent?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="yes" value="yes">
-              <label for="yes">All </label><span class="visually-hidden">of the rent</span>
+              <input id="all" type="radio" name="sum" value="all">
+              <label for="all">All </label><span class="visually-hidden">of the rent</span>
             </div>
 
           <div class="multiple-choice">
-            <input id="penCredit" type="radio" name="benefits" value="penCredit">
-            <label for="penCredit" id="penCredit" class=" block-label">
+            <input id="some" type="radio" name="sum" value="some">
+            <label for="some" id="some" class=" block-label">
 Some<span class="visually-hidden">of the rent</span>
             </label>
           </div>
@@ -54,25 +54,15 @@ Some<span class="visually-hidden">of the rent</span>
           
         </div>
 
-
-
         
-  <div class="form-item-wrapper">
-    <div class="form-group">
-      
-        <a href="" class="button " id="next">Next</a>
-      
-    </div>
-  </div>
-<!-- 
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
 
-    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
 
       </form>
 
-    </div>
 
-  </div>
     </div>
     </div>
 </main>
