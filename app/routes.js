@@ -335,7 +335,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.hben === 'yes') {
         res.redirect('housing-benefit-all');
       } else {
-        res.redirect('live_rent_rent-amount');
+        res.redirect('live_rent-frequency');
       }
     });
 
@@ -349,6 +349,27 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     });
 
+        
+            // service charge question type handler
+        router.get(/servicequestion-handler/, function (req, res) {
+      console.log(req.query);
+      if (req.query.servicecharge === 'yes') {
+        res.redirect('live_services-amount');
+      } else {
+        res.redirect('live_rent_rent-amount');
+      }
+    });
+
+        
+    // service charge question type handler
+        router.get(/rentfrq-handler/, function (req, res) {
+      console.log(req.query);
+      if (req.query.servicecharge === 'yes') {
+        res.redirect('live_services-amount');
+      } else {
+        res.redirect('live_rent_rent-amount');
+      }
+    });
 
    // service handler
         router.get(/service-handler/, function (req, res) {
