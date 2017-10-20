@@ -23,7 +23,7 @@
 
 
 
-      <form action="additions" method="get" class="form">
+      <form action="addenergy-handler" method="get" class="form">
 
         <fieldset class="form-group">
           <legend class="visually-hidden">
@@ -31,22 +31,22 @@
           </legend>
 
           <div class="multiple-choice multiple-radio">
-            <input id="meal" name="rentdeductions" value="meal" type="radio">
+            <input id="meal" name="rentadds" value="meal" type="radio">
             <label for="meal">Meals only</label>
           </div>
           <div class="multiple-choice multiple-radio">
-            <input id="email" name="contact" value="email" type="radio">
-            <label for="email">Energy bills only</label>
+            <input id="energy" name="rentadds" value="energy" type="radio">
+            <label for="energy">Energy bills only</label>
           </div>
           <div class="multiple-choice multiple-radio">
-            <input id="email" name="contact" value="email" type="radio">
-            <label for="email">Both meals and energy bills</label>
+            <input id="both" name="rentadds" value="both" type="radio">
+            <label for="both">Both meals and energy bills</label>
           </div>
 
           <p class="form-block">or</p>
           <div class="multiple-choice multiple-radio">
-            <input id="text" name="contact" value="text" type="radio">
-            <label for="text">No, these aren't included</label>
+            <input id="no" name="rentadds" value="no" type="radio">
+            <label for="no">No, these aren't included</label>
           </div>
 
         </fieldset>

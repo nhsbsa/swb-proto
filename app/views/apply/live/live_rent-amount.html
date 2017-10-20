@@ -12,23 +12,22 @@
  <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-      {% if thirdparty %}
-      <h1 class="heading-large">How much is {{firstname}}'s rent {every month}?</h1>
-    {% else %}
-      <h1 class="heading-large">How much is your rent {every month}?</h1>
-    {% endif %}
 
-    </div>
 
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">How much is {{firstname}}'s rent {every month}?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">How much is your monthly rent payment?</h1>
+                 {% endif %}
+            </header>
 
       <form action="" method="" class="form">
           <fieldset>
             <legend class="visually-hidden">
 How often do you pay your mortgage {every month}?</legend>
 
-<br>
 
 <p>Don't include any rent that is paid by housing benefit, only tell us the amount you pay yourself. </p>
 
@@ -37,7 +36,7 @@ How often do you pay your mortgage {every month}?</legend>
 <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
 <br><br><br>
 <p>
-          <a class="button" href="loan-question" id="next">Next</a>
+          <a class="button" href="live_deductions" id="next">Next</a>
         </p>
       
 <!-- 

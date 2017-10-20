@@ -345,7 +345,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.sum === 'all') {
         res.redirect('live_services2');
       } else {
-        res.redirect('live_rent_rent-amount');
+        res.redirect('live_rent-frequency');
       }
     });
 
@@ -356,20 +356,20 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.servicecharge === 'yes') {
         res.redirect('live_services-amount');
       } else {
-        res.redirect('live_rent_rent-amount');
+        res.redirect('live_ground-rent');
       }
     });
 
         
-    // service charge question type handler
-        router.get(/rentfrq-handler/, function (req, res) {
-      console.log(req.query);
-      if (req.query.servicecharge === 'yes') {
-        res.redirect('live_services-amount');
-      } else {
-        res.redirect('live_rent_rent-amount');
-      }
-    });
+    // // service charge question type handler
+    //     router.get(/rentfrq-handler/, function (req, res) {
+    //   console.log(req.query);
+    //   if (req.query.servicecharge === 'yes') {
+    //     res.redirect('live_rent_rent-amount');
+    //   } else {
+    //     res.redirect('live_rent_rent-amount');
+    //   }
+    // });
 
    // service handler
         router.get(/service-handler/, function (req, res) {
@@ -416,7 +416,6 @@ router.get(/telephone-c-handler/, function (req, res) {
       res.redirect('../your-home');
     });
 
-
     
     // mortgaged-handler
     router.get(/mortgaged2-handler/, function (req, res) {
@@ -427,7 +426,14 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     })
 
-
+      //meals and energy
+    router.get(/addenergy-handler/, function (req, res) {
+      if (req.query.rentadds== 'no') {
+        res.redirect('live_services2');
+      } else {
+        res.redirect('live_rent_meals-which');
+      }
+    });
 
     
 
