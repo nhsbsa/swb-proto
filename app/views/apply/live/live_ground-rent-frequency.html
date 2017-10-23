@@ -12,18 +12,17 @@
  <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-      { if thirdparty }
-      <h1 class="heading-large">How often does {{firstname}} pay their ground rent?</h1>
-      <br>
-    { else }
-      <h1 class="heading-large">How often do you pay your ground rent?</h1>
 
 
-    </div>
+         <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">How often does {{firstname}} pay their ground rent?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">How often do you pay your ground rent top of your rent?</h1>
+                 {% endif %}
+            </header>
 
-<br>
 
       <form action="" method="" class="form">
           <fieldset>
@@ -57,7 +56,7 @@ How often do you pay your ground rent?</legend>
 
 <br>
 <p>
-          <a class="button" href="loan-question" id="next">Next</a>
+          <a class="button" href="live_ground-rent-amount" id="next">Next</a>
         </p>
       
 

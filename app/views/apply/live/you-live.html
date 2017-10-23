@@ -39,12 +39,17 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <a href="javascript:history.go(-1)" class="link-back">Back</a>
-      <div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-  <h1 class="heading-large">
-      Which type of property do you live in?
-  </h1>
-<br>
+
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Which type of property does {{firstname}} live in?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Which type of property do you live in?</h1>
+                 {% endif %}
+            </header>
+
+
   <form action="home-handler" method="get" class="form">
 
 <div class="form-group">
@@ -69,10 +74,10 @@
           </div>
 
           
-           <div class="multiple-choice">
+<!--            <div class="multiple-choice">
             <input type="radio" id="guest" value="guest" name="home">
             <label class="form-control-radio bold" for="guest">A care home</label>
-        </div>
+        </div> -->
 
           <div class="multiple-choice">
             <input type="radio" id="guest" value="guest" name="home">

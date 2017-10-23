@@ -8,36 +8,38 @@
 {% block content %}
 
 <main id="content" role="main">
-<a href="javascript:history.go(-1)" class="link-back">Back</a>
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-               <header class="page-header">
+           <header class="page-header">
             <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
              {% if thirdparty %}
-            <h1 class="page-header--lede heading-large">Does {{firstname}} claim any benefits or tax credits?</h1>
+            <h1 class="page-header--lede heading-large">Does {{firstname}} get help to pay for their care home from your local council?</h1>
             {% else %}
-            <h1 class="page-header--lede heading-large">Do you claim any benefits or tax credits?</h1>
+            <h1 class="page-header--lede heading-large">Do you get help to pay for your care home from your local council?</h1>
              {% endif %}
             </header>
 
-      <form action="benefits-handler" method="get" class="form">
-        
+  <p>If you're not sure, ask the home manager or matron</p>
+
+    <form action="authority-assessed-handler" method="get" class="form">
+
         <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Do {{partnerortext}} claim any benefits or tax credits?
+              Is your GP practice in Scotland or Wales?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="benefittc" value="yes">
+              <input id="yes" type="radio" name="authority" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="benefittc" value="no">
+              <input id="no" type="radio" name="authority" value="no">
               <label for="no">No</label>
             </div>
             
@@ -50,20 +52,10 @@
           </div>
 
       </form>
-
-
-
-
     </div>
-    </div>
-
+</div>
 </main>
 
-
 {% endblock %}
-
-
-
-
-
+  
 

@@ -12,13 +12,15 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-             <header class="page-header">
-                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Where you live</p>
-                 { if thirdparty }
-                <h1 class="page-header--lede heading-large"> How much does ground rent does {firstname} pay {every week}?</h1>
-                { else }
-                <h1 class="page-header--lede heading-large">How much ground rent do you pay {every week}?</h1>
 
+
+             <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large"> How much does ground rent does {firstname} pay {every week}?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">How much is your monthly ground rent payment?</h1>
+{% endif %}
             </header>
 
 
@@ -34,12 +36,9 @@
 
         </div>
   
-        <div class="form-item-wrapper">
-
-          <div class="form-group">
-            <input class="button" type="submit" value="Next">
-          </div>
-        </div>
+<p>
+          <a class="button" href="live_loan-adapted" id="next">Next</a>
+        </p>
 
 
       </form>

@@ -12,18 +12,19 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-    {% if thirdparty %}
-      <h1 class="heading-large">What is {{firstname}}'s date of birth?</h1>
-    {% else %}
-      <h1 class="heading-large">What is your date of birth?</h1>
-    {% endif %}
-</div>
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">What is {{firstname}}'s date of birth?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">What is your date of birth?</h1>
+                 {% endif %}
+            </header>
+
         <form action="birth-handler" method="get" class="form">
 
 <div class="form-group">
-  <fieldset data-required data-error="Cannot be blank">
+  <fieldset>
 <!--     <legend class="form-label-bold">Date of birth</legend> -->
     <p class="form-hint" id="dob-hint">For example, 31 07 1980</p>
 

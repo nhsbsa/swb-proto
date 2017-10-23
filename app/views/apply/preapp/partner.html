@@ -1,4 +1,4 @@
- {% extends "layout_bsa.html" %}
+{% extends "layout_bsa.html" %}
 
 {% block page_title %}
   Help paying for NHS Costs prototype
@@ -7,38 +7,42 @@
 {% block content %}
 
 <main id="content" role="main">
-  <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
 
-                     <header class="page-header">
-                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+
+             <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
                  {% if thirdparty %}
-                <h1 class="page-header--lede heading-large">Does {{firstname}} pay council tax for {{address}}?</h1>
+                <h1 class="page-header--lede heading-large">Does {{firstname}} live with a partner?</h1>
                 {% else %}
-                <h1 class="page-header--lede heading-large">Do you pay council tax?</h1>
+                <h1 class="page-header--lede heading-large">Do you live with a partner?</h1>
                  {% endif %}
             </header>
 
 
-  <form action="counciltax-handler" method="get" class="form">
+  <p>This means you live together as a couple, you don't have to be married or in a civil partnership.</p>
+
+
+  <form action="p2-handler" method="get" class="form">
 
        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Do you pay council tax?
+              Do you live with a partner?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="councilTax" value="yes">
+              <input id="yes" type="radio" name="partner" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="councilTax" value="no">
+              <input id="no" type="radio" name="partner" value="no">
               <label for="no">No</label>
             </div>
             

@@ -1,0 +1,64 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+           <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your contact details</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Is this address also {{firstname}}'s postal address?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Is this address also your postal address?</h1>
+             {% endif %}
+            </header>
+
+<p class="panel panel-border-wide">1 Street, <br>Place, <br>County,<br> NE12 A34<br>
+</p>
+<br>
+ 
+      <form action="address-c-handler" method="get" class="form">
+
+       <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Is this address also your postal address?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="postaddress" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="postaddress" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+      <div class="form-group">
+        <input class="button" type="submit"  value="Next">
+      </div>
+        
+<!--       <p class="navigation"><a class="cancel" href="start">Cancel</a></p> -->
+
+      </form>
+      
+    </div>
+    
+  </div>
+  
+</main>
+
+{% endblock %}

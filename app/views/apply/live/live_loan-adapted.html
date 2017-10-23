@@ -13,20 +13,21 @@
     <div class="column-two-thirds">
 
 
-    <div class="heading-group">
-        <p>Apply for help with NHS costs</p>
 
-    {if thirdparty }
-      <h1 class="heading-large">Does {firstname} have a loan that's been used to make their home more accessible?</h1>
-      <br>
-    {else }
-      <h1 class="heading-large">Do you have a loan that's been used to make your home more accessible?</h1>
 
-    </div>
+                 <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {firstname} have a loan that's been used to make their home more accessible?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Do you have a loan that's been used to make your home more accessible?</h1>
+                 {% endif %}
+            </header>
 
-<p>This is to change {your/their} home for the needs of a disabled person or someone over 75. For example, widening doors or installing a stair lift.</p>
 
-      <form action="" method="get" class="form">
+<p>This is to change your home for the needs of a disabled person or someone over 75. For example, widening doors or installing a stair lift.</p>
+
+      <form action="adaptloan-handler" method="get" class="form">
                  <div class="form-group">
           
           <fieldset class="inline">
@@ -35,12 +36,12 @@
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="yes" value="yes">
+              <input id="yes" type="radio" name="adapted" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="no" value="no">
+              <input id="no" type="radio" name="adapted" value="no">
               <label for="no">No</label>
             </div>
             
@@ -51,13 +52,11 @@
 
 
         
-  <div class="form-item-wrapper">
-    <div class="form-group">
-      
-        <a href="" class="button " id="next">Next</a>
-      
-    </div>
-  </div>
+    <!-- submit button -->
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
 <!-- 
 
     <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
@@ -67,8 +66,7 @@
     </div>
 
   </div>
-    </div>
-    </div>
+
 </main>
 
 {% endblock %}

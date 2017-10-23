@@ -12,26 +12,19 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-     
-      <h1 class="heading-large">Do you live on your own with pension as your only income?</h1>
 
-    </div>
+               <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Does {{firstname}} live on your own with pension as their only income?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Do you live on your own with pension as your only income?</h1>
+             {% endif %}
+            </header>
+
     <br>
-<!-- <p class="lede">We're currently building this service</p> -->
-<!-- <p>For now, you can only use this service if a pension is your only income and you live on your own.</p> -->
 
-<!-- <ul class="list-bullet">
-  <li>you claim state pension and it's your only income</li>
-  <li>you live on your own</li>
-</ul> -->
   <form action="kickout-handler" method="get" class="form">
-
-        
-<!--           <div class="form-group">
-            <input class="button button-start" type="submit" href="#"  value="Apply online">
-          </div> -->
 
 
 <form>
@@ -40,7 +33,7 @@
 
       <legend>
         <h1 class="visually-hidden">
-          Do both of these things apply?
+          Do you live on your own with pension as your only income?
         </h1>
       </legend>
 

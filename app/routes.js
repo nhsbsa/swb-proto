@@ -58,15 +58,10 @@ applicant.address = null;
 
 var thisYear = 2017;
 
+// PRE APPLICATION SECTION
 
 
-router.get(/dob/, function (req, res) {
-  res.render('apply/you/dob', {
-    thirdparty : benificiary.thirdParty,
-    firstname : benificiary.firstname
-  });
-});
-
+// Who's it for?
 router.get(/beneficiary-handler/, function (req, res) {
   console.log(req.query.whofor);
   if(req.query.whofor == "yes") {
@@ -79,10 +74,48 @@ router.get(/beneficiary-handler/, function (req, res) {
 
 router.get(/registration-third-party/, function (req, res) {
   console.log(benificiary.thirdParty);
-  res.render('apply/you/registration-third-party', {
+  res.render('apply/preapp/registration-third-party', {
     thirdparty : benificiary.thirdParty
   });
 });
+// live in care home?
+    router.get(/preappcare-handler/, function (req, res) {
+      if (req.query.carehome === 'yes') {
+        res.redirect('sc/authority-assessed');
+      } else {
+        res.redirect('saving-6k');
+      }
+    });
+
+// authority assessment?
+    router.get(/authority-assessed-handler/, function (req, res) {
+      if (req.query.authority === 'yes') {
+        res.redirect('lis-application');
+      } else {
+        res.redirect('../saving-6k');
+      }
+    });
+
+
+
+//release 1 savings handler *note* this will change according to carehome answer in next iteration
+    router.get(/savings6k-handler/, function (req, res) {
+      if (req.query.savings === 'yes') {
+        res.redirect('kickout_release2-no-answer');
+      } else {
+        res.redirect('job');
+      }
+    });
+
+
+
+    router.get(/dob/, function (req, res) {
+      res.render('apply/preapp/dob', {
+        thirdparty : benificiary.thirdParty,
+        firstname : benificiary.firstname
+      });
+    });
+
 
 router.get(/name-handler/, function (req, res) {
   benificiary.firstname = req.query.firstname;
@@ -90,54 +123,79 @@ router.get(/name-handler/, function (req, res) {
   res.redirect('dob');
 });
 
+// not for this iteration
+    // router.get(/birth-handler/, function (req, res) {
+    //   applicant.age = (thisYear - req.query.dobyear);
+    //   console.log(applicant.age);
+    //   if (applicant.age <= 15) {
+    //     res.render('apply/you/full-exemption-u16', {
+    //     });
+    //       } else if (benificiary.thirdParty == true) {
+    //     res.render('apply/you/post-address', {
+    //       thirdparty : benificiary.thirdParty,
+    //       firstname : benificiary.firstname
+    //     });
+    //   } else {
+    //     res.redirect('post-address');
+    //   }
+    // });
+
     router.get(/birth-handler/, function (req, res) {
       applicant.age = (thisYear - req.query.dobyear);
       console.log(applicant.age);
       if (applicant.age <= 15) {
-        res.render('apply/you/full-exemption-u16', {
+        res.render('apply/preapp/full-exemption-u16', {
         });
           } else if (benificiary.thirdParty == true) {
-        res.render('apply/you/post-address', {
+        res.render('apply/preapp/partner', {
           thirdparty : benificiary.thirdParty,
           firstname : benificiary.firstname
         });
       } else {
-        res.redirect('post-address');
+        res.redirect('partner');
       }
     });
 
-
 router.get(/partner/, function (req, res) {
-  res.render('apply/you/partner', {
+  res.render('apply/preapp/partner', {
     thirdparty : benificiary.thirdParty,
     firstname : benificiary.firstname
   });
 });
 
-         // partner handler v2
+    //pension credit
     router.get(/p2-handler/, function (req, res) {
-      sprint = req.url.charAt(5);
-      if (req.query.partner === 'yes') {
-        applicant.partner = true;
-        //aboutPartnerStatus = "Started";
-        //aboutPartnerLink = continueText;
-      } else if (req.query.partner === 'no') {
-        applicant.partner = false;
-        //aboutPartnerStatus = completedText;
-        //aboutPartnerLink = changeText;
+      if (req.query.partner=== 'yes') {
+        res.redirect('kickout_release2-no-answer');
+      } else {
+        res.redirect('non-dependants');
       }
-      setPartnerText(applicant.partner);
- if (benificiary.thirdParty == true) {
-        res.render('apply/you/children-under-20', {
-          thirdparty : benificiary.thirdParty,
-          firstname : benificiary.firstname
-        });   
-        } else {
-            res.render('apply/you/children-under-20', {
-                'partnerandtext' : partnerAndText,
-            });
-        }
     });
+
+ //         // partner handler v2
+ //    router.get(/p2-handler/, function (req, res) {
+ //      sprint = req.url.charAt(5);
+ //      if (req.query.partner === 'yes') {
+ //        applicant.partner = true;
+ //        //aboutPartnerStatus = "Started";
+ //        //aboutPartnerLink = continueText;
+ //      } else if (req.query.partner === 'no') {
+ //        applicant.partner = false;
+ //        //aboutPartnerStatus = completedText;
+ //        //aboutPartnerLink = changeText;
+ //      }
+ //      setPartnerText(applicant.partner);
+ // if (benificiary.thirdParty == true) {
+ //        res.render('apply/preapp/kickout_release2-no-answer', {
+ //          thirdparty : benificiary.thirdParty,
+ //          firstname : benificiary.firstname
+ //        });   
+ //        } else {
+ //            res.render('apply/you/children-under-20', {
+ //                'partnerandtext' : partnerAndText,
+ //            });
+ //        }
+ //    });
 
 
     //pension credit
@@ -354,12 +412,41 @@ router.get(/telephone-c-handler/, function (req, res) {
         router.get(/servicequestion-handler/, function (req, res) {
       console.log(req.query);
       if (req.query.servicecharge === 'yes') {
-        res.redirect('live_services-amount');
+        res.redirect('live_service-charge-frequency');
       } else {
         res.redirect('live_ground-rent');
       }
     });
 
+            // ground rent question type handler
+        router.get(/groundrent-handler/, function (req, res) {
+      console.log(req.query);
+      if (req.query.groundrent === 'yes') {
+        res.redirect('live_ground-rent-frequency');
+      } else {
+        res.redirect('live_loan-adapted');
+      }
+    });
+
+         // adaption loan
+        router.get(/adaptloan-handler/, function (req, res) {
+      console.log(req.query);
+      if (req.query.adapted === 'yes') {
+        res.redirect('live_loan-adaption-frequency');
+      } else {
+        res.redirect('live_council-tax');
+      }
+    });
+                 // adaption loan
+        router.get(/counciltax-handler/, function (req, res) {
+      console.log(req.query);
+      if (req.query.councilTax === 'yes') {
+        res.redirect('live_council-tax-amount');
+      } else {
+        res.redirect('living-summary');
+      }
+    });
+        
         
     // // service charge question type handler
     //     router.get(/rentfrq-handler/, function (req, res) {
@@ -471,9 +558,9 @@ router.get(/telephone-c-handler/, function (req, res) {
     // NON-DEPENDANT
     router.get(/non-dephandler/, function (req, res) {
       if (req.query.nonDep === 'yes') {
-        res.redirect('non-dep-ko');
+        res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('about-you-summary');
+        res.redirect('care-home-question');
       }
     });
 
@@ -506,18 +593,32 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     });
 
-
-     router.get(/benefits-handler/, function (req, res) {
-      if (req.query.benefittc == 'yes') {
-          res.render('apply/preapp/benefits-type-question', {
-          });
+     router.get(/job-handler/, function (req, res) {
+      if (req.query.job == 'yes') {
+        res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('pregnancy');
+        res.redirect('benefits-question');
       }
     });
 
 
-         router.get(/statepen-handler/, function (req, res) {
+router.get(/benefits-handler/, function (req, res) {
+      if (req.query.benefittc == 'no') {
+      res.redirect('preapp-summary'); 
+      } else if (applicant.age >= 63) {
+        res.redirect('benefits-type-question-over63');
+      } else {
+        res.redirect('benefits-type-question');
+      }
+});
+
+
+
+
+
+
+
+     router.get(/statepen-handler/, function (req, res) {
       if (req.query.statepen== 'yes') {
         res.redirect('pension_statepension-frequency');
       } else {
@@ -540,55 +641,134 @@ var benType;
 
         if (req.query.incomesupport == "true") {
                   console.log(req.query);
+                  benType = 'Income Support';
+          res.render('apply/preapp/full-exemption-benefits-income-support', {
 
-          res.render('apply/preapp/full-exemption-benefits-travel', {
-            'bentype' : benType
           });
+
+    
         } else if (req.query.taxcredits == "true") {
           if (req.query.esa == "true") {
             res.render('ESA');
           } else if (req.query.jsa == "true") {
             res.render('JSA');
           } else if (req.query.uc == "true") {
-            res.render('checker/1/benefits-uc-tc');
+            res.render('apply/preapp/benefits-uc-tc');
           } else {
             // tc only
-            res.render('checker/1/tax-credits-over20-new',{
+            res.render('apply/preapp/tax-credits-income',{
             });
           }
 
         } else if (req.query.uc == "true") {
           setPartnerText(applicant.partner);
-          res.render('checker/1/uc-claim-type-v2', {
+          res.render('apply/preapp/uc-claim-type-v2', {
       
             // 'partnerortext' : partnerOrText
           });
         } else if (req.query.esa == "true") {
           benType = 'income related Employment and Support Allowance (ESA)';
-          res.render('checker/1/benefits-esa', {
+          res.render('apply/preapp/benefits-esa', {
 
           });
         } else if (req.query.jsa == "true") {
           benType = 'income based Job Seekers Allowance (JSA)';
-          res.render('checker/1/benefits-jsa', {
+          res.render('apply/preapp/benefits-jsa', {
 
           });
         } else if (req.query.pencredit == "true") {
-          benType = 'Pension Credit (Guarantee Credit)';
-          res.render('checker/1/benefits-pension', {
+          benType = 'Pension credit (Guarantee Credit)';
+          res.render('apply/preapp/benefits-pension', {
 
           });
         } else if (req.query.none == 'true') {
-          if (applicant.age > 60) {
-            res.redirect('war-pension');
-          } else {
-            res.redirect('pregnancy');
-          }
+            res.redirect('preapp-summary');
+  
         }
       });
 
-    
 
+
+    // passported benefits handler over 63
+
+          router.get(/ben63-check/, function (req, res) {
+            if (req.query.taxcredits == "true") {
+            res.redirect('tax-credits-income'); 
+
+          } else if (req.query.pencredit == "true") {
+            benType = 'Pension Credit (Guarantee Credit)';
+            res.render('apply/preapp/benefits-pension', {
+        });
+          } else if (req.query.none == 'true') {
+              res.redirect('preapp-summary')
+          }
+        });
+
+
+// esa handler
+          router.get(/esa-handler/, function (req, res) {
+      if (req.query.esa == 'contesa') {
+      res.redirect('preapp-summarybenefits-handler'); 
+      } else {
+        res.redirect('full-exemption-benefits-esa');
+      }
+});
+
+
+    // child tax credit handler
+          router.get(/taxcredit-income-handler/, function (req, res) {
+      if (req.query.taxcreditsIncome == 'yes') {
+      res.redirect('full-exemption-tc'); 
+      } else {
+        res.redirect('preapp-summary');
+      }
+});
+              // jsa handler
+          router.get(/jsa-handler/, function (req, res) {
+      if (req.query.jsatype == 'incomejsa') {
+      res.redirect('full-exemption-benefits-jsa'); 
+      } else {
+        res.redirect('preapp-summary');
+      }
+});
+
+          
+    // pension credit handler
+          router.get(/pensioncredit-handler/, function (req, res) {
+      if (req.query.pensioncredit == 'guaranteecred') {
+      res.redirect('full-exemption-pencredits'); 
+      } else {
+        res.redirect('preapp-summary');
+      }
+});
+
+
+     // universal credits income handler
+      router.get(/uc-type-handler/, function (req, res) {
+      if (req.query.ucElement === 'yes') {
+        res.redirect('uc-income-with-element-v3');
+      } else{
+        res.redirect('uc-income-without-element-v2');
+      }
+    });
+
+      // universal credits without element handler (£435)
+      router.get(/uc-element-income-handler/, function (req, res) {
+      if (req.query.ucelementIncome === 'yes') {
+        res.redirect('full-exemption-uc');
+            } else {
+                res.redirect('kickout_release2-no-answer');
+      }
+    });
+
+                      // universal credits with element handler(£935)
+            router.get(/uc-without-elements-handler/, function (req, res) {
+      if (req.query.ucIncome === 'yes') {
+        res.redirect('full-exemption-uc');
+      } else {
+        res.redirect('kickout_release2-no-answer');
+      }
+    });
 
 // add your routes here
 

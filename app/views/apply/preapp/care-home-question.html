@@ -13,31 +13,36 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-               <header class="page-header">
+
+           <header class="page-header">
             <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
              {% if thirdparty %}
-            <h1 class="page-header--lede heading-large">Does {{firstname}} claim any benefits or tax credits?</h1>
+            <h1 class="page-header--lede heading-large">Does {{firstname}} get housing benefit?</h1>
             {% else %}
-            <h1 class="page-header--lede heading-large">Do you claim any benefits or tax credits?</h1>
+            <h1 class="page-header--lede heading-large">Do you live in a care home?</h1>
              {% endif %}
             </header>
 
-      <form action="benefits-handler" method="get" class="form">
+            <p>Care homes are sometimes called nursing homes or residential care homes.
+
+
+
+      <form action="preappcare-handler" method="get" class="form">
         
         <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Do {{partnerortext}} claim any benefits or tax credits?
+              Do you live in a care home?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="benefittc" value="yes">
+              <input id="yes" type="radio" name="carehome" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="benefittc" value="no">
+              <input id="no" type="radio" name="carehome" value="no">
               <label for="no">No</label>
             </div>
             

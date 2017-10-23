@@ -12,11 +12,15 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your contact details</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">How should we contact {{firstname}} if we need to?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">How should we contact you if we need to?</h1>
+             {% endif %}
+            </header>
 
-      <h1 class="heading-large">How should we contact you if we need to?</h1>
-</div>
 <p>We'll only contact you about this application.</p>
 <p class="form-hint">Select all that apply.</p>
       

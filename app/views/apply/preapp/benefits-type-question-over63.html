@@ -29,7 +29,7 @@
                 <header class="page-header">
                 <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
                  {% if thirdparty %}
-                <h1 class="page-header--lede heading-large">Does {{firstname}} get any of these benefits?</h1>
+                <h1 class="page-header--lede heading-large">What benefits or tax credits does {{firstname}} you get?</h1>
                 {% else %}
                 <h1 class="page-header--lede heading-large">Do you get any of these benefits?</h1>
                  {% endif %}
@@ -45,7 +45,7 @@
 
 
 
-        <form action="ben-check" class="form" method="get">
+        <form action="ben63-check" class="form" method="get">
 
           <div class="form-group">
             <fieldset>
@@ -55,26 +55,6 @@
               <div class="multiple-choice multiple-radio">
                 <input id="taxcredits" name="taxcredits" type="checkbox" value="true">
                 <label for="taxcredits">Child tax credits</label>
-              </div>
-
-              <div class="multiple-choice multiple-radio">
-                <input id="incomesupport" name="incomesupport" type="checkbox" value="true">
-                <label for="incomeSupport">Income Support</label>
-              </div>
-
-              <div class="multiple-choice multiple-radio">
-                <input id="uniCredit" name="uc" type="checkbox" value="true">
-                <label for="uniCredit">Universal Credit</label>
-              </div>
-
-              <div class="multiple-choice multiple-radio">
-                <input id="esa" name="esa" type="checkbox" value="true">
-                <label class=" block-label" for="esa" id="esa">Employment and Support Allowance (ESA)</label>
-              </div>
-
-              <div class="multiple-choice multiple-radio">
-                <input id="jsa" name="jsa" type="checkbox" value="true"> 
-                <label class=" block-label" for="jsa" id="jsa">Jobseeker's Allowance (JSA)</label>
               </div>
 
               <div class="multiple-choice multiple-radio">

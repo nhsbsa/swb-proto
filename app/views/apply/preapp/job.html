@@ -11,35 +11,35 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <a href="javascript:history.go(-1)" class="link-back">Back</a>
-      <div class="heading-group">
-        <p>Apply for help with NHS costs</p>
 
-      {% if thirdparty %}
-      <h1 class="heading-large">Does {{firstname}} live with a partner?</h1>
-    {% else %}
-      <h1 class="heading-large">Do you live with a partner?</h1>
-    {% endif %}
-    </div>
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Does {{firstname}} have a paid job?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Do you have a paid job?</h1>
+             {% endif %}
+            </header>
 
-  <p>This means you live together as a couple, you don't have to be married or in a civil partnership.</p>
+  <p>This can be self-employed or as an employee.</p>
 
 
-  <form action="p2-handler" method="get" class="form">
+  <form action="job-handler" method="get" class="form">
 
        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Do you live with a partner?
+              Do you have any stocks, shares, land or properties?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="partner" value="yes">
+              <input id="yes" type="radio" name="job" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="partner" value="no">
+              <input id="no" type="radio" name="job" value="no">
               <label for="no">No</label>
             </div>
             

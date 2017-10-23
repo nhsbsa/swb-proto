@@ -12,18 +12,26 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-     
-      <h1 class="heading-large">You can't apply online yet</h1>
-          </div>
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">You can't apply online for {{firstname}} yet</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">You can't apply online yet</h1>
+                 {% endif %}
+            </header>
 
-<h2 class="heading-medium">This service is being developed</h2>
+
+<h2 class="heading-medium" style="margin-top: 0px">This service is being developed</h2>
           <p>You need to apply using a paper form called an HC1.</p>
 
-          <p>You can <a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">download an HC1</a> or get one from Jobcentres, GP practices, pharmacies and Citizens Advice centres.</p>
+          <p>You can <!-- <a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme"> -->download an HC1<!-- </a> --> or get one from Jobcentres, GP practices, pharmacies and Citizens Advice centres.</p>
+<ul class="options-list" style="margin-top: 0.5em">
+        <li><a class="icon download-icon" href="">Download an HC1 application form</a></li>
+      </ul>
 
-    </div>
+
+
     </div>
 </main>
 

@@ -1,5 +1,4 @@
-{% extends "layout_bsa.html" %}
- 
+ {% extends "layout_bsa.html" %}
 
 {% block page_title %}
   Help paying for NHS Costs prototype
@@ -8,36 +7,39 @@
 {% block content %}
 
 <main id="content" role="main">
-<a href="javascript:history.go(-1)" class="link-back">Back</a>
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
+
+
                <header class="page-header">
             <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
              {% if thirdparty %}
-            <h1 class="page-header--lede heading-large">Does {{firstname}} claim any benefits or tax credits?</h1>
+            <h1 class="page-header--lede heading-large">Does anyone else live with {{firstname}} who is 18 or older?</h1>
             {% else %}
-            <h1 class="page-header--lede heading-large">Do you claim any benefits or tax credits?</h1>
+            <h1 class="page-header--lede heading-large">Does anyone else live with you who is 18 or older?</h1>
              {% endif %}
             </header>
 
-      <form action="benefits-handler" method="get" class="form">
-        
-        <div class="form-group">
+
+  <form action="non-dephandler" method="get" class="form">
+
+       <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Do {{partnerortext}} claim any benefits or tax credits?
+              Does anyone else live with you at {{data['address-lineone']}}?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="benefittc" value="yes">
+              <input id="yes" type="radio" name="nonDep" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="benefittc" value="no">
+              <input id="no" type="radio" name="nonDep" value="no">
               <label for="no">No</label>
             </div>
             
@@ -50,17 +52,12 @@
           </div>
 
       </form>
-
-
-
-
     </div>
     </div>
-
 </main>
 
-
 {% endblock %}
+
 
 
 
