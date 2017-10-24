@@ -622,7 +622,7 @@ router.get(/benefits-handler/, function (req, res) {
       if (req.query.statepen== 'yes') {
         res.redirect('pension_statepension-frequency');
       } else {
-        res.redirect('../lis-check-list-3');
+        res.redirect('pension_other-pension');
       }
     });
 
@@ -633,6 +633,15 @@ router.get(/benefits-handler/, function (req, res) {
         res.redirect('kickout_release2-no-answer');
       }
     });
+     router.get(/workpen-handler/, function (req, res) {
+      if (req.query.workpen== 'yes') {
+        res.redirect('pension_pension-name-second');
+      } else {
+        res.redirect('pension_pension-tally');
+      }
+    });
+
+
 
 
 var benType;
