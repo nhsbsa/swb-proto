@@ -233,6 +233,14 @@ router.get(/partner/, function (req, res) {
       }
     });
 
+    //capital amounts
+    router.get(/postaddress-handler/, function (req, res) {
+      if (req.query.postal === 'no') {
+        res.redirect('post-address-postal');
+      } else {
+        res.redirect('/apply/you/contact-prefs');
+      }
+    });
 
 // address handler
         router.get(/address-c-handler/, function (req, res) {
@@ -637,7 +645,7 @@ router.get(/benefits-handler/, function (req, res) {
       if (req.query.workpen== 'yes') {
         res.redirect('pension_pension-name-second');
       } else {
-        res.redirect('pension_pension-tally');
+        res.redirect('pension_pensio');
       }
     });
 
