@@ -1,6 +1,6 @@
-icon download-icon@import 'unbranded';
+@import 'unbranded';
 
-// PPCdownload-icon
+// PPC
 $break-small: 640px;
 $break-medium: 768px;
 
@@ -527,9 +527,6 @@ $task-list-indent: 35px;
   margin-top: 1.8em; }
 
 .page-header .heading-large {
-  margin: .15em 0 1.25em; }
-
-  .page-header .heading-xlarge {
   margin: .15em 0 1.25em; }
 
 .page-header .heading-secondary {
