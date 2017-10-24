@@ -12,15 +12,16 @@
  <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-      {% if thirdparty %}
-      <h1 class="heading-large">How often does {{firstname}} pay their mortgage?</h1>
-    {% else %}
-      <h1 class="heading-large">How often do you pay your mortgage?</h1>
-    {% endif %}
+                   <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">How often does {{firstname}} pay their mortgage?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">How often do you pay your mortgage?</h1>
+             {% endif %}
+            </header>
 
-    </div>
+
 
 
       <form action="" method="" class="form">
@@ -53,24 +54,10 @@ How often do you pay your mortgage?</legend>
           </fieldset>  
 
 
+
 <br>
-          <h2 class="heading-large" for="pay" id="cont">
-  How much do you pay?
-</h2><br>
-<!-- <p>Include any endowment premiums linked to the mortgage.</p> -->
-
-<p>Don't include:</p>
-<ul class="list-bullet">
-  <li>arrears</li>
-  <li>voluntarily overpayments</li>
-  <li>insurance premiums</li>
-</ul>
-
-
-<span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
-<br><br><br>
 <p>
-          <a class="button" href="loan-question" id="next">Next</a>
+          <a class="button" href="mortgage-amount2" id="next">Next</a>
         </p>
       
 <!-- 
@@ -85,25 +72,6 @@ How often do you pay your mortgage?</legend>
   </div>
 </main>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-$('input[name="optionsRadios"]').on('change', function(){
-    if ($(this).val()=='Every week') {
-         //change to "show update"
-         $("#cont").text("How much do you pay every week?");
-    } else if ($(this).val()=='Every 2 weeks') {
-         $("#cont").text("How much do you pay every 2 weeks?");
-    } else if ($(this).val()=='Every 4 weeks') {
-         $("#cont").text("How much do you pay every 4 weeks?");
-    }
-     else if ($(this).val()=='Every month') {
-         $("#cont").text("How much do you pay every month?");
-    }
-    else {
-         $("#cont").text("How much do you pay every year?");
-    }
-});
-</script>
 
 {% endblock %}
 

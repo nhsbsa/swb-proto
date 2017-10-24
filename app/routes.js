@@ -473,7 +473,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.sloan === 'yes') {
         res.redirect('loan-frequency');
       } else {
-        res.redirect('../services');
+        res.redirect('../live_services2');
       }
     });
 
@@ -509,7 +509,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.mortgaged === 'yes') {
         res.redirect('mortgage-frequency');
       } else {
-        res.redirect('../../services');
+        res.redirect('loan-question');
       }
     })
 
@@ -769,6 +769,15 @@ var benType;
         res.redirect('kickout_release2-no-answer');
       }
     });
+                      // universal credits with element handler(£935)
+            router.get(/otherpen-handler/, function (req, res) {
+      if (req.query.otherpen === 'yes') {
+        res.redirect('pension_pension-name');
+      } else {
+        res.redirect('pension-summary');
+      }
+    });
+
 
 // add your routes here
 

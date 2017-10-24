@@ -12,15 +12,15 @@
  <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-      { if thirdparty }
-      <h1 class="heading-large">How much is {firstname}'s state pension {every month}?</h1>
-    { else }
-      <h1 class="heading-large">How much is your state pension {every month}?</h1>
+                       <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">How much is {firstname}'s state pension {every month}?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">How much is your state pension every 4 weeks?</h1>
+             {% endif %}
+            </header>
 
-
-    </div>
 
 
       <form action="" method="" class="form">
@@ -28,14 +28,13 @@
             <legend class="visually-hidden">
 How much is your state pension {every month}?</legend>
 
-<br>
 
 
 <p class="form-hint">The amount must include pence. For example, £171.31</p>
 <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
 <br><br><br>
 <p>
-          <a class="button" href="loan-question" id="next">Next</a>
+          <a class="button" href="pension_other-pension" id="next">Next</a>
         </p>
       
 <!-- 

@@ -1,0 +1,154 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .check-your-answers td {
+    font-size: 19px;
+    line-height: 1.31579;
+}
+.check-your-answers td {
+    font-weight: 400;
+    text-transform: none;
+    line-height: 1.25;
+    vertical-align: top;
+}
+.bold {
+  font-weight: 700;
+}
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Apply with NHS costs</p>
+            <h1 class="page-header--lede heading-large">Check your answers</h1>
+          </header>
+
+<!-- <p class="panel panel-border-wide">You’re applying for help with NHS costs on behalf of:</p> -->
+<table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Your contact detais
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Address
+        </td>
+        <td class="bold">
+          1 Street <br>
+          Place <br>
+          County<br> 
+          NE12 A34<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Address</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Different postal address
+        </td>
+        <td class="bold">
+          No
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Postal address</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Contact method
+        </td>
+        <td>
+          Email<br>
+          Telephone
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">prefered contact method</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Email address
+        </td>
+        <td class="bold">
+          Myname@email.com
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">email address</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Telephone number
+        </td>
+        <td class="bold">
+          0191 222 0000
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Producer name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          TextRelay service needed
+        </td>
+        <td class="bold">
+          No
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">whether you need to use a text relay service</span>
+          </a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+       
+
+<br><br>
+        <p>
+          <a class="button" href="../design-sprints/sprint21/check-list_where-you-live" id="next">Next</a>
+        </p>
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}

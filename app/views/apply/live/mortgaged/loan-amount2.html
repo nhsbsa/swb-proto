@@ -12,15 +12,15 @@
  <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-      {% if thirdparty %}
-      <h1 class="heading-large">How much is {{firstname}}'s secured loan payment {every month}?</h1>
-    {% else %}
-      <h1 class="heading-large">How much is your secured loan payment {every month}?</h1>
-    {% endif %}
+                           <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">How much is {{firstname}}'s secured loan payment {every month}?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">How much is your monthly secured loan payment?</h1>
+             {% endif %}
+            </header>
 
-    </div>
 
 
       <form action="" method="" class="form">
@@ -29,14 +29,13 @@
 How often do you pay your mortgage {every month}?</legend>
 
 
-<br>
 
 
 <p class="form-hint">The amount must include pence. For example, £171.31</p>
 <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
 <br><br><br>
 <p>
-          <a class="button" href="loan-question" id="next">Next</a>
+          <a class="button" href="../live_services2" id="next">Next</a>
         </p>
       
 <!-- 
