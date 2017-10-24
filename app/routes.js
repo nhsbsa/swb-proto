@@ -774,7 +774,7 @@ var benType;
       if (req.query.otherpen === 'yes') {
         res.redirect('pension_pension-name');
       } else {
-        res.redirect('pension-summary');
+        res.redirect('pension-summary-state');
       }
     });
 
