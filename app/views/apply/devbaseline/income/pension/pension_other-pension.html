@@ -12,34 +12,34 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-      { if thirdparty }
-      <h1 class="heading-large">Does {firstname} get Pension Credit Savings Credit? </h1>
-      <br>
-    { else }
-      <h1 class="heading-large">Do you get Pension Credit Savings Credit?</h1>
-
-    </div>
-<p>This is an extra payment for people who saved some money towards their retirement. It is up to £13.07 (for single people) or £14.75 (for couples) a week.</p>
+                           <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Does {firstname} get another pension?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Do you get another pension?</h1>
+             {% endif %}
+            </header>
 
 
-  <form action="" method="get" class="form">
+
+
+  <form action="otherpen-handler" method="get" class="form">
 
        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-               Do you get Pension Credit Savings Credit?
+               Do you get another pension? 
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="nonDep" value="yes">
+              <input id="yes" type="radio" name="otherpen" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="nonDep" value="no">
+              <input id="no" type="radio" name="otherpen" value="no">
               <label for="no">No</label>
             </div>
             

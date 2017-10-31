@@ -12,12 +12,13 @@
  <div class="grid-row">
     <div class="column-two-thirds">
 
-                   <header class="page-header">
+
+                                   <header class="page-header">
             <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
              {% if thirdparty %}
-            <h1 class="page-header--lede heading-large">How often does {{firstname}} get paid their state pension?</h1>
+            <h1 class="page-header--lede heading-large">How often does {firstname} get paid their state pension?</h1>
             {% else %}
-            <h1 class="page-header--lede heading-large">How often do you get paid your state pension?</h1>
+            <h1 class="page-header--lede heading-large">How often do you get paid your Scottish Widows pension?</h1>
              {% endif %}
             </header>
 
@@ -42,6 +43,10 @@ How often do you pay get paid your state pension?</legend>
             </div>
                         <div class="multiple-choice">
               <input class="choose" id="everymonth" type="radio" name="optionsRadios" value="Every month">
+              <label for="everymonth">Every calendar month</label>
+            </div>
+                                    <div class="multiple-choice">
+              <input class="choose" id="everymonth" type="radio" name="optionsRadios" value="Every month">
               <label for="everymonth">Once a year</label>
             </div>
  
@@ -50,7 +55,7 @@ How often do you pay get paid your state pension?</legend>
 
 <br>
 <p>
-          <a class="button" href="pension_statepension-amount" id="next">Next</a>
+          <a class="button" href="pension_pension-amount" id="next">Next</a>
         </p>
       
 

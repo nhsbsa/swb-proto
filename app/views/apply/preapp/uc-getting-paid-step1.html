@@ -13,36 +13,37 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-
-           <header class="page-header">
+               <header class="page-header">
             <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
              {% if thirdparty %}
-            <h1 class="page-header--lede heading-large">Does {{firstname}} get housing benefit?</h1>
+            <h1 class="page-header--lede heading-large">Does {{firstname}} get Universal Credit?</h1>
             {% else %}
-            <h1 class="page-header--lede heading-large">Do you live in a care home?</h1>
+            <h1 class="page-header--lede heading-large">Do you get Universal Credit?</h1>
              {% endif %}
             </header>
 
-            <p>Care homes are sometimes called nursing homes or residential care homes.
-
-
-      <form action="preappcare-handler" method="get" class="form">
+      <form action="getuc-handler" method="get" class="form">
         
         <div class="form-group">
           
-          <fieldset class="inline">
+          <fieldset>
             <legend class="visually-hidden">
-              Do you live in a care home?
+              Do you get Universal Credit?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="carehome" value="yes">
-              <label for="yes">Yes</label>
+              <input id="yes" type="radio" name="getuc" value="yes">
+              <label for="yes">Yes, I'm already receiving Universal Credit payments</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="carehome" value="no">
-              <label for="no">No</label>
+              <input id="notyet" type="radio" name="getuc" value="notyet">
+              <label for="notyet">Not yet, I'm awaiting the outcome of my first assessement period</label>
+            </div>
+            <p class="form-block">or</p>
+             <div class="multiple-choice">
+              <input id="no" type="radio" name="getuc" value="no">
+              <label for="no">No, I'm getting a different benefit</label>
             </div>
             
           </fieldset>  
@@ -55,11 +56,9 @@
 
       </form>
 
+      </div>
+      </div>
 
-
-
-    </div>
-    </div>
 
 </main>
 

@@ -613,13 +613,22 @@ router.get(/telephone-c-handler/, function (req, res) {
 router.get(/benefits-handler/, function (req, res) {
       if (req.query.benefittc == 'no') {
       res.redirect('preapp-summary'); 
-      } else if (applicant.age >= 63) {
-        res.redirect('benefits-type-question-over63');
       } else {
-        res.redirect('benefits-type-question');
+        res.redirect('uc-getting-paid-step1');
       }
 });
 
+
+
+router.get(/getuc-handler/, function (req, res) {
+      if (req.query.getuc == 'yes') {
+      res.redirect('uc-claim-type-v2'); 
+      } else if (req.query.getuc == 'no') {
+      res.redirect('benefits-type-question'); 
+      } else {
+        res.redirect('uc-assessment-period-info');
+      }
+});
 
 
 
@@ -645,11 +654,13 @@ router.get(/benefits-handler/, function (req, res) {
       if (req.query.workpen== 'yes') {
         res.redirect('pension_pension-name-second');
       } else {
-        res.redirect('pension_pensio');
+        res.redirect('pension_pension-tally');
       }
     });
 
 
+
+     
 
 
 var benType;
