@@ -12,9 +12,16 @@
  <div class="grid-row">
     <div class="column-two-thirds">
 
-      <h1 class="heading-large">
-        Do you get any other money?
-      </h1>
+
+
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before applying</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {{firstname}} get any other money? </h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Do you get any other money?</h1>
+                 {% endif %}
+            </header>
       
       <p>This could include money from:</p>
 <ul class="list list-bullet">

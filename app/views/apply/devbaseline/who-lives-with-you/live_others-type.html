@@ -1,0 +1,77 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+      
+      <h1 class="heading-large">What kind of people live with you?</h1>
+
+    </div>
+
+  <form action="" method="get" class="form">
+
+       <div class="form-group">
+          
+          <fieldset class="">
+            <legend class="visually-hidden">
+               Who lives with you?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="nonDep" value="yes">
+              <label for="yes">A joint tennant. Usually a flat mate.</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="nonDep" value="no">
+              <label for="no">Someone who pays you rent</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="nonDep" value="no">
+              <label for="no">Your landlord</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="nonDep" value="yes">
+              <label for="yes">A live in carer who looks after you {or your partner}</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="nonDep" value="yes">
+              <label for="yes">They normally live somewhere else</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="nonDep" value="yes">
+              <label for="yes">Full time student</label>
+            </div>
+
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+

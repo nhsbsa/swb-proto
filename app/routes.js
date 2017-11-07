@@ -104,7 +104,7 @@ router.get(/registration-third-party/, function (req, res) {
       if (req.query.savings === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('job');
+        res.redirect('preapp-summary');
       }
     });
 
@@ -571,7 +571,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.nonDep === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('saving-6k');
+        res.redirect('job');
       }
     });
 
@@ -615,12 +615,11 @@ router.get(/telephone-c-handler/, function (req, res) {
 
 router.get(/benefits-handler/, function (req, res) {
       if (req.query.benefittc == 'no') {
-      res.redirect('preapp-summary'); 
+      res.redirect('saving-6k'); 
       } else {
         res.redirect('uc-getting-paid-step1');
       }
 });
-
 
 
 router.get(/getuc-handler/, function (req, res) {
@@ -629,7 +628,7 @@ router.get(/getuc-handler/, function (req, res) {
       } else if (req.query.getuc == 'no') {
       res.redirect('benefits-type-question'); 
       } else {
-        res.redirect('uc-assessment-period-info');
+        res.redirect('saving-6k');
       }
 });
 

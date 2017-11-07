@@ -1,0 +1,92 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+.list {
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    }
+    .check-your-answers h2,
+.check-your-answers--amend li {
+  padding: .73684em 1.05263em .52632em 0; }
+
+.check-your-answers h2 a {
+  color: #0b0c0c;
+  display: flex;
+  text-decoration: none; }
+
+.check-your-answers {
+  border-bottom: 1px solid #bfc1c3;
+  margin-bottom: 20px;
+  padding: 0; }
+
+  .check-your-answers li,
+.check-your-answers--header,
+.check-your-answers--footer,
+.check-your-answers--amend li {
+  border-bottom: 1px solid #bfc1c3;
+ }
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+        <div class="column-two-thirds">
+        
+
+    <header class="page-header">
+                <h1 class="page-header--lede heading-large">Do you want to remove this pension?</h1>
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+            <div></div></header>
+
+
+
+<p class="panel panel-border-wide"><span class="strong">NHS</span> <br>£80.03 paid every 4 weeks
+</p>
+    <br>
+      <form action="removeYes" method="get" class="form">
+        
+        <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Do you have a long-term illness?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="medcondition" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="medcondition" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+      </div>
+    </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

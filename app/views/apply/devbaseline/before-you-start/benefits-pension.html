@@ -1,0 +1,229 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+ .heading-no-margin {
+    margin-top: 0em;
+  }
+  .column-half {
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightgray;
+    padding: 1em;
+    margin: 1em 0em 1em 1em;
+    width: 47%;
+    height: 570px;
+  }
+  @media (max-width: 641px) {
+    .column-half {
+      width: 92%;
+      margin: 1em 1em 0em 1em;
+      padding: 15px;
+      height: auto;
+    }
+  }
+  .uc-statement {
+    width: 100%;
+    display: block;
+    margin-top: 1em;
+  }
+ }
+ .bullets-child {
+  display: block;
+  margin-left: 1em;
+ }
+ .list-child-bullet {
+  display: list-item;
+  margin-left: 1em;
+  margin-top: 0.3em;
+ }
+ strong {
+  font-weight: 700;
+ }
+ .list-discription {
+  margin-bottom: 0.3em;
+ }
+ .callout--attention {
+  border: 8px solid #0072ce;
+ }
+ .callout {
+  padding: 1em 1em 0.1em 1em;
+  margin-bottom: 1.5em;
+  background-color: #fff
+ }
+ @media (min-width: 925px) {
+  .callout {
+    padding: 1em 1em 0.1em 1em;
+    margin-bottom: 1.5em
+  }
+ }
+ .callout--info {
+  background-color: #f0f4f5;
+  border: solid #768692;
+  border-width: 0 0 0 4px
+ }
+
+.panel-border-narrow { 
+  padding-top:0.2em
+}
+details{
+  margin-top: 0.5em
+}
+.opening-para{
+  margin-top: 1em;
+}
+.govuk-related-items {
+ border-top:10px solid #005ea5;
+ padding-top:5px
+}
+.govuk-related-items h2 {
+ font-weight:700;
+ text-transform:none;
+ font-size:18px;
+ line-height:1.2;
+ margin-top:0.3em;
+ margin-bottom:0.5em
+}
+@media (min-width: 641px) {
+ .govuk-related-items h2 {
+  font-size:24px;
+  line-height:1.25
+ }
+}
+.govuk-related-items .description {
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.14286
+}
+@media (min-width: 641px) {
+ .govuk-related-items .description {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+.govuk-related-items ul {
+ padding:0;
+ margin:0;
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.14286;
+ list-style:none;
+ margin-bottom:1.25em
+}
+@media (min-width: 641px) {
+ .govuk-related-items ul {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+.govuk-related-items ul li {
+ padding:0;
+ margin-bottom:0.75em
+}
+.govuk-related-items ul li.related-items-more {
+ font-weight:bold
+}
+.add-title-margin {
+ margin-top:15px
+}
+@media (min-width: 641px) {
+.add-title-margin {
+  margin-top:45px
+ }
+}
+
+</style>
+
+<main id="content" role="main">
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">What type of Pension Credit does {{firstname}} get?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">What type of Pension Credit do you get?</h1>
+                 {% endif %}
+            </header>
+
+         <p> There are 2 types of Pension Credit, Guarantee Credit and Savings Credit.</p>
+            <details>
+              <summary><span class="summary">I'm not sure what type I get</span></summary>
+
+              <div class="panel panel-border-narrow" id="details-content-0" style="margin-top:1em">
+                <h3 class="heading-medium">Check your benefit payment letter</h3>
+
+                <h2 class="heading-small">Guarantee Credit</h2>
+                <p>Guarantee Credit tops up your weekly income if it’s below £159.35<!--  (for single people) or £243.25 (for couples) -->.</p>
+
+                <h2 class="heading-small">Savings Credit</h2>
+                <p>Savings Credit is a payment for people who have saved some money towards their retirement, for example a pension. <p>
+                <p><!-- You have to have a minimum income of £137.35 a week  if you're single, and £218.42 a week if you're in a couple. -->The most in Savings Credit you can get per week is £13.20.</p>
+
+                <p>If you're still unsure contact the <a href="https://www.gov.uk/contact-pension-service">Pension Service helpline</a>.</p>
+              </div>
+            </details>
+
+
+        <form action="pensioncredit-handler" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset>
+            <legend class="visuallyhidden">
+            What type of Pension Credit do you get?
+            </legend>
+          <br>
+
+          <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+            <input id="guaranteecred" type="radio" name="pensioncredit" value="guaranteecred">
+            <label for="guaranteecred" id="guaranteecred" class=" block-label">
+
+              <p class="list-discription">Guarantee Credit</p>
+          </label>
+        </div>
+
+          <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+            <input id="savingcred" type="radio" name="pensioncredit" value="savingcred">
+            <label for="savingcred" id="savingcred" class=" block-label">
+
+              <p class="list-discription">Savings Credit</p>
+              <span class="font-xsmall">The maximum you can get per week is £13.20</span>
+            </label>
+          </div>
+          </fieldset>
+        </div>
+
+
+
+            <br>
+      
+        <!-- submit button -->
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+        </form>
+
+      </div>
+
+
+
+
+</main>
+{% endblock %} 
+
+
