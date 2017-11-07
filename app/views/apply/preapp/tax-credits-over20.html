@@ -12,14 +12,24 @@
     <div class="column-two-thirds">
 
        <!--3- Are you named on a Tax Credits Exemption certificate-->
-         <form action="taxcredit-type-handler" method="get" class="form">
 
-    <h2 class="heading-large">What tax credits do {{partnerortext}} get?</h2>
+
+
+                       <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">What tax credits does {{firstname}} you get?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">What tax credits do you get?</h1>
+                 {% endif %}
+
+
+         <form action="taxcredit-type-handler" method="get" class="form">
 
           <div class="form-group">
           <fieldset>
             <legend class="visuallyhidden">
-              What tax credits do {{partnerortext}} get?
+              What tax credits do you get?
             </legend>
 
             <div class="multiple-choice">
@@ -42,11 +52,11 @@
               <label for="wtc">Working Tax Credit on its own</label>
             </div>
 
-            <p class="form-block">or</p>
+           <!--  <p class="form-block">or</p>
             <div class="multiple-choice">
               <input id="no" type="radio" name="taxcreditsType" value="no">
-              <label for="no">No, {{iwe}} don't get tax credits</label>
-            </div>
+              <label for="no">No, I don't get tax credits</label>
+            </div> -->
             
           </fieldset>
         </div>

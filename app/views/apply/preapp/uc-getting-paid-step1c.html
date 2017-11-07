@@ -18,7 +18,7 @@
              {% if thirdparty %}
             <h1 class="page-header--lede heading-large">Does {{firstname}} get Universal Credit?</h1>
             {% else %}
-            <h1 class="page-header--lede heading-large">Do you get Universal Credit?</h1>
+            <h1 class="page-header--lede heading-large">Are you getting Universal Credit or ?</h1>
              {% endif %}
             </header>
 
@@ -26,29 +26,34 @@
         
         <div class="form-group">
           
-          <fieldset>
+          <fieldset class="inline">
             <legend class="visually-hidden">
               Do you get Universal Credit?
             </legend>
 
             <div class="multiple-choice">
               <input id="yes" type="radio" name="getuc" value="yes">
-              <label for="yes">Yes, I receive Universal Credit payments</label>
+              <label for="yes">Yes</label>
             </div>
-
-            <div class="multiple-choice">
-              <input id="notyet" type="radio" name="getuc" value="notyet">
-              <label for="notyet">Not yet, but I've applied</label>
-            </div>
-            <p class="form-block">or</p>
-             <div class="multiple-choice">
+<div class="multiple-choice">
               <input id="no" type="radio" name="getuc" value="no">
-              <label for="no">No, I get a different benefit</label>
+              <label for="no">No</label>
             </div>
+             
             
           </fieldset>  
           
+
         </div>
+        <details role="group">
+        <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+          <span class="summary">Benefits being replaced by Universal Credit</span>
+        </summary>
+        <div class="panel panel-border-wide" id="details-content-0" aria-hidden="true">
+        <p>Universal Credit is a new benefit that will gradually replace many benefits</p>
+        </div>
+    </details>
+<br>
         
           <div class="form-group">
             <input class="button" type="submit"  value="Next">

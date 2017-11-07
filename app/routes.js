@@ -78,21 +78,22 @@ router.get(/registration-third-party/, function (req, res) {
     thirdparty : benificiary.thirdParty
   });
 });
+
 // live in care home?
     router.get(/preappcare-handler/, function (req, res) {
       if (req.query.carehome === 'yes') {
         res.redirect('sc/authority-assessed');
       } else {
-        res.redirect('saving-6k');
+        res.redirect('../../live/living-summary-care');
       }
     });
 
 // authority assessment?
     router.get(/authority-assessed-handler/, function (req, res) {
       if (req.query.authority === 'yes') {
-        res.redirect('lis-application');
+        res.redirect('declaration-carehome');
       } else {
-        res.redirect('../saving-6k');
+        res.redirect('../../live/living-summary-care');
       }
     });
 
@@ -377,6 +378,8 @@ router.get(/telephone-c-handler/, function (req, res) {
       } else if (req.query.home === 'guest') {
         applicant.guest = true;
         res.redirect('live-ko');
+      } else if (req.query.home === 'care') {
+        res.redirect('../preapp/sc/authority-assessed');
       } else if (req.query.home === 'homeless') {
         res.redirect('live-ko');
       } else {
@@ -568,7 +571,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.nonDep === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('care-home-question');
+        res.redirect('saving-6k');
       }
     });
 
@@ -684,13 +687,13 @@ var benType;
             res.render('apply/preapp/benefits-uc-tc');
           } else {
             // tc only
-            res.render('apply/preapp/tax-credits-income',{
+            res.render('apply/preapp/tax-credits-over20',{
             });
           }
 
         } else if (req.query.uc == "true") {
           setPartnerText(applicant.partner);
-          res.render('apply/preapp/uc-claim-type-v2', {
+          res.render('apply/preapp/uc-claim-tyben-check', {
       
             // 'partnerortext' : partnerOrText
           });
@@ -732,11 +735,20 @@ var benType;
           }
         });
 
+          router.get(/taxcredit-type-handler/, function (req, res) {
+      if (req.query.taxcreditsType == 'wtc') {
+      res.redirect('preapp-summary'); 
+      } else {
+        res.redirect('tax-credits-income');
+      }
+});
+          
+
 
 // esa handler
           router.get(/esa-handler/, function (req, res) {
       if (req.query.esa == 'contesa') {
-      res.redirect('preapp-summarybenefits-handler'); 
+      res.redirect('preapp-summary'); 
       } else {
         res.redirect('full-exemption-benefits-esa');
       }
