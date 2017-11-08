@@ -12,22 +12,25 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-<div class="heading-group">
-        <p>Apply for help with NHS costs</p>
-    {% if thirdparty %}
-      <h1 class="heading-large">
-        What kind of income does {{firstname}} get?
-      </h1>
-    {% else %}
-      <h1 class="heading-large">
-        What kind of income do you get?
-      </h1>
-    {% endif %}
-</div>
 
+     <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and other money</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">What income does {{firstname}} get?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">What income do you get?</h1>
+                 {% endif %}
+            </header>
+<div class="panel panel-border-wide">
+  <p>You've already told us about:</p>
+  <ul class="list-bullet">
+  <li>Contribution-based Jobseeker's Allowance</li>
+  </ul>
+  </div>
+<br>
   <form action="incometype-handler" class="form" method="get">
 
-  <p>Select all that apply</p>
+  <p style="color:grey">Select all that apply</p>
       
       <form class="form" action="contact-handler" id="contact-boxes">
         <fieldset class="form-group">
@@ -35,43 +38,51 @@
             How should we contact you if we need to?
           </legend>
           <div class="multiple-choice multiple-radio">
-            <input id="email" name="email" type="checkbox" value="true">
-            <label for="email">Wages</label>
+            <input id="wages" name="incometype" value="earned-income" type="checkbox">
+            <label for="wages">Wages</label>
           </div>
           <div class="multiple-choice multiple-radio">
-            <input id="phone" name="phone" type="checkbox" value="true">
-            <label for="phone">Benefits or Tax Credits</label>
+            <input id="benefits" name="incometype" value="benefits-income" type="checkbox">
+            <label for="benefits">Benefits or Tax Credits</label>
           </div>
 
            <div class="multiple-choice multiple-radio">
-            <input id="letter" name="contact" value="letter" type="checkbox">
-            <label for="letter">Pensions (state, work, private)</label>
+            <input id="pension" name="incometype" value="pension-income" type="checkbox">
+            <label for="pension">Pensions (state, work, private)</label>
           </div>
                                        <div class="multiple-choice multiple-radio">
-            <input id="letter" name="contact" value="letter" type="checkbox">
-            <label for="letter">Student loans, grants or bursaries</label>
+            <input id="student" name="incometype" value="student-loan" type="checkbox">
+            <label for="student">Student loans, grants or bursaries</label>
           </div>
  
                              <div class="multiple-choice multiple-radio">
-            <input id="letter" name="contact" value="letter" type="checkbox">
-            <label for="letter">Maintenance payments</label>
+            <input id="maintenance" name="incometype" value="maintenance-from-ex" type="checkbox">
+            <label for="maintenance">Maintenance payments from an ex-partner</label>
           </div>
                                                 <div class="multiple-choice multiple-radio">
-            <input id="letter" name="contact" value="letter" type="checkbox">
-            <label for="letter">Rent from anyone living with you</label>
+            <input id="border" name="incometype" value="border-income" type="checkbox">
+            <label for="border">Rent from anyone living with you</label>
           </div>
                              <div class="multiple-choice multiple-radio">
-            <input id="letter" name="contact" value="letter" type="checkbox">
-            <label for="letter">Rent from other properties you own</label>
+            <input id="landlord" name="incometype" value="property-you-own" type="checkbox">
+            <label for="landlord">Rent from other property you own</label>
           </div>
-
-          <div class="multiple-choice multiple-radio">
+ <!--          <div class="multiple-choice multiple-radio">
             <input id="letter" name="contact" value="letter" type="checkbox">
-            <label for="letter">Other money</label>
+            <label for="letter">Charity or voluntary organisation</label>
+          </div> -->
+       <!--                                 <div class="multiple-choice multiple-radio">
+            <input id="letter" name="contact" value="letter" type="checkbox">
+            <label for="letter">Trust funds</label>
+          </div> -->
+                                                 <div class="multiple-choice multiple-radio">
+            <input id="other" name="incometype" value="other-income" type="checkbox">
+            <label for="other">Other income</label>
           </div>
+<p class="form-block">or</p>
                   <div class="multiple-choice multiple-radio">
-            <input id="letter" name="contact" value="letter" type="checkbox">
-            <label for="letter">No income</label>
+            <input id="none" name="incometype" value="no-income" type="checkbox">
+            <label for="none">No income</label>
           </div>
 
         </fieldset>

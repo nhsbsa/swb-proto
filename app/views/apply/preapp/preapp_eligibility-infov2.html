@@ -1,0 +1,100 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+  </style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+  <!--               <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p> -->
+                <h1 class="page-header--lede heading-xlarge" style="margin-top: 0px">Before you start an application</h1>
+            </header>
+
+
+            <p>At the moment you can only use this service if both of these apply:</p>
+<ul class="list-bullet">
+<li>your pension is your only income</li>
+<li>you live on your own</li>
+</ul>
+
+<h2 class="heading-medium">If you can't apply online yet</h2>
+
+<p>You need to apply using a paper form called an HC1.</p>
+
+<p>You can <a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">download an HC1</a> or get one from Jobcentres, GP practices, pharmacies and Citizens Advice centres.</p>
+
+<br>
+<p>
+<a class="button" href="whose-applying" id="next">Next</a>
+</p>
+
+        </div>
+    </div>
+
+
+
+
+ 
+
+
+
+        
+<!--       <p class="navigation"><a class="cancel" href="start">Cancel</a></p> -->
+
+      </form>
+      
+    </div>
+    
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   
