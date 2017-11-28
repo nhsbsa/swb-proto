@@ -7,9 +7,28 @@
 {% block content %}
 
 <style>
-	<link href="../assets/stylesheets/styles.css" rel="stylesheet">
+/*	<link href="../assets/stylesheets/styles.css" rel="stylesheet">
 	<link href="../assets/stylesheets/r2_calculator.css" rel="stylesheet">
-	<link href="../assets/stylesheets/r1calc.css" rel="stylesheet">
+	<link href="../assets/stylesheets/r1calc.css" rel="stylesheet">*/
+
+.example {
+  position: relative;
+  overflow: hidden;
+background-color: #F8F8F8;
+margin-right: 2%;
+border: 10px solid #dee0e2;
+  margin-bottom: 0.78947em;
+  margin-top: 15px;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px; }
+  .info-table {
+  span {
+    float: right;
+    width: 60%;
+  }
+}
 	</style>
 
 <main id="content" role="main">
@@ -22,25 +41,37 @@
 
   <div class="grid-row">
 
-    <div class="column-two-thirds">
+    <div class="column-half">
 
-	<div class="row">
-		<div class="large-12 columns">
-			<br>
-			<div class="row" data-equalizer="">
-				<div class="small-12 medium-6 columns">
-					<div class="panel" data-equalizer-watch="">
-						<h4>Process a paper application</h4>
-						<div>
-							You'll need:
-						</div>
-						<ul>
+        <div class="example">
+          <h2 class="bold-medium">Process a paper application</h2>
+          <br>
+<p>You'll need:</p>
+<ul class="list-bullet">
 							<li>the help with fees application form (EX160)</li>
 							<li>the court or tribunal form related to the application</li>
-						</ul><a class="button success" href="1-personal.html">Start now</a>
-					</div>
-				</div>
-				<div class="small-12 medium-6 columns">
+						</ul>
+						<a class="button" href="1-personal.html" style="margin-top:1em">Start now</a>
+      </div>
+
+    </div>
+
+    <div class="column-half">
+
+        <div class="example">
+          <h2 class="bold-medium">Process an online application</h2>
+          <br>
+<p>You'll need:</p>
+<ul class="list-bullet">
+							<li>the help with fees application form (EX160)</li>
+							<li>the court or tribunal form related to the application</li>
+						</ul>
+						<a class="button" href="1-personal.html" style="margin-top:1em">Start now</a>
+      </div>
+
+    </div>
+				
+	<div class="column-half">
 					<div class="panel" data-equalizer-watch="">
 						<h4>Process an online application</h4><label for="reference">Enter the 6 character reference:</label>
 						<div class="small-2 medium-3 large-3 columns" style="padding:0px;">
@@ -50,7 +81,7 @@
 							<input id="reference" style="text-transform: uppercase;" type="text">
 						</div><a class="button success" href="online-application-details-1.html">Start now</a>
 					</div>
-				</div>
+		
 			</div><br>
 			<div class="row">
 				<div class="small-12 columns">
