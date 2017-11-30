@@ -1,6 +1,27 @@
-  
-<style>
 
+<style>
+#global-header #bsa-logo {
+    width: 300px;
+    margin: 20px 15px 0 0;
+    max-width: 26% !important;;
+    float: right;
+}
+#global-header .header-wrapper {
+    max-width: 990px;
+    margin: 0 auto;
+    padding-top: 8px;
+  }
+
+#global-header {
+  background: none;
+  height: 100%;
+  .header-wrapper {
+    background: transparent;
+  }
+}
+hr{
+  margin-top:0em;
+}
 #global-header.with-proposition .header-wrapper .header-proposition {
 /*    width: 100% !important;
     float: none !important;*/
@@ -51,11 +72,20 @@
         margin-bottom:0em;
 }
 
-</style>
 
+</style>
+	
+    <header role="banner" id="global-header" class="with-proposition">
 
   <div class="header-wrapper">
-  <div class="header-proposition" style="float:left; width:30%; padding-left:15px; margin-top:4em">
+<div id="header-logo">
+    <a id="bsa-logo" href="/index.html">
+      <img src="/public/images/bsa/bsa_logo.svg">
+    </a>
+  </div>
+  <div class="grid-row">
+  </div>
+  <div class="header-proposition" style="float:left; width:30%; padding-left:15px">
         <ul id="proposition-links">
             <li>
               Helen Spires
@@ -72,19 +102,17 @@
 
 
   </div>
-<div id="header-logo">
-  <div class="header-wrapper">
-
-    <a id="bsa-logo" href="/index.html">
-      <img src="/public/images/bsa/bsa_logo.svg">
-    </a>
-  </div>
-</div>
-
+            <p class="heading-secondary" style="float:right; margin-top:0px; padding: 0px 15px 0 0;">Apply for help with NHS costs</p>
 
 </div>
+  <hr>
+    </header>
+<!--     <div id="global-header-bar"></div> -->
+
+          
 
 
+        
 
 
 
