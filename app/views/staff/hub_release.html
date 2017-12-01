@@ -1,0 +1,170 @@
+{% extends "layout_bsa_internal_release1.html" %}
+
+{% block page_title %}
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+
+.example {
+  position: relative;
+  overflow: hidden;
+background-color: #F8F8F8;
+margin-right: 2%;
+border: 10px solid #dee0e2;
+  margin-bottom: 0.78947em;
+  margin-top: 15px;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px; 
+	font-size: medium;}
+
+  .info-table {
+  span {
+    float: right;
+    width: 60%;
+  }
+}
+.govuk-beta-label {
+ padding:10px 0 8px;
+ border-bottom:1px solid #bfc1c3
+}
+@media (min-width: 641px) {
+ .govuk-beta-label {
+  padding-bottom:10px
+ }
+}
+.govuk-beta-label p {
+ display:table;
+ margin:0;
+ color:#000;
+ font-family:"nta", Arial, sans-serif;
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.14286
+}
+@media (min-width: 641px) {
+ .govuk-beta-label p {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+.navigation-service {
+    padding: 11px 0 9px 0;
+    border-bottom: 1px solid #bfc1c3;
+    margin: 0 0 10px;
+    position: relative;
+}
+
+.navigation-service-name {
+ font-family: Arial,sans-serif;
+ font-weight:700;
+ text-transform:none;
+ font-size:16px;
+ line-height:1.25;
+ margin:0 0 0 0
+}
+@media (min-width: 641px) {
+ .navigation-service-name {
+  font-size:19px;
+  line-height:1.31579
+ }
+}
+.navigation-service-switch {
+ font-family: Arial,sans-serif;
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.14286;
+ text-align:right;
+ position:absolute;
+ top:0;
+ right:0;
+ padding:13px 0 9px 15px
+}
+@media (min-width: 641px) {
+ .navigation-service-switch {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+.navigation-service-switch:focus {
+ outline:none;
+ border-bottom:4px solid #ffbf47;
+ border-left:10px solid #ffbf47;
+ border-right:3px solid #ffbf47;
+ right:-3px;
+ color:#0b0c0c
+}
+.task-due {
+  @include phase-tag;
+
+  float: right;
+  margin-right: 0;
+  padding:1px 5px 4px;
+  padding-top: 3px;
+}
+
+
+.task-due {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+        margin-right: 8px;
+    padding: 2px 5px 0;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #b10e1e;
+    float: right;
+    margin-right: 0;
+    padding: 1px 5px 4px;
+        padding-top: 1px;
+    padding-top: 3px;
+/*
+a:link{
+padding-left: 15px
+}*/
+}
+
+	.large-numbers p strong {
+    font-size: 80px;
+    line-height: 1;
+    font-weight: bold;
+}
+	</style>
+
+
+<main id="content" role="main">
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+          <h1 class="heading-large">Process an online application</h1>
+
+<p style="font-size: medium">Enter the 8 character reference:</p>
+<input class="form-control" id="full-name" type="text" name="full-name">
+<br>
+						<a class="button button-start" href="1-personal.html" style="margin-top:1.18em">Search </a>
+      </div>
+    </div>
+
+    </div>
+
+
+</main>
+
+{% endblock %}
