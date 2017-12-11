@@ -61,6 +61,17 @@ var thisYear = 2017;
 // PRE APPLICATION SECTION
 
 
+        //do you want to apply online ?
+    router.get(/applyonline-handler/, function (req, res) {
+      if (req.query.online === 'yes') {
+        res.redirect('preapp_eligibility-confirm');
+      } else {
+        res.redirect('preapp_eligibility-not-online');
+      }
+    });
+
+
+
 // Who's it for?
 router.get(/beneficiary-handler/, function (req, res) {
   console.log(req.query.whofor);
