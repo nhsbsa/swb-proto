@@ -1,4 +1,5 @@
- {% extends "layout_bsa.html" %}
+{% extends "layout_bsa.html" %}
+ 
 
 {% block page_title %}
   Help paying for NHS Costs prototype
@@ -6,44 +7,40 @@
 
 {% block content %}
 
+
 <main id="content" role="main">
-  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+    <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-                <header class="page-header">
+            <header class="page-header">
                 <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
-  
-                <h1 class="page-header--lede heading-large">Are you applying for you or someone else?</h1>
-
+                <h1 class="page-header--lede heading-large">Is your pension your only income?</h1>
             </header>
 
-<!-- <div class="heading-group">
-        <p>Apply for help with NHS costs</p>
+<!-- keep eye on this in first round of testing
+  <p>paid job etc</p> -->
 
-  <h1 class="heading-large">
-Are you applying for you or someone else?
-  </h1>
-  </div> -->
 
-      <form action="beneficiary-handler" method="get" class="form">
-        
+  <form action="penincome-handler" method="get" class="form">
+
+
         <div class="form-group">
           
-          <fieldset class="">
+          <fieldset class="inline">
             <legend class="visually-hidden">
-              Are you applying for you or someone else?
+                  Do you have more than £23,250 in savings, investments and properties?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="whofor" value="no">
-              <label for="yes">Myself</label>
+              <input id="yes" type="radio" name="penincome" value="yes">
+              <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="whofor" value="yes">
-              <label for="no">Someone else</label>
+              <input id="no" type="radio" name="penincome" value="no">
+              <label for="no">No</label>
             </div>
             
           </fieldset>  
@@ -56,8 +53,10 @@ Are you applying for you or someone else?
 
       </form>
 
-    </div>
-    </div>
-</main>
 
+    </div>
+    </div>
+
+</main>
 {% endblock %}
+

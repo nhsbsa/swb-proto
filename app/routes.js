@@ -64,12 +64,73 @@ var thisYear = 2017;
         //do you want to apply online ?
     router.get(/applyonline-handler/, function (req, res) {
       if (req.query.online === 'yes') {
-        res.redirect('preapp_eligibility-confirm');
+        res.redirect('preapp_eligibility-info-docsv2');
       } else {
         res.redirect('preapp_eligibility-not-online');
       }
     });
 
+
+
+        // mon-dependant (reuseable)
+    router.get(/non-dephandler/, function (req, res) {
+      if (req.query.nonDep === 'yes') {
+        res.redirect('kickout_release2-no-answer');
+      } else {
+        res.redirect('pension-only-income');
+      }
+    });
+
+// pension your only income (to be removed completely as we iterate- not reusable)
+    router.get(/penincome-handler/, function (req, res) {
+      if (req.query.penincome === 'yes') {
+        res.redirect('saving-6k');
+      } else {
+        res.redirect('kickout_release2-no-answer');
+      }
+    });
+
+    //release 1 savings handler *note* this will change according to carehome answer in next iteration
+    router.get(/savings6k-handler/, function (req, res) {
+      if (req.query.savings === 'yes') {
+        res.redirect('kickout_release2-no-answer');
+      } else {
+        res.redirect('education-training');
+      }
+    });
+
+        //education handler
+    router.get(/education-handler/, function (req, res) {
+      if (req.query.education === 'yes') {
+        res.redirect('kickout_release2-no-answer');
+      } else {
+        res.redirect('preapp-summaryv2');
+      }
+    });
+    
+
+    // //do all these apply to you?- removed 16.01.18 by lindsay and helen
+    // router.get(/preapp-check/, function (req, res) {
+    //   if (req.query.criteria === 'own' && 'pension') {
+    //     res.redirect('preapp_eligibility-not-online');
+    //   } else {
+    //     res.redirect('preapp_eligibility-info-docsv2');
+    //   }
+    // });
+
+    // // //do all these apply to you?
+    // router.get(/preapp-check/, function (req, res) {
+    //         if (req.query.eligible1 == "true") {
+    //         res.redirect('tax-credits-income'); 
+
+    //       } else if (req.query.pencredit == "true") {
+    //         benType = 'Pension Credit (Guarantee Credit)';
+    //         res.render('apply/preapp/benefits-pension', {
+    //     });
+    //       } else if (req.query.none == 'true') {
+    //           res.redirect('preapp-summary')
+    //       }
+    //     });
 
 
 // Who's it for?
@@ -85,10 +146,26 @@ router.get(/beneficiary-handler/, function (req, res) {
 
 router.get(/registration-third-party/, function (req, res) {
   console.log(benificiary.thirdParty);
-  res.render('apply/preapp/registration-third-party', {
+  res.render('apply/you/registration-third-party', {
     thirdparty : benificiary.thirdParty
   });
 });
+
+    router.get(/birth-handler/, function (req, res) {
+      applicant.age = (thisYear - req.query.dobyear);
+      console.log(applicant.age);
+      if (applicant.age <= 15) {
+        res.render('apply/preapp/full-exemption-u16', {
+        });
+          } else if (benificiary.thirdParty == true) {
+        res.render('apply/you/post-address', {
+          thirdparty : benificiary.thirdParty,
+          firstname : benificiary.firstname
+        });
+      } else {
+        res.redirect('/apply/you/post-address');
+      }
+    });
 
 // live in care home?
     router.get(/preappcare-handler/, function (req, res) {
@@ -110,14 +187,7 @@ router.get(/registration-third-party/, function (req, res) {
 
 
 
-//release 1 savings handler *note* this will change according to carehome answer in next iteration
-    router.get(/savings6k-handler/, function (req, res) {
-      if (req.query.savings === 'yes') {
-        res.redirect('kickout_release2-no-answer');
-      } else {
-        res.redirect('preapp-summary');
-      }
-    });
+
 
 
 
@@ -152,21 +222,7 @@ router.get(/name-handler/, function (req, res) {
     //   }
     // });
 
-    router.get(/birth-handler/, function (req, res) {
-      applicant.age = (thisYear - req.query.dobyear);
-      console.log(applicant.age);
-      if (applicant.age <= 15) {
-        res.render('apply/preapp/full-exemption-u16', {
-        });
-          } else if (benificiary.thirdParty == true) {
-        res.render('apply/preapp/partner', {
-          thirdparty : benificiary.thirdParty,
-          firstname : benificiary.firstname
-        });
-      } else {
-        res.redirect('partner');
-      }
-    });
+
 
 router.get(/partner/, function (req, res) {
   res.render('apply/preapp/partner', {
@@ -250,7 +306,7 @@ router.get(/partner/, function (req, res) {
       if (req.query.postal === 'no') {
         res.redirect('post-address-postal');
       } else {
-        res.redirect('/apply/you/contact-prefs');
+        res.redirect('nhs-number');
       }
     });
 
@@ -266,6 +322,8 @@ router.get(/partner/, function (req, res) {
         res.redirect('/apply/you/contact-prefs');
       }
     });
+
+
 
 // contact preferences
     router.get(/contactTP-handler/, function (req, res) {
@@ -577,14 +635,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     });
 
-    // NON-DEPENDANT
-    router.get(/non-dephandler/, function (req, res) {
-      if (req.query.nonDep === 'yes') {
-        res.redirect('kickout_release2-no-answer');
-      } else {
-        res.redirect('job');
-      }
-    });
+
 
 // students
 

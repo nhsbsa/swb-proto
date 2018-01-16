@@ -1,0 +1,143 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+  </style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+                <h1 class="page-header--lede heading-large" style="margin-top: 0px">What you'll need</h1>
+            </header>
+
+<!-- <p class="lede">This is a new service and we're only inviting a limited number of people to apply online.</p> -->
+            <p>We'll ask you for information about your:</p>
+<ul class="list-bullet">
+<li>income - how much you get from any pensions you have</li>
+<li>housing costs - what you pay for things like council tax and rent</li>
+</ul>
+ <br>
+<details>
+  <summary><span class="summary">Documents that could help</span></summary>
+  <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+          <p>You may need your:</p>
+          <ul class="list-bullet">
+<!--           <li>payslips or latest business accounts (if self employed)</li>
+          <li>student funding notices</li> -->
+                    <li>rent or mortgage statements</li>
+          <li>latest council tax bill or council tax benefit letter</li>
+          <li>pension details</li>
+<!--           <li>latest statement of Pension Credit award notice</li> -->
+          
+          <li>savings, investments and property details</li>
+
+          </ul>
+        </div>
+
+
+</details> 
+ <br>
+<div class="notice">
+  <i class="icon icon-important">
+    <span class="visually-hidden">Warning</span>
+  </i>
+  <strong class="bold-small">
+    It's important you know this information before you start. <BR>You can't save your application and come back to it later.
+  </strong>
+</div>
+
+<!-- <h2 class="heading-medium">What you need</h2>
+        <p>When you apply, we'll ask for information about:</p>
+
+<ul class="list-bullet">
+<li>money you get- things like pay, pensions or student loans (your income)</li>
+<li>your housing costs- things like council tax and rent (your outgoings)</li>
+<li>any savings or investments you have</li>
+</ul>
+<br>
+<p>If you have a partner, you'll need to tell us about their income and outgoings too.</p> -->
+
+
+
+<!-- <h2 class="heading-medium">If you can't apply online yet</h2>
+
+<p>You need to apply using a paper form called an HC1.</p>
+
+<p>You can <a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">download an HC1</a> or get one from Jobcentres, GP practices, pharmacies and Citizens Advice centres.</p> -->
+
+<br>
+<p>
+<a class="button" href="non-dependants" id="next">Next</a>
+</p>
+
+        </div>
+    </div>
+
+
+
+
+ 
+
+
+
+        
+<!--       <p class="navigation"><a class="cancel" href="start">Cancel</a></p> -->
+
+      </form>
+      
+    </div>
+    
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

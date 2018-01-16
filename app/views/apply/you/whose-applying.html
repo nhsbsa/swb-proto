@@ -1,0 +1,63 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Personal details</p>
+  
+                <h1 class="page-header--lede heading-large">Are you applying for you or someone else?</h1>
+
+            </header>
+
+<!-- <div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+
+  <h1 class="heading-large">
+Are you applying for you or someone else?
+  </h1>
+  </div> -->
+
+      <form action="beneficiary-handler" method="get" class="form">
+        
+        <div class="form-group">
+          
+          <fieldset class="">
+            <legend class="visually-hidden">
+              Are you applying for you or someone else?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="whofor" value="no">
+              <label for="yes">Myself</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="whofor" value="yes">
+              <label for="no">Someone else</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+    </div>
+    </div>
+</main>
+
+{% endblock %}

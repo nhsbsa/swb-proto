@@ -11,14 +11,21 @@ ol.steps .instruction-list-item-extra-information {
 
 {% block content %}
 <main id="content" role="main">
-  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
 
   <div class="grid-row">
     <div class="column-two-thirds column-minimum">
 
-      <h1 class="heading-xlarge">
+    <div class="heading-group">
+        <p>Apply for help to pay NHS costs</p>
+
+      <h1 class="heading-xlarge">Your application</h1>
+
+    </div>
+<p>You can’t send the application until you've completed all the sections.</p>
+<!--       <h1 class="heading-xlarge">
         Apply for help to pay NHS costs
-      </h1>
+      </h1> -->
 
       <ol class="task-list" >
         <li>
@@ -26,8 +33,8 @@ ol.steps .instruction-list-item-extra-information {
             <span class="task-list-section-number">1. </span>Check before you start
           </h2>
           <ul class="task-list-items">
-            <p class="instruction-list-item-extra-information">Before applying, check to see if you're already entitled to NHS costs
-            </p>
+<!--             <p class="instruction-list-item-extra-information">Before applying, check to see if you're already entitled to NHS costs
+            </p> -->
             <li class="task-list-item" style="border-top: 1px solid #bfc1c3;">
               <a class="task-name" href="#" aria-describedby="eligibility-completed">
                 Check eligibility
@@ -37,7 +44,25 @@ ol.steps .instruction-list-item-extra-information {
           </ul>
         </li>
         <li>
-<!--           <h2 class="task-list-section">
+                  <!-- <h2 class="task-list-section">
+            <span class="task-list-section-number">2. </span>Tell us how to contact you
+          </h2>
+         
+          <ul class="task-list-items"> -->
+            <!-- <p class="instruction-list-item-extra-information">If we need to contact you
+            </p> -->
+              <!-- <li class="task-list-item" style="border-top: 1px solid #bfc1c3;">
+              <a class="task-name" href="/apply/you/post-address">
+                Your contact details
+              </a> -->
+              <!-- <strong class="task-completed" id="company-information-completed">Completed</strong> -->
+<!--             </li> -->
+              <!-- <strong class="task-completed" id="company-information-completed">Completed</strong> -->
+            <!-- </li>
+          </ul>
+        </li>
+        <li> -->
+          <!-- <h2 class="task-list-section">
             <span class="task-list-section-number">2. </span> Get supporting documents
           </h2>
          
@@ -54,7 +79,7 @@ ol.steps .instruction-list-item-extra-information {
         </li>
         <li> -->
                   <h2 class="task-list-section">
-            <span class="task-list-section-number">2. </span> Complete application
+            <span class="task-list-section-number">2. </span> About you
           </h2>
           <ul class="task-list-items">
           <p class="instruction-list-item-extra-information" >To work out your correct amount of help we need information about your housing costs and income.
@@ -65,54 +90,69 @@ ol.steps .instruction-list-item-extra-information {
               </a>
               <strong class="task-completed" id="company-information-completed">Completed</strong>
             </li>  -->
-            <li class="task-list-item" style="border-top: 1px solid #bfc1c3;">
-              <a class="task-name" href="#">
-                Your contact details
-              </a>
-              <strong class="task-completed" id="company-information-completed">Completed</strong>
-            </li>
             <li class="task-list-item">
-              <a class="task-name" href="/apply/live/you-live" aria-describedby="contact-details-completed">
+              <a class="task-name" href="#">
+                Personal details
+              </a>
+                <strong class="task-completed" id="company-information-completed">Completed</strong>
+              </li>
+            <li class="task-list-item">
+              <a class="task-name" href="#">
+                Contact details
+              </a>
+                <strong class="task-completed" id="company-information-completed">Completed</strong>
+              </li>
+              <!-- <strong class="task-completed" id="company-information-completed">Completed</strong> -->
+<!--             </li> -->
+       <!--      <li class="task-list-item">
+              <a class="task-name" href="#" aria-describedby="contact-details-completed">
+                Where you live
+              </a> -->
+              <!-- <strong class="task-completed" id="contact-details-completed">Completed</strong> -->
+          <!--   </li> -->
+        <li class="task-list-item">
+              <a class="task-name" href="#">
                 Where you live
               </a>
-              <!-- <strong class="task-completed" id="contact-details-completed">Completed</strong> -->
-            </li>
-<!--        <li class="task-list-item">
-              <a class="task-name" href="#">
-                About who lives with you
-              </a>
               <strong class="task-completed" id="contact-details-completed">Completed</strong>
-            </li>-->
-<!--             <li class="task-list-item">
+            </li>
+            <!-- <li class="task-list-item">
               <a class="task-name" href="#" aria-describedby="medical-information-completed">
                 Savings, investments and second properties
-              </a>
-             <strong class="task-completed" id="medical-information-completed">Completed</strong> 
-            </li> -->
+              </a> -->
+            <!--  <strong class="task-completed" id="medical-information-completed">Completed</strong>  -->
+      <!--       </li> -->
             <li class="task-list-item">
-              <a class="task-name" href="#" aria-describedby="medical-information-completed">
+              <a class="task-name" href="/apply/pension/pension_statepension" aria-describedby="where-you-live-completed">
                 Your income and other money
               </a>
-              <!-- <strong class="task-completed" id="medical-information-completed">Completed</strong> -->
+              <strong class="task-completed" id="medical-information-completed">Completed</strong>
             </li>
           </ul>
         </li>
+
         <li>
           <h2 class="task-list-section">
-            <span class="task-list-section-number">3. </span> Apply
+            <span class="task-list-section-number">3. </span> Submit application
           </h2>
-          <ul class="task-list-items">
+<!--           <ul class="task-list-items">
           <li class="task-list-item">
               <a class="task-name" href="#">
                 Read declaration and submit
               </a>
-          </li>
+          </li> -->
           <!-- <li class="task-list-item">
               <a class="task-name" href="#">
                 Submit
               </a>
           </li> -->
-          </ul>
+          <!-- </ul> -->
+          <div style="padding-left: 35px; margin-top: 1em">
+        <p>
+          <a class="button" href="/apply/declaration" id="next">Send</a>
+        </p>
+          
+      </div>
         </li>
       </ol>
 
