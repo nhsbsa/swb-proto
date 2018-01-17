@@ -84,9 +84,9 @@ var thisYear = 2017;
 // pension your only income (to be removed completely as we iterate- not reusable)
     router.get(/penincome-handler/, function (req, res) {
       if (req.query.penincome === 'yes') {
-        res.redirect('saving-6k');
-      } else {
         res.redirect('kickout_release2-no-answer');
+      } else {
+        res.redirect('saving-6k');
       }
     });
 
