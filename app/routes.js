@@ -721,6 +721,13 @@ router.get(/getuc-handler/, function (req, res) {
         res.redirect('pension_pension-tally');
       }
     });
+          router.get(/remove-handler/, function (req, res) {
+      if (req.query.remove== 'yes') {
+        res.redirect('pension_pension-tally-scotwid-removed');
+      } else {
+        res.redirect('pension_pension-tally');
+      }
+    });
 
 
 

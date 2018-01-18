@@ -12,12 +12,13 @@
  <div class="grid-row">
     <div class="column-two-thirds">
 
-                   <header class="page-header">
+
+                                   <header class="page-header">
             <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
              {% if thirdparty %}
-            <h1 class="page-header--lede heading-large">How often does {{firstname}} get paid their State Pension?</h1>
+            <h1 class="page-header--lede heading-large">How often does {firstname} get paid their state pension?</h1>
             {% else %}
-            <h1 class="page-header--lede heading-large">How often do you get paid your State Pension?</h1>
+            <h1 class="page-header--lede heading-large">How often do you get paid your NHS pension?</h1>
              {% endif %}
             </header>
 
@@ -31,18 +32,25 @@ How often do you pay get paid your state pension?</legend>
               <input class="choose" id="everyweek" type="radio" name="optionsRadios" value="Every week">
               <label for="everyweek">Every week</label>
             </div>
+                        <div class="multiple-choice">
+              <input class="choose" id="every2week" type="radio" name="optionsRadios" value="Every 2 weeks">
+              <label for="every2week">Every 2 weeks</label>
+            </div>
 
             <div class="multiple-choice">
               <input class="choose" id="every4week" type="radio" name="optionsRadios" value="Every 4 weeks">
               <label for="every4week">Every 4 weeks</label>
             </div>
-
-            <div class="multiple-choice">
-              <input class="choose" id="every4week" type="radio" name="optionsRadios" value="Every 4 weeks">
-              <label for="every4week">Every 13 weeks</label>
+                        <div class="multiple-choice">
+              <input class="choose" id="everymonth" type="radio" name="optionsRadios" value="Every month" checked="checked">
+              <label for="everymonth">Every calendar month</label>
             </div>
 
-                        <div class="multiple-choice">
+                                              <div class="multiple-choice">
+              <input class="choose" id="everyquarter" type="radio" name="optionsRadios" value="Every quarter">
+              <label for="everymonth">Every quarter (4 times a year)</label>
+            </div>
+                                    <div class="multiple-choice">
               <input class="choose" id="everymonth" type="radio" name="optionsRadios" value="Every month">
               <label for="everymonth">Once a year</label>
             </div>
@@ -52,7 +60,7 @@ How often do you pay get paid your state pension?</legend>
 
 <br>
 <p>
-          <a class="button" href="pension_statepension-amount" id="next">Next</a>
+          <a class="button" href="pension_pension-amount-second-edit" id="next">Next</a>
         </p>
       
 
