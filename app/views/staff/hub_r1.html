@@ -11,6 +11,26 @@
 	<link href="../assets/stylesheets/r2_calculator.css" rel="stylesheet">
 	<link href="../assets/stylesheets/r1calc.css" rel="stylesheet">*/
 
+
+/*  .button:before {
+     content:url(/public/images/bsa/plus.svg);
+     position:absolute;
+     z-index:100000;
+     width:50%;
+  }*/
+
+  .button-add:before {
+   position:absolute;
+   top: -2.5px;
+   left: 8px;
+   background: url(/public/images/bsa/plus.svg) no-repeat center center;
+   width: 20px;
+ }
+   .button-add: {
+
+   }
+
+
 .example {
   position: relative;
   overflow: hidden;
@@ -19,7 +39,7 @@ margin-right: 2%;
 border: 10px solid #dee0e2;
   margin-bottom: 0.78947em;
   margin-top: 15px;
-  padding-top: 30px;
+  padding-top: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
   padding-left: 15px; 
@@ -144,34 +164,55 @@ padding-left: 15px
     line-height: 1;
     font-weight: bold;
 }
+
+#myDIV {
+    margin-top: 0px;
+    display:none;
+}
+ /* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 16px;
+} 
+.tablinks{
+font-size:16px;
+}
+
 	</style>
 
 
 <main id="content" role="main">
-<!-- <div class="navigation-service">
-      <div class="navigation-service-name">
-        Help paying for NHS costs
-      </div>
-      <a href="/services" class="navigation-service-switch">Switch service</a>
-    </div> -->
-<!-- <div class="phase-banner">
-  <p>
-    <strong class="phase-tag">BETA</strong>
-    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-  </p>
-</div> -->
-
-<!-- <div class="govuk-beta-label">
-  <p>
-    <strong class="phase-tag">Beta</strong>
-    <span>
-          This is new guidance. Complete our quick 5-question survey to <a target="_blank" rel="noopener noreferrer" href="https://www.surveymonkey.co.uk/r/servicemanualsurvey?c=/service-manual/service-standard">help us improve it</a>.
-
-
-    </span>
-  </p>
-</div> -->
-
 
 
 
@@ -180,21 +221,20 @@ padding-left: 15px
     <div class="column-half">
 
         <div class="example">
-          <h2 class="bold-medium">Get next online application</h2>
-<!--           <br>
-<p style="font-size: medium">Enter the 8 character reference:</p>
-<input class="form-control" id="full-name" type="text" name="full-name">
-<br> -->
-						<a class="button button-start" href="1-personal.html" style="margin-top:1.18em">Next</a>
+          <h2 class="bold-small">Get next online application</h2>
+						<a class="button button-start" style="margin-top:1.18em; margin-bottom:0.6em " onclick="myFunction()">Next</a>
+            <br><br>
       </div>
     </div>
         <div class="column-half">
 
 <div class="example">
-          <h2 class="bold-medium">Enter CRS number</h2>
-<div class="form-group" style="margin-bottom: 0px">
-        <input style="margin-top: 1.5em; margin-right:1em" class="form-control" id="full-name-f2" name="full-name-f2" type="text"> <a class="button button-start" href="1-personal.html" style="margin-top:1.18em">Next</a>
+          <h2 class="bold-small">Enter CRS number</h2>
+<div class="form-group" style="margin-bottom: 0px" >
+        <input style="margin-top: 1em; margin-right:1em; margin-bottom: 1em" class="form-control" id="full-name-f2" name="full-name-f2" type="text"> <a class="button button-add button-nhs" style="padding-left:2.5em; margin-top:1.18em">Link CRS </a>
       </div>
+
+      <p><a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">Search by a CRS number</a></p>
             
       </div>
 </div>
@@ -202,59 +242,434 @@ padding-left: 15px
 
     </div>
     </div>
-				
 
 
 
-					<h3 class="heading-large">Claims to do</h3>
+<div id="myDIV" display="none">
+<h3 class="heading-medium" style="margin-top: 0.8em">Application details</h3>
+       <!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Newyork')">Before starting</button>
+  <button class="tablinks" onclick="openCity(event, 'London')">Personal details</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Contact details</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Housing</button>
+  <button class="tablinks" onclick="openCity(event, 'Madrid')">Income and savings</button>
+</div>
 
-			<div class="row">
-				<div class="small-12 columns">
-					<table width="100%">
-						<thead>
-							<tr>
-								<th width="18%">Reference</th>
-								<th width="22%">Applicant</th>
-								<th width="22%">Date recieved</th>
-								<th>Date processed by</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<a href="evidence-check-2.html">p96v 68g3</a>
-								</td>
-								<td>Robert Morgan</td>
-								<td>10 December 2017</td>
-								<td>8 January 2018</td>
-								<td><strong class="task-due">Due soon</strong></td>
-							</tr>
-							<tr>
-								<td>
-									<a href="#">d87u 74k9</a>
-								</td>
-								<td>Patrick Turner</td>
-								<td>19 December 2017</td>
-								<td>12 January 2018</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<a href="#">z69v 68g3</a>
-								</td>
-								<td>Naveen Kumar</td>
-								<td>19 December 2017</td>
-								<td>12 January 2018</td>
-								<td></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+<!-- Tab content -->
+<div id="Newyork" class="tabcontent">
+<thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0.4em">
+            Before starting
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+  <table id="review-table-one">
+      <tr>
+<!--    <td>Does anyone aged 18 or over live with you?</td> -->
+        <td>Live with anyone aged 18 or over</td>
+        <td class="bold">No</td>
+      </tr>
+            <tr>
+        <!-- <td>Do you have any income other than your pension?</td> -->
+        <td>Have any income other than pension</td>
+        <td class="bold">No</td>
+        
+      </tr>
+      <tr>
+        <!-- <td>Do you have savings and investments?</td> -->
+        <td>Have savings and investments</td>
+        <td class="bold">Less than £6,000</td>
+       
+      </tr>
+      <tr>
+        <td>In education or training</td>
+        <td class="bold">No</td>
+       
+      </tr>
+
+     
+    </table>
+</div>
+<div id="London" class="tabcontent">
+<table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0em">
+            Personal details
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+     <tr>
+        <td>Full name</td>
+        <td class="bold" style="font-weight: 700">{{firstname}}Shiela Green</td>
+       
+      </tr>
+      <tr>
+        <td>Date of birth</td>
+        <td class="bold" style="font-weight: 700">{{dobday}} {{dobmonth}} {{dobyear}} 02 April 1951</td>
+       
+      </tr>
+          <tr>
+        <td>
+          Address
+        </td>
+        <td class="bold" style="font-weight: 700">
+          1 West Street <br>
+          Killingworth <br>
+          Tyne and Wear<br> 
+          NE12 A34<br>
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          Different postal address
+        </td>
+        <td class="bold" style="font-weight: 700">
+          No
+        </td>
+      </tr
+      <tr>
+        <td>
+          NHS number 
+        </td>
+        <td class="bold" style="font-weight: 700">
+          123 456 7891
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="Paris" class="tabcontent">
+<table class="check-your-answers">
+
+<thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0em">
+            Contact details
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>
+          Contact method
+        </td>
+        <td>
+          Email<br>
+          Telephone
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          Email address
+        </td>
+        <td class="bold">
+          Myname@email.com
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Telephone number
+        </td>
+        <td class="bold">
+          0191 222 0000
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Text Relay service needed
+        </td>
+        <td class="bold">
+          No
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <table class="check-your-answers">
+
+<thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0em">
+            Housing costs
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Type of property you live in
+        </td>
+        <td class="bold">
+          Rented accommodation 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Do you get housing benefit?
+        </td>
+        <td class="bold">
+          Yes
+        </td>
+      </tr>
+      <tr>
+        <td>
+          How much of your rent is paid by housing benefit?
+        </td>
+        <td>
+          Some
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          Rent frequency
+        </td>
+        <td class="bold">
+          Monthly
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Monthly rent amount
+        </td>
+        <td class="bold">
+          £220.20
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Are meals or energy bills included in your rent?
+        </td>
+        <td class="bold">
+          No
+        </td>
+
+      </tr>
+            <tr>
+        <td>
+          Do you pay service charges?
+        </td>
+        <td class="bold">
+          No
+        </td>
+
+      </tr>
+                  <tr>
+        <td>
+          Do you pay ground rent?
+        </td>
+        <td class="bold">
+          No
+        </td>
+
+      </tr>
+                  <tr>
+        <td>
+          Do you pay council tax?
+        </td>
+        <td class="bold">
+          Yes
+        </td>
+
+      </tr>
+                  <tr>
+        <td>
+          Yearly council tax amount
+        </td>
+        <td class="bold">
+          £1626.12
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div> 
+<div id="Paris" class="tabcontent">
+<table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0em">
+            Your contact details
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>
+          Contact method
+        </td>
+        <td>
+          Email<br>
+          Telephone
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          Email address
+        </td>
+        <td class="bold">
+          Myname@email.com
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Telephone number
+        </td>
+        <td class="bold">
+          0191 222 0000
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Text Relay service needed
+        </td>
+        <td class="bold">
+          No
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div id="Madrid" class="tabcontent">
+ <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top: 0em">
+            Income and other money
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Do you get a State Pension?
+        </td>
+        <td class="bold">
+          Yes
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          State Pension frequency
+        </td>
+        <td class="bold">
+          Paid every 4 weeks
+        </td>
+      </tr>
+      <tr>
+        <td>
+          State Pension amount
+        </td>
+        <td>
+          £122.30
+        </td>
+
+
+      </tr>
+<!--             <tr>
+        <td>
+          Pension Credit
+        </td>
+        <td class="bold">
+          Savings Credit
+        </td>
+
+      </tr> -->
+    </tbody>
+  </table>
+</div> 
+      </div>
+
+
+</div>
+
+
 		</div>
 	</div>
 
 </main>
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "block";
+    }
+}
+</script>
+<script >
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+} 
+</script>
 
 {% endblock %}

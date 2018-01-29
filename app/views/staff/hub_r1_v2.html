@@ -1,4 +1,4 @@
-{% extends "layout_bsa_internal_release1.html" %}
+{% extends "layout_internal.html" %}
 
 {% block page_title %}
 
@@ -7,6 +7,28 @@
 {% block content %}
 
 <style>
+/*	<link href="../assets/stylesheets/styles.css" rel="stylesheet">
+	<link href="../assets/stylesheets/r2_calculator.css" rel="stylesheet">
+	<link href="../assets/stylesheets/r1calc.css" rel="stylesheet">*/
+
+
+/*  .button:before {
+     content:url(/public/images/bsa/plus.svg);
+     position:absolute;
+     z-index:100000;
+     width:50%;
+  }*/
+
+  .button-add:before {
+   position:absolute;
+   top: -2.5px;
+   left: 8px;
+   background: url(/public/images/bsa/plus.svg) no-repeat center center;
+   width: 20px;
+ }
+   .button-add: {
+
+   }
 
 
 .example {
@@ -17,7 +39,7 @@ margin-right: 2%;
 border: 10px solid #dee0e2;
   margin-bottom: 0.78947em;
   margin-top: 15px;
-  padding-top: 30px;
+  padding-top: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
   padding-left: 15px; 
@@ -142,29 +164,95 @@ padding-left: 15px
     line-height: 1;
     font-weight: bold;
 }
+
+#myDIV {
+    margin-top: 20px;
+    display:none;
+}
+
 	</style>
 
 
 <main id="content" role="main">
+<!-- <div class="navigation-service">
+      <div class="navigation-service-name">
+        Help paying for NHS costs
+      </div>
+      <a href="/services" class="navigation-service-switch">Switch service</a>
+    </div> -->
+<!-- <div class="phase-banner">
+  <p>
+    <strong class="phase-tag">BETA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div> -->
+
+<!-- <div class="govuk-beta-label">
+  <p>
+    <strong class="phase-tag">Beta</strong>
+    <span>
+          This is new guidance. Complete our quick 5-question survey to <a target="_blank" rel="noopener noreferrer" href="https://www.surveymonkey.co.uk/r/servicemanualsurvey?c=/service-manual/service-standard">help us improve it</a>.
+
+
+    </span>
+  </p>
+</div> -->
+
+
 
 
   <div class="grid-row">
 
-    <div class="column-two-thirds">
+    <div class="column-half">
 
-
-          <h1 class="heading-large">Process an online application</h1>
-
+        <div class="example">
+          <h2 class="bold-small">Get next online application</h2>
+<!--           <br>
 <p style="font-size: medium">Enter the 8 character reference:</p>
 <input class="form-control" id="full-name" type="text" name="full-name">
-<br>
-						<a class="button button-start" href="1-personal.html" style="margin-top:1.18em">Search </a>
+<br> -->
+						<a class="button" style="margin-top:1.18em" onclick="myFunction()">Next</a>
       </div>
+    </div>
+        <div class="column-half">
+
+<div class="example">
+          <h2 class="bold-small">Enter CRS number</h2>
+<div class="form-group" style="margin-bottom: 0px">
+        <input style="margin-top: 1em; margin-right:1em" class="form-control" id="full-name-f2" name="full-name-f2" type="text"> <a class="button button-add" style="padding-left:2.5em; margin-top:1.18em">Link CRS </a>
+      </div>
+            
+      </div>
+</div>
+</div>
+
+    </div>
     </div>
 
 
 
+<div id="myDIV" display="none">
+<h3 class="heading-large">Claims to do</h3>
+      
+      </div>
+
+
+</div>
+
+
+		</div>
+	</div>
 
 </main>
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 
 {% endblock %}

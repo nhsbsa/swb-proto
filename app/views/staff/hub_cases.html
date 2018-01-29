@@ -1,0 +1,325 @@
+{% extends "layout_internal.html" %}
+
+{% block page_title %}
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+/*	<link href="../assets/stylesheets/styles.css" rel="stylesheet">
+	<link href="../assets/stylesheets/r2_calculator.css" rel="stylesheet">
+	<link href="../assets/stylesheets/r1calc.css" rel="stylesheet">*/
+
+
+/*  .button:before {
+     content:url(/public/images/bsa/plus.svg);
+     position:absolute;
+     z-index:100000;
+     width:50%;
+  }*/
+
+  .button-add:before {
+   position:absolute;
+   top: -2.5px;
+   left: 8px;
+   background: url(/public/images/bsa/plus.svg) no-repeat center center;
+   width: 20px;
+ }
+   .button-add: {
+
+   }
+
+
+.example {
+  position: relative;
+  overflow: hidden;
+background-color: #F8F8F8;
+margin-right: 2%;
+border: 10px solid #dee0e2;
+  margin-bottom: 0.78947em;
+  margin-top: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px; 
+	font-size: medium;}
+
+  .info-table {
+  span {
+    float: right;
+    width: 60%;
+  }
+}
+.govuk-beta-label {
+ padding:10px 0 8px;
+ border-bottom:1px solid #bfc1c3
+}
+@media (min-width: 641px) {
+ .govuk-beta-label {
+  padding-bottom:10px
+ }
+}
+.govuk-beta-label p {
+ display:table;
+ margin:0;
+ color:#000;
+ font-family:"nta", Arial, sans-serif;
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.14286
+}
+@media (min-width: 641px) {
+ .govuk-beta-label p {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+.navigation-service {
+    padding: 11px 0 9px 0;
+    border-bottom: 1px solid #bfc1c3;
+    margin: 0 0 10px;
+    position: relative;
+}
+
+.navigation-service-name {
+ font-family: Arial,sans-serif;
+ font-weight:700;
+ text-transform:none;
+ font-size:16px;
+ line-height:1.25;
+ margin:0 0 0 0
+}
+@media (min-width: 641px) {
+ .navigation-service-name {
+  font-size:19px;
+  line-height:1.31579
+ }
+}
+.navigation-service-switch {
+ font-family: Arial,sans-serif;
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.14286;
+ text-align:right;
+ position:absolute;
+ top:0;
+ right:0;
+ padding:13px 0 9px 15px
+}
+@media (min-width: 641px) {
+ .navigation-service-switch {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+.navigation-service-switch:focus {
+ outline:none;
+ border-bottom:4px solid #ffbf47;
+ border-left:10px solid #ffbf47;
+ border-right:3px solid #ffbf47;
+ right:-3px;
+ color:#0b0c0c
+}
+.task-due {
+  @include phase-tag;
+
+  float: right;
+  margin-right: 0;
+  padding:1px 5px 4px;
+  padding-top: 3px;
+}
+
+
+.task-due {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+        margin-right: 8px;
+    padding: 2px 5px 0;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #b10e1e;
+    float: right;
+    margin-right: 0;
+    padding: 1px 5px 4px;
+        padding-top: 1px;
+    padding-top: 3px;
+/*
+a:link{
+padding-left: 15px
+}*/
+}
+
+	.large-numbers p strong {
+    font-size: 80px;
+    line-height: 1;
+    font-weight: bold;
+}
+
+#myDIV {
+    margin-top: 0px;
+    display:none;
+}
+ /* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 16px;
+} 
+.tablinks{
+font-size:16px;
+}
+
+	</style>
+
+
+<main id="content" role="main">
+
+
+
+<h3 class="heading-large" style="margin-top: 0.8em">Cases</h3>
+       <!-- Tab links -->
+
+
+      <div class="row">
+<!--         <div class="small-12 columns"> -->
+          <table>
+            <thead>
+              <tr>
+     
+                <th width="">Name</th>
+                <th width="">Date of birth</th>
+                <th width="">Postcode</th>
+                <th width="18%">Date received</th>
+           <!--      <th width="19%">Registration date</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td><a href="">Robert Morgan</a></td>
+                <td>02/04/1984</td>
+                <td>NE12 A34</td>
+                <td>10/11/2017</td>
+    <!--             <td>None</td> -->
+             <!--    <td><strong class="task-due">Due soon</strong></td> -->
+              </tr>
+              <tr>
+
+                <td><a href="">Patrick Turner</a></td>
+                <td>02/04/1984</td>
+                <td>NE12 A34</td>
+                <td>10/11/2017</td>
+    <!--             <td>None</td> -->
+             <!--    <td><strong class="task-due">Due soon</strong></td> -->
+              </tr>
+              <tr>
+
+                <td><a href="">Naveen Kumar</a></td>
+                <td>02/04/1984</td>
+                <td>NE12 A34</td>
+                <td>10/11/2017</td>
+    <!--             <td>None</td> -->
+             <!--    <td><strong class="task-due">Due soon</strong></td> -->
+              </tr>
+              <tr>
+
+                <td><a href="">Mark Gary Dobson</a></td>
+                <td>02/04/1984</td>
+                <td>NE12 A34
+                </td>
+                <td>10/11/2017</td>
+    <!--             <td>None</td> -->
+             <!--    <td><strong class="task-due">Due soon</strong></td> -->
+              </tr>
+            
+            </tbody>
+          </table>
+<!--         </div> -->
+      </div>
+</div>
+
+</div> 
+      </div>
+
+
+</div>
+
+
+		</div>
+	</div>
+
+</main>
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "block";
+    }
+}
+</script>
+<script >
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+} 
+</script>
+
+{% endblock %}
