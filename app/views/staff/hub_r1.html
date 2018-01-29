@@ -1,0 +1,260 @@
+{% extends "layout_internal.html" %}
+
+{% block page_title %}
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+/*	<link href="../assets/stylesheets/styles.css" rel="stylesheet">
+	<link href="../assets/stylesheets/r2_calculator.css" rel="stylesheet">
+	<link href="../assets/stylesheets/r1calc.css" rel="stylesheet">*/
+
+.example {
+  position: relative;
+  overflow: hidden;
+background-color: #F8F8F8;
+margin-right: 2%;
+border: 10px solid #dee0e2;
+  margin-bottom: 0.78947em;
+  margin-top: 15px;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px; 
+	font-size: medium;}
+
+  .info-table {
+  span {
+    float: right;
+    width: 60%;
+  }
+}
+.govuk-beta-label {
+ padding:10px 0 8px;
+ border-bottom:1px solid #bfc1c3
+}
+@media (min-width: 641px) {
+ .govuk-beta-label {
+  padding-bottom:10px
+ }
+}
+.govuk-beta-label p {
+ display:table;
+ margin:0;
+ color:#000;
+ font-family:"nta", Arial, sans-serif;
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.14286
+}
+@media (min-width: 641px) {
+ .govuk-beta-label p {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+.navigation-service {
+    padding: 11px 0 9px 0;
+    border-bottom: 1px solid #bfc1c3;
+    margin: 0 0 10px;
+    position: relative;
+}
+
+.navigation-service-name {
+ font-family: Arial,sans-serif;
+ font-weight:700;
+ text-transform:none;
+ font-size:16px;
+ line-height:1.25;
+ margin:0 0 0 0
+}
+@media (min-width: 641px) {
+ .navigation-service-name {
+  font-size:19px;
+  line-height:1.31579
+ }
+}
+.navigation-service-switch {
+ font-family: Arial,sans-serif;
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.14286;
+ text-align:right;
+ position:absolute;
+ top:0;
+ right:0;
+ padding:13px 0 9px 15px
+}
+@media (min-width: 641px) {
+ .navigation-service-switch {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+.navigation-service-switch:focus {
+ outline:none;
+ border-bottom:4px solid #ffbf47;
+ border-left:10px solid #ffbf47;
+ border-right:3px solid #ffbf47;
+ right:-3px;
+ color:#0b0c0c
+}
+.task-due {
+  @include phase-tag;
+
+  float: right;
+  margin-right: 0;
+  padding:1px 5px 4px;
+  padding-top: 3px;
+}
+
+
+.task-due {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+        margin-right: 8px;
+    padding: 2px 5px 0;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #b10e1e;
+    float: right;
+    margin-right: 0;
+    padding: 1px 5px 4px;
+        padding-top: 1px;
+    padding-top: 3px;
+/*
+a:link{
+padding-left: 15px
+}*/
+}
+
+	.large-numbers p strong {
+    font-size: 80px;
+    line-height: 1;
+    font-weight: bold;
+}
+	</style>
+
+
+<main id="content" role="main">
+<!-- <div class="navigation-service">
+      <div class="navigation-service-name">
+        Help paying for NHS costs
+      </div>
+      <a href="/services" class="navigation-service-switch">Switch service</a>
+    </div> -->
+<!-- <div class="phase-banner">
+  <p>
+    <strong class="phase-tag">BETA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div> -->
+
+<!-- <div class="govuk-beta-label">
+  <p>
+    <strong class="phase-tag">Beta</strong>
+    <span>
+          This is new guidance. Complete our quick 5-question survey to <a target="_blank" rel="noopener noreferrer" href="https://www.surveymonkey.co.uk/r/servicemanualsurvey?c=/service-manual/service-standard">help us improve it</a>.
+
+
+    </span>
+  </p>
+</div> -->
+
+
+
+
+  <div class="grid-row">
+
+    <div class="column-half">
+
+        <div class="example">
+          <h2 class="bold-medium">Get next online application</h2>
+<!--           <br>
+<p style="font-size: medium">Enter the 8 character reference:</p>
+<input class="form-control" id="full-name" type="text" name="full-name">
+<br> -->
+						<a class="button button-start" href="1-personal.html" style="margin-top:1.18em">Next</a>
+      </div>
+    </div>
+        <div class="column-half">
+
+<div class="example">
+          <h2 class="bold-medium">Enter CRS number</h2>
+<div class="form-group" style="margin-bottom: 0px">
+        <input style="margin-top: 1.5em; margin-right:1em" class="form-control" id="full-name-f2" name="full-name-f2" type="text"> <a class="button button-start" href="1-personal.html" style="margin-top:1.18em">Next</a>
+      </div>
+            
+      </div>
+</div>
+</div>
+
+    </div>
+    </div>
+				
+
+
+
+					<h3 class="heading-large">Claims to do</h3>
+
+			<div class="row">
+				<div class="small-12 columns">
+					<table width="100%">
+						<thead>
+							<tr>
+								<th width="18%">Reference</th>
+								<th width="22%">Applicant</th>
+								<th width="22%">Date recieved</th>
+								<th>Date processed by</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<a href="evidence-check-2.html">p96v 68g3</a>
+								</td>
+								<td>Robert Morgan</td>
+								<td>10 December 2017</td>
+								<td>8 January 2018</td>
+								<td><strong class="task-due">Due soon</strong></td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#">d87u 74k9</a>
+								</td>
+								<td>Patrick Turner</td>
+								<td>19 December 2017</td>
+								<td>12 January 2018</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#">z69v 68g3</a>
+								</td>
+								<td>Naveen Kumar</td>
+								<td>19 December 2017</td>
+								<td>12 January 2018</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}
