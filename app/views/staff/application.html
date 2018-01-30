@@ -7,182 +7,48 @@
 
 {% block content %}
 
-<link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/overrides.css">
-<link type="text/css" rel="stylesheet" media="screen" href="../../../../assets/stylesheets/complete.css">
-
-<!-- #BeginEditable "styles" -->
-
-
-<!-- <link type="text/css" rel="stylesheet" media="screen" href="/public/stylesheets/bootstrap.css"> -->
-<script src="../../../../assets/js/jquery-1.10.2.min.js"></script>
-<script src="../../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-
-<link type="text/css" rel="stylesheet" media="screen" href="../../css/ebf-override.css">
 
 <style type="text/css">
-.label,.glyphicon { margin-right:5px; }
 
-.casecounter{
-  font-size:x-small;
-  vertical-align:middle;
-}
 
-.navtextsize{
-
-}
-
-#global-header #logo img {
-  width:auto !important;
-  position: relative;
-  top: -2px;
-  height: 34px;
-  padding-right: 6px;
-  float: left;
-  display: inline;
-  line-height: inherit;
-  border: none;
-}
-#global-header a#logo.content{
-  font-size:19px;
-}
-.navbar {
-    position: relative;
-    min-height: 55px;
-    margin-bottom: 20px;
-    }
-    .navbar-default {
-    background-color: #f8f8f8;}
-
-    .navbar-default {
-    border: none;
-    border-radius: 0;}
-
-    .navbar-form {
-    margin: 10px 0;
-    padding: 0;}
-
-    .navbar-form .input-group {
-    display: inline-table;
-    vertical-align: middle;
-}
-.input-group {
-    position: relative;
-    display: table;
-    border-collapse: separate;}
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-color: #e7e7e7;}
-    .navbar-left {
-    float: left !important;
-}
-.navbar-form .input-group > .form-control {
-    width: 100%;
-}
-nav.navbar .form-control {
-    height: 35px;
-}
-.input-group-btn {
-    position: relative;
-    font-size: 0;
-    white-space: nowrap;
-}
-.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
-    margin-left: -1px;
-}
-nav .btn.btn-primary {
-    border-radius: 0;
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;
-    background: black;}
-    .input-group-btn > .btn {
-    position: relative;
-}
-
-.site-search .content {
-    margin: 0 15px;
-}
-input.submit {
-  margin-left:-6.5px; 
-    width: 36px;
-    height: 38px;
-    border: 1px solid #005ea5;
-    border-width: 0 0 0 1px;
-    border-left-color: #222;
-    border-radius: 0;
+ /* Style the tab */
+.tab {
     overflow: hidden;
-    text-indent: -5000px;
-    color: #fff;
-    background-color: #005ea5;
-    background-image: url(https://assets.publishing.service.gov.uk/static/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
-    background-repeat: no-repeat;
-   background-position: 0%;}
-
-
-nav.navbar ul.pagination.see-all {
-    margin-left: 10px;
-}
-nav.navbar ul.pagination {
-    margin: 10px 0;
-    float: right;
-    height: 35px;
-}
-.pagination {
-    display: inline-block;
-    padding-left: 0;
-    border-radius: 4px;
-}
-.pagination > li {
-    display: inline;
-}
-nav.navbar ul.pagination li.active a {
-    background: #005ea5;
-    color: white;
-}
-nav.navbar ul.pagination {
-  margin: 10px 0;
-  float: right;
-  height: 35px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
 }
 
-nav.navbar ul.pagination.see-all {
-  margin-left: 10px;
-}
-
-nav.navbar ul.pagination li a, nav.navbar ul.pagination li a span {
-  font-size: 16px !important;
-  border-radius: 0;
-  color: #005ea5;
-  border-color: #005ea5;
-}
-
-nav.navbar ul.pagination li.active a {
-  background: #005ea5;
-  color: white;
-}
-
-.navbar-default {
-  border: none;
-  border-radius: 0;
-}
-
-nav ul.pagination li a {
-  border-radius: 0;
-}
-.pagination > li > a, .pagination > li > span {
-    position: relative;
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
     float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
     padding: 6px 12px;
-    margin-left: -1px;
-    line-height: 1.42857143;
-  background: #fff;
-    text-decoration: none;
-
-    border: 1px solid #ddd;
-
-}
-table > thead > tr > th {
-    border-bottom: 5px solid #ddd;
-}
-.second-row:hover { background: #f8f8f8;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 16px;
+} 
+.tablinks{
+font-size:16px;
 }
 
 
@@ -192,16 +58,16 @@ table > thead > tr > th {
 
   <main id="content" role="main">
 
+
     <!-- #BeginEditable "content" -->
-
-
-      <h1 class="form-title heading-large">Low Income Scheme applications <span id="urn"></span></h1>
 
           <div class="grid-row">
     <div class="column-two-thirds">
-
-<p>Below is a list of the documents associated with the bankruptcy application.</p>
-          <p>Applicant: <span class="heading-small">Kim Scarlett</span></p>
+    <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>CRS 56789876</p>
+                <h1 class="page-header--lede heading-large">Shiela Green</h1>
+           
+            </header>
           </div>
 
         <div class="column-one-third">
@@ -217,273 +83,420 @@ table > thead > tr > th {
 
         </div>
       </div>
+
+
+<!-- <h3 class="heading-medium" style="margin-top: 0.8em">Application details</h3> -->
+       <!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Newyork')">Before starting</button>
+  <button class="tablinks" onclick="openCity(event, 'London')">Personal details</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Contact details</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Housing</button>
+  <button class="tablinks" onclick="openCity(event, 'Madrid')">Income and savings</button>
+</div>
+
+<!-- Tab content -->
+<div id="Newyork" class="tabcontent">
+<thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0.4em">
+            Before starting
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+  <table id="review-table-one">
+      <tr>
+<!--    <td>Does anyone aged 18 or over live with you?</td> -->
+        <td>Live with anyone aged 18 or over</td>
+        <td class="bold">No</td>
+      </tr>
+            <tr>
+        <!-- <td>Do you have any income other than your pension?</td> -->
+        <td>Have any income other than pension</td>
+        <td class="bold">No</td>
+        
+      </tr>
+      <tr>
+        <!-- <td>Do you have savings and investments?</td> -->
+        <td>Have savings and investments</td>
+        <td class="bold">Less than £6,000</td>
+       
+      </tr>
+      <tr>
+        <td style="border-bottom: none">In education or training</td>
+        <td style="border-bottom: none" class="bold">No</td>
+       
+      </tr>
+
+     
+    </table>
+</div>
+<div id="London" class="tabcontent">
+<table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0em">
+            Personal details
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+     <tr>
+        <td>Full name</td>
+        <td class="bold" style="font-weight: 700">{{firstname}}Shiela Green</td>
+       
+      </tr>
+      <tr>
+        <td>Date of birth</td>
+        <td class="bold" style="font-weight: 700">{{dobday}} {{dobmonth}} {{dobyear}} 02 April 1951</td>
+       
+      </tr>
+          <tr>
+        <td>
+          Address
+        </td>
+        <td class="bold" style="font-weight: 700">
+          1 West Street <br>
+          Killingworth <br>
+          Tyne and Wear<br> 
+          NE12 A34<br>
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          Different postal address
+        </td>
+        <td class="bold" style="font-weight: 700">
+          No
+        </td>
+      </tr
+      <tr>
+        <td>
+          NHS number 
+        </td>
+        <td class="bold" style="font-weight: 700">
+          123 456 7891
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="Paris" class="tabcontent">
+<table class="check-your-answers">
+
+<thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0em">
+            Contact details
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>
+          Contact method
+        </td>
+        <td>
+          Email<br>
+          Telephone
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          Email address
+        </td>
+        <td class="bold">
+          Myname@email.com
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Telephone number
+        </td>
+        <td class="bold">
+          0191 222 0000
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Text Relay service needed
+        </td>
+        <td class="bold">
+          No
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <table class="check-your-answers">
+
+<thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0em">
+            Housing costs
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Type of property you live in
+        </td>
+        <td class="bold">
+          Rented accommodation 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Do you get housing benefit?
+        </td>
+        <td class="bold">
+          Yes
+        </td>
+      </tr>
+      <tr>
+        <td>
+          How much of your rent is paid by housing benefit?
+        </td>
+        <td>
+          Some
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          Rent frequency
+        </td>
+        <td class="bold">
+          Monthly
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Monthly rent amount
+        </td>
+        <td class="bold">
+          £220.20
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Are meals or energy bills included in your rent?
+        </td>
+        <td class="bold">
+          No
+        </td>
+
+      </tr>
+            <tr>
+        <td>
+          Do you pay service charges?
+        </td>
+        <td class="bold">
+          No
+        </td>
+
+      </tr>
+                  <tr>
+        <td>
+          Do you pay ground rent?
+        </td>
+        <td class="bold">
+          No
+        </td>
+
+      </tr>
+                  <tr>
+        <td>
+          Do you pay council tax?
+        </td>
+        <td class="bold">
+          Yes
+        </td>
+
+      </tr>
+                  <tr>
+        <td>
+          Yearly council tax amount
+        </td>
+        <td class="bold">
+          £1626.12
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div> 
+<div id="Paris" class="tabcontent">
+<table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0em">
+            Your contact details
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>
+          Contact method
+        </td>
+        <td>
+          Email<br>
+          Telephone
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          Email address
+        </td>
+        <td class="bold">
+          Myname@email.com
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Telephone number
+        </td>
+        <td class="bold">
+          0191 222 0000
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Text Relay service needed
+        </td>
+        <td class="bold">
+          No
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div id="Madrid" class="tabcontent">
+ <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top: 0em">
+            Income and other money
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Do you get a State Pension?
+        </td>
+        <td class="bold">
+          Yes
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          State Pension frequency
+        </td>
+        <td class="bold">
+          Paid every 4 weeks
+        </td>
+      </tr>
+      <tr>
+        <td>
+          State Pension amount
+        </td>
+        <td>
+          £122.30
+        </td>
+
+
+      </tr>
+<!--             <tr>
+        <td>
+          Pension Credit
+        </td>
+        <td class="bold">
+          Savings Credit
+        </td>
+
+      </tr> -->
+    </tbody>
+  </table>
+</div> 
       </div>
-      </div>
-
-      <hr>
-      <!-- Navbar - Start -->
- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-<input class="form-control" id="full-name-f2" name="full-name-f2" type="text" style="width:20%"" placeholder="Search" >
-
-      <input class="submit" value="Search" type="submit" >
-
-
-
-  	    </div>
-      <!-- Navbar - End -->
-<br>
-      <!-- Table - Start -->
-       <div class="row">
-<!--         <div class="small-12 columns"> -->
-          <table>
-            <thead>
-              <tr>
-                <th>CRS reference</th>
-                <th>Name</th>
-                <th width="">Date of birth</th>
-                <th width="">Postcode</th>
-                <th width="18%">Date received</th>
-           <!--      <th width="19%">Registration date</th> -->
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="second-row">
-                <td>56743897</td>
-                <td><a href="">Robert Morgan</a></td>
-                <td>02/04/1984</td>
-                <td>NE12 A34</td>
-                <td>10/11/2017</td>
-    <!--             <td>None</td> -->
-             <!--    <td><strong class="task-due">Due soon</strong></td> -->
-              </tr>
-              <tr class="second-row">
-                <td>56743897</td>
-                <td><a href="">Patrick Turner</a></td>
-                <td>02/04/1984</td>
-                <td>NE12 A34</td>
-                <td>10/11/2017</td>
-    <!--             <td>None</td> -->
-             <!--    <td><strong class="task-due">Due soon</strong></td> -->
-              </tr>
-              <tr class="second-row">
-                <td></td>
-                <td><a href="">Naveen Kumar</a></td>
-                <td>02/04/1984</td>
-                <td>NE12 A34</td>
-                <td>10/11/2017</td>
-    <!--             <td>None</td> -->
-             <!--    <td><strong class="task-due">Due soon</strong></td> -->
-              </tr>
-              <tr class="second-row">
-                 <td></td>
-                <td><a href="">Mark Gary Dobson</a></td>
-                <td>02/04/1984</td>
-                <td>NE12 A34
-                </td>
-                <td>10/11/2017</td>
-    <!--             <td>None</td> -->
-             <!--    <td><strong class="task-due">Due soon</strong></td> -->
-              </tr>
-                            <tr class="second-row">
-                <td>56743897</td>
-                <td><a href="">Robert Morgan</a></td>
-                <td>02/04/1984</td>
-                <td>NE12 A34</td>
-                <td>10/11/2017</td>
-    <!--             <td>None</td> -->
-             <!--    <td><strong class="task-due">Due soon</strong></td> -->
-              </tr>
-              <tr class="second-row">
-                <td>56743897</td>
-                <td><a href="">Patrick Turner</a></td>
-                <td>02/04/1984</td>
-                <td>NE12 A34</td>
-                <td>10/11/2017</td>
-    <!--             <td>None</td> -->
-             <!--    <td><strong class="task-due">Due soon</strong></td> -->
-              </tr>
-              <tr class="second-row">
-                <td></td>
-                <td><a href="">Naveen Kumar</a></td>
-                <td>02/04/1984</td>
-                <td>NE12 A34</td>
-                <td>10/11/2017</td>
-    <!--             <td>None</td> -->
-             <!--    <td><strong class="task-due">Due soon</strong></td> -->
-              </tr>
-              <tr class="second-row">
-                 <td></td>
-                <td><a href="">Mark Gary Dobson</a></td>
-                <td>02/04/1984</td>
-                <td>NE12 A34
-                </td>
-                <td>10/11/2017</td>
-    <!--             <td>None</td> -->
-             <!--    <td><strong class="task-due">Due soon</strong></td> -->
-              </tr>
-                            <tr class="second-row">
-                <td></td>
-                <td><a href="">Naveen Kumar</a></td>
-                <td>02/04/1984</td>
-                <td>NE12 A34</td>
-                <td>10/11/2017</td>
-    <!--             <td>None</td> -->
-             <!--    <td><strong class="task-due">Due soon</strong></td> -->
-              </tr>
-              <tr class="second-row">
-                 <td></td>
-                <td><a href="">Mark Gary Dobson</a></td>
-                <td>02/04/1984</td>
-                <td>NE12 A34
-                </td>
-                <td>10/11/2017</td>
-    <!--             <td>None</td> -->
-             <!--    <td><strong class="task-due">Due soon</strong></td> -->
-              </tr>
-            
-            </tbody>
-          </table>
-          <br>
-
-      <!-- ////////////////////////////////////// Modals Section - End ////////////////////////////////////// -->
-
-
-      <!-- Navbar - Start -->
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                          <ul class="pagination see-all" style="margin-right:1em">
-            <li><a href="#">See all</a></li>
-          </ul>
-          <ul class="pagination">
-            <!-- <li>
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li> -->
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- Navbar - End -->
-
-
-
-    <!-- #EndEditable -->
-
+    </div>
   </div>
 
 </main>
-      <script type="text/javascript" src="../../../../assets/js/bootstrap-switch/jquery.min.js"></script>
+<script >
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
 
-      <!-- #BeginEditable "scripts" -->
-      <script type="text/javascript" src="../../../../assets/js/bootstrap/js/toggle-button.js"></script>
-      <script type="text/javascript" src="../../../../assets/js/jquery.tablesorter.min.js"></script>
-      <script type="text/javascript" src="js/casedata.js"></script>
-      <script type="text/javascript" src="../../../../assets/js/bootstrap/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="../../../../assets/js/jquery.cookie.js"></script>
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
 
-      <script type="text/javascript">
-      var rownumber;
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
 
-      var url      = window.location.href;     // Returns full URL
-      var pathname = window.location.pathname; // Returns path only
-      $("#email-link").on("click", function (e) {
-        $.cookie("url", url, {path:'/'});
-        $.cookie("pathname", pathname, {path:'/'});
-      });
-
-      if ($.cookie("urn")) {
-        $("#urn").text($.cookie("urn")).addClass("bolder");
-        $(".urn").text($.cookie("urn")).addClass("bolder");
-      }
-
-      var filter = getParameterByName("filter");
-      if(filter==null||filter==""){
-        filter=1;
-      }
-
-      $(document).ready(function() {
-        $("table").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: $("#pager")});
-        // $('[data-toggle="tooltip"]').tooltip();
-      });
-
-      ///////////////////////// Delete Row Functionality - Start /////////////////////////
-      var documentValue;
-
-      $("#table tr").on("click", function (e) {
-      	getRowNumber($(this).index()+1);
-        documentValue = $(this).find('td:nth-child(2)').text();
-        $("#document").text(documentValue);
-      });
-
-      $(".delete-row").on("click", function (e) {
-        $('#table-row-'+rownumber).hide(750);
-      });
-
-      function getRowNumber(row){
-      	rownumber = row;
-      }
-      ///////////////////////// Delete Row Functionality - End /////////////////////////
-
-      $('[data-toggle="tooltip"]').tooltip("hide")
-
-      $("#urn").on("click", function (e) {
-        $('#urn').tablesorter();
-      });
-
-      $("#name").on("click", function (e) {
-        $('#name').tablesorter();
-      });
-
-      $("#date").on("click", function (e) {
-        $('#date').tablesorter();
-      });
-
-      // Approve cookies
-      $("#approve").on("click", function (e) {
-        $.cookie("document-title", $("#document-title").text(), {path:'/'});
-        $.cookie("document-type", $("#document-type").text(), {path:'/'});
-        $.cookie("document-creator", $("#document-creator").text(), {path:'/'});
-        $.cookie("document-description", $("#document-description").text(), {path:'/'});
-        $.cookie("document-date", $("#document-date").text(), {path:'/'});
-      });
-
-      function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-      }
-
-      var $rows = $('#table tr');
-      $('#search').keyup(function() {
-
-        var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-        reg = RegExp(val, 'i'),
-        text;
-
-        $rows.show().filter(function() {
-          text = $(this).text().replace(/\s+/g, ' ');
-          return !reg.test(text);
-        }).hide();
-      });
-
-      // #Search highlighted - Start
-
-      // #Search highlighted - End
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+} 
+</script>
 
 
-      </script>
-
-      <!-- #EndEditable -->
 
 
    {% endblock %}
