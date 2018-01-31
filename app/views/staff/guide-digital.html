@@ -104,10 +104,98 @@
        background-color: #2b8cc4;
        transition: background-color 300ms ease-out;
     }
+    .example-icon-list p {
+    display: inline-block;
+    font-size: 16px;
+    padding-left: 1em;
+    vertical-align: middle;
+    margin-bottom: 0;
+  }
+  .list--check, {
+    list-style: none;
+    padding-left: 32px;
+  }
+  .list--check li::before {
+    background-image:
+  }
+  .standard {
+    vertical-align: middle;
+    padding: 0;
+    counter-reset: standard-counter;
+  }
+  .standard>li::before {
+    width: 10%;
+  }
+  .standard>li {
+    list-style: none;
+    display: block;
+    border-top: 1px solid #bfc1c3;
+    padding: 1em 0 0.5em 0;
+    margin: 0;
+    page-break-inside: avoid;
+  }
+  .updated-standard li .point {
+    width: 67%;
+  }
+  .standard>li .point {
+    padding-left: 3em
+  }
+  .standard>li .point {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+/*  .circle-step {
+    font-size: 19px;
+    min-width: 38px;
+    min-height: 38px;
+    line-height: 38px;
+  }*/
+  .circle {
+    display: inline-block;
+    border-radius: 50%;
+    background: #0b0c0c;
+    color: #fff;
+    font-family: "ntatabularnumbers", "nta", Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    margin: 0.5em 0em 0em 1em;
+  }
+  .panel_side {
+    display: block;
+    padding-top: 15px;
+    background-color: #DEE0E2;
+  }
+  .panel_side_inner {
+    width: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+  }
+  .display_field {
+    margin-bottom: 20px;
+    display: block;
+  }
+  .display_field_value h3 {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    text-transform: none;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .income-img {
+    width: 283px;
+  }
+  @media(max-width:640px) {
+    .income-img {
+      width: 100%
+    }
+  }
     </style>
 
 
-    <main id="content" role="main">
+<main id="content" role="main">
         <div class="heading-group">
             <p>Staff guides</p>
             <h1 class="heading-large">Digital application</h1>
@@ -118,61 +206,68 @@
             <div class="column-third">
                 <nav class="app-c-contents-list" role="navigation">
                     <h2 class="heading-small">Contents</h2>
-                    <ol class="app-c-contents-list__list">
+                    <!-- <ol class="app-c-contents-list__list">
                         <li class="app-c-contents-list__list-item app-c-contents-list__list-item--parent">
                             <a class="app-c-contents-list__link" href="#introduction">Introduction</a>
-                        </li>
-            <!--             <li class="app-c-contents-list__list-item app-c-contents-list__list-item--parent">
+                        </li> -->
+                        <!--<li class="app-c-contents-list__list-item app-c-contents-list__list-item==parent">
                             <a class="app-c-contents-list__link" href="#who-apply">Who can appeal</a>
                         </li> -->
                         <li class="app-c-contents-list__list-item app-c-contents-list__list-item--parent">
-                            <a class="app-c-contents-list__link" href="#before-start">What to do</a>
+                            <a class="app-c-contents-list__link" href="#what-to-do">What to do</a>
                         </li>
-                <!--         <li class="app-c-contents-list__list-item app-c-contents-list__list-item--parent">
+                        <!--<li class="app-c-contents-list__list-item app-c-contents-list__list-item==parent">
                             <a class="app-c-contents-list__link" href="#contact">Successful appeals</a>
                         </li> -->
-                 <!--        <li class="app-c-contents-list__list-item app-c-contents-list__list-item--parent">
-                            <a class="app-c-contents-list__link" href="#contact">Unsuccessful appeals</a>
+                        <!--<li class="app-c-contents-list__list-item app-c-contents-list__list-item==parent">
+                        <a class="app-c-contents-list__link" href="#contact">Unsuccessful appeals</a>
                         </li> -->
                     </ol><br>
                     <!-- <p><a class="button-blue" href="#more-guides" style="color:white; font-weight: 600">More guides &nbsp; &nbsp; ⬇</a></p> -->
                 </nav>
             </div>
-
             <div class="column-two-thirds">
-                <h3 class="heading-medium" id="intro">Introduction</h3>
-                <p>blah blah blah</p><br>
-                <!-- <h3 class="heading-medium" id="who-can-appeal">Who can appeal</h3>
-                <h5>The appeal:</h5>
-                <ul>
-                    <li>must be made within 14 days from the date they had to appeal</li>
-                    <li>must include the original application along with any evidence or new information</li>
-                </ul>
-
-                <br>
+                <!-- <h2 class="heading-medium" id="introduction">Introduction</h2>
+                <p>This is the guide on </p>
                 <br> -->
- <h3 class="heading-medium" id="what-to-do">What to do</h3>
-                 <p>steps content to go here</p>
-           <!--      <div class="panel">
-                   
-                </div> -->
 
-                <br>
-               <!--  <h3 class="heading-medium" id="success">Successful appeals</h3>
-                <p>If the delivery manager decides that the applicant’s appeal is valid, they will write to the applicant with the outcome.</p>
-                <br>
-                <h3 class="heading-medium" id="unsuccess">Unsuccessful appeals</h3>
-                <p>The delivery manager must write to the applicant within 10 days of receiving the appeal. The applicant may then appeal again to the operational manager.</p>
-                <p>The operational manager’s decision is final.</p> -->
+                <h2 class="heading-large" id="what-to-do">What to do</h2>
+                <ol class="standard">
+                    <li style="border-top: none;">
+                        <span class="circle circle-step">1</span>
+                        <div class="point">
+                            <p><span class="heading-small">View the next digital application available to register</span><br>
+                            Click on the green 'next' button to bring up the details you will need to register an application on CRS.</p>
+                             <img style="width:60%" src="/public/images/bsa/get-next-button.png">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="circle circle-step">2</span>
+                        <div class="point">
+                            <p><span class="heading-small">Register the application on CRS and enter the CRS number into the online system</span><br>
+                            Once you've registered the application in CRS, enter the CRS number into the online system and click to blue 'link CRS' button.</p>
+                            <p>This will make sure that any digital applications can be found using the CRS number if need be.</p>
+                            <img style="width:60%" src="/public/images/bsa/link-crs-button.png">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="circle circle-step">3</span>
+                        <div class="point">
+                            <p><span class="heading-small">View full application details and assess as normal</span><br>
+                            View the full application details by clicking on the applicants name.</p>
+                            <p>You will be able to see each section of information in different tabs, such as income or housing costs.</p>
+                        </div>
+                    </li>
+<!--                     <li>
+                        <span class="circle circle-step">4</span>
+                        <div class="point">
+                            <p><span class="heading-small">Add note to </span><br>
+                            It could be that your</p>
+                        </div>
+                    </li> -->
+                </ol>
             </div>
         </div>
-
-        <!-- <div class="grid-row">
-            <div class="panel callout blue">
-                <h4 class="heading-medium" id="more-guides">More guides</h4>
-            </div>
-        </div> -->
-
     </main>
 
     {% endblock %}

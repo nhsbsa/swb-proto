@@ -51,9 +51,60 @@
 font-size:16px;
 }
 
+/* Style the tab */
+.tabblue {
+    overflow: hidden;
+/*    border: 1px solid #ccc;*/
+    background-color: #005EB8;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabblue button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tabblue button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Create an active/current tablink class */
+.tabblue button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 16px;
+} 
+.tablinksblue{
+font-size:16px;
+color: white;
+
+}
 
 </style>
 
+  <div class="tabblue" style="margin-top:-2em;">
+
+  <button style="margin-left:10em; border-right: 2px solid #ffffff; border-left: 2px solid #ffffff;" class="tablinksblue" onclick="window.location.href='hub_r3'" >Home</button>
+  <button class="tablinksblue" style="border-right: 2px solid #ffffff" onclick="window.location.href='admin'">Case details</button>
+<!--   <button class="tablinks">Contact details</button>
+  <button class="tablinks">Housing</button>
+  <button class="tablinks">Savings</button>
+    <button class="tablinks">Income</button> -->
+</div>
 
 
   <main id="content" role="main">
@@ -74,10 +125,10 @@ font-size:16px;
           <!-- Panel Indent - Start -->
 
 
-          <div class="panel panel-border-narrow"" style="font-size:16px; border-color:#efefef">
-              <p style="margin: 0 0 10px"><a href="../1-search.html" style="font-weight: bold;">Save and View another case</a></p>
-              <p style="margin: 0 0 10px"><a href="../3-upload.html">Upload a new document</a></p>
-              <p style="margin: 0 0 10px"><a href="4-edit.html">Edit application details</a></p>
+          <div class="panel panel-border-narrow"" style="font-size:16px; border-color:#efefef; margin-top:2em">
+              <p style="margin: 0 0 10px"><a href="#" style="font-weight: bold;">Save and View another case</a></p>
+              <p style="margin: 0 0 10px"><a href="#">Upload a new document</a></p>
+              <p style="margin: 0 0 10px"><a href="#">Edit application details</a></p>
             </div>
           <!-- Panel Indent - End -->
 
@@ -92,7 +143,8 @@ font-size:16px;
   <button class="tablinks" onclick="openCity(event, 'London')">Personal details</button>
   <button class="tablinks" onclick="openCity(event, 'Paris')">Contact details</button>
   <button class="tablinks" onclick="openCity(event, 'Tokyo')">Housing</button>
-  <button class="tablinks" onclick="openCity(event, 'Madrid')">Income and savings</button>
+  <button class="tablinks" onclick="openCity(event, 'Berlin')">Savings</button>
+    <button class="tablinks" onclick="openCity(event, 'Madrid')">Income</button>
 </div>
 
 <!-- Tab content -->
@@ -120,12 +172,7 @@ font-size:16px;
         <td class="bold">No</td>
         
       </tr>
-      <tr>
-        <!-- <td>Do you have savings and investments?</td> -->
-        <td>Have savings and investments</td>
-        <td class="bold">Less than £6,000</td>
-       
-      </tr>
+
       <tr>
         <td style="border-bottom: none">In education or training</td>
         <td style="border-bottom: none" class="bold">No</td>
@@ -165,7 +212,7 @@ font-size:16px;
         <td>
           Address
         </td>
-        <td class="bold" style="font-weight: 700">
+        <td class="bold" >
           1 West Street <br>
           Killingworth <br>
           Tyne and Wear<br> 
@@ -173,19 +220,19 @@ font-size:16px;
         </td>
 
       </tr>
-      <tr>
+<!--       <tr>
         <td>
           Different postal address
         </td>
-        <td class="bold" style="font-weight: 700">
+        <td class="bold">
           No
         </td>
-      </tr
+      </tr> -->
       <tr>
-        <td>
+        <td style="border-bottom: none">
           NHS number 
         </td>
-        <td class="bold" style="font-weight: 700">
+        <td class="bold" style="border-bottom: none">
           123 456 7891
         </td>
       </tr>
@@ -209,17 +256,6 @@ font-size:16px;
     </thead>
 
     <tbody>
-
-      <tr>
-        <td>
-          Contact method
-        </td>
-        <td>
-          Email<br>
-          Telephone
-        </td>
-
-      </tr>
       <tr>
         <td>
           Email address
@@ -237,10 +273,10 @@ font-size:16px;
         </td>
       </tr>
       <tr>
-        <td>
+        <td style="border-bottom: none">
           Text Relay service needed
         </td>
-        <td class="bold">
+        <td class="bold" style="border-bottom: none">
           No
         </td>
 
@@ -268,7 +304,7 @@ font-size:16px;
     <tbody>
       <tr>
         <td>
-          Type of property you live in
+          Type of property
         </td>
         <td class="bold">
           Rented accommodation 
@@ -276,7 +312,7 @@ font-size:16px;
       </tr>
       <tr>
         <td>
-          Do you get housing benefit?
+          Getting housing benefit
         </td>
         <td class="bold">
           Yes
@@ -284,9 +320,9 @@ font-size:16px;
       </tr>
       <tr>
         <td>
-          How much of your rent is paid by housing benefit?
+          How much rent is paid by housing benefit
         </td>
-        <td>
+        <td class="bold">
           Some
         </td>
 
@@ -301,7 +337,7 @@ font-size:16px;
       </tr>
       <tr>
         <td>
-          Monthly rent amount
+          Rent amount after housing benefit
         </td>
         <td class="bold">
           £220.20
@@ -325,7 +361,7 @@ font-size:16px;
         </td>
 
       </tr>
-                  <tr>
+        <tr>
         <td>
           Do you pay ground rent?
         </td>
@@ -334,7 +370,7 @@ font-size:16px;
         </td>
 
       </tr>
-                  <tr>
+       <tr>
         <td>
           Do you pay council tax?
         </td>
@@ -343,11 +379,11 @@ font-size:16px;
         </td>
 
       </tr>
-                  <tr>
-        <td>
+       <tr>
+        <td style="border-bottom: none">
           Yearly council tax amount
         </td>
-        <td class="bold">
+        <td class="bold" style="border-bottom: none">
           £1626.12
         </td>
 
@@ -413,14 +449,14 @@ font-size:16px;
   </table>
 </div>
 
-<div id="Madrid" class="tabcontent">
+<div id="Berlin" class="tabcontent">
  <table class="check-your-answers">
 
     <thead>
       <tr>
         <th colspan="2">
           <h2 class="heading-medium" style="margin-top: 0em">
-            Income and other money
+            Savings
           </h2>
         </th>
         <th>
@@ -430,8 +466,35 @@ font-size:16px;
 
     <tbody>
       <tr>
+        <!-- <td>Do you have savings and investments?</td> -->
+        <td style="border-bottom: none">Savings, investments and property</td>
+        <td class="bold" style="border-bottom: none">Less than £6,000</td>
+       
+      </tr>
+    </tbody>
+  </table>
+</div> 
+
+<div id="Madrid" class="tabcontent">
+ <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top: 0em">
+            Income and other money
+          </h2>
+          <h2 class="heading-small">State pension</h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
         <td>
-          Do you get a State Pension?
+          Get a State Pension
         </td>
         <td class="bold">
           Yes
@@ -447,32 +510,69 @@ font-size:16px;
         </td>
       </tr>
       <tr>
-        <td>
+        <td >
           State Pension amount
         </td>
-        <td>
+        <td class="bold" >
           £122.30
         </td>
 
 
       </tr>
-<!--             <tr>
-        <td>
-          Pension Credit
-        </td>
-        <td class="bold">
-          Savings Credit
-        </td>
 
-      </tr> -->
     </tbody>
   </table>
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-small">Private and workplace pensions</h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Get a State Pension
+        </td>
+        <td class="bold">
+          Yes
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          State Pension frequency
+        </td>
+        <td class="bold">
+          Paid every 4 weeks
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom: none">
+          State Pension amount
+        </td>
+        <td class="bold" style="border-bottom: none">
+          £122.30
+        </td>
+
+
+      </tr>
+
+    </tbody>
+  </table>
+
 </div> 
       </div>
     </div>
   </div>
 
 </main>
+
 <script >
 function openCity(evt, cityName) {
     // Declare all variables
@@ -484,7 +584,7 @@ function openCity(evt, cityName) {
         tabcontent[i].style.display = "none";
     }
 
-    // Get all elements with class="tablinks" and remove the class "active"
+    // // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
@@ -495,6 +595,10 @@ function openCity(evt, cityName) {
     evt.currentTarget.className += " active";
 } 
 </script>
+
+
+
+
 
 
 

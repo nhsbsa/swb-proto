@@ -209,7 +209,61 @@ padding-left: 15px
 font-size:16px;
 }
 
-	</style>
+
+/* Style the tab */
+.tabblue {
+    overflow: hidden;
+/*    border: 1px solid #ccc;*/
+    background-color: #005EB8;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabblue button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tabblue button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Create an active/current tablink class */
+.tabblue button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 16px;
+} 
+.tablinksblue{
+font-size:16px;
+color: white;
+
+}
+
+</style>
+
+  <div class="tabblue" style="margin-top:-2em;">
+
+<!--   <button style="margin-left:10em; border-right: 2px solid #ffffff; border-left: 2px solid #ffffff;" class="tablinksblue" onclick="window.location.href='hub_r3'" >Home</button> -->
+  <button class="tablinksblue" style="margin-left:10em; border-right: 2px solid #ffffff; border-left: 2px solid #ffffff;"" onclick="window.location.href='admin'">Case details</button>
+<!--   <button class="tablinks">Contact details</button>
+  <button class="tablinks">Housing</button>
+  <button class="tablinks">Savings</button>
+    <button class="tablinks">Income</button> -->
+</div>
 
 
 <main id="content" role="main">
@@ -266,8 +320,8 @@ font-size:16px;
             <tbody>
               <tr>
 
-                <td><a href="application">Robert Morgan</a></td>
-                <td>02/04/1984</td>
+                <td><a href="application">Shiela Green</a></td>
+                <td>02/04/1951</td>
                 <td>
                   1 West Street <br>
                   Killingworth <br>
