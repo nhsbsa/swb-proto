@@ -1,95 +1,206 @@
-{{< layout}}
+ {% extends "layout_bsa.html" %}
 
-{{$pageTitle}}Upload your photo{{/pageTitle}}
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
 
-{{$header}}
-    <h1>Upload your photo</h1>
-{{/header}}
+{% block content %}
 
-{{$content}}
-        <p>   Your photo must be taken in the last month.</p>
-        <p>
-              We keep all photos for up to 30 days in line with our <a href="" rel="external">privacy policy</a>.
-            </p>
+<style>
+/* Timeout Modal */
 
-        <a href="/priority_service_170215/uploadphoto/" class="button">Upload your photo</a><br/><br/>
-
-
-    <div class="grid-row photo-upload-eg">
-        <div class="column-half img">
-            <object type="image/jpg" data="/public/images/woman-with-reddish-hair_ex@2x.jpg"type="image/svg+xml" class="svg" tabindex="-1">
-            <img src="/public/images/woman-with-reddish-hair_ex@2x.jpg" width="206" height= alt="">
-            </object>
-        </div>
-        <div class="column-half">
-          <h2>Taking a good photo</h2>
-            <ol class="list list-number">
-                <li>Get a friend to take your photo.</li>
-                <li>Use a plain background.</li>
-                <li>Don’t crop your photo, include your face, shoulders and upper body.</li>
-                <li>Keep your hair away from your face and brushed down.</li>
-                <li>Make sure there are no shadows on your face or behind you.</li>
-            </ol>
-        </div>
-    </div>
-
-    <!-- modal box -->
-    <br/><br/><br/>
-    <a href="#openModal">Timeout</a>
-    <div id="openModal" class="modalDialog">
-    	<div>
-        <div class="warning">
-            <div class="notice">
-              <i class="icon icon-important">
-                <span class="visually-hidden">Warning</span>
-              </i>
-              <strong class="bold-small">
-                Your session expires in <span id="timer" class="timer">4:59</span> minutes
-              </strong>
-            </div>
-        </div>
-        <div class="timeout_content">
-          <p>We won’t be able save what you’ve done so far. You’ll need to start again.</p>
-          <a href="#close" class="button" title="Close">I need more time</a><br>
-        </div>
-    	</div>
-    </div>
-    <!-- end of modal box -->
-
-    <!-- time countdown script -->
-    <script type="text/javascript">
-var timeoutHandle;
-function countdown(minutes) {
-    var seconds = 60;
-    var mins = minutes
-    function tick() {
-        var counter = document.getElementById("timer");
-        var current_minutes = mins-1
-        seconds--;
-        counter.innerHTML =
-        current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-        if( seconds > 0 ) {
-            timeoutHandle=setTimeout(tick, 1000);
-        } else {
-            if(mins > 1){
-
-               // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
-               setTimeout(function () { countdown(mins - 1); }, 1000);
-            }
-
-          else {
-            setTimeout(function(){window.location.href='timeout/timedout-message'},0);
-          }
-        }
-    }
-    tick();
+@media (max-width: 640px){
+  .timeout-dialog {
+    width: 280px !important;
+  }
 }
 
-countdown(5);
+.timeout-overlay {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=80);
+  -khtml-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
 
+html.noScroll {
+  overflow: hidden;
+}
+
+.timeout-dialog {
+  z-index: 1002;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 435px;
+  padding: 30px;
+  border: 5px solid black;
+  background-color: #fff;
+
+  p {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+
+  .countdown {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: 700;
+  }
+
+
+  .button{
+    margin-bottom: 1em;
+    font-size: 19px;
+  }
+
+
+  .button.button--link{
+    margin: 0;
+    padding: .526315em .789473em .263157em;
+  }
+
+
+}
+
+</style>
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+<div class="example">
+  <div class="scale-wrapper" style="height: 417.5px;">
+    <div class="scale">
+
+
+  <!-- PAGE CONTENT-->
+  <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-large">What type of Employment and Support Allowance (ESA) do you get?</h1>
+ <p>There are 2 types of ESA, income-related and contribution-based.</p>
+<!--        <p>Although similar in name, contributions-based ESA doesn't automatically entitle you to help with NHS costs.</p> -->
+    
+      
+             <details>
+              <summary><span class="summary">I'm not sure what type I get</span></summary>
+                <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+                <h3 class="heading-medium">
+                Check your benefit payment letter
+                </h3>
+
+                  <p>On page 3 of your benefit letter, look under the heading <strong>‘Income and Benefits’</strong>.</p><p> It will say either:</p>
+
+                    <ul class="list-bullet">
+                    <li>'your <strong>income-related</strong> entitlement is'</li>
+                    <li>'you are entitled to <strong>contribution based</strong>'</li>
+                    </ul>
+                    <br>
+                    <p>Find out more about the <a href="https://www.gov.uk/employment-support-allowance/types-of-esa" target="_blank">different types of ESA</a>.</p>
+                    <p>If you're not sure contact the <a href="https://www.gov.uk/contact-jobcentre-plus/existing-benefit-claims">Jobcentre Plus Helpline</a>.</p>
+
+                  <!-- <img class="uc-statement" src="/public/images/bsa/ESA-income-letter2.png" alt="an image showing that your type of ESA is shown towards the bottom of your letter.">
+<br>
+                       -->
+              </div>
+            </details>
+
+        <form action="esa-handler" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset>
+            <legend class="visuallyhidden">
+            What type of Employment and Support Allowance (ESA) do you get?
+            </legend>
+          <br>
+
+          <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+            <input id="incomeesa" type="radio" name="esa" value="incomeesa">
+            <label for="incomeesa" id="incomeesa" class=" block-label">
+
+              <p class="list-discription">Income-related ESA</p>
+          </label>
+        </div>
+
+          <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+            <input id="contesa" type="radio" name="esa" value="contesa">
+            <label for="contesa" id="contesa" class=" block-label">
+
+              <p class="list-discription">Contribution-based ESA</p>
+ <!--              <span class="font-xsmall">Usually you get this if you’ve paid enough National Insurance contributions in the last 2 full tax years. </span> -->
+            </label>
+          </div>
+
+<!-- 
+          <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+
+            <input id="both" type="radio" name="esa" value="both">
+            <label for="both" id="both" class=" block-label">
+
+              <p class="list-discription">I get both</p>
+            </label>
+          </div> -->
+
+          </fieldset>
+        </div>
+
+
+
+            <br>
+      
+        <!-- submit button -->
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+        </form>
+
+      </div>
+
+    </div></main>
+
+<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">
+  <h1 class="heading-medium" style="margin-top:0.5em">You’re about to be signed out</h1>
+  <p id="timeout-message" role="text">For security reasons, you will be signed out of this service in <span id="timeout-countdown" class="bold">2 minutes</span>.</p>
+        <div class="notice">
+  <i class="icon icon-important">
+    <span class="visually-hidden">Warning</span>
+  </i>
+  <strong class="bold-small">
+    Your application will not saved. Any information you entered will have to be entered again.
+  </strong>
+</div>
+<br><br>
+
+<!--   <button id="timeout-keep-signin-btn" class="button" style="margin-bottom:1em">Stay signed in</button> -->
+  <input class="button button--link" style="margin-bottom:1em" type="button" value="Stay signed in" onclick="window.location.href='../preapp/benefits-esa'">
+<!--   <button id="timeout-sign-out-btn" class="button button--link">Sign out</button> -->
+
+  <input class="button button--link" type="button" value="Sign out" onclick="window.location.href='timedout-message2'">
+</div>
+<div id="timeout-overlay" class="timeout-overlay"></div>
+</div>
+  </div>
+</div>
+<script>
+$.timeoutDialog({
+  timeout: 900,
+  countdown: 120,
+  keep_alive_url: '/keep-alive',
+  logout_url: '/sign-out',
+  keep_alive_button_text: 'Get another 15 minutes',
+  sign_out_button_text: 'Sign out'
+});
 </script>
-    <!-- end of time countdown script -->
 
-{{/content}}
 
-{{/ layout}}
+{% endblock %}
