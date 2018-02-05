@@ -1,0 +1,183 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+ /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+	position: relative;
+	border-top: 1px solid #bfc1c3;
+	border-right: none;
+	border-bottom:none;
+	border-left:none;
+	color: #005ea5;
+	font-size: 24px;
+line-height: 1.25;
+		cursor: pointer;
+	    padding-top: 14px;
+	    padding-left:0px;
+    padding-bottom: 12px;
+    border-top: 1px solid #bfc1c3;
+    width: 100%;
+    transition: 0.4s;
+    font-family:  Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    text-align: left;
+    background-color: white;
+
+}
+
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+        cursor: pointer;
+    background: #f8f8f8;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+	border:none;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    padding-left:0px;
+    padding-top: 10px;
+padding-bottom: 30px;
+} 
+.subsection__icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 16px;
+    width: 16px;
+    margin-top: -8px;
+    background: url(https://assets.publishing.service.gov.uk/service-manual-frontend/icons-plus-minus-d4de828db60520db2057af7ed3526d770973e70a94c4d8a1ba6cf4a6dcf6490e.svg), linear-gradient(transparent, transparent);
+        background-repeat: repeat, repeat;
+        background-position-x: 0%, 0%;
+        background-position-y: 0%, 0%;
+    background-repeat: no-repeat;
+    background-position: 0 -16px;
+}
+</style>
+
+<main id="content" role="main">
+		<a class="link-back" href="javascript:history.go(-1)">Back</a>
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<header class="page-header">
+					<p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is</span> Your income and regular money</p>{% if thirdparty %}
+					<h1 class="page-header--lede heading-large">Does {firstname} get another pension?</h1>{% else %}
+					<h1 class="page-header--lede heading-large">Benefits you need to tell us about</h1>{% endif %}
+				</header>
+
+				<p class="lede">We will only ask you benefits that will affect the outcome of your claim</p>
+				<p>Select all that apply</p>
+
+				<!-- Carers and disability benefits -->
+				<button class="accordion">Carers and disability benefits</button>
+				<div class="panel">
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Attendance Allowance</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Personal Independence Payment</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Disability Living Allowance</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Carer's Allowance</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Industrial Injuries Disablement Benefit</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Incapacity Benefit</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Severe Disability Allowance</label>
+					</div>
+				</div>
+
+				<!-- Armed forces disability benefits -->
+				<button class="accordion">Armed forces disability benefits</button>
+				<div class="panel">
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Armed Forces Independence Payment</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Armed Forces Compensation Scheme</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">War Disablement Pension</label>
+					</div>
+				</div>
+
+				<!-- Death and bereavement benefits -->
+				<button class="accordion">Death and bereavement benefits</button>
+				<div class="panel">
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Bereavement Support Payment</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Bereavement Allowance (previously Widow's Pension)</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Industrial Death Benefit</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Widowed Parent's Allowance</label>
+					</div>
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">War Widow(er) Pension</label>
+					</div>
+				</div>
+				<!-- Maternity benefit -->
+				<button class="accordion" style="border-bottom: 1px solid #bfc1c3">Maternity benefits</button>
+				<div class="panel">
+					<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Maternity Allowance</label>
+					</div>
+				</div>
+				<br><br><br>
+
+
+				        <!-- submit button -->
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+        </form>
+			</div>
+		</div>
+	</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+} 
+
+</script>
+{% endblock %}
