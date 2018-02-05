@@ -32,8 +32,6 @@ line-height: 1.25;
 
 }
 
-
-
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
         cursor: pointer;
@@ -56,6 +54,7 @@ padding-bottom: 30px;
     right: 0;
     height: 16px;
     width: 16px;
+    padding-right: 30px;
     margin-top: -8px;
     background: url(https://assets.publishing.service.gov.uk/service-manual-frontend/icons-plus-minus-d4de828db60520db2057af7ed3526d770973e70a94c4d8a1ba6cf4a6dcf6490e.svg), linear-gradient(transparent, transparent);
         background-repeat: repeat, repeat;
@@ -77,11 +76,12 @@ padding-bottom: 30px;
 				</header>
 
 				<p class="lede">We will only ask you benefits that will affect the outcome of your claim</p>
-				<p>Select all that apply</p>
+				
 
 				<!-- Carers and disability benefits -->
-				<button class="accordion">Carers and disability benefits</button>
+				<button class="accordion">Carers and disability benefits <span class="subsection__icon"</span></button>
 				<div class="panel">
+				<p>Select all that apply</p>
 					<div class="multiple-choice multiple-radio">
 						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Attendance Allowance</label>
 					</div>
@@ -106,8 +106,9 @@ padding-bottom: 30px;
 				</div>
 
 				<!-- Armed forces disability benefits -->
-				<button class="accordion">Armed forces disability benefits</button>
+				<button class="accordion">Armed forces disability benefits <span class="subsection__icon"</span></button>
 				<div class="panel">
+				<p>Select all that apply</p>
 					<div class="multiple-choice multiple-radio">
 						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Armed Forces Independence Payment</label>
 					</div>
@@ -120,8 +121,9 @@ padding-bottom: 30px;
 				</div>
 
 				<!-- Death and bereavement benefits -->
-				<button class="accordion">Death and bereavement benefits</button>
+				<button class="accordion">Death and bereavement benefits <span class="subsection__icon"</span></button>
 				<div class="panel">
+				<p>Select all that apply</p>
 					<div class="multiple-choice multiple-radio">
 						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Bereavement Support Payment</label>
 					</div>
@@ -139,12 +141,17 @@ padding-bottom: 30px;
 					</div>
 				</div>
 				<!-- Maternity benefit -->
-				<button class="accordion" style="border-bottom: 1px solid #bfc1c3">Maternity benefits</button>
+				<button class="accordion" style="border-bottom: 1px solid #bfc1c3">Maternity benefits<span class="subsection__icon"</span></button>
 				<div class="panel">
+				<p>Select all that apply</p>
 					<div class="multiple-choice multiple-radio">
 						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Maternity Allowance</label>
 					</div>
 				</div>
+<br><br>
+									<div class="multiple-choice multiple-radio">
+						<input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">I <span class="bold">do not</span> get any of these benefits</label>
+					</div>
 				<br><br><br>
 
 
