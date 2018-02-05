@@ -1,0 +1,39 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+  <div class="grid-row">
+     <div class="column-two-thirds">
+
+                                <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Does {firstname} get another pension?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Benefits you get</h1>
+             {% endif %}
+            </header>
+
+<!-- <p class="panel panel-border-wide">You can add as many pensions as you need to.<p>
+ --></div>
+</div>
+        <div class="panel panel-border-wide">
+      <p>You've told you get:</p>
+            <ul class="list list-bullet">
+            <li>Contribution-based Employment and Support Allowance (ESA)</li>
+            </ul>
+        </div>
+<br>
+        <p>
+          <a class="button" href="benefits_benefits-amount-esa" id="next">Next</a>
+        </p>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
