@@ -63,6 +63,7 @@ padding-bottom: 30px;
     background-repeat: no-repeat;
     background-position: 0 -16px;
 }
+
 </style>
 
 <main id="content" role="main">
@@ -186,5 +187,14 @@ for (i = 0; i < acc.length; i++) {
     });
 } 
 
+</script>
+<script>
+function changeImage(image){
+	
+	$("big_image img").attr("src",image).removeClass("hide_image").addClass("show_image");
+	
+	
+
+}
 </script>
 {% endblock %}
