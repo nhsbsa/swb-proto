@@ -1,0 +1,71 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+           <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Does {{firstname}} get housing benefit?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">How often is your Carer's Allowance paid?</h1>
+             {% endif %}
+            </header>
+
+
+      <form action="carers-handler" method="get" class="form">
+        
+        <div class="form-group">
+          
+          <fieldset>
+            <legend class="visually-hidden">
+              How often is your Carer's Allowance paid?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="carehome" value="yes">
+              <label for="yes">Every week</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="carehome" value="no">
+              <label for="no">Every 4 weeks</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+        <p>
+          <a class="button" href="" id="next">Next</a>
+        </p>
+
+      </form>
+
+
+
+
+    </div>
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+

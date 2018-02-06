@@ -27,19 +27,13 @@
 
 
                 <header class="page-header">
-                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Get a refund</p>
                  {% if thirdparty %}
                 <h1 class="page-header--lede heading-large">What benefits or tax credits does {{firstname}} you get?</h1>
                 {% else %}
-                <h1 class="page-header--lede heading-large">Do you get any of these benefits?</h1>
+                <h1 class="page-header--lede heading-large">Which of these NHS costs do you want to claim a refund for?</h1>
                  {% endif %}
             </header>
-
-<!--         <div class="panel panel-border-narrow">
-        <p>There are some benefits with similar names.<br>
-        You need to be sure of the benefit you are getting as some benefits, although similar in name, <span class= "strong">do not</span> give you the same entitlements.</p>
-        <p>Check your benefits payment letter or contact the <a href="https://www.gov.uk/contact-jobcentre-plus/existing-benefit-claims">Jobcentre Plus Helpline</a>.</p>
-        </div> -->
 
         <h2 class="body-text">Select all that apply</h2><br>
 
@@ -53,29 +47,38 @@
               <legend class="visuallyhidden">What benefits or tax credits do {{partnerortext}} get?</legend>
 
               <div class="multiple-choice multiple-radio">
-                <input id="taxcredits" name="taxcredits" type="checkbox" value="true">
-                <label for="taxcredits">Child tax credits</label>
+                <input id="prescriptions" name="prescription" type="checkbox" value="true">
+                <label for="prescriptions">NHS prescriptions</label>
               </div>
 
               <div class="multiple-choice multiple-radio">
                 <input id="penCredit" name="pencredit" type="checkbox" value="true">
-                <label class="block-label" for="penCredit" id="penCredit">Pension Credit</label>
+                <label class="block-label" for="penCredit" id="penCredit">NHS dental check-ups or treatment </label>
               </div>
-
-              <p class="form-block">or</p>
-
+               <div class="multiple-choice multiple-radio">
+                <input id="penCredit" name="pencredit" type="checkbox" value="true">
+                <label class="block-label" for="penCredit" id="penCredit">Sight test</label>
+              </div>
+               <div class="multiple-choice multiple-radio">
+                <input id="penCredit" name="pencredit" type="checkbox" value="true">
+                <label class="block-label" for="penCredit" id="penCredit">Glasses or contact lenses</label>
+              </div>
               <div class="multiple-choice multiple-radio">
-                <input id="none" name="none" type="checkbox" value="true">
-                <label for="none">No, I don't get any of these benefits</label>
+                <input id="penCredit" name="pencredit" type="checkbox" value="true">
+                <label class="block-label" for="penCredit" id="penCredit">NHS wigs or fabric supports</label>
+              </div>
+                            <div class="multiple-choice multiple-radio">
+                <input id="penCredit" name="pencredit" type="checkbox" value="true">
+                <label class="block-label" for="penCredit" id="penCredit">Travel to receive NHS treatment
               </div>
 
             </fieldset>
 
           </div>
 
-          <div class="form-group">
-            <input class="button" type="submit" value="Next">
-          </div>
+        <p>
+          <a class="button" href="../declaration" id="next">Next</a>
+        </p>
 
         </form>
       </div>

@@ -169,21 +169,21 @@ html.noScroll {
     </div></main>
 
 <div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">
-  <h1 class="heading-medium" style="margin-top:0.5em">You’re about to be signed out</h1>
-  <p id="timeout-message" role="text">For security reasons, you will be signed out of this service in <span id="timeout-countdown" class="bold">2 minutes</span>.</p>
+  <h1 class="heading-medium" style="margin-top:0.5em">Do you want to continue with your application?</h1>
+  <p id="timeout-message" role="text">For security reasons, you will be timed out of this service in <span id="timeout-countdown" class="bold">2 minutes</span>.</p>
         <div class="notice">
   <i class="icon icon-important">
     <span class="visually-hidden">Warning</span>
   </i>
   <strong class="bold-small">
-    Your application will not saved. Any information you entered will have to be entered again.
+    You cannot save this application. <!-- Any information you entered will have to be entered again. -->
   </strong>
 </div>
 <br>
 
 <!--   <button id="timeout-keep-signin-btn" class="button" style="margin-bottom:1em">Stay signed in</button> -->
-  <input class="button button--link" style="margin-bottom:1em" type="button" value="Stay signed in" onclick="window.location.href='../preapp/benefits-esa'">
-  <p><a href="timedout-message2">Sign out now</a><p>
+  <input class="button button--link" style="margin-bottom:1em" type="button" value="Continue" onclick="window.location.href='../preapp/benefits-esa'">
+<!--   <p><a href="timedout-message2">Cancel application</a><p> -->
 <!--   <button id="timeout-sign-out-btn" class="button button--link">Sign out</button> -->
 
 <!--   <input class="button button--link" type="button" value="Sign out" onclick="window.location.href='timedout-message2'"> -->

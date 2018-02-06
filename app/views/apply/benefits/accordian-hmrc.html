@@ -162,16 +162,17 @@
 <header class="page-header">
           <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is</span> Your income and regular money</p>{% if thirdparty %}
           <h1 class="page-header--lede heading-large">Does {firstname} get another pension?</h1>{% else %}
-          <h1 class="page-header--lede heading-large">Benefits you need to tell us about</h1>{% endif %}
+          <h1 class="page-header--lede heading-large">Do you get any of these benefits?</h1>{% endif %}
         </header>
 
-        <p class="lede">We will only ask you benefits that will affect the outcome of your claim</p>
+        <p class="lede">We will only ask you about benefits that can affect the outcome of your application.</p>
 
     
 
         <div class="subsections" data-module="accordion-with-descriptions">
 
         <div class="subsection-controls">
+        <p style="margin: 0px; float: left">Select all that apply</p>
           <button class="js-open-close if-no-js-hide"></button>
         </div>
 
@@ -190,7 +191,6 @@
 
             <div class="js-toggle-disclosure-target if-js-hide">
               <div class="panel">
-        <p>Select all that apply</p>
         <!-- age: 65 and over -->
           <div class="multiple-choice multiple-radio">
             <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Attendance Allowance</label>
@@ -232,7 +232,6 @@
 
             <div class="js-toggle-disclosure-target if-js-hide">
                       <div class="panel">
-        <p>Select all that apply</p>
           <div class="multiple-choice multiple-radio">
             <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Armed Forces Independence Payment</label>
           </div>
@@ -259,7 +258,6 @@
 
             <div class="js-toggle-disclosure-target if-js-hide">
                       <div class="panel">
-        <p>Select all that apply</p>
           <div class="multiple-choice multiple-radio">
             <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Bereavement Support Payment</label>
           </div>

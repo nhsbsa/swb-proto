@@ -886,6 +886,17 @@ var benType;
       }
     });
 
+                  // REFUNDS
+      router.get(/refund-handler/, function (req, res) {
+      if (req.query.refund === 'yes') {
+        res.redirect('refunds');
+            } else {
+                res.redirect('../declaration');
+      }
+    });
+
+            
+
 
 // add your routes here
 
