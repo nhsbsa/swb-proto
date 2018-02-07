@@ -25,7 +25,7 @@
 
   <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
 
-  <form action="attendance-allowance-handler" method="get" class="form">
+  <form action="pip-handler" method="get" class="form">
       
   <div class="form-group">
              
@@ -35,7 +35,7 @@
             </legend>
 
             <div class="multiple-choice multiple-radio" data-target="dailyliving">
-              <input id="yes" type="checkbox" name="hasnhsno" value="Yes">
+              <input id="yes" type="checkbox" name="pip" value="Yes">
               <label for="yes">Daily living part</label>
             </div>
             <div class="panel panel-border-narrow js-hidden" id="dailyliving" style="margin-bottom:2em">
@@ -57,42 +57,28 @@
           </fieldset>
           </div>
 
-            <div class="multiple-choice multiple-radio" data-target="mobilty">
-              <input id="no" type="checkbox" name="hasnhsno" value="No">
-              <label for="no">Mobilty part</label>
-            </div>
-                        <div class="panel panel-border-narrow js-hidden" id="mobilty">
-<fieldset class="inline">
-            <legend class="heading-small">
-              What mobilty rate do you get?
-            </legend>
-
-            <div class="multiple-choice">
-              <input id="yes" type="radio" name="carehome" value="yes">
-              <label for="yes">Enhanced rate</label>
+            <div class="multiple-choice multiple-radio">
+              <input id="no" type="checkbox" name="pip" value="No">
+              <label for="no">Mobility part</label>
             </div>
 
-            <div class="multiple-choice">
-              <input id="no" type="radio" name="carehome" value="no">
-              <label for="no">Standard rate</label>
-            </div>
-            
-          </fieldset>
-          </div>
-
-
-           </fieldset>
-  </div>
 
         
-          <div class="form-group">
+<!--           <div class="form-group" style="margin-top: 1em">
             <input class="button" type="submit"  value="Next">
-          </div>
+          </div> -->
+</fieldset>
+</div>
+
 
 
 <!--     <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
 
   </form>
+
+  <p>
+          <a class="button" href="../pension/pension_statepension" id="next">Next</a>
+        </p>
     </div>
     </div>
 </main>

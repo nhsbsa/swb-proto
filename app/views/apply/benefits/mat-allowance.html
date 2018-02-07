@@ -1,0 +1,74 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+                    <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">What is {{firstname}}'s date of birth?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">How often is your Maternity Allowance paid?</h1>
+                 {% endif %}
+            </header>
+
+
+  <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+
+  <form action="matallow-handler" method="get" class="form">
+      
+  <div class="form-group">
+             
+          <fieldset>
+            <legend class="visually-hidden">
+            How often is your Maternity Allowance paid?
+            </legend>
+
+            <div class="multiple-choice" data-target="2weeks">
+              <input id="yes" type="radio" name="maweeks" value="Yes">
+              <label for="yes">Every 2 weeks</label>
+            </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="2weeks" style="margin-bottom:1em">
+            <label class="form-label-bold" for="nhsno">How much Maternity Allowance do you get every 2 weeks?</label>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
+
+            <div class="multiple-choice" data-target="4weeks">
+              <input id="no" type="radio" name="maweeks" value="No">
+              <label for="no">Every 4 weeks</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="4weeks" style="margin-bottom:2em">
+            <label class="form-label-bold" for="nhsno">How much Maternity Allowance do you get every 4 weeks?</label>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
+
+
+           </fieldset>
+  </div>
+
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+
+<!--     <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

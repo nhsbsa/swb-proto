@@ -71,19 +71,35 @@ var thisYear = 2017;
     });
 
 
-
-        // mon-dependant (reuseable)
+        // mon-dependant (release 2)
     router.get(/non-dephandler/, function (req, res) {
       if (req.query.nonDep === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('pension-only-income');
+        res.redirect('benefits-question');
       }
     });
+    //     // mon-dependant (release 1 reuseable)
+    // router.get(/non-dephandler/, function (req, res) {
+    //   if (req.query.nonDep === 'yes') {
+    //     res.redirect('kickout_release2-no-answer');
+    //   } else {
+    //     res.redirect('pension-only-income');
+    //   }
+    // });
 
-// pension your only income (to be removed completely as we iterate- not reusable)
+// pension your only income (release 1: to be removed completely as we iterate- not reusable)
     router.get(/penincome-handler/, function (req, res) {
       if (req.query.penincome === 'yes') {
+        res.redirect('kickout_release2-no-answer');
+      } else {
+        res.redirect('saving-6k');
+      }
+
+    });
+    // pension your only income (release 1: to be removed completely as we iterate- not reusable)
+    router.get(/r2income-handler/, function (req, res) {
+      if (req.query.r2income === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
         res.redirect('saving-6k');
@@ -670,7 +686,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.job == 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('benefits-question');
+        res.redirect('full-exemption-uc');
       }
     });
 
@@ -686,11 +702,11 @@ router.get(/benefits-handler/, function (req, res) {
 
 router.get(/getuc-handler/, function (req, res) {
       if (req.query.getuc == 'yes') {
-      res.redirect('uc-claim-type-v2'); 
+      res.redirect('job'); 
       } else if (req.query.getuc == 'no') {
       res.redirect('benefits-type-question'); 
       } else {
-        res.redirect('saving-6k');
+        res.redirect('benefits-type-question');
       }
 });
 
@@ -718,7 +734,7 @@ router.get(/getuc-handler/, function (req, res) {
       if (req.query.workpen== 'yes') {
         res.redirect('pension_pension-name-second');
       } else {
-        res.redirect('pension_pension-tally');
+        res.redirect('../benefits/income-summary');
       }
     });
           router.get(/remove-handler/, function (req, res) {
@@ -781,7 +797,7 @@ var benType;
 
           });
         } else if (req.query.none == 'true') {
-            res.redirect('preapp-summary');
+            res.redirect('only-incomer2');
   
         }
       });
@@ -805,7 +821,7 @@ var benType;
 
           router.get(/taxcredit-type-handler/, function (req, res) {
       if (req.query.taxcreditsType == 'wtc') {
-      res.redirect('preapp-summary'); 
+      res.redirect('kickout_release2-no-answer'); 
       } else {
         res.redirect('tax-credits-income');
       }
@@ -816,7 +832,7 @@ var benType;
 // esa handler
           router.get(/esa-handler/, function (req, res) {
       if (req.query.esa == 'contesa') {
-      res.redirect('preapp-summary'); 
+      res.redirect('only-incomer2'); 
       } else {
         res.redirect('full-exemption-benefits-esa');
       }
@@ -828,7 +844,7 @@ var benType;
       if (req.query.taxcreditsIncome == 'yes') {
       res.redirect('full-exemption-tc'); 
       } else {
-        res.redirect('preapp-summary');
+        res.redirect('kickout_release2-no-answer');
       }
 });
               // jsa handler
@@ -836,7 +852,7 @@ var benType;
       if (req.query.jsatype == 'incomejsa') {
       res.redirect('full-exemption-benefits-jsa'); 
       } else {
-        res.redirect('preapp-summary');
+        res.redirect('only-incomer2');
       }
 });
 
@@ -846,7 +862,7 @@ var benType;
       if (req.query.pensioncredit == 'guaranteecred') {
       res.redirect('full-exemption-pencredits'); 
       } else {
-        res.redirect('preapp-summary');
+        res.redirect('only-incomer2');
       }
 });
 
@@ -885,6 +901,10 @@ var benType;
         res.redirect('pension-summary-state');
       }
     });
+
+
+            
+// pip
 
                   // REFUNDS
       router.get(/refund-handler/, function (req, res) {
