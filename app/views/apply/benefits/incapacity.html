@@ -18,46 +18,49 @@
                  {% if thirdparty %}
                 <h1 class="page-header--lede heading-large">What is {{firstname}}'s date of birth?</h1>
                 {% else %}
-                <h1 class="page-header--lede heading-large">Which rate of Attendance Allowance do you receive?</h1>
+                <h1 class="page-header--lede heading-large">How often do you get paid Incapacity Benefit?</h1>
                  {% endif %}
             </header>
 
 
   <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
 
-  <form action="attendance-allowance-handler" method="get" class="form">
-        
-        <div class="form-group">
-          
+  <form action="incap-handler" method="get" class="form">
+      
+  <div class="form-group">
+             
           <fieldset>
             <legend class="visually-hidden">
-              Which rate of Attendance Allowance do you get?
+            How often do you get paid Incapacity Benefit?
             </legend>
 
-            <div class="multiple-choice">
-              <input id="yes" type="radio" name="carehome" value="yes">
-              <label for="yes" style="white-space: pre-line; line-height: 1.3">High rate
-              <span class="font-xsmall">£83.10</span> </label>
+            <div class="multiple-choice" >
+              <input id="yes" type="radio" name="incap" value="Yes">
+              <label for="yes">Every week</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="carehome" value="no">
-              <label for="no" style="white-space: pre-line; line-height: 1.3">Low rate
-              <span class="font-xsmall">£55.65</span></label>
+              <input id="no" type="radio" name="incap" value="No">
+              <label for="no">Every 2 weeks</label>
             </div>
-            
-          </fieldset>  
-          
-        </div>
+
+
         
-          <div class="form-group">
+<!--           <div class="form-group" style="margin-top: 1em">
             <input class="button" type="submit"  value="Next">
-          </div>
+          </div> -->
+</fieldset>
+</div>
+
 
 
 <!--     <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
 
   </form>
+
+  <p>
+          <a class="button" href="../pension/pension_statepension" id="next">Next</a>
+        </p>
     </div>
     </div>
 </main>

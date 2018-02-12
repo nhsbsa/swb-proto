@@ -76,7 +76,7 @@ var thisYear = 2017;
       if (req.query.nonDep === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('benefits-question');
+        res.redirect('only-incomer2');
       }
     });
     //     // mon-dependant (release 1 reuseable)

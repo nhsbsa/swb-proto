@@ -1,0 +1,85 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This is pre-application overview for </span>Apply for help with NHS costs</p>
+            <h1 class="page-header--lede heading-large">We're going to use these details you've told us</h1>
+          </header>
+
+<!-- <p class="panel panel-border-wide">You’re applying for help with NHS costs on behalf of:</p> -->
+    {% if thirdparty %}
+      <h2 class="heading-medium" style="margin-top:0; padding-top:0">{{firstname}}'s details</h3>
+    {% else %}
+    <h2 class="heading-medium" style="margin-top:0; padding-top:0">Check your answers:</h3>
+        {% endif %}
+       
+       
+    <table id="review-table-one">
+      <tr>
+        <td>Partner</td>
+        <td class="bold">No</td>
+        <td><a href="">Change</a></td>
+      </tr>
+      <tr>
+        <td>Claiming benefits or tax credits</td>
+        <td class="bold">Yes</td>
+        <td><a href="">Change</a></td>
+      </tr>
+      <tr>
+        <td>Living in a care home</td>
+        <td class="bold">No</td>
+        <td><a href="">Change</a></td>
+      </tr>
+      <tr>
+        <td>Savings and investments</td>
+        <td class="bold">£16,000 or less</td>
+        <td><a href="">Change</a></td>
+      </tr>
+
+
+
+
+     <!--  <tr>
+        <td>Address</td>
+        <td class="bold">1 Street, <br>Place, <br>County,<br> NE12 A34</td>
+        <td><a href="">Change</a></td>
+      </tr>
+      <tr>
+        <td>Contact by</td>
+        <td id="has-mobile" class="bold">Telephone</td>
+        <td><a href="">Change</a></td>
+      </tr>
+       <tr id="email-value">
+        <td>Telephone number</td>
+        <td class="bold">0191 200 9999</td>
+        <td><a href="">Change</a></td>
+      </tr> -->
+     
+    </table>
+
+<br><br>
+        <p>
+          <a class="button" href="../design-sprints/sprint21/check-list_contact" id="next">Next</a>
+        </p>
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}

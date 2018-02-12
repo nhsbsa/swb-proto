@@ -1,0 +1,403 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+  <style>
+
+.ui-autocomplete {
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+  border: 2px solid #6f777b;
+  max-height: 350px;
+  overflow-x: hidden;
+}
+
+.ui-autocomplete .ui-menu-item {
+  border-top: 1px solid #bfc1c3;
+  display: block;
+  padding: 4px 6px;
+  color: #0b0c0c;
+  cursor: pointer;
+}
+
+.ui-autocomplete .ui-menu-item:first-child {
+  border-top: none;
+}
+
+.ui-autocomplete .ui-menu-item.ui-state-focus {
+  font-weight: bold;
+  background-color: #6f777b;
+  color: #fff;
+}
+
+.ui-autocomplete {
+  width: 100%;
+}
+
+@media (min-width: 641px) {
+  .ui-autocomplete {
+    width: 66.66%;
+  }
+}
+
+.added-country .form-control {
+  padding: 0.5em;
+}
+
+.typeahead,
+.tt-query,
+.tt-hint {
+  font-size: 19px;
+  font-weight: 300;
+  text-transform: none;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.tt-hint {
+  display: none;
+}
+
+.tt-dropdown-menu {
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.tt-suggestion {
+  padding: 0.5em;
+  font-size: 19px;
+  line-height: 24px;
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.twitter-typeahead {
+  width: 100%;
+}
+
+.validation-wrapper .optional-section .twitter-typeahead input {
+  margin-bottom: 0;
+}
+
+.test-case {
+  overflow: visible;
+}
+
+.visually-hidden,
+.visuallyhidden,
+.hidden-hint .screenreader-punctuation,
+.hidden-hint .form-hint {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.added-country .form-control {
+  padding: 0.5em;
+}
+
+.tt-menu {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 65%;
+  max-height: 220px;
+  overflow-y: scroll;
+}
+
+.tt-suggestion {
+  padding: 0.5em;
+}
+
+.tt-suggestion:hover, .tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+}
+
+.twitter-typeahead {
+  width: 100%;
+}
+
+.test-case {
+  overflow: visible;
+}
+
+dialog {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  margin: auto;
+  border: solid;
+  padding: 1em;
+  background: white;
+  color: black;
+  display: none;
+}
+
+dialog[open] {
+  display: block;
+}
+
+dialog + .backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* for small devices, modal dialogs go full-screen */
+@media screen and (max-width: 540px) {
+  dialog[_polyfill_modal] {
+    /* TODO: implement */
+    top: 0;
+    width: auto;
+    margin: 1em;
+  }
+}
+
+._dialog_overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+dialog {
+  display: block;
+  position: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+dialog h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 24px;
+  line-height: 1.0416666667;
+}
+
+@media (min-width: 641px) {
+  dialog h1 {
+    font-size: 36px;
+    line-height: 1.1111111111;
+  }
+}
+
+dialog[open] {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 15px;
+  width: 90%;
+  border: 5px solid black;
+}
+
+@media (min-width: 641px) {
+  dialog[open] {
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 500px;
+  }
+}
+
+dialog[open] + .backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+dialog[open]::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.dialog-button {
+  display: none;
+}
+
+.js-enabled .dialog-button {
+  display: block;
+}
+
+.js-enabled dialog {
+  display: none;
+}
+
+.js-enabled dialog[open] {
+  display: block;
+  position: absolute;
+}
+
+.dialog-is-open {
+  overflow: hidden;
+}
+
+.disclosure-control {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #005ea5;
+  background: none;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  padding-left: 20px;
+  position: relative;
+}
+
+@media (min-width: 641px) {
+  .disclosure-control {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+.disclosure-control__icon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url("/public/images/disclosure/icon-closed.png") no-repeat;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+.disclosure-control[aria-expanded="true"] .disclosure-control__icon {
+  background: url("/public/images/disclosure/icon-open.png") no-repeat;
+}
+
+.js-enabled div[aria-hidden="true"] {
+  display: none;
+}
+
+.js-enabled div[aria-hidden="false"] {
+  display: block;
+}
+
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .accordion-with-descriptions-01 .subsection-controls:after, .accordion-with-descriptions-02 .subsection-controls:after, .accordion-with-descriptions-03 .subsection-controls:after, .question:after, .question-first:after, div.test-case-overflow-allowed:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.hint-underneath,
+.hint {
+  display: block;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 0 0 5px 0;
+  color: #6f777b;
+  clear: both;
+}
+
+@media (min-width: 641px) {
+  .hint-underneath,
+  .hint {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+</style>
+
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="councilcare-handler" method="get" class="form">
+
+                                       <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">How much is {firstname}'s {Scottish Widows} pension {every month}?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">What benefits do you get?</h1>
+             {% endif %}
+            </header>
+
+      <div class="test-case" style="overflow: visible">
+        <label for="council" class="council-label">Benefit name</label>
+        <div>
+          <select id="council" class="typeahead js-hidden" name="council" aria-required="true">
+          <option value=""></option>
+          <option value="Newport City Council">Carer's Allowance</option>
+          <option value="North Ayrshire Council">North Ayrshire Council</option>
+          <option value="North Down Borough Council">North Down Borough Council</option>
+          <option value="Omagh District Council">Omagh District Council</option>
+          <option value="Orkney Islands Council">Orkney Islands Council</option>
+          <option value="Pembrokeshire County Council">Pembrokeshire County Council</option>
+          <option value="Perth and Kinross Council">Perth and Kinross Council</option>
+          <option value="Powys County Council">Powys County Council</option>
+          <option value="Renfrewshire Council">Renfrewshire Council</option>
+          <option value="Rhondda Cynon Taff County Borough Council">Rhondda Cynon Taff County Borough Council</option>
+          <option value="Swansea City and Borough Council">Swansea City and Borough Council</option>
+          <option value="Newtownabbey Borough Council">Newtownabbey Borough Council</option>
+          <option value="Newry and Mourne District Council">Newry and Mourne District Council</option>
+          <option value="Food Standards Agency Northern Ireland">Food Standards Agency Northern Ireland</option>
+          </select>
+        </div>
+      </div>
+      <br>
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+</form>
+    </div>
+  </div>
+</main>
+
+
+
+
+
+  <!-- Javascript -->
+<script src="/public/javascripts/details.polyfill.js"></script>
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/application.js"></script>
+
+
+  <!-- selector -->
+  <script src="/public/javascripts/typeahead-aria.js"></script>
+  <script src="/public/javascripts/init-autocomplete.js"></script>
+
+
+
+
+{% endblock %}
