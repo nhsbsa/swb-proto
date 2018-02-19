@@ -1,0 +1,57 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Include Bootstrap Datepicker -->
+
+
+<style>
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+
+    float: left;
+    padding-bottom: 8px;
+    transition: background-color .3s;
+
+    font-size:16px;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
+
+
+<main id="content" role="main">
+    <div class="grid-row">
+
+<div class="pagination">
+  <a href="#">❮ Yesterday</a>
+  <a style="margin-left:6.5em" href="#">Today ❯</a>
+</div>
+      
+<form>
+  <input class="form-control form-control-1-4" type="date" placeholder="none" name="bday">
+</form>
+</div>
+</div>
+
+
+</main>
+
+
+
+    
+{% endblock %}
