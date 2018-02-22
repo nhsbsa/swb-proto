@@ -1,19 +1,18 @@
 /* global $ */
 /* global GOVUK */
 
+console.log("here");
+
 // Warn about using the kit in production
-if (
-  window.sessionStorage && window.sessionStorage.getItem('prototypeWarning') !== 'false' &&
-  window.console && window.console.info
-) {
+if (window.console && window.console.info) {
   window.console.info('GOV.UK Prototype Kit - do not use for production')
-  window.sessionStorage.setItem('prototypeWarning', true)
-}
+}    
 
 $(document).ready(function () {
   // Use GOV.UK shim-links-with-button-role.js to trigger a link styled to look like a button,
   // with role="button" when the space key is pressed.
   GOVUK.shimLinksWithButtonRole.init()
+
   // Show and hide toggled content
   // Where .multiple-choice uses the data-target attribute
   // to toggle hidden content
@@ -38,20 +37,6 @@ $(document).ready(function(){
 
 })
     
-    $(document).ready(function(){
-  
-  $('ul.tabs1 li').click(function(){
-    var tab_id = $(this).attr('data-tab1');
-
-    $('ul.tabs1 li').removeClass('current1');
-    $('.tab1-content').removeClass('current1');
-
-    $(this).addClass('current1');
-    $("#"+tab_id).addClass('current1');
-  })
-
-})
-    
     $(document).ready(function() {
 
     $('.internal-table tr').click(function() {
@@ -62,6 +47,7 @@ $(document).ready(function(){
     });
 
 });
+    })
 
     
   

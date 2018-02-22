@@ -85,6 +85,17 @@
     </div>
     </div>
 </main>
+<script>
+  function(t) {
+  if (!s.disabled) {
+    t = e._fixEvent(t);
+    var r = s.handlers[t.type];
+    if (r)
+      for (var o = 0; o < r.length; o++) r[o].call(n, t)
+  }
+}
+</script>
+
 
 {% endblock %}
 
