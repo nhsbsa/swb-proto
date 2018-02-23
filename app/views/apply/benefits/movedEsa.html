@@ -1,0 +1,58 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+<form>
+  <div class="form-group">
+    <fieldset class="inline">
+
+                                       <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">How much is {firstname}'s {Scottish Widows} pension {every month}?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Have you recently moved to ESA from another benefit?</h1>
+             {% endif %}
+            </header>
+        
+
+
+
+      <div class="multiple-choice">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+        <label for="radio-inline-1">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+        <label for="radio-inline-2">No</label>
+      </div>
+
+
+    </fieldset>
+      
+  </div>
+            <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+</form>
+
+
+    
+
+  </div>
+     </div>
+</main>
+
+
+
+{% endblock %}
+

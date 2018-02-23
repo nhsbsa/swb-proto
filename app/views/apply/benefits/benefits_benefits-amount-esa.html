@@ -18,11 +18,51 @@
              {% if thirdparty %}
             <h1 class="page-header--lede heading-large">How much is {firstname}'s {Scottish Widows} pension {every month}?</h1>
             {% else %}
-            <h1 class="page-header--lede heading-large">How much is your Employment and Support Allowance every 2 weeks?</h1>
+            <h1 class="page-header--lede heading-large">How much Employment Support Allowance do you get?</h1>
              {% endif %}
             </header>
+        
+              <form action="" method="" class="form">
+          <fieldset>
+            <legend class="visually-hidden">
+            How often is your Employment Support Allowance paid?
+            </legend>
+
+            <div class="multiple-choice" data-target="week">
+              <input id="yes" type="radio" name="wwpweeks" value="Yes">
+              <label for="yes">I know my weekly rate</label>
+            </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="week" style="margin-bottom:1em">
+            <label class="form-label-bold" for="nhsno">How much is your weekly rate of Employment Support Allowance?</label>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
+              
+                          <div class="multiple-choice" data-target="4weeks">
+              <input id="4week" type="radio" name="wwpweeks" value="4week">
+              <label for="4week">I know how much I get paid every 2 weeks</label>
+            </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="4weeks" style="margin-bottom:1em">
+            <label class="form-label-bold" for="nhsno">How much Employment Support Allowance do you get every 2 weeks?</label>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
 
 
+           </fieldset>
+<p>
+          <a class="button" href="pension_other-pension-list" id="next">Next</a>
+        </p>
+      
+<!-- 
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+
+      </form>
+
+
+<!--
       <form action="" method="" class="form">
           <fieldset>
             <legend class="visually-hidden">
@@ -36,12 +76,13 @@ How much is your state pension {every month}?</legend>
           <a class="button" href="accordian-hmrc" id="next">Next</a>
         </p>
       
-<!-- 
+ 
 
-    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> 
 
 
       </form>
+-->
 
     </div>
 

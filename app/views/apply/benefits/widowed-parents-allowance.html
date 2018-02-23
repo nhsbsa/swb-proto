@@ -26,12 +26,41 @@
       <form action="" method="" class="form">
           <fieldset>
             <legend class="visually-hidden">
-How much is your Widowed Parents Allowance payment every week?</legend>
+            How often is your Widowed Parent's Allowance paid?
+            </legend>
+
+            <div class="multiple-choice" data-target="week">
+              <input id="yes" type="radio" name="wwpweeks" value="Yes">
+              <label for="yes">Every week</label>
+            </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="week" style="margin-bottom:1em">
+            <label class="form-label-bold" for="nhsno">How much Widowed Parent's Allowance do you get every week?</label>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
+              
+                          <div class="multiple-choice" data-target="4weeks">
+              <input id="4week" type="radio" name="wwpweeks" value="4week">
+              <label for="4week">Every 2 weeks</label>
+            </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="4weeks" style="margin-bottom:1em">
+            <label class="form-label-bold" for="nhsno">How much Widowed Parent's Allowance do you get every 2 weeks?</label>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
+
+            <div class="multiple-choice" data-target="yearly">
+              <input id="no" type="radio" name="wwpweeks" value="No">
+              <label for="no">Every 4 weeks</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="yearly" style="margin-bottom:2em">
+            <label class="form-label-bold" for="nhsno">How much Widowed Parent's Allowance do you get every 4 weeks?</label>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
 
 
-<p class="form-hint">The amount must include pence. For example, £112.55</p>
-<span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
-<br><br><br>
+           </fieldset>
 <p>
           <a class="button" href="pension_other-pension-list" id="next">Next</a>
         </p>
