@@ -1,0 +1,83 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+.bold {
+  font-weight: 700;
+}
+  .check-your-answers td {
+    font-size: 19px;
+    line-height: 1.31579;
+}
+.check-your-answers td {
+    font-weight: 400;
+    text-transform: none;
+    line-height: 1.25;
+    vertical-align: top;
+}
+
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Apply with NHS costs</p>
+            <h1 class="page-header--lede heading-large">Check your answers</h1>
+          </header>
+
+<!-- <p class="panel panel-border-wide">You’re applying for help with NHS costs on behalf of:</p> -->
+<table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top:0em">
+            Your partner's personal details
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+     <tr>
+        <td>Full name</td>
+        <td class="bold" style="font-weight: 700">{{firstname}}Michael Green</td>
+        <td><a href="">Change</a></td>
+      </tr>
+      <tr>
+        <td>Date of birth</td>
+        <td class="bold" style="font-weight: 700">{{dobday}} {{dobmonth}} {{dobyear}} 10 February 1978</td>
+        <td><a href="">Change</a></td>
+      </tr>
+          <tr>
+    </tbody>
+  </table>
+       
+
+<br><br>
+        <p>
+          <a class="button" href="../design-sprints/sprint21/check-list_income-couple" id="next">Next</a>
+        </p>
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}

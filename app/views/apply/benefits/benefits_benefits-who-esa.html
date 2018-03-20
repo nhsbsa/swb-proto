@@ -1,0 +1,61 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+                                       <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">How much is {firstname}'s {Scottish Widows} pension {every month}?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Who gets contribution-based Employment and Support Allowance?</h1>
+             {% endif %}
+            </header>
+
+<!-- <p>Select everyone who gets contribution-based Employment and Support Allowance.</p> -->
+      <form class="form" action="esawho-handler" id="contact-boxes">
+        <fieldset class="form-group">
+          <legend class="visually-hidden">
+            Who gets contribution-based Employment and Support Allowance?
+          </legend>
+          <div class="multiple-choice multiple-radio">
+            <input id="you" name="you" type="checkbox" value="true">
+            <label for="you">Myself</label>
+          </div>
+          <div class="multiple-choice multiple-radio" data-target="partner-reveal">
+            <input id="partner" name="partner" type="checkbox" value="true">
+            <label for="parter">My partner</label>
+          </div>
+          <div class="panel panel-border-wide js-hidden" id="partner-reveal">
+        <label class="form-label" for="partner-info">We'll ask you about your partner's Employment and Support Allowance in the partner section.</label>
+        </fieldset>
+
+<!--         <p>
+          <a class="button" href="benefits_benefits-amount-esa" id="next">Next</a>
+        </p> -->
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</main>
+
+
+
+{% endblock %}
+

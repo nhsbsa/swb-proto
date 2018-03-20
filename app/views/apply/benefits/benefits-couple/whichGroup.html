@@ -1,0 +1,63 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+                                       <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">How much is {firstname}'s {Scottish Widows} pension {every month}?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Which group are you in?</h1>
+             {% endif %}
+            </header>
+        
+              <form action="" method="" class="form">
+          <fieldset>
+            <legend class="visually-hidden">
+            Which group are you in?
+            </legend>
+
+            <div class="multiple-choice" data-target="week">
+              <input id="yes" type="radio" name="wwpweeks" value="Yes">
+              <label for="yes">Work-related activity group</label>
+            </div>
+              
+                          <div class="multiple-choice" data-target="4weeks">
+              <input id="4week" type="radio" name="wwpweeks" value="4week">
+              <label for="4week">Support group</label>
+            </div>
+
+
+
+
+           </fieldset>
+                  <br>
+<p>
+          <a class="button" href="pension_other-pension-list" id="next">Next</a>
+        </p>
+
+
+
+      </form>
+
+
+    </div>
+
+  </div>
+</main>
+
+
+
+{% endblock %}
+

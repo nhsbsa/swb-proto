@@ -1,0 +1,123 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .check-your-answers td {
+    font-size: 19px;
+    line-height: 1.31579;
+}
+.check-your-answers td {
+    font-weight: 400;
+    text-transform: none;
+    line-height: 1.25;
+    vertical-align: top;
+}
+.bold {
+  font-weight: 700;
+}
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Apply with NHS costs</p>
+            <h1 class="page-header--lede heading-large">Check your answers</h1>
+          </header>
+
+<!-- <p class="panel panel-border-wide">You’re applying for help with NHS costs on behalf of:</p> -->
+<table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top: 0em">
+            Your income and regular money
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Do you get a State Pension?
+        </td>
+        <td class="bold">
+          Yes
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Address</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          State Pension frequency
+        </td>
+        <td class="bold">
+          Paid every 4 weeks
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Postal address</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          State Pension amount
+        </td>
+        <td>
+          £122.30
+        </td>
+
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">prefered contact method</span>
+          </a>
+        </td>
+      </tr>
+<!--             <tr>
+        <td>
+          Pension Credit
+        </td>
+        <td class="bold">
+          Savings Credit
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Address</span>
+          </a>
+        </td>
+      </tr> -->
+    </tbody>
+  </table>
+       
+<br><br>
+        <p>
+          <a class="button" href="../design-sprints/sprint21/check-list_declaration-new" id="next">Next</a>
+        </p>
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}

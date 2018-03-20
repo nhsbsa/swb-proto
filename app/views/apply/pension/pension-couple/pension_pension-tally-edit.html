@@ -1,0 +1,164 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+.list {
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    }
+    .check-your-answers h2,
+.check-your-answers--amend li {
+  padding: .73684em 1.05263em .52632em 0; }
+
+.check-your-answers h2 a {
+  color: #0b0c0c;
+  display: flex;
+  text-decoration: none; }
+
+.check-your-answers {
+  border-bottom: 1px solid #bfc1c3;
+  margin-bottom: 20px;
+  padding: 0; }
+
+  .check-your-answers li,
+.check-your-answers--header,
+.check-your-answers--footer,
+.check-your-answers--amend li {
+  border-bottom: 1px solid #bfc1c3;
+ }
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+        <div class="column-two-thirds">
+        
+
+    <header class="page-header">
+                <h1 class="page-header--lede heading-large">Pensions you've told us about</h1>
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+            <div></div></header>
+
+<!--  <div class="panel panel-border-wide">
+                <p>Because at least one of the pensions you've told us about is a foreign pension will likely need more information about them.</p>
+            </div> -->
+
+             <form action="" method="get" class="form">
+
+             <h2 class="heading-small">State pension</h2>
+   <table>
+
+  <tbody>
+    <tr>
+      <td>State Pension</td>
+      <td style="width: 39%">£489.20 every 4 weeks</td>
+       <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">State Retirement pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">State retirement pension from your pension income</span></a>
+       </td>
+    </tr>
+<!--     <tr>
+      <td>Pension Credit</td>
+      <td style="width: 40%">Savings credit</td>
+      <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish Widows from your pension income</span></a>
+       </td>
+    </tr> -->
+
+  </tbody>
+</table>
+<br>
+  <h2 class="heading-small">Private or workplace pensions</h2>
+   <table>
+
+  <tbody>
+    <tr>
+      <td>Scottish Widows</td>
+      <td>£70.80 every week</td>
+       <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish Widows from your pension income</span></a>
+       </td>
+    </tr>
+    <tr>
+      <td>NHS</td>
+      <td>£24.60 monthly</td>
+      <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">NHS pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">NHS from your pension income</span></a>
+       </td>
+    </tr>
+<!--     <tr>
+      <td>HMRC Nuvos</td>
+      <td>£109.80 every month</td>
+      <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish Widows from your pension income</span></a>
+       </td>
+    </tr>
+    <tr>
+      <td>HMRC Classic</td>
+      <td>£109.80 every week</td>
+      <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish Widows from your pension income</span></a>
+       </td>
+    </tr> -->
+  </tbody>
+</table>
+
+
+<br>
+
+            <!-- <ul class="list check-your-answers--amend">
+              <li class="group">
+                    <span class="column-one-third"><span class="visuallyhidden">You have told us about</span>Scottish Widows</span>
+                     <span class="column-one-third"><span class="visuallyhidden">You have told us about</span>£100.00</span>
+                    <footer class="column-one-third check-your-answers__footer">
+                        <a href="person-details">Edit<span class="visuallyhidden">Scottish Widows pension amount or frequency of payments</span></a> or <a href="remove">Remove<span class="visuallyhidden">Scottish Widows from your pension income</span></a>
+                    </footer>
+                </li>
+              <li class="group">
+                    <span class="column-one-third"><span class="visuallyhidden">You have told us about</span>Scottish Widows</span>
+                     <span class="column-one-third"><span class="visuallyhidden">You have told us about</span>Scottish Widows</span>
+                    <footer class="column-one-third check-your-answers__footer">
+                        <a href="person-details">Edit<span class="visuallyhidden">Scottish Widows pension amount or frequency</span></a> or <a href="remove">Remove<span class="visuallyhidden">Scottish Widows from your pension income</span></a>
+                    </footer>
+                </li>
+
+                              <li class="group">
+                    <span class="column-one-third"><span class="visuallyhidden">You have told us about</span>HMRC Nuvos</span>
+                    <span class="column-one-third"><span class="visuallyhidden">You have told us about</span>Scottish Widows</span>
+                    <footer class="column-one-third check-your-answers__footer">
+                        <a href="person-details">Edit<span class="visuallyhidden">HMRC Nuvos pension amount or frequency</span></a> or <a href="remove">Remove<span class="visuallyhidden">HMRC Nuvos from your pension income</span></a>
+                    </footer>
+                </li>
+                             <li class="group">
+                    <span class="column-one-third"><span class="visuallyhidden">You have told us about</span>NHS</span>
+                    <span class="column-one-third"><span class="visuallyhidden">You have told us about</span>Scottish Widows</span>
+                    <footer class="column-one-third check-your-answers__footer">
+                        <a href="person-details">Edit<span class="visuallyhidden">NHS pension amount or frequency</span></a> or <a href="remove">Remove<span class="visuallyhidden">NHS from your pension income</span></a>
+                    </footer>
+                </li>
+            </ul>
+ -->
+
+        <a href="#">+ Add another pension</a>
+
+        <br><br><br>
+  <div class="form-item-wrapper">
+    <div class="form-group">
+      
+        <a href="/apply/design-sprints/sprint21/check-list_declaration-new" class="button " id="next">Next</a>
+      
+    </div>
+  </div>
+
+      </form>
+
+      </div>
+    </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

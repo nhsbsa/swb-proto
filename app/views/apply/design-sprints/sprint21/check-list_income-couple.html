@@ -1,0 +1,107 @@
+{% extends "layout_bsa.html" %}
+ <style>
+ol.steps .instruction-list-item-extra-information {
+  margin-left: 1.57895em;
+}
+</style>
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds column-minimum">
+
+    <div class="heading-group">
+        <p>Apply for help to pay NHS costs</p>
+
+      <h1 class="heading-xlarge">Your application</h1>
+
+    </div>
+<p>You can’t send the application until you have completed all the sections.</p>
+<!--       <h1 class="heading-xlarge">
+        Apply for help to pay NHS costs
+      </h1> -->
+
+      <ol class="task-list" >
+        <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">1. </span>Check before you start
+          </h2>
+          <ul class="task-list-items">
+<!--             <p class="instruction-list-item-extra-information">Before applying, check to see if you're already entitled to NHS costs
+            </p> -->
+            <li class="task-list-item" style="border-top: 1px solid #bfc1c3;">
+              <a class="task-name" href="#" aria-describedby="eligibility-completed">
+                Check eligibility
+              </a>
+              <strong class="task-completed" id="eligibility-completed">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+
+                  <h2 class="task-list-section">
+            <span class="task-list-section-number">2. </span> About you
+          </h2>
+          <ul class="task-list-items">
+<!--                 <p class="instruction-list-item-extra-information">To work out the help you're entitled to, we need information about your housing costs and income.</p> -->
+
+            <li class="task-list-item">
+              <a class="task-name" href="#">
+                Personal details
+              </a>
+                <strong class="task-completed" id="company-information-completed">Completed</strong>
+              </li>
+            <li class="task-list-item">
+              <a class="task-name" href="#">
+                Contact details
+              </a>
+                <strong class="task-completed" id="company-information-completed">Completed</strong>
+              </li>
+
+        <li class="task-list-item">
+              <a class="task-name" href="#">
+                Where you live
+              </a>
+              <strong class="task-completed" id="contact-details-completed">Completed</strong>
+            </li>
+
+            <li class="task-list-item">
+              <a class="task-name" href="#" aria-describedby="where-you-live-completed">
+                Income and other money
+              </a>
+<strong class="task-completed" id="contact-details-completed">Completed</strong>
+</li>
+          </ul>
+            <h2 class="task-list-section"><span class="task-list-section-number">3.</span> About your partner</h2>
+
+            <ul class="task-list-items">
+              <li class="task-list-item">
+                <a class="task-name" href="#">Personal details</a>
+                <strong class="task-completed" id="contact-details-completed">Completed</strong>
+              </li>
+              <li class="task-list-item">
+                <a aria-describedby="#" class="task-name" href="/apply/benefits/benefits-couple/income-info">Income and other money</a>
+              </li>
+            </ul>
+
+
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">4. </span> Submit application
+          </h2>
+
+          <div style="padding-left: 35px; margin-top: 1em">
+         <input class="button" id="application" value="Send" disabled="disabled" aria-disabled="true" type="submit"></div>
+
+      </ol>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

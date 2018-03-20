@@ -1,0 +1,120 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+  </style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+               <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your partner's income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Does {{firstname}} claim any benefits or tax credits?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">About your partner's income</h1>
+             {% endif %}
+            </header>
+            </div>
+            </div>
+
+    <div class="grid-row what-you-need">
+
+<!--         <div class="column-one-third">
+             <div class="savemessage">
+                 <h2 class="heading-small">Automatic saving</h2>
+                 <p>Your information is saved automatically. If you sign out, you’ll have 28 days to complete your application.</p>
+             </div>        </div> -->
+
+        <div class="column-two-thirds">
+
+            <p>In this section, we'll ask you about money your partner gets from:</p>
+<!--             <ul class="list list-bullet">
+                <li>any money you get from wages or pensions</li>
+                <li>any money you get, or could get, from student loans and bursaries</li>
+                <li>any money you get from benefits</li>
+                <li>your savings or investments, such as ISA's and bank accounts</li>
+                <li>any other properties or land you might own</li>
+            </ul> -->
+
+            <ul class="list list-bullet">
+            <li>benefits</li>
+            <li>State Pension</li>
+                <li>private or workplace pensions</li>
+            <!--     <li>your savings or investments, such as ISA's and bank accounts</li> -->
+<!--                 <li>any other properties or land you might own</li> -->
+            </ul>
+
+<br>
+        <p>
+          <a class="button" href="benefit-list-esa" id="next">Next</a>
+        </p>
+
+        </div>
+    </div>
+
+
+
+
+ 
+
+
+
+        
+<!--       <p class="navigation"><a class="cancel" href="start">Cancel</a></p> -->
+
+      </form>
+      
+    </div>
+    
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

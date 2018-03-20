@@ -1,0 +1,76 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+           <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Does {{firstname}} get housing benefit?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Do you get a Guaranteed Income Payment as part of of your Armed Forces Compensation Scheme?</h1>
+             {% endif %}
+            </header>
+
+
+
+<p>We don't need to know about any lump sum you may have received.</p>
+
+      <form action="afcsquestion-handler" method="get" class="form">
+        
+        <div class="form-group">
+             
+          <fieldset>
+            <legend class="visually-hidden">
+            How often is your Maternity Allowance paid?
+            </legend>
+
+            <div class="multiple-choice" data-target="2weeks">
+              <input id="yes" type="radio" name="afcsquest" value="Yes">
+              <label for="yes">Yes</label>
+            </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="2weeks" style="margin-bottom:1em">
+            <label class="form-label-bold" for="nhsno">How much Guaranteed Income Payment do you get each month?</label>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="afcsquest" value="No">
+              <label for="no">No</label>
+            </div>
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+
+
+
+    </div>
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+

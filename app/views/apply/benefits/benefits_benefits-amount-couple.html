@@ -1,0 +1,97 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+                                       <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">How much is {firstname}'s {Scottish Widows} pension {every month}?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">How much Jobseeker’s Allowance does your partner get?</h1>
+             {% endif %}
+            </header>
+        
+              <form action="" method="" class="form">
+          <fieldset>
+            <legend class="visually-hidden">
+            How often is your Jobseeker’s Allowance paid?
+            </legend>
+
+            <div class="multiple-choice" data-target="week">
+              <input id="yes" type="radio" name="wwpweeks" value="Yes">
+              <label for="yes">I know their weekly rate</label>
+            </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="week" style="margin-bottom:1em">
+            <label class="form-label-bold" for="nhsno">How much is their weekly rate of Jobseeker’s Allowance?</label>
+              <span class="form-hint">The amount must include pence. For example, £146.20</span>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
+              
+                          <div class="multiple-choice" data-target="4weeks">
+              <input id="4week" type="radio" name="wwpweeks" value="4week">
+              <label for="4week">I know how much they get paid every 2 weeks</label>
+            </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="4weeks" style="margin-bottom:1em">
+            <label class="form-label-bold" for="nhsno">How much Jobseeker’s Allowance do they get every 2 weeks?</label>
+              <span class="form-hint">The amount must include pence. For example, £146.20</span>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
+
+
+           </fieldset>
+<p>
+          <a class="button" href="accordian-hmrc" id="next">Next</a>
+        </p>
+      
+<!-- 
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+
+      </form>
+
+
+<!--
+      <form action="" method="" class="form">
+          <fieldset>
+            <legend class="visually-hidden">
+How much is your state pension {every month}?</legend>
+
+
+<p class="form-hint">The amount must include pence. For example, £146.20</p>
+<span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+<br><br><br>
+<p>
+          <a class="button" href="accordian-hmrc" id="next">Next</a>
+        </p>
+      
+ 
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> 
+
+
+      </form>
+-->
+
+    </div>
+
+  </div>
+</main>
+
+
+
+{% endblock %}
+

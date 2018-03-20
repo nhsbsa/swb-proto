@@ -1,0 +1,123 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+.photo-code {
+ margin-top:0.5em
+}
+.photo-code .form-group {
+ float:left
+}
+.photo-code .form-group input {
+ width:75%
+}
+.photo-code span {
+ float:left;
+ margin-top:0.5em;
+ margin-left:0.3em;
+ margin-right:0.3em;
+ font-weight:bold
+}
+.photo-code #photo-code-sld-group {
+ width:6em
+}
+.photo-code #photo-code-tld-group {
+ width:3em
+}
+.photo-code #photo-code-path-group {
+ width:6em
+}
+.photo-code-url {
+ font-family:"nta",Arial,sans-serif;
+ font-weight:700;
+ text-transform:none;
+ font-size:12px;
+ line-height:1.25;
+ color:#6f777b;
+ margin-top:0.7em
+}
+@media (min-width: 641px) {
+ .photo-code-url {
+  font-size:14px;
+  line-height:1.42857
+ }
+}</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+                                       <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">How much is {firstname}'s {Scottish Widows} pension {every month}?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">How much is your monthly NHS pension payment?</h1>
+             {% endif %}
+            </header>
+
+
+      <form action="" method="" class="form">
+          <fieldset>
+            <legend class="visually-hidden">
+How much is your state pension {every month}?</legend>
+
+
+<div id="photo-code-group" class="form-group" style="margin-bottom: 0px">
+    <fieldset>
+        <legend>
+            <span id="photo-code-hint" class="form-hint">The amount must include pence. For example, £124.50</span>
+            
+        </legend>
+
+                    <div class="photo-code" data-gakey="photo-code">
+                        <div id="photo-code-sld-group" class="form-group">
+    <label for="photo-code-sld" class="visually-hidden">
+        Monthly payment pounds
+        
+        
+    </label>
+    <span class="heading-medium">£</span>
+    <input name="photo-code-sld" id="photo-code-sld" class="form-control" aria-required="true" maxlength="6" type="text">
+</div>
+
+                        <span>.</span>
+                        <div id="photo-code-tld-group" class="form-group">
+    <label for="photo-code-tld" class="visually-hidden">
+        Monthly payment pence
+        
+        
+    </label>
+    <input name="photo-code-tld" id="photo-code-tld" class="form-control" aria-required="true" maxlength="3" type="text">
+</div>
+</div>
+    </fieldset>
+</div>
+
+<p>
+          <a class="button" href="pension_other-pension-list" id="next">Next</a>
+        </p>
+      
+<!-- 
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+      </form>
+
+    </div>
+
+  </div>
+</main>
+
+
+
+{% endblock %}
+

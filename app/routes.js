@@ -61,12 +61,36 @@ var thisYear = 2017;
 // PRE APPLICATION SECTION
 
 
+
+         // partner handler v2
+    router.get(/testing-handler/, function (req, res) {
+      sprint = req.url.charAt(5);
+      if (req.query.partner === 'yes') {
+        applicant.partner = true;
+      } else if (req.query.partner === 'no') {
+        applicant.partner = false;
+        //aboutPartnerStatus = completedText;
+        //aboutPartnerLink = changeText;
+      }
+      setPartnerText(applicant.partner);
+        if(req.query.partner === 'yes') {
+          res.redirect('/apply/start');
+        } else {
+            res.redirect('/apply/start');
+        }
+    });
+
+
         //do you want to apply online ?
     router.get(/applyonline-handler/, function (req, res) {
-      if (req.query.online === 'yes') {
-        res.redirect('preapp_eligibility-info-docsv2');
+          if (req.query.online === 'yes') {
+          res.render('apply/preapp/preapp_eligibility-info-docsv3', {
+              'partnerortext' : partnerOrText
+          });
       } else {
-        res.redirect('preapp_eligibility-not-online');
+        res.render('apply/preapp/preapp_eligibility-not-online', {
+        'partnerortext' : partnerOrText,
+        });
       }
     });
 
@@ -76,9 +100,12 @@ var thisYear = 2017;
       if (req.query.nonDep === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('only-incomer2');
+                 res.render('apply/preapp/only-incomer2', {
+                'partnerortext' : partnerOrText,
+        });
       }
     });
+
     //     // mon-dependant (release 1 reuseable)
     // router.get(/non-dephandler/, function (req, res) {
     //   if (req.query.nonDep === 'yes') {
@@ -120,7 +147,7 @@ var thisYear = 2017;
       if (req.query.education === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('preapp-summaryv2');
+        res.redirect('preapp-summaryv3');
       }
     });
     
@@ -737,6 +764,13 @@ router.get(/getuc-handler/, function (req, res) {
         res.redirect('../benefits/income-summary');
       }
     });
+          router.get(/couple-handler/, function (req, res) {
+      if (req.query.couple== 'yes') {
+        res.redirect('pension_pension-name-second');
+      } else {
+        res.redirect('/apply/benefits/benefits-couple/income-summary');
+      }
+    });
           router.get(/remove-handler/, function (req, res) {
       if (req.query.remove== 'yes') {
         res.redirect('pension_pension-tally-scotwid-removed');
@@ -901,7 +935,14 @@ var benType;
         res.redirect('pension-summary-state');
       }
     });
-
+                      // ESA who gets it?
+            router.get(/esawho-handler/, function (req, res) {
+      if (req.query.partner === 'true') {
+        res.redirect('benefits_benefits-who-jsa');
+      } else {
+        res.redirect('benefits_benefits-amount-esa');
+      }
+    });
 
             
 // pip
@@ -911,7 +952,7 @@ var benType;
       if (req.query.refund === 'yes') {
         res.redirect('refunds');
             } else {
-                res.redirect('../declaration');
+                res.redirect('../declaration_r1');
       }
     });
 
