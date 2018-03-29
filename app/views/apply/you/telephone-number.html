@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<style>
+<!-- <style>
 .block-label {
     display: block;
     float: none;
@@ -16,8 +16,17 @@
     border: 1px solid #dee0e2;
     padding: 18px 30px 15px 54px;
     margin-bottom: 10px;
-    cursor: pointer;
-    </style>
+    cursor: pointer;}
+
+#block_container {
+}
+#bloc1, #bloc2 {
+    display:inline;
+}
+#bloc2{
+  float:right;
+}
+    </style> -->
 
 <main id="content" role="main">
   <a href="javascript:history.go(-1)" class="link-back">Back</a>
@@ -44,14 +53,29 @@
     <div class="form-item-wrapper">
 
 <div class="form-group" style="margin-bottom: 1em">
-     <label for="phone" class="visuallyhidden" aria-describedby="hint-phone">What is your telephone number?</label>
+     <label for="phone" class="visuallyhidden" aria-describedby="hint-phone">What is your telephone number?</label></div>
   <input class="form-control" id="telephone-number" name="telephone-number" type="text">
-</div>
-         <div class="multiple-choice multiple-radio" style="margin-bottom:2em">
+<!-- 
+<br><br> -->
+
+  <div id="block_container">
+
+    
+<!--     <div id="bloc1"><img src="/public/images/bsa/deaf.svg" height="48px"></div>
+<div id="bloc2" class="multiple-choice multiple-radio image" style="margin-bottom:2em;">
+
+            <input id="email" name="email" type="checkbox" value="true">
+            <label for="email">I need you to contact me using the Text Relay service</label>
+          </div>
+
+</div> -->
+         <div class="multiple-choice multiple-radio image" style="margin-bottom:2em;">
+
             <input id="email" name="email" type="checkbox" value="true">
             <label for="email">I need you to contact me using the Text Relay service</label>
           </div>
           </div>
+
 
 
 <!--                  <details role="group">
