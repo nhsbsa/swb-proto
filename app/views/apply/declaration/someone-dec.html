@@ -14,55 +14,66 @@
 
 
                     <header class="page-header">
-                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
                  {% if thirdparty %}
                 <h1 class="page-header--lede heading-large">What is {{firstname}}'s date of birth?</h1>
                 {% else %}
-                <h1 class="page-header--lede heading-large">How often is your War Widow(er) Pension paid?</h1>
+                <h1 class="page-header--lede heading-large">How often is your War Disablement Pension paid?</h1>
                  {% endif %}
             </header>
 
 
   <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
 
-  <form action="matallow-handler" method="get" class="form">
+  <form action="wdpension-handler" method="get" class="form">
       
   <div class="form-group">
              
           <fieldset>
             <legend class="visually-hidden">
-            How often is your War Widow(er) Pension paid?
+            How often is your War Disablement Pension paid?
             </legend>
 
             <div class="multiple-choice" data-target="week">
-              <input id="yes" type="radio" name="wwpweeks" value="Yes">
+              <input id="yes" type="radio" name="incapweeks" value="Yes">
               <label for="yes">Every week</label>
             </div>
 
           <div class="panel panel-border-narrow js-hidden" id="week" style="margin-bottom:1em">
-            <label class="form-label-bold" for="nhsno">How much War Widow(er) Pension do you get every week?</label>
+            <label class="form-label-bold" for="nhsno">How much War Disablement Pension do you get every week?</label>
               <span class="form-hint">The amount must include pence. For example, £146.20</span>
             <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
           </div>
               
                           <div class="multiple-choice" data-target="4weeks">
-              <input id="4week" type="radio" name="wwpweeks" value="4week">
+              <input id="4week" type="radio" name="incapweeks" value="4week">
               <label for="4week">Every 4 weeks</label>
             </div>
 
           <div class="panel panel-border-narrow js-hidden" id="4weeks" style="margin-bottom:1em">
-            <label class="form-label-bold" for="nhsno">How much War Widow(er) Pension do you get every 4 weeks?</label>
+            <label class="form-label-bold" for="4weeks">How much War Disablement Pension do you get every 4 weeks?</label>
+              <span class="form-hint">The amount must include pence. For example, £146.20</span>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
+          </div>
+              
+                          <div class="multiple-choice" data-target="13weeks">
+              <input id="13week" type="radio" name="incapweeks" value="13week">
+              <label for="13week">Every 13 weeks</label>
+            </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="13weeks" style="margin-bottom:1em">
+            <label class="form-label-bold" for="13week">How much War Disablement Pension do you get every 13 weeks?</label>
               <span class="form-hint">The amount must include pence. For example, £146.20</span>
             <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
           </div>
 
-            <div class="multiple-choice" data-target="yearly">
-              <input id="no" type="radio" name="wwpweeks" value="No">
-              <label for="no">Yearly</label>
+            <div class="multiple-choice" data-target="monthly">
+              <input id="no" type="radio" name="incapweeks" value="No">
+              <label for="no">Every calendar month (officers only)</label>
             </div>
 
-            <div class="panel panel-border-narrow js-hidden" id="yearly" style="margin-bottom:2em">
-            <label class="form-label-bold" for="nhsno">How much War Widow(er) Pension  do you get each year?</label>
+            <div class="panel panel-border-narrow js-hidden" id="monthly" style="margin-bottom:2em">
+            <label class="form-label-bold" for="nhsno">How much War Disablement Pension do you get every calendar month?</label>
                 <span class="form-hint">The amount must include pence. For example, £146.20</span>
             <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="ni-number">
           </div>

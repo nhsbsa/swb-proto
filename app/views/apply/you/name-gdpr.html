@@ -1,0 +1,322 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+#user-satisfaction-survey {
+    background-color: #005ea5;
+    margin-bottom: 1px;
+    color: #fff;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+}
+  
+#user-satisfaction-survey .survey-wrapper,.govuk-emergency-banner div,#wrapper {
+ max-width:960px;
+ margin:0 15px
+}
+@media (min-width: 641px) {
+ #user-satisfaction-survey .survey-wrapper,.govuk-emergency-banner div,#wrapper {
+  margin:0 30px
+ }
+}
+@media (min-width: 1020px) {
+ #user-satisfaction-survey .survey-wrapper,.govuk-emergency-banner div,#wrapper {
+  margin:0 auto
+ }
+}
+#user-satisfaction-survey .survey-wrapper {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    clear: both;
+}
+
+#user-satisfaction-survey {
+ display:none;
+ background-color:#005ea5;
+ margin-bottom:1px;
+ color:#fff;
+ font-family:"nta", Arial, sans-serif;
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.1428571429
+}
+@media (min-width: 641px) {
+ #user-satisfaction-survey {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+#user-satisfaction-survey.visible {
+ display:block
+}
+@media (max-width: 640px) {
+ #user-satisfaction-survey.visible .survey-close-button {
+  font-size:20px
+ }
+ #user-satisfaction-survey.visible .survey-title {
+  font-size:18px;
+  margin-top:2em
+ }
+ #user-satisfaction-survey.visible .survey-primary-link,#user-satisfaction-survey.visible .postscript-cta {
+  font-size:18px
+ }
+}
+#user-satisfaction-survey [tabindex="-1"]:focus {
+ outline:none
+}
+#user-satisfaction-survey a:link,#user-satisfaction-survey a:active,#user-satisfaction-survey a:hover,#user-satisfaction-survey a:visited {
+ color:inherit
+}
+#user-satisfaction-survey a:focus {
+ color:#0b0c0c
+}
+#user-satisfaction-survey .survey-wrapper {
+ padding-top:15px;
+ padding-bottom:20px;
+ clear:both
+}
+#user-satisfaction-survey .survey-inner-wrapper {
+ max-width:30em
+}
+#user-satisfaction-survey .survey-title {
+ font-family:"nta", Arial, sans-serif;
+ font-weight:700;
+ text-transform:none;
+ font-size:16px;
+ line-height:1.25;
+ margin-bottom:.5em
+}
+@media (min-width: 641px) {
+ #user-satisfaction-survey .survey-title {
+  font-size:19px;
+  line-height:1.3157894737
+ }
+}
+#user-satisfaction-survey .survey-close-button {
+ float:right;
+ font-family:"nta", Arial, sans-serif;
+ font-weight:400;
+ text-transform:none;
+ font-size:12px;
+ line-height:1.25
+}
+@media (min-width: 641px) {
+ #user-satisfaction-survey .survey-close-button {
+  font-size:14px;
+  line-height:1.4285714286
+ }
+}
+#user-satisfaction-survey .survey-primary-link {
+ font-family:"nta", Arial, sans-serif;
+ font-weight:400;
+ text-transform:none;
+ font-size:16px;
+ line-height:1.25;
+ margin-right:.5em
+}
+@media (min-width: 641px) {
+ #user-satisfaction-survey .survey-primary-link {
+  font-size:19px;
+  line-height:1.3157894737
+ }
+}
+#user-satisfaction-survey .survey-form-label {
+ display:block;
+ margin-bottom:.25em
+}
+#user-satisfaction-survey .survey-form-input {
+ display:block;
+ -webkit-box-sizing:border-box;
+ -moz-box-sizing:border-box;
+ box-sizing:border-box;
+ width:100%;
+ padding:5px 4px 4px;
+ border:2px solid #fff;
+ margin:0;
+ margin-bottom:1em
+}
+#user-satisfaction-survey .survey-form-description {
+ font-family:"nta", Arial, sans-serif;
+ font-weight:400;
+ text-transform:none;
+ font-size:12px;
+ line-height:1.25;
+ margin-bottom:.5em
+}
+@media (min-width: 641px) {
+ #user-satisfaction-survey .survey-form-description {
+  font-size:14px;
+  line-height:1.4285714286
+ }
+}
+#user-satisfaction-survey .survey-form-button {
+ background-color:#fff;
+ position:relative;
+ display:-moz-inline-stack;
+ display:inline-block;
+ padding:.526315em .789473em .263157em;
+ border:none;
+ -webkit-border-radius:0;
+ -moz-border-radius:0;
+ border-radius:0;
+ outline:1px solid transparent;
+ outline-offset:-1px;
+ -webkit-appearance:none;
+ -webkit-box-shadow:0 2px 0 #d9d9d9;
+ -moz-box-shadow:0 2px 0 #d9d9d9;
+ box-shadow:0 2px 0 #d9d9d9;
+ font-size:1em;
+ line-height:1.25;
+ text-decoration:none;
+ -webkit-font-smoothing:antialiased;
+ cursor:pointer;
+ color:#0b0c0c;
+ font-family:"nta", Arial, sans-serif;
+ font-weight:700;
+ text-transform:none;
+ font-size:16px;
+ line-height:1.25;
+ color:#005ea5;
+ margin-right:.5em
+}
+#user-satisfaction-survey .survey-form-button:visited {
+ background-color:#fff
+}
+#user-satisfaction-survey .survey-form-button:hover,#user-satisfaction-survey .survey-form-button:focus {
+ background-color:#f2f2f2
+}
+#user-satisfaction-survey .survey-form-button:active {
+ top:2px;
+ -webkit-box-shadow:0 0 0 #fff;
+ -moz-box-shadow:0 0 0 #fff;
+ box-shadow:0 0 0 #fff
+}
+#user-satisfaction-survey .survey-form-button.disabled,#user-satisfaction-survey .survey-form-button[disabled="disabled"],#user-satisfaction-survey .survey-form-button[disabled] {
+ zoom:1;
+ filter:alpha(opacity=50);
+ opacity:0.5
+}
+#user-satisfaction-survey .survey-form-button.disabled:hover,#user-satisfaction-survey .survey-form-button[disabled="disabled"]:hover,#user-satisfaction-survey .survey-form-button[disabled]:hover {
+ cursor:default;
+ background-color:#fff
+}
+#user-satisfaction-survey .survey-form-button.disabled:active,#user-satisfaction-survey .survey-form-button[disabled="disabled"]:active,#user-satisfaction-survey .survey-form-button[disabled]:active {
+ top:0;
+ -webkit-box-shadow:0 2px 0 #d9d9d9;
+ -moz-box-shadow:0 2px 0 #d9d9d9;
+ box-shadow:0 2px 0 #d9d9d9
+}
+#user-satisfaction-survey .survey-form-button:link,#user-satisfaction-survey .survey-form-button:link:focus,#user-satisfaction-survey .survey-form-button:hover,#user-satisfaction-survey .survey-form-button:focus,#user-satisfaction-survey .survey-form-button:visited {
+ color:#0b0c0c
+}
+#user-satisfaction-survey .survey-form-button:before {
+ content:"";
+ height:110%;
+ width:100%;
+ display:block;
+ background:transparent;
+ position:absolute;
+ top:0;
+ left:0
+}
+#user-satisfaction-survey .survey-form-button:active:before {
+ top:-10%;
+ height:120%
+}
+@media (min-width: 641px) {
+ #user-satisfaction-survey .survey-form-button {
+  font-size:19px;
+  line-height:1.1
+ }
+}
+#user-satisfaction-survey .survey-form-button:hover,#user-satisfaction-survey .survey-form-button:focus {
+ color:#004f8c
+}
+#user-satisfaction-survey .survey-form-button:focus {
+ outline:3px solid #ffbf47
+}
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+    margin-bottom: -142px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+    height: 142px; 
+}
+
+</style>
+<div class="page-wrap">
+
+  
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+              <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Personal details</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Who are you are applying for?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">What is your name?</h1>
+                 {% endif %}
+            </header>
+
+<p>Use your full name. For example, Susan not Sue.<br>
+
+  <form action="name-handler" method="get" class="form">
+<div class="form-group">
+  <label class="form-label" for="firstname">First name</label>
+  <input class="form-control" id="firstname" name="firstname" type="text">
+</div>
+<div class="form-group">
+  <label class="form-label" for="middlename">Middle name</label>
+  <input class="form-control" id="middlename" name="firstname" type="text">
+</div>
+
+<div class="form-group">
+  <label class="form-label" for="last-name-third-party">Last name</label>
+  <input class="form-control" id="lastname" name="lastname" type="text">
+</div>
+
+           <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+               <p>
+        </p>
+   <!--  <p class="navigation"><a class="cancel" href="../lis-check-list">Save and come back later</a></p> -->
+  </form>
+    </div>
+    </div>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+<div id="user-satisfaction-survey-container"><section id="user-satisfaction-survey" class="visible" aria-hidden="false">  <div class="survey-wrapper">    <a class="survey-close-button" href="#user-survey-cancel" aria-labelledby="survey-title user-survey-cancel" id="user-survey-cancel" role="button">Close</a>    <h2 class="survey-title" id="survey-title">Tell us what you think of GOV.UK</h2><div id="email-survey-pre">  <a class="survey-primary-link" href="#email-survey-form" id="email-survey-open" rel="noopener noreferrer" role="button" aria-expanded="false">    Take a short survey to give us your feedback  </a></div><form id="email-survey-form" action="/contact/govuk/email-survey-signup" method="post" class="js-hidden" aria-hidden="true">  <div class="survey-inner-wrapper">    <div id="survey-form-description" class="survey-form-description">We’ll send you a link to a feedback form. It only takes 2 minutes to fill in.      <br> Don’t worry: we won’t send you spam or share your email address with anyone.    </div>    <label class="survey-form-label" for="survey-email-address">      Email Address    </label>    <input name="email_survey_signup[survey_id]" value="user_satisfaction_survey" type="hidden">    <input name="email_survey_signup[survey_source]" value="/carers-allowance/how-to-claim" type="hidden">    <input name="email_survey_signup[ga_client_id]" value="1391715336.1518715215" type="hidden">    <input class="survey-form-input" name="email_survey_signup[email_address]" id="survey-email-address" aria-describedby="survey-form-description" type="text">    <button class="survey-form-button" type="submit">Send me the survey</button><a href="https://www.smartsurvey.co.uk/s/gov_uk?c=/carers-allowance/how-to-claim&amp;gcl=1391715336.1518715215" id="take-survey" target="_blank" rel="noopener noreferrer">Don’t have an email address?</a>  </div></form><div id="email-survey-post-success" class="js-hidden" aria-hidden="true" tabindex="-1">  Thanks, we’ve sent you an email with a link to the survey.</div><div id="email-survey-post-failure" class="js-hidden" aria-hidden="true" tabindex="-1">  Sorry, we’re unable to send you an email right now. Please try again later.</div>  </div></section></div>
+</footer>
+
+
+{% endblock %}

@@ -1,0 +1,93 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Personal details</p>
+  
+                <h1 class="page-header--lede heading-large">Are you applying for you or someone else?</h1>
+
+            </header>
+
+<!-- <div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+
+  <h1 class="heading-large">
+Are you applying for you or someone else?
+  </h1>
+  </div> -->
+
+      <form action="beneficiary-handler" method="get" class="form">
+        
+        <div class="form-group">
+          
+          <fieldset class="">
+            <legend class="visually-hidden">
+              Are you applying for you or someone else?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="someoneelse" value="no">
+              <label for="yes">Myself</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="someoneelse" value="yes">
+              <label for="no">Someone else</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+
+                    <details>
+              <summary><span class="summary">When can I apply for someone else?</span></summary>
+
+              <div class="panel panel-border-narrow" id="details-content-0" style="margin-top:1em">
+
+                <h2 class="heading-small">If you're responsible for their financial affairs</h2>
+                <p>You can complete the form on behalf of someone else if you are responsible for their financial affairs because they have either:</p>
+                <ul class="list list-bullet">
+<li>learning difficulties </li>
+<li>a condition which prevents them from managing their own affairs</li>
+</ul>
+            <div class="notice">
+  <i class="icon icon-important" style="top: 20%">
+    <span class="visually-hidden">Warning</span>
+  </i>
+  <strong class="bold-small">
+    You are responsible for making sure the information entered is correct and complete.
+  </strong>
+</div>
+<br>
+<h2 class="heading-small">If you're just helping to complete the form</h2>
+
+<p>You should select the ‘myself’ option. </p>
+<p>You can help to complete the form, but they are responsible for the information given.</p>
+
+
+              </div>
+            </details>
+            <br>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+    </div>
+    </div>
+</main>
+
+{% endblock %}
