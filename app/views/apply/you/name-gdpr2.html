@@ -7,49 +7,166 @@
 {% block content %}
 
 <style>
-* {
-    margin :0;
-    padding :0; 
+footer {
+  height:360px;
+  z-index:10;
 }
-.header {
-    margin: 0 auto;
-    top: 0;
-    width: 100%;
-    z-index: 999;
+.header-banner {
+  background-color: #333;
+  background-image: url('https://37.media.tumblr.com/8b4969985e84b2aa1ac8d3449475f1af/tumblr_n3iftvUesn1snvqtdo1_1280.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
 }
+
+header .logo {
+  background-color: transparent;
+  background-image: url('http://www.futhead.com/static//img/14/clubs/1887.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 72px; 
+  height: 256px;
+  width: 256px;
+}
+
+header h1 {
+  position: absolute;
+  top: 72px; 
+  left: 240px;
+  color: #fff;
+}
+
+.fixed-header {
+  position: fixed;
+  top:0; left:0;
+  width: 100%; 
+}
+
+nav {
+  width:100%;
+  height:60px;
+  background: #292f36;
+  postion:fixed;
+  z-index:10;
+}
+
+nav ul { 
+  list-style-type: none;
+  margin: 0 auto;
+  padding-left:0;
+  text-align:right;
+  width: 960px; 
+  max-width: 100%;
+}
+nav ul li { 
+  display: inline-block; 
+  line-height: 60px;
+  margin-left: 10px;
+}
+nav ul li a {
+  text-decoration: none; 
+  color: #a9abae;
+}
+
+
+/* demo */
+.content{ width: 960px; max-width: 100%; margin:0 auto; padding-top: 60px; }
+article { width: 720px; float: left; }
+article p:first-of-type { margin-top: 0; }
+aside { width: 120px; float: right; }
+aside img { max-width: 100%; }
+body { 
+  color: #292f36;
+  font-family: helvetica;
+  line-height: 1.6;
+}
+
+
+/* resets */
+body { margin:0px; padding:0px; }
 </style>
 
 <main id="content" role="main">
   <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
 
+     
 
-
-
-
-  <div class="grid-row">
+<div class="grid-row">
     <div class="column-two-thirds">
-    <div class="header" > <!--  Header Part code within it  --> 
 
-     </div>
-     <div class="content"> 
-     </div> 
-              
+<!--               <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Personal details</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Who are you are applying for?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">What is your name?</h1>
+                 {% endif %}
+            </header> -->
 
+<p>Use your full name. For example, Susan not Sue.<br>
+
+  <form action="name-handler" method="get" class="form">
+<div class="form-group">
+  <label class="form-label" for="firstname">First name</label>
+  <input class="form-control" id="firstname" name="firstname" type="text">
+</div>
+<div class="form-group">
+  <label class="form-label" for="middlename">Middle name</label>
+  <input class="form-control" id="middlename" name="firstname" type="text">
+</div>
+
+<div class="form-group">
+  <label class="form-label" for="last-name-third-party">Last name</label>
+  <input class="form-control" id="lastname" name="lastname" type="text">
+</div>
+
+           <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+               <p>
+        </p>
+   <!--  <p class="navigation"><a class="cancel" href="../lis-check-list">Save and come back later</a></p> -->
+  </form>
     </div>
     </div>
+
+<footer>
+<!--   <div class="header-banner">
+
+   
+  </div> -->
+  <div class="clear"></div>
+  <nav>
+    <ul>
+      <li><a href="/archive">Archive</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/contact">Contact</a></li>
+    <ul>
+  </nav>
+</footer>
 
 </main>
 
-<script>
-  $(window).scroll(function() {    // this will work when your window scrolled.
-    var height = $(window).scrollTop();  //getting the scrolling height of window
-    if(height  > 100) {
-      $(".header").css({"position": "fixed"});
-    } else{
-      $(".header").css({"position": "relative"});
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/modules.js"></script>
+    
+    <script>
+    $(window).scroll(function(){
+    if ($(window).scrollTop() >= 20) {
+       $('nav').addClass('fixed-header');
     }
-  });
-</script>
+  
+});
+
+/* scrollTop() >= 240
+   Should be equal the the height of the header
+ */
+    </script>
+
 
 {% endblock %}

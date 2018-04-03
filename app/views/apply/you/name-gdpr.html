@@ -264,7 +264,7 @@ html, body {
 
 </style>
 <div class="page-wrap">
-
+<div id="user-satisfaction-survey-container"><section id="user-satisfaction-survey" class="visible" aria-hidden="false">  <div class="survey-wrapper">    <a class="survey-close-button" href="#user-survey-cancel" aria-labelledby="survey-title user-survey-cancel" id="user-survey-cancel" role="button">Close</a>    <h2 class="survey-title" id="survey-title">Tell us what you think of GOV.UK</h2><div id="email-survey-pre">  <a class="survey-primary-link" href="#email-survey-form" id="email-survey-open" rel="noopener noreferrer" role="button" aria-expanded="false">    Take a short survey to give us your feedback  </a></div></section></div>
   
 
 <main id="content" role="main">
@@ -314,9 +314,6 @@ html, body {
 
 </main>
 
-<footer class="site-footer">
-<div id="user-satisfaction-survey-container"><section id="user-satisfaction-survey" class="visible" aria-hidden="false">  <div class="survey-wrapper">    <a class="survey-close-button" href="#user-survey-cancel" aria-labelledby="survey-title user-survey-cancel" id="user-survey-cancel" role="button">Close</a>    <h2 class="survey-title" id="survey-title">Tell us what you think of GOV.UK</h2><div id="email-survey-pre">  <a class="survey-primary-link" href="#email-survey-form" id="email-survey-open" rel="noopener noreferrer" role="button" aria-expanded="false">    Take a short survey to give us your feedback  </a></div><form id="email-survey-form" action="/contact/govuk/email-survey-signup" method="post" class="js-hidden" aria-hidden="true">  <div class="survey-inner-wrapper">    <div id="survey-form-description" class="survey-form-description">We’ll send you a link to a feedback form. It only takes 2 minutes to fill in.      <br> Don’t worry: we won’t send you spam or share your email address with anyone.    </div>    <label class="survey-form-label" for="survey-email-address">      Email Address    </label>    <input name="email_survey_signup[survey_id]" value="user_satisfaction_survey" type="hidden">    <input name="email_survey_signup[survey_source]" value="/carers-allowance/how-to-claim" type="hidden">    <input name="email_survey_signup[ga_client_id]" value="1391715336.1518715215" type="hidden">    <input class="survey-form-input" name="email_survey_signup[email_address]" id="survey-email-address" aria-describedby="survey-form-description" type="text">    <button class="survey-form-button" type="submit">Send me the survey</button><a href="https://www.smartsurvey.co.uk/s/gov_uk?c=/carers-allowance/how-to-claim&amp;gcl=1391715336.1518715215" id="take-survey" target="_blank" rel="noopener noreferrer">Don’t have an email address?</a>  </div></form><div id="email-survey-post-success" class="js-hidden" aria-hidden="true" tabindex="-1">  Thanks, we’ve sent you an email with a link to the survey.</div><div id="email-survey-post-failure" class="js-hidden" aria-hidden="true" tabindex="-1">  Sorry, we’re unable to send you an email right now. Please try again later.</div>  </div></section></div>
-</footer>
 
 
 {% endblock %}
