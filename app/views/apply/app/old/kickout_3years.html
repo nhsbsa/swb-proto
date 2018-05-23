@@ -1,0 +1,45 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary">Apply for social work bursary</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">You're not eligible</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">You're not eligible</h1>
+                 {% endif %}
+            </header>
+
+
+<h2 class="heading-medium" style="margin-top: 0px">To be eligible you must have been a resident in the UK for 3 years on the first day of your course.</h2>
+
+          <p>You may be able to get help through other schemes, check <a href="">gov.uk</a> to find out.</p>
+<!-- <ul class="options-list" style="margin-top: 0.5em">
+        <li><a class="icon download-icon" href="">Download an HC1 application form</a></li>
+      </ul> -->
+
+
+
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+

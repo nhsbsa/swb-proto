@@ -1,0 +1,74 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {{firstname}} have more than £23,250 in savings, investments and properties?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Do you have more than £23,250 in savings, investments and properties?</h1>
+                 {% endif %}
+            </header>
+
+  <p>The property you live in doesn't count.</p>
+
+<div class="heading-group">
+        <p>Apply for help with NHS costs</p>
+    {if thirdparty }
+      <h1 class="heading-large">
+        How much does {firstname} have in savings and investments?
+      </h1>
+    {else }
+      <h1 class="heading-large">
+        What is your combined total of savings and investments?
+      </h1>
+</div>
+<br>
+<p class="form-hint">Select the total amount:<p>
+
+  <form action="incometype-handler" class="form" method="get">
+      
+      <form class="form" action="contact-handler" id="contact-boxes">
+        <fieldset class="form-group">
+          <legend class="visually-hidden">
+            How much do you have in savings and investments?
+          </legend>
+          <div class="multiple-choice multiple-radio">
+            <input id="email" name="email" type="checkbox" value="true">
+            <label for="email">£6,000 or less</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="phone" name="phone" type="checkbox" value="true">
+            <label for="phone">£6,000.01 to £16,000</label>
+          </div>
+
+           <div class="multiple-choice multiple-radio">
+            <input id="letter" name="contact" value="letter" type="checkbox">
+            <label for="letter">More than £16,000</label>
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+      </form>
+
+   <!--  <p class="navigation"><a class="cancel" href="../lis-check-list">Save and come back later</a></p> -->
+
+    </div>
+    </div>
+</main>
+
+{% endblock %}

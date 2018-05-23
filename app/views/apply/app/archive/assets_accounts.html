@@ -1,0 +1,86 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before applying</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {{firstname}} have any of these accounts or investments? </h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Do you have any money in accounts, investments or property?</h1>
+                 {% endif %}
+            </header>
+  
+  <p>Select all the accounts or investments you have.</p>
+
+      <form action="assets-handler" method="get" class="form">
+
+        <fieldset class="form-group">
+          <legend class="visually-hidden">
+            Do you have any money in these accounts or investments?
+          </legend>
+          <div class="multiple-choice multiple-radio">
+            <input id="accounts" name="savings" value="accounts" type="checkbox">
+            <label for="accounts">Current or savings accounts including ISAs</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="bonds" name="savings" value="bonds" type="checkbox">
+            <label for="bonds">Premium, Income or Capital Bonds </label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="shares" name="savings" value="shares" type="checkbox">
+            <label for="shares">Shares</label>
+          </div>
+           <div class="multiple-choice multiple-radio">
+            <input id="nsc" name="savings" value="nsc" type="checkbox">
+            <label for="nsc">National Saving Certificates</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="trusts" name="savings" value="trusts" type="checkbox">
+            <label for="trusts">Trusts</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="property" name="savings" value="property" type="checkbox">
+            <label for="property">Properties or land, excuding your home</label>
+          </div>
+           <div class="multiple-choice multiple-radio">
+            <input id="cash" name="savings" value="cash" type="checkbox">
+            <label for="cash">Other investments or cash</label>
+          </div>
+ <p class="form-block">or</p>
+          <div class="multiple-choice multiple-radio">
+            <input id="no" name="savings" value="no" type="checkbox">
+            <label for="no"><span class="bold">No</span>, I do not have any accounts or investments</label>
+          </div>
+
+        </fieldset>
+
+              
+          <div>
+
+          </div>
+
+        <div class="form-group">
+          <input class="button" value="Next" type="submit">
+        </div>
+      </form>
+              <!-- <p class="navigation"><a class="cancel" href="../../lis-home">Save and come back later</a></p> -->
+          
+    </div>
+      
+  </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,125 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Social work bursary
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+
+    .form-control-date {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  width: 95%;
+  padding: 5px 4px 4px;
+  border: 2px solid #0b0c0c;
+}
+    
+  </style>
+
+<main id="content" role="main">
+    
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary">Apply for Social Work Bursary</p>
+            <h1 class="page-header--lede heading-large">Eligibility check
+</h1>
+  
+          </header>
+            
+            <p class="lede">Based on your household income (£12,311.00) you are not eligible for some of the additional elements:</p>
+                <ul class="list list-bullet">
+                    <li>Maintenance grant</li>
+                    <li>Adult Dependants Allowance</li>
+                    <li>Parents Learning Allowance</li>
+                    <li>Childcare Allowance</li>
+                </ul>    
+            
+             <div class="panel panel-border-wide">
+  <p>
+    We do this check to so that only people who are eligible have to send us evidence. 
+  </p>
+</div>
+
+      <form action="summary" method="get" class="form">
+
+   <div class="form-group">
+    <fieldset class="inline">
+
+      <legend><h2 class="heading-medium">Remove these elements from your application?</h2></legend>
+
+      <div class="multiple-choice">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+        <label for="radio-inline-1">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+        <label for="radio-inline-2">No</label>
+      </div>
+
+    </fieldset>
+  </div>
+          
+          <br>
+  
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+
+    </div>
+  
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

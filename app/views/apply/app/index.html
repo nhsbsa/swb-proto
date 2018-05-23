@@ -1,0 +1,94 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Social work bursary
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+  </style>
+
+<main id="content" role="main">
+    
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary">Apply for</p>
+            <h1 class="page-header--lede heading-large">Social Work Bursary</h1>
+          </header>
+            
+            <p class="lede">Use this service to apply for a Social Work Bursary. </p>
+            
+            <p>If you’re training for social work you may be able to get a Social work bursary, they:</p>
+
+            <ul class="list bullet-list">
+                
+                <li>help with living costs and tuition fees</li>
+                <li>don’t depend on your household income</li>
+                <li>don’t have to be paid back</li>
+            </ul>
+            <br>
+            <div class="form-group">
+            <a href="app/university_based"><input class="button button-start" type="submit"  value="Start"></a>
+          </div>
+        <br>
+            <br>
+        <h2 class="heading-medium">Before you start</h2>
+            <p>These are the things you will need before you start</p>
+            <ul>
+                <li>Thing one</li>
+                <li>Thing two</li>
+                <li>Thing three</li>
+            </ul>
+            
+            <br>
+            <br>
+          
+            
+            </div>
+     
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

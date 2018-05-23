@@ -1,0 +1,162 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Social work bursary
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+
+    .form-control-date {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  width: 95%;
+  padding: 5px 4px 4px;
+  border: 2px solid #0b0c0c;
+}
+    
+  </style>
+
+<main id="content" role="main">
+    
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary">Apply for Social Work Bursary</p>
+            <h1 class="page-header--lede heading-large">Supporting evidence
+</h1>
+          </header>
+
+    <p class="lede">Upload a scanned image or photo of your:</p>
+            
+            <table>
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th class="numeric" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UK Passport</td>
+      <td class="numeric">
+          <div class="form-group">
+  <label class="visually-hidden" for="file-input">
+    Choose a file
+  </label>
+  <input type="file" id="file-input">
+</div></td>
+    </tr>
+    <tr>
+      <td>P45</td>
+      <td class="numeric">
+          <div class="form-group">
+  <label class="visually-hidden" for="file-input">
+    Choose a file
+  </label>
+  <input type="file" id="file-input">
+</div></td>
+    </tr>
+  </tbody>
+</table>
+            
+            <br>
+            <br>
+            
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">Post instead</legend>
+
+      <div class="multiple-choice" data-target="example-different-country">
+        <input id="nationalities-other" name="nationalities" type="checkbox" value="Citizen of a different country">
+        <label for="nationalities-other">I would prefer to post them</label>
+      </div>
+        
+        <!--
+      <div class="panel panel-border-narrow js-hidden" id="example-different-country">
+        
+    <h3 class="heading-medium">Quote the reference number </h3>
+          <p>3732jYY</p>
+          
+          <h3 class="heading-medium">Send evidence to:</h3>
+          
+          
+      
+      <ul class="bullet-list">
+      <li>123 Some random street</li>
+          <li>A random place</li>
+          <li>This county</li>
+          <li>United Country</li>
+          <li>PO5TCD</li>
+      </ul>
+      </div>
+-->
+    </fieldset>
+      
+  </div>
+
+    
+    <br>
+</form>
+            
+            <br><br>
+          <div class="form-group">
+            <a href="summary"><input class="button" type="submit"  value="Next"></a>
+          </div>
+
+
+    </div>
+  
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

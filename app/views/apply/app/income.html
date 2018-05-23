@@ -1,0 +1,154 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Social work bursary
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+
+    .form-control-date {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  width: 95%;
+  padding: 5px 4px 4px;
+  border: 2px solid #0b0c0c;
+}
+    
+  </style>
+
+<main id="content" role="main">
+    
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary">Apply for Social Work Bursary</p>
+            <h1 class="page-header--lede heading-large">Is your household income below £18,000?
+</h1>
+          </header>
+            
+            <details>
+  <summary style="margin-bottom:25px;"><span class="summary">Whats included in my household income</span></summary>
+
+  <div class="panel panel-border-narrow">
+      
+      <p>Any:</p>
+
+    <ul class="list list-bullet">
+                    <li>Net profit from property, lettings or rent</li>
+                    <li>Income from trusts</li>
+                    <li>Income from taxable pensions due to incapacity or disability</li>
+                    <li>Income from other taxable pensions</li>
+                    <li>Income from benefits</li>
+                </ul>
+      <p>Your partners:</p>
+      
+      <ul class="list list-bullet">
+                    <li>Salary or wages before deductions</li>
+                    <li>Income from self employment</li>
+                    <li>Income as company director</li>
+                    <li>State Retirement Pension</li>
+                    <li>Income from any other pensions</li>
+                    <li>Bank and building society gross interest (before tax)</li>
+                    <li>Other investment income (before tax)</li>
+                    <li>Maintenance payments received</li>
+                    <li>Benefits or allowances - List below and send evidence of amount</li>
+                    <li>Other income</li>
+                </ul>
+      
+  </div>
+
+</details>
+            
+            <form action="income-handler" method="get" class="form">
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Is your income below £18,000</legend>
+
+      <div class="multiple-choice" data-target="yes">
+        <input type="radio" name="online" value="yes">
+        <label>Yes</label>
+      </div>
+
+      <div class="multiple-choice">
+        <input type="radio" name="online" value="no">
+        <label>No</label>
+      </div>
+        
+        <div class="panel panel-border-narrow js-hidden" id="yes">
+        <p>Depending on your other circumstances you may be eligible for:</p>
+            
+             <ul class="list list-bullet">
+                    <li>Maintenance grant</li>
+                    <li>Adult Dependants Allowance</li>
+                    <li>Parents Learning Allowance</li>
+                    <li>Childcare Allowance</li>
+                </ul>
+            
+        </div>
+
+    </fieldset>
+        
+  </div>
+      
+      <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+      
+</form>
+      
+
+    </div>
+  
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

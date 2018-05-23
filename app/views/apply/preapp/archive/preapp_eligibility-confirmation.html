@@ -1,0 +1,137 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+  </style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+
+               <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+            <h1 class="page-header--lede heading-large" >Which of these things apply to you?</h1>
+            </header>
+
+
+
+<p class="">Select all that apply to you:</p>
+<form action="preapp-check" class="form" method="get">
+
+          <div class="form-group">
+            <fieldset>
+
+              <legend class="visuallyhidden">What benefits or tax credits do {{partnerortext}} get?</legend>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="eligible-1" name="criteria" type="checkbox" value="own">
+                <label for="taxcredits">I live on my own</label>
+              </div>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="eligible-2" name="criteria" type="checkbox" value="pension">
+                <label for="eligible-2">My pension is my only income</label>
+              </div>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="eligible-3" name="criteria" type="checkbox" value="6000">
+                <label for="eligible-3">I have less than £6000 in savings or investments</label>
+              </div>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="eligible-4" name="criteria" type="checkbox" value="property">
+                <label for="eligible-4">I don't own any second properties</label>
+              </div>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="eligible-5" name="criteria" type="checkbox" value="benefits"> 
+                <label for="eligible-5"> I don't claim any benefits or tax credits</label>
+              </div>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="eligible-5" name="criteria" type="checkbox" value="benefits"> 
+                <label for="eligible-5"> I'm not in education or training</label>
+              </div>
+
+            </fieldset>
+
+          </div>
+
+                       <!-- <details>
+              <summary><span class="summary">What does investments mean?</span></summary>
+                <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+                <h3 class="heading-medium">
+                We don't ask about these benefits because they don't entitle you to help with NHS costs:
+                </h3>
+                    <ul class="list-bullet">
+                    <li>Personal Independence Payment (PIP)</li>
+                    <li>Disability Living Allowance (DLA)</li>
+                    <li>Incapacity Benefit</li>
+                    <li>Attendance Allowance</li>
+                    </ul>
+<br>
+                    <p>It's important you know what benefit you get. If you're not sure contact the <a href="https://www.gov.uk/contact-jobcentre-plus/existing-benefit-claims">Jobcentre Plus Helpline</a>.</p>
+
+              </div>
+            </details>
+ -->
+<br>
+          <div class="form-group" style="margin-top: 1em">
+            <input class="button" type="submit" value="Next">
+          </div>
+
+        </form>
+      </div>
+      </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

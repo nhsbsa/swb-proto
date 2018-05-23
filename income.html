@@ -1,0 +1,140 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Social work bursary
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+
+    .form-control-date {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  width: 95%;
+  padding: 5px 4px 4px;
+  border: 2px solid #0b0c0c;
+}
+    
+  </style>
+
+<main id="content" role="main">
+    
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This is an application for social work bursary: </span>Means tested elements</p>
+            <h1 class="page-header--lede heading-large">Is your household income below £18,000?
+</h1>
+          </header>
+            
+            
+            <form action="income-handler" method="get" class="form">
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Is your income below £18,000</legend>
+
+      <div class="multiple-choice" data-target="contact-by-email">
+        <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+        <label for="example-contact-by-email">Yes</label>
+      </div>
+
+      <div class="multiple-choice" data-target="contact-by-phone">
+        <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+        <label for="example-contact-by-phone">No</label>
+      </div>
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+        <p>Depending on your other circumstances you may be eligible for:</p>
+            
+             <ul class="list list-bullet">
+                    <li>Maintenance grant</li>
+                    <li>Adult Dependants Allowance</li>
+                    <li>Parents Learning Allowance</li>
+                    <li>Childcare Allowance</li>
+                </ul>
+
+      <legend><h2 class="heading-medium">Would you like to apply for any of these?</h2></legend>
+<br>
+      <div class="multiple-choice">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+        <label for="radio-inline-1">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+        <label for="radio-inline-2">No</label>
+      </div>
+                
+      <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+        <label class="form-label" for="contact-phone">Phone number</label>
+        <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+      </div>
+            
+            
+
+    </fieldset>
+        
+  </div>
+      
+      <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+      
+</form>
+                
+</form>
+  
+          
+
+    </div>
+  
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

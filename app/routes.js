@@ -84,24 +84,39 @@ var thisYear = 2017;
         //do you want to apply online ?
     router.get(/applyonline-handler/, function (req, res) {
           if (req.query.online === 'yes') {
-          res.render('apply/preapp/preapp_eligibility-info-docsv3', {
-              'partnerortext' : partnerOrText
+          res.render('apply/preapp/employer_funding', {
           });
       } else {
-        res.render('apply/preapp/preapp_eligibility-not-online', {
-        'partnerortext' : partnerOrText,
+        res.render('/apply/app/index', {
         });
       }
     });
 
 
         // mon-dependant (release 2)
-    router.get(/non-dephandler/, function (req, res) {
-      if (req.query.nonDep === 'yes') {
-        res.redirect('kickout_release2-no-answer');
+    router.get(/course-handler/, function (req, res) {
+      if (req.query.course === 'post') {
+        res.render('apply/preapp/preapp_summary_post');
       } else {
-                 res.render('apply/preapp/only-incomer2', {
-                'partnerortext' : partnerOrText,
+                 res.render('apply/preapp/preapp_summary_under', {
+        });
+      }
+    });
+
+   router.get(/funding-handler/, function (req, res) {
+      if (req.query.funding === 'yes') {
+        res.render('apply/preapp/kickout_funding');
+      } else {
+                 res.render('apply/preapp/uk_resident', {
+        });
+      }
+    });
+
+   router.get(/resident-handler/, function (req, res) {
+      if (req.query.resident === 'yes') {
+        res.render('apply/preapp/university_name');
+      } else {
+                 res.render('apply/preapp/kickout_3years', {
         });
       }
     });
@@ -115,23 +130,23 @@ var thisYear = 2017;
     //   }
     // });
 
-// pension your only income (release 1: to be removed completely as we iterate- not reusable)
-    router.get(/penincome-handler/, function (req, res) {
-      if (req.query.penincome === 'yes') {
-        res.redirect('kickout_release2-no-answer');
-      } else {
-        res.redirect('saving-6k');
-      }
-
-    });
     // pension your only income (release 1: to be removed completely as we iterate- not reusable)
     router.get(/r2income-handler/, function (req, res) {
       if (req.query.r2income === 'yes') {
-        res.redirect('kickout_release2-no-answer');
+        res.redirect('apply/preapp/only-incomer3');
       } else {
-        res.redirect('saving-6k');
+        res.redirect('kickout_not_eligible');
       }
     });
+
+    router.get(/r3income-handler/, function (req, res) {
+      if (req.query.r3income === 'yes') {
+        res.redirect('saving-6k');
+      } else {
+        res.redirect('kickout_release2-no-answer');
+      }
+    });
+
 
     //release 1 savings handler *note* this will change according to carehome answer in next iteration
     router.get(/savings6k-handler/, function (req, res) {
@@ -478,6 +493,17 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     });
 
+        // hospital
+    router.get(/invalid-handler/, function (req, res) {
+      if (req.query.invalid === 'yes') {
+        res.redirect('you-live');
+      } else {
+        res.redirect('you-live');
+      }
+    });
+
+
+
 
     // home-handler
     router.get(/home-handler/, function (req, res) {
@@ -493,7 +519,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       } else if (req.query.home === 'care') {
         res.redirect('../preapp/sc/authority-assessed');
       } else if (req.query.home === 'homeless') {
-        res.redirect('live-ko');
+        res.redirect('living-summary');
       } else {
         res.redirect('live-ko');
       }
@@ -957,6 +983,92 @@ var benType;
     });
 
             
+
+// social work bursary application routes
+
+//do you want to apply online ?
+    router.get(/university-handler/, function (req, res) {
+          if (req.query.online === 'yes') {
+          res.render('apply/app/social_care_sector', {
+          });
+      } else {
+        res.render('apply/app/kickout', {
+        });
+      }
+    });
+
+    router.get(/sector-handler/, function (req, res) {
+          if (req.query.online === 'yes') {
+          res.render('apply/app/past_bursary', {
+          });
+      } else {
+        res.render('apply/app/past_bursary', {
+        });
+      }
+    });
+
+  router.get(/immigration-handler/, function (req, res) {
+          if (req.query.online === 'yes') {
+          res.render('apply/app/travel', {
+          });
+      } else {
+        res.render('apply/app/travel_another', {
+        });
+      }
+    });
+
+ router.get(/travel-handler/, function (req, res) {
+          if (req.query.online === 'england') {
+          res.render('apply/app/course_details', {
+          });
+      } if (req.query.online === 'englandandabroad') {
+          res.render('apply/app/travel_englandandabroad', {
+          });
+      } if (req.query.online === 'abroad') {
+          res.render('apply/app/travel_abroadonly', {
+          });
+      }
+    });
+
+ router.get(/travel-loop-handler/, function (req, res) {
+          if (req.query.online === 'yes') {
+          res.render('apply/app/higher_education', {
+          });
+      } else {
+        res.render('apply/app/travel_yes_another', {
+        });
+      }
+    });
+
+ router.get(/income-handler/, function (req, res) {
+          if (req.query.online === 'no') {
+          res.render('apply/app/disability', {
+          });
+      } else {
+        res.render('apply/app/additional_elements', {
+        });
+      }
+    });
+
+router.get(/ed-handler/, function (req, res) {
+          if (req.query.online === 'yes') {
+          res.render('apply/app/higher_course_details', {
+          });
+      } else {
+        res.render('apply/app/course_details', {
+        });
+      }
+    });
+
+router.get(/work-handler/, function (req, res) {
+          if (req.query.online === 'yes') {
+          res.render('apply/app/employed_uk', {
+          });
+      } else {
+        res.render('apply/app/course_details', {
+        });
+      }
+    });
 
 
 // add your routes here

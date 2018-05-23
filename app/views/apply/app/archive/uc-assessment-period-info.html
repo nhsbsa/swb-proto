@@ -1,0 +1,101 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+.import-panel {
+    font-weight: bold;
+    padding: 20px 0px 10px 40px;
+    background: url("/public/images/icon-information.png") no-repeat scroll 0px center;
+    }
+    .form-hint-list-item--valid{
+    color:black;
+    }
+    .tax-cred-img{
+    float: left;
+    margin-right: 5px;
+     background: url("/public/images/bsa/tax-cert.png") -71px 0;
+    width: 21px;
+    height: 21px;
+}
+    .container {
+    width: 200px;
+    height: 120px;
+}
+
+/* resize images */
+.container img {
+    width: 100%;
+    height: auto;
+}
+.heading-margin{
+  margin-top: 0em;
+}
+.print-link {
+ margin-top:2em;
+ margin-bottom:2em;
+ font-size: 16px;
+}
+.print-link a {
+ background:url(https://assets.publishing.service.gov.uk/government-frontend/icon-print-b04bc2c6b31f73054f79768fd91f76df0b164b247c0905d8ca07b45cfb4f9a3b.png) no-repeat 0 50%;
+ padding:0.5em 0 0.5em 28px
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+ .print-link a {
+  background-image:url(https://assets.publishing.service.gov.uk/government-frontend/icon-print-2x-685277484e948f6a848f303d3614e422e652a6a6536980501b893d9f4bbd9f4f.png);
+  background-size:16px 18px
+ }
+}
+
+.card{
+  width:50%;
+}
+ @media (max-width: 641px) {
+ .card {
+  width:100%;
+ }
+}
+
+</style>
+
+
+
+<main id="content" role="main">
+<!-- <a href="javascript:history.go(-1)" class="link-back">Back</a> -->
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        
+               <header class="page-header">
+            <h1 class="page-header--lede heading-xlarge">You aren't automatically entitled to help with NHS costs</h1>
+            </header>
+<p>Because you're waiting on the outcome of your first assessment period, you won't know if you're entitled to help with your NHS costs.</p>
+
+<p>You'll get help if you earned:</p>
+<ul class="list-bullet">
+  <li>£435 or less</li>
+  <li>£935 or less if you have a payment for either a child who lives with you or a 'limited capability for work' 
+</ul>
+
+<h2 class="heading-medium">What to do next</h2>
+<p>After your first assessment period, you'll find out if you're automatically entitled to help.</p>
+<p>You
+
+  </div>
+  </div>
+
+
+
+
+</main>
+
+
+
+
+{% endblock %}
+

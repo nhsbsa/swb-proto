@@ -1,0 +1,108 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Social work bursary
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+
+    .form-control-date {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  width: 95%;
+  padding: 5px 4px 4px;
+  border: 2px solid #0b0c0c;
+}
+    
+    .nhsuk-box-highlight {
+        margin: 0 0 1em 0;
+        padding: 2px 0 20px 0 ;
+        color: #fff;
+        background: #2360AC;
+        text-align: center;
+    }
+    
+  </style>
+
+<main id="content" role="main">
+    
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary">Apply for Social Work Bursary</p>
+            <h1 class="page-header--lede heading-large">That's all for now</h1>
+  
+          </header>
+                        
+            <div class="nhsuk-box-highlight">
+            <h2 class="heading-large">Application complete</h2>
+                <p>Your reference number is <strong>328j37s</strong></p>
+            
+            </div>
+            
+            <h2 class="heading-medium">What happens next?</h2>
+            
+            <p>Your application will be processed within 10 working days.</p>
+            
+            <p>If we need any further information or additional evidence we will contact you by email.</p>
+            
+             <div class="panel panel-border-wide">
+  <p>
+   Your actual payment won't be made until your University confirms you have a capped place.
+  </p>
+</div>
+
+    </div>
+  
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

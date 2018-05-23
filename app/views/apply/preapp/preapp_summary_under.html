@@ -1,0 +1,100 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This is pre-application overview for </span>Grant eligibility checker</p>
+            <h1 class="page-header--lede heading-large">You're eligible</h1>
+          </header>
+        
+        <details>
+
+  <summary><span class="summary">Check your answers</span></summary>
+
+  <div class="panel panel-border-narrow">
+
+    <table id="review-table-one">
+        <h2 class="heading-medium" style="margin-top:0em">
+            Your answers
+          </h2>
+      <tr>
+        <td>Employer funding</td>
+        <td class="bold">Yes</td>
+        <td><a href="employer_funding">Change</a></td>
+      </tr>
+      <tr>
+        <td>UK resident for 3 years</td>
+        <td class="bold">Yes</td>
+        <td><a href="uk_resident">Change</a></td>
+      </tr>
+      <tr>
+        <td>University</td>
+        <td class="bold">Anglia Ruskin University</td>
+        <td><a href="university_name">Change</a></td>
+      </tr>
+      <tr>
+        <td>Course</td>
+        <td class="bold">MA Social Work (Chelmsford)</td>
+        <td><a href="course_name">Change</a></td>
+      </tr>
+      <tr>
+        <td>Course type</td>
+        <td class="bold">Undergraduate</td>
+        <td><a href="course_type">Change</a></td>
+      </tr>
+    </table>      
+
+  </div>
+
+</details>
+        
+        <h2 class="heading-medium">What you could get</h2>
+        
+        <table>
+  <caption class="heading-small visually-hidden">Amounts</caption>
+  <tbody>
+    <tr>
+      <td>Basic element</td>
+      <td class="bold">£3,362.50</td>
+    </tr>
+    <tr>
+      <td>For travel expenses</td>
+      <td class="bold">£862.50</td>
+    </tr>
+    <tr>
+      <td>Towards course fee's</td>
+      <td class="bold">£4,052</td>
+    </tr>
+    <tr>
+      <td>Disability assistance</td>
+      <td class="bold">£1,741 - £20,725</td>
+    </tr>
+  </tbody>
+</table>
+    
+         <br>
+        
+        <div class="panel panel-border-wide">
+        <p>You may also be eligible for a maintenance grant and allowances for dependants depending on your income.</p>
+        </div>
+        
+<h2 class="heading-medium">To apply for this grant</h2>
+
+<p>Download the <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-03/SWB%20Undergraduate%20application%20form%202018-19%20%28V1%29%20Inc%20EM%20Form%2003.2018.pdf">undergraduate grant form</a>.</p>
+        
+  </div>
+  </div>
+
+</main>
+
+{% endblock %}

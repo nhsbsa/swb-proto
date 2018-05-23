@@ -1,0 +1,73 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+
+               <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Does anyone else live with {{firstname}} who is 18 or older?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Does anyone else live with you who is 18 or older?</h1>
+             {% endif %}
+            </header>
+
+<p>Don't include:</p>
+            <ul class="list-bullet">
+              <li>joint-tenants for example, flat mates </li>
+              <li>joint-owners</li>
+              <li>young people studying for A-level, Scottish Highers or equivalent</li>
+            </ul>
+<br>
+
+  <form action="non-dephandler" method="get" class="form">
+
+       <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Does anyone else live with you at {{data['address-lineone']}}?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="nonDep" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="nonDep" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+

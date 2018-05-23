@@ -1,0 +1,142 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+.example {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #bfc1c3;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px; }
+  @media (min-width: 641px) {
+    .example {
+      padding-top: 45px;
+      padding-right: 30px;
+      padding-bottom: 30px;
+      padding-left: 30px; } }
+  .example:before {
+    content: "EXAMPLE";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.21053em 0.78947em 0.21053em 0.78947em;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 12px;
+    line-height: 1.25;
+    background: #bfc1c3;
+    color: white; }
+    @media (min-width: 641px) {
+      .example:before {
+        font-size: 14px;
+        line-height: 1.42857; } }
+  .example .highlight {
+    font-style: normal;
+    color: #0076c0; }
+  .example .list-bullet {
+    margin-bottom: 20px; }
+</style>
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+               <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Does {{firstname}} claim any benefits or tax credits?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Are you awaiting the outcome of your first Universal Credit assessment period?</h1>
+             {% endif %}
+            </header>
+
+<!-- <p>Your first assessment period will start:
+<ul class="list-bullet">
+<li>after the 7 waiting days, if they apply</li>
+    <li>on the date of your claim, if the waiting days don’t apply</li>
+</ul>
+</p> -->
+
+
+
+<details>
+
+  <summary><span class="summary">Universal timeline example</span></summary>
+  <div class="example">
+<ul class="list-bullet">
+<li>Ben lost his job and makes a new claim for Universal Credit on 15 July.</li>
+<li>He must wait seven days before his claim can start, this is called the 'waiting week'.</li>
+<li>This makes his assessment date the 22 July. It means he will be paid on the 22nd of each month.</li>
+<li>He needs to wait one 'assessment period' (that’s a calendar month) to 22 August.</li>
+<li>He also needs to leave up to seven days for the money to reach his account.</li>
+<li>He should expect his first payment of Universal Credit no later than 29 August.</li>
+</ul>
+
+  </div>
+
+
+ </details>
+<br>
+
+
+
+
+      <form action="ucperiod-handler" method="get" class="form">
+        
+        <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Do {{partnerortext}} claim any benefits or tax credits?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="ucperiod" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="ucperiod" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+
+
+
+    </div>
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+

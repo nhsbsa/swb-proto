@@ -1,0 +1,78 @@
+s{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>span.hint {
+    color: #6f777b;
+}</style>
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {{firstname}}'s Universal Credit include a payment for any of these?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Does your Universal Credit include a payment for any of these?</h1>
+                 {% endif %}
+                  </header>
+                       <ul class="list-bullet">
+          <li>a child or young person who lives with you</li>
+          <li>a disability or health condition that makes it hard for {{partnerOrText}} to work  - this is called limited capability for work</li>
+      </ul>
+           
+
+             <form action="uc-type-handler" method="get" class="form">
+              
+
+<br>
+
+  <div class="form-group">
+  
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Does {{jointOrText}} Universal Credit include either of these payments?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="ucElement" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="ucElement" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+      </div>
+    </div>
+
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-{% extends "layout_bsa.html" %}
+ {% extends "layout_bsa.html" %}
 
 {% block page_title %}
   Help paying for NHS Costs prototype
@@ -8,55 +8,60 @@
 
 <main id="content" role="main">
 
-  <div class="grid-row">
-  <div class="column-two-thirds">
+<div class="grid-row">
 
-        <h1 class="heading-xlarge">
-          <span class="heading-secondary">Prototype</span>
-          Apply for help to pay NHS costs
-        </h1>
+        <div class="column-two-thirds">
 
-  <h2 class="heading-medium">Our purpose</h2>
-        <p class="lede">To reduce health inequality caused by having limited means.</p>
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Prototype</p>
+            <h1 class="page-header--lede heading-large">Social Work Bursary</h1>
+          </header>
 
-  <table>
-    <thead>
-      <tr>
-        <th width="25%">Link</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="apply/devbaseline/">DevBaseline</a></td>
-
-        <td>For all agreed tickets</td>
-      </tr>
-<!--       <tr>
-        <td><a href="apply/design-sprints/">Design iterations</a></td>
-
-        <td>All design iterations of the service</td>
-      </tr> -->
-
-        <tr>
-        <td><a href="apply/design-sprints/research/index-research">User research</a></td>
-
-        <td>For latest usability testing</td>
-      </tr>
-
-    </tbody>
-  </table>
-
-  
-  </div>
-
+        </div>
 </div>
+    
+        <hr>
+    
+<div class="grid-row">
+        <div class="column-third">
+            <h2 class="heading-medium">Eligibility checker</h2>
+        </div>
+        <div class="column-two-thirds">
+        <div class="form-group" style="margin-top:50px;">
+            <a href="apply/start"><input class="button" type="submit"  value="Open"></a>
+          </div>
+        </div>
+    </div>
 
-  
-  <h2 class="heading-medium">Alpha Prototypes</h2>
-<h3 class="heading-small"> <a href="http://nhslis.herokuapp.com/">Sprint 8</a></h3>
-</main>
+         <hr>
+    
+<div class="grid-row">
+        <div class="column-third">
+            <h2 class="heading-medium">Application form</h2>
+        </div>
+        <div class="column-two-thirds">
+        <div class="form-group" style="margin-top:50px;">
+            <a href="apply/app"><input class="button" type="submit"  value="Open"></a>
+          </div>
+        </div>
+    </div>
+    
+        <hr>
+    
+<div class="grid-row">
+        <div class="column-third">
+            <h2 class="heading-medium">User management</h2>
+        </div>
+        <div class="column-two-thirds">
+        <div class="form-group" style="margin-top:50px;">
+            <a href="apply/start"><input class="button" type="submit"  value="Open"></a>
+          </div>
+        </div>
+    </div>
+    
+    </main>
+
+
 
 {% endblock %}
-
 

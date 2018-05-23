@@ -1,0 +1,167 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Social work bursary
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+
+    .form-control-date {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  width: 95%;
+  padding: 5px 4px 4px;
+  border: 2px solid #0b0c0c;
+}
+    
+  </style>
+
+<main id="content" role="main">
+    
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary">Apply for Social Work Bursary</p>
+            <h1 class="page-header--lede heading-large">Would you like to apply for any additional grant elements?
+</h1>
+                
+          </header>
+            
+            <p class="lede">In addition to the basic Social Work Bursary element you can also apply for the following elements:</p>
+            
+      <form action="disability" method="get" class="form">
+
+  <fieldset>
+
+    <legend class="visually-hidden"><h2 class="heading-medium">Additional grant elements</h2></legend>
+<br>
+    <div class="multiple-choice">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+      <label for="waste-type-1">
+        Maintenance grant
+        <span class="form-hint">
+            Up to £2,721 per year (£4,201 for London) to cover the cost of living and studying.
+        </span>
+      </label>
+    </div>
+      
+      <div class="multiple-choice">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+      <label for="waste-type-1">
+        Adult Dependants Allowance
+        <span class="form-hint">
+            Up to £2,925 per year if you have adults financially dependent you.
+        </span>
+      </label>
+    </div>
+      
+      <div class="multiple-choice">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+      <label for="waste-type-1">
+        Parents Learning Allowance
+        <span class="form-hint">
+            Up to £1,669 per year if you are a parent.
+        </span>
+      </label>
+    </div>
+      
+      <div class="multiple-choice">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+      <label for="waste-type-1">
+        Childcare allowance
+        <span class="form-hint">
+            Up to £128.78 per week if you have one child.<br>
+            Up to £191.45 per week if you have two or more children.
+        </span>
+      </label>
+    </div>
+      
+      <!--
+      
+      <div class="multiple-choice">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+      <label for="waste-type-1">
+        Disabled Students' Allowance
+        <span class="form-hint">
+            Up to £1,741 per year in general allowance<br>
+            Up to £5,214 (one off payment) to pay for specialist equiptment<br>
+            Up to £20,725 per year towards non-medicial helpers allowance<br>
+            Help towards travel (uncapped)
+        </span>
+      </label>
+    </div>
+      
+      <!--
+      <div class="multiple-choice">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+      <label for="waste-type-1">
+        None of the above
+      </label>
+    </div>
+-->
+
+  </fieldset>
+          
+          <br>
+  
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+
+    </div>
+  
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

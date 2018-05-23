@@ -1,0 +1,78 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+  </style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+            
+                <h1 class="page-header--lede heading-xlarge" style="margin-top: 0px">You can apply using the paper forms below</h1>
+            </header>
+
+
+<p>There are two forms depending on the type of course you are on.</p>
+            
+<h2 class="heading-medium">Postgraduate courses</h2>
+
+<p>Download the <a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">postgraduate grant form</a>.</p>
+            
+<h2 class="heading-medium">Undergraduate courses</h2>
+
+<p>Download the <a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">undergraduate grant form</a>.</p>
+
+    </div>
+  
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

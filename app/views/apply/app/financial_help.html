@@ -1,0 +1,167 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Social work bursary
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* -- What you need: column source order is different on this page -- */
+.what-you-need > .column-one-third {
+  float: right; }
+
+.what-you-need > .column-two-thirds {
+  float: left; }
+
+@media screen and (max-width: 640px) {
+  .what-you-need > .column-one-third {
+    margin: 0 15px 15px; } }
+
+.fee-reference {
+  margin-bottom: 20px; }
+
+.fee-reference dd + dt {
+  margin-top: 10px; }
+
+  .declaration, .savemessage {
+  background: #f8f8f8;
+  border-bottom: #bfc1c3 solid 3px;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+  padding: 20px; }
+  @media screen and (min-width: 641px) {
+    .declaration, .savemessage {
+      margin: 0;
+      margin-bottom: 20px; } }
+  .declaration h2, .savemessage h2 {
+    margin-top: 0; }
+
+.savemessage {
+  color: #fff;
+  background-color: #005ea5;
+  border-bottom: none; }
+
+    .form-control-date {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  width: 95%;
+  padding: 5px 4px 4px;
+  border: 2px solid #0b0c0c;
+}
+    
+  </style>
+
+<main id="content" role="main">
+    
+ <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary">Apply for Social Work Bursary</p>
+            <h1 class="page-header--lede heading-large">Have you applied for any other financial help relating to this course?
+</h1>
+          </header>
+
+      <form action="nationality" method="get" class="form">
+
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Have you applied for any other financial help relating to this course?</legend>
+        
+        <span class="form-hint">
+    For example: Grants, bursaries, retainers or support from other organisations
+  </span>
+        <br>
+
+      <div class="multiple-choice" data-target="contact-by-email">
+        <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+        <label for="example-contact-by-email">Yes</label>
+      </div>
+
+      <div class="multiple-choice" data-target="contact-by-phone">
+        <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+        <label for="example-contact-by-phone">No</label>
+      </div>
+    
+        <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+        
+            <legend><h2 class="heading-medium">Was your application approved?</h2></legend>
+            <br>
+
+      <div class="multiple-choice" data-target="app-approved" >
+        <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
+        <label for="radio-1">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+        <label for="radio-2">No</label>
+      </div>
+      <div class="multiple-choice" data-target="app-approved" >
+        <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad">
+        <label for="radio-3">I haven't heard back yet</label>
+      </div>
+            
+            <div class="js-hidden" id="app-approved" name="app=approved-group">
+                
+                <div class="form-group">
+                    <br>
+  <label class="form-label" for="select-box">Support type</label>
+  <select class="form-control" id="select-box">
+    <option>Grant</option>
+    <option>Bursary</option>
+    <option>Retainer</option>
+    <option>Other support</option>   
+  </select>
+</div>
+        
+                <div class="form-group">
+  <label class="form-label" for="first-name-2">Name of organisation</label>
+  <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+</div>
+                
+                <div class="form-group" style="width:25%;">
+  <label class="form-label" for="first-name-2">From</label>
+  <input class="form-control-date" id="first-name-2" name="first-name-2" type="text" width="100% !important">
+                </div>
+                <div class="form-group" style="width:25%; margin-left:10px; margin-top:0px;">
+                    <label class="form-label" for="first-name-2">To</label>
+  <input class="form-control-date" id="first-name-2" name="first-name-2" type="text">
+</div>
+                 <div class="form-group">
+  
+</div>
+
+            </div>
+
+      </div>
+
+    </fieldset>
+      
+  </div>
+          
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+
+    </div>
+  
+  </div>
+  
+</main>
+
+{% endblock %}
+
+
+    
+   

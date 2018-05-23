@@ -1,0 +1,65 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+    <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {{firstname}} have more than £23,250 in savings, investments and properties?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Do you have more than £23,250 in savings, investments and properties?</h1>
+                 {% endif %}
+            </header>
+
+  <p>The property you live in doesn't count.</p>
+
+
+  <form action="carehome-savings-handler" method="get" class="form">
+
+
+        <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+                  Do you have more than £23,250 in savings, investments and properties?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="savings" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="savings" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+
+    </div>
+    </div>
+
+</main>
+{% endblock %}
+
